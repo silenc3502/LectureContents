@@ -1,9 +1,18 @@
 var app = new Vue ({
     el: '#app',
     data: {
+        message: '우왕 뷰 짱',
+        initMsg: '양방향 연결이 뭔지 함 볼까 ?',
+        list: ['사과', '바나나', '딸기', '수박', '참외', '포도', '망고', '블루베리', '체리'],
+        show: true,
+        num: 3,
+        count: 0,
+        radius: 50,
+        randomNumber: 0,
+        isTheif: false,
+        firstFormerView: false,
+        firstFormerStat: false,
         shopView: false,
-        jobView: false,
-        goGetJob: false,
         shopList: [],
         shopListValue: [],
         inventoryView: false,
@@ -27,7 +36,7 @@ var app = new Vue ({
             // 현재 누적한 경험치량
             currentLevelBar: 0,
             money: 0,
-            jobSelect: '모험가',
+            selectJob: '모험가'
         },
         monsterName: '',
         monsters: [
@@ -64,10 +73,12 @@ var app = new Vue ({
             { name: '뱀파이어 로드', hp: 150000, exp: 4500, money: 1500000 },
             { name: '이무기', hp: 300000, exp: 10000, money: 3000000 },
             { name: '베헤모스', hp: 500000, exp: 20000, money: 5000000 },
-            { name: '리치 로드', hp: 1000000, exp: 40000, money: 10000000 },
+            { name: '하급 악마', hp: 1000000, exp: 40000, money: 10000000 },
+            { name: '리치 로드', hp: 1500000, exp: 60000, money: 15000000 },
             { name: '베헤모스 킹', hp: 2000000, exp: 80000, money: 20000000 },
             { name: '드래곤', hp: 4000000, exp: 150000, money: 40000000 },
             { name: '데스 나이트', hp: 10000000, exp: 300000, money: 100000000 },
+            { name: '고위 악마', hp: 12000000, exp: 600000, money: 200000000 },
             { name: '카오스 드래곤', hp: 99999999, exp: 10000000, money: 100000000 },
             { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999, money: 9999999999 }
         ],
@@ -129,32 +140,6 @@ var app = new Vue ({
                 alert('돈.벌.어.와!')
             }
         },
-        getJob() {
-            if(this.characterStatus.jobSelect == "warrior") {
-                this.characterStatus.str *= 2
-                this.characterStatus.def *= 2
-                this.characterStatus.atk *= 2
-            }else if(this.characterStatus.jobSelect == "mage") {
-                this.characterStatus.intelligence *= 2
-                this.characterStatus.mp *=2
-                this.characterStatus.men *=2
-                this.characterStatus.atk *= 2
-            }else if(this.characterStatus.jobSelect == "archer") {
-                this.characterStatus.dex *= 2
-                this.characterStatus.atk *= 2
-            }else if(this.characterStatus.jobSelect == "thief") {
-                this.characterStatus.str *= 1.5
-                this.characterStatus.dex *= 1.5
-                this.characterStatus.atk *= 2
-            }else if(this.characterStatus.jobSelect == "pirate") {
-                this.characterStatus.str *= 1.5
-                this.characterStatus.dex *= 1.5
-                this.characterStatus.atk *= 2
-            }
-
-            this.jobView = false;
-
-        },
         equipItem () {
             var tmpSum = 0
 
@@ -178,6 +163,12 @@ var app = new Vue ({
 
             this.characterStatus.itemAtk = tmpSum
             this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSum
+        },
+        buttonClickTest: function (event) {
+            alert('뷰 짱')
+        },
+        increment: function () {
+            this.count += 1
         },
         addMonster: function () {
             var max = this.monsters.reduce( function (a, b) {
@@ -221,6 +212,12 @@ var app = new Vue ({
                 this.characterStatus.dex * 3 +
                 this.characterStatus.intelligence * 0.7
         },
+        savageBlow (index) {
+            this.monsters[index].hp -= this.characterStatus.atk * 50 +
+                this.characterStatus.str * 25 +
+                this.characterStatus.dex * 100 +
+                this.characterStatus.intelligence * 3
+        },
         randomGeneration () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
         },
@@ -230,41 +227,15 @@ var app = new Vue ({
                     parseInt(this.monsters[i].hp - this.characterStatus.atk * 3.5)
             }
         },
-        dragonShout: function () {
+        suddenRaid () {
             for (var i = 0; i < this.monsters.length; i++) {
                 this.monsters[i].hp =
-                    parseInt(this.monsters[i].hp - (this.characterStatus.atk * 3.5 *
-                    this.characterStatus.str))
+                    parseInt(this.monsters[i].hp - (this.characterStatus.dex * 10 +
+                        this.characterStatus.atk * 10 +
+                        this.characterStatus.intelligence * 1.5 +
+                        this.characterStatus.str * 3))
             }
-        },
-        blizzard () {
-            for (var i = 0; i < this.monsters.length; i++) {
-                this.monsters[i].hp =
-                    parseInt(this.monsters[i].hp - (this.characterStatus.atk * 3.5
-                        * this.characterStatus.intelligence))
-            }
-        },
-        arrowRain () {
-            for (var i = 0; i < this.monsters.length; i++) {
-                this.monsters[i].hp =
-                    parseInt(this.monsters[i].hp - (this.characterStatus.atk * 3.5
-                        * this.characterStatus.dex))
-            }
-        },
-        shadowAssault () {
-            for (var i = 0; i < this.monsters.length; i++) {
-                this.monsters[i].hp =
-                    parseInt(this.monsters[i].hp - (this.characterStatus.atk * 3.5
-                        * (this.characterStatus.str + this.characterStatus.dex)))
-            }
-        },
-        cannonBall () {
-            for (var i = 0; i < this.monsters.length; i++) {
-                this.monsters[i].hp =
-                    parseInt(this.monsters[i].hp - (this.characterStatus.atk * 3.5
-                        * (this.characterStatus.str + this.characterStatus.dex )))
-            }
-        },
+        }
     },
     beforeCreate() {
         console.log('Vue 객체를 만들기 이전입니다.')
@@ -280,6 +251,31 @@ var app = new Vue ({
     },
     beforeUpdate() {
         console.log('VDOM의 변화를 감지합니다.')
+
+        if (this.characterStatus.selectJob === 'thief') {
+            this.isTheif = true
+        }
+
+        if ((this.characterStatus.level >= 50) && (this.characterStatus.selectJob === '모험가')) {
+            this.firstFormerView = true
+        } else {
+            this.firstFormerView = false
+        }
+
+        if (!(this.characterStatus.selectJob === '모험가') && !(this.firstFormerStat))
+        {
+            this.characterStatus.atk += 1000
+            this.characterStatus.defaultAtk += 1000
+
+            this.characterStatus.str += 500
+            this.characterStatus.int += 50
+            this.characterStatus.dex += 1000
+            this.characterStatus.vit += 50
+            this.characterStatus.def += 50
+            this.characterStatus.men += 50
+
+            this.firstFormerStat = true
+        }
 
         var i
         for (i = 0; i < this.monsters.length; i++) {
@@ -301,17 +297,40 @@ var app = new Vue ({
             this.characterStatus.currentLevelBar =
                 parseInt(this.characterStatus.currentLevelBar -
                     this.characterStatus.totalLevelBar)
-            this.characterStatus.level += 1
-            this.characterStatus.hp *= 1.2
-            this.characterStatus.defaultAtk += 3
-            this.characterStatus.atk += 3
-            this.characterStatus.def += 1
-            this.characterStatus.str *= 1.1
-            this.characterStatus.intelligence *= 1.1
-            this.characterStatus.dex *= 1.1
-            this.characterStatus.vit *= 1.1
-            this.characterStatus.def *= 1.1
-            this.characterStatus.men *= 1.1
+
+            if (this.characterStatus.selectJob === '모험가') {
+                console.log('모험가입니다.')
+
+                this.characterStatus.level += 1
+                this.characterStatus.hp *= 1.2
+                this.characterStatus.defaultAtk += 3
+                this.characterStatus.atk += 3
+                this.characterStatus.def += 1
+                this.characterStatus.str *= 1.1
+                this.characterStatus.intelligence *= 1.1
+                this.characterStatus.dex *= 1.1
+                this.characterStatus.vit *= 1.1
+                this.characterStatus.def *= 1.1
+                this.characterStatus.men *= 1.1
+            } else if (this.characterStatus.selectJob === 'thief') {
+                console.log('도적입니다.')
+
+                var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                this.characterStatus.level += 1
+                this.characterStatus.hp *= 1.1
+                this.characterStatus.defaultAtk *= 1.1
+
+                this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                this.characterStatus.def += 1
+                this.characterStatus.str *= 1.15
+                this.characterStatus.intelligence *= 1.1
+                this.characterStatus.dex *= 1.5
+                this.characterStatus.vit *= 1.05
+                this.characterStatus.def *= 1.05
+                this.characterStatus.men *= 1.05
+            }
 
             // 레벨링 시스템 구축
             if (this.characterStatus.level < 10) {
@@ -319,26 +338,23 @@ var app = new Vue ({
                     parseInt(this.characterStatus.totalLevelBar * 1.1)
             } else if (this.characterStatus.level < 20) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.1)
+                    parseInt(this.characterStatus.totalLevelBar * 1.15)
             } else if (this.characterStatus.level < 30) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.1)
+                    parseInt(this.characterStatus.totalLevelBar * 1.2)
             } else if (this.characterStatus.level < 40) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.1)
+                    parseInt(this.characterStatus.totalLevelBar * 1.25)
             } else if (this.characterStatus.level < 50) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.1)
+                    parseInt(this.characterStatus.totalLevelBar * 1.3)
             } else if (this.characterStatus.level < 80) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.1)
+                    parseInt(this.characterStatus.totalLevelBar * 1.35)
             } else if (this.characterStatus.level < 100) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 2)
+                    parseInt(this.characterStatus.totalLevelBar * 1.4)
             }
-        }
-        if(this.characterStatus.level >= 20) {
-            this.goGetJob = true;
         }
     },
     updated() {

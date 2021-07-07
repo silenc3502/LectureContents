@@ -4,16 +4,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
-
 @Slf4j
 @Controller
-public class FifthVueController {
+public class SixthVueController {
 
-    @GetMapping("/fifthVue")
-    public String getFifthVue () {
-        log.info("getFifthVue()");
+    @GetMapping("/sixthVue")
+    public String getSixthVue () {
+        log.info("getSixthVue()");
 
-        return "/vue/fifth";
+        return "/vue/sixth";
     }
 }

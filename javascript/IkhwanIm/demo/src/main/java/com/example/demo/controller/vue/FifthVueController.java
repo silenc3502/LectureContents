@@ -8,7 +8,7 @@ import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 @Slf4j
 @Controller
-public class FifthController {
+public class FifthVueController {
 
     @GetMapping("/fifthVue")
     public String getFifthVue () {

@@ -12,14 +12,20 @@
                 Test
             </router-link>
         </div>
+        <h2>테스트 페이지</h2>
     </div>
 </template>
 
 <script>
-// @ is an alias to /src
 export default {
-  name: 'Home',
-  components: {
-  }
+    components: {
+    },
+    data () {
+        return {
+            msg: 'Test'
+        }
+    },
+    methods: {
+    }
 }
 </script>

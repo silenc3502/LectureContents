@@ -9,6 +9,7 @@ var app = new Vue ({
         count: 0,
         radius: 50,
         randomNumber: 0,
+        isTheif: false,
         firstFormerView: false,
         firstFormerStat: false,
         shopView: false,
@@ -211,33 +212,28 @@ var app = new Vue ({
                                         this.characterStatus.dex * 3 +
                                         this.characterStatus.intelligence * 0.7
         },
-        showDown () {
-            for (var i = 0; i < this.monsters.length; i++) {
-                if(this.characterStatus.selectJob != '모험가')
-                this.monsters[i].hp = 
-                    parseInt(this.monsters[i].hp - this.characterStatus.atk * 5)
-            }
-            if(this.characterStatus.selectJob === '모험가'){
-                alert("1차 전직 후 사용가능 합니다")
-            }
-        },
-        knife (index) {
-            if(this.characterStatus.selectJob != '모험가'){
-                this.monsters[index].hp -= this.characterStatus.atk * 30 +
-                this.characterStatus.str * 10 +
-                this.characterStatus.dex * 5 +
-                this.characterStatus.intelligence * 1.2
-            }else{
-                alert("레벨업해오세요")
-            }
+        savageBlow (index) {
+            this.monsters[index].hp -= this.characterStatus.atk * 50 +
+                                        this.characterStatus.str * 25 +
+                                        this.characterStatus.dex * 100 +
+                                        this.characterStatus.intelligence * 3
         },
         randomGeneration () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
         },
         myDarknessDragon () {
             for (var i = 0; i < this.monsters.length; i++) {
-                this.monsters[i].hp = 
+                this.monsters[i].hp =
                     parseInt(this.monsters[i].hp - this.characterStatus.atk * 3.5)
+            }
+        },
+        suddenRaid () {
+            for (var i = 0; i < this.monsters.length; i++) {
+                this.monsters[i].hp =
+                    parseInt(this.monsters[i].hp - (this.characterStatus.dex * 10 +
+                        this.characterStatus.atk * 10 +
+                        this.characterStatus.intelligence * 1.5 +
+                        this.characterStatus.str * 3))
             }
         }
     },
@@ -256,6 +252,10 @@ var app = new Vue ({
     beforeUpdate() {
         console.log('VDOM의 변화를 감지합니다.')
 
+        if (this.characterStatus.selectJob === 'thief') {
+            this.isTheif = true
+        }
+
         if ((this.characterStatus.level >= 50) && (this.characterStatus.selectJob === '모험가')) {
             this.firstFormerView = true
         } else {
@@ -266,7 +266,7 @@ var app = new Vue ({
         {
             this.characterStatus.atk += 1000
             this.characterStatus.defaultAtk += 1000
-            
+
             this.characterStatus.str += 500
             this.characterStatus.int += 50
             this.characterStatus.dex += 1000
@@ -295,7 +295,7 @@ var app = new Vue ({
 
         for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
             this.characterStatus.currentLevelBar =
-                parseInt(this.characterStatus.currentLevelBar - 
+                parseInt(this.characterStatus.currentLevelBar -
                     this.characterStatus.totalLevelBar)
 
             if (this.characterStatus.selectJob === '모험가') {

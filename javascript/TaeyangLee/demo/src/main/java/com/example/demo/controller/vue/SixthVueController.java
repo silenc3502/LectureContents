@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Slf4j
 @Controller
-public class FifthController {
-    @GetMapping("/fifthVue")
-    public String getFifthVue() {
-        log.info("getFifthVue()");
+public class SixthVueController {
+    @GetMapping("/sixthVue")
+    public String getSixthVue() {
+        log.info("getSixthVue()");
 
-        return "/vue/fifth";
+        return "/vue/sixth";
     }
 }

@@ -8,11 +8,13 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-
-      $(document).ready(function() {
-        var formObj = $("#membership")
+    $(document).ready(function() {
+        var formObj = $("#membership");
 
         $("#btnRegister").on("click", function() {
+            var passwordObj = $("#password");
+            alert("member: " + JSON.stringify(membership));
+
             formObj.attr("action", "m_register");
             formObj.attr("method", "post");
             formObj.submit();
@@ -31,7 +33,7 @@
         </tr>
         <tr>
             <td>비밀번호</td>
-            <td><input type="password" name="password" th:field="*{password}"></td>
+            <td><input type="password" id="password" name="password" th:field="*{password}"></td>
         </tr>
         <tr>
             <td>사용할 ID</td>
@@ -43,7 +45,7 @@
         </tr>
     </table>
 </form>
-
+<script src="/Js/passwordAlert.js"></script>
 <div>
     <button type="submit" id="btnRegister">등록</button>
 </div>

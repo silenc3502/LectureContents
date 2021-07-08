@@ -1,9 +1,0 @@
-div{
-    width: 2000px;
-    height: 1000px;
-    display: block;
-}
-.bg {
-    background: url(/img.png) no-repeat;
-    background-size: cover;
-}

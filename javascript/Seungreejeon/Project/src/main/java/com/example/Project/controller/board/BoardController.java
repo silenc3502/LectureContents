@@ -18,7 +18,7 @@ public class BoardController {
     private BoardService boardservice;
 
     @GetMapping("/b_register")
-    public String GetB_Register(Board board, Model model) throws Exception{
+    public String GetB_Register(Board board, Model model) throws Exception {
         log.info("getB_register()");
 
         return "/board/b_register";
@@ -34,5 +34,23 @@ public class BoardController {
         model.addAttribute("msg", "등록이 완료되었습니다.");
 
         return "/board/b_success";
+    }
+
+    @GetMapping("/b_lists")
+    public String getB_list(Model model) throws Exception {
+        log.info("getB_List()");
+
+        model.addAttribute("lists",boardservice.list());
+
+        return "/board/b_lists";
+    }
+
+    @GetMapping("/b_read")
+    public String getB_read(Model model,int boardNo) throws Exception {
+        log.info("getB_read()"+ boardNo);
+
+        model.addAttribute(boardservice.read(boardNo));
+
+        return "/board/b_read";
     }
 }

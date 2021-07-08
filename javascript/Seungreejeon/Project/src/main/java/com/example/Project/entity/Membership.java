@@ -13,7 +13,7 @@ import java.util.Date;
 public class Membership {
     private String name;
     private String user_id;
-    private int password;
+    private String password;
     private String address;
     private Date reg_date;
 }

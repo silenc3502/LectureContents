@@ -16,6 +16,8 @@ public class Signup {
     private String name;
     private int birthday;
     private String  gender;
+    private String address;
+    private int phoneNo;
     private Date regdate;
 
 

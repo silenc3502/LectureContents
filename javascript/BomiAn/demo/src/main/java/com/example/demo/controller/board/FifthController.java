@@ -21,6 +21,6 @@ public class FifthController {
 
         model.addAttribute("lists", service.list());
 
-        return "/board/fifth/lists";
+        return "/board/fgddgdhfh/lists";
     }
 }

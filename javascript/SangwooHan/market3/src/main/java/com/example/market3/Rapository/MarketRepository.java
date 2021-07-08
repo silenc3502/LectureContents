@@ -27,9 +27,9 @@ public class MarketRepository {
     }
 
     public void create2(Signup signup) {
-        String query = "insert into signup (userid ,password, name, birthday, gender) values (?,?,?,?,?)";
+        String query = "insert into signup (userid ,password, name, birthday, gender, address, phoneNo) values (?,?,?,?,?,?,?)";
 
-        jdbcTemplate.update(query, signup.getUserid(), signup.getPassword(), signup.getName(), signup.getBirthday(), signup.getGender());
+        jdbcTemplate.update(query, signup.getUserid(), signup.getPassword(), signup.getName(), signup.getBirthday(), signup.getGender(), signup.getAddress(), signup.getPhoneNo());
     }
 
     public  void login (Signup signup)throws  Exception{
@@ -148,7 +148,7 @@ public class MarketRepository {
 
     public Signup memberRead (Integer bulletinNo) throws Exception {
         List<Signup> results = jdbcTemplate.query(
-                "select signup_no, userid, password, name, birthday, gender, reg_date from signup where signup_no = ?",
+                "select signup_no, userid, password, name, birthday, gender, address, phoneNo, reg_date from signup where signup_no = ?",
                 new RowMapper<Signup>() {
                     @Override
                     public Signup mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -160,6 +160,8 @@ public class MarketRepository {
                         signup.setName(rs.getString("name"));
                         signup.setBirthday(rs.getInt("birthday"));
                         signup.setGender(rs.getString("gender"));
+                        signup.setAddress(rs.getString("address"));
+                        signup.setPhoneNo(rs.getInt("phoneNo"));
                         signup.setRegdate(rs.getDate("reg_date"));
 
                         return signup;
@@ -168,6 +170,9 @@ public class MarketRepository {
 
         return results.isEmpty() ? null : results.get(0);
     }
+
+
+
 
 
 
@@ -202,4 +207,12 @@ public class MarketRepository {
 
         jdbcTemplate.update(query, market.getName(), market.getPrice(), market.getDescription(), market.getProductNo());
     }
+
+    public  void memberupdate(Signup signup) throws Exception{
+        String query = "update signup set userid = ?, password = ?, name = ?, birthday = ?, gender = ?, address = ?, phoneNo = ? where signup_no = ?";
+        // where market_no = ? 앞에오는 ?에는 ,부호를 생략해야 에러가 뜨질않는다. 왤까???
+
+        jdbcTemplate.update(query, signup.getUserid(), signup.getPassword(), signup.getName(), signup.getBirthday(), signup.getGender(), signup.getAddress(), signup.getPhoneNo(), signup.getBulletinNo());
     }
+
+}

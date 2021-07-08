@@ -11,6 +11,7 @@ public interface marketService {
 
     public  Market read(Integer productNo) throws  Exception;
 
+
     public void remove(Integer productNo) throws  Exception;
 
     public  void modify(Market market) throws  Exception;
@@ -23,6 +24,8 @@ public interface marketService {
     public Signup memberRead(Integer bulletinNo) throws Exception;
 
     public  void memberRemove(Integer bulletinNo) throws Exception;
+
+    public  void memberModify(Signup signup) throws Exception;
 
 
 

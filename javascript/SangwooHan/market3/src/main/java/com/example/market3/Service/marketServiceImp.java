@@ -63,6 +63,11 @@ public class marketServiceImp implements  marketService {
   public void memberRemove(Integer bulletinNo) throws Exception {
     repository.memberDelete(bulletinNo);
   }
+
+  @Override
+  public void memberModify(Signup signup) throws Exception {
+    repository.memberupdate(signup);
+  }
 }
 
 

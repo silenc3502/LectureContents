@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <div>
+        <div id="header">
             <router-link :to="{ name: 'Home' }"
                     class="nav-link"
                     active-class="active">
@@ -13,8 +13,10 @@
             </router-link>
         </div>
         <h2>테스트 페이지</h2>
-        <div id='app'>  
-            <global-component v-bind:initial-test='counter'>
+        <div id="app">
+            <p>{{ msg }}</p>
+
+            <global-component v-bind:initial-test="counter">
             </global-component>
 
             <local-component v-bind:num="value"></local-component>
@@ -23,10 +25,12 @@
     </div>
 </template>
 
-// javascript 관련 파트 작성
 <script>
-import LocalComponent from '../components/LocalComponent.vue'
 
+import Vue from 'vue'
+import GlobalComponent from '../components/GlobalComponent.vue'
+import LocalComponent from '../components/LocalComponent.vue'
+Vue.component(GlobalComponent.name, GlobalComponent)
 export default {
     components: {
         'local-component': LocalComponent
@@ -39,7 +43,7 @@ export default {
         }
     },
     methods: {
-        plus() {
+        plus () {
             this.value++
         }
     }

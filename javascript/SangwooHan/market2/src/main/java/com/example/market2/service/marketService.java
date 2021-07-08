@@ -16,6 +16,8 @@ public interface marketService {
 
     public  void modify(Market market) throws  Exception;
     public void signup(Signup signup);
-    public  void login(Login login);
+    public  int login(Login login);
+
+    public boolean logincheck(Login login, Signup signup);
 
 }

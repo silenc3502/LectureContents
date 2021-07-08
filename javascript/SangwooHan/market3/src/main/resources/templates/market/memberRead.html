@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:td="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        var formObj = $("#signupBoard");
+
+        $("#removebtn").on("click", function() {
+
+            formObj.attr("action", "memberRemove");
+
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+         $("#memberlistbtn").on("click", function() {
+            self.location = "memberList";
+        });
+
+
+         });
+</script>
+<body>
+<h1>나그넷 회원가입.</h1>
+<form id="signupBoard"  th:object="${signup}" method="post">
+  <input type="hidden" name="bulletinNo" th:field="*{bulletinNo}"/>
+  <table>
+    <tr>
+      <td>아이디</td>
+    </tr>
+    <tr>
+      <td><input type="text" name="userid"
+                 th:field="*{userid}" readonly="readonly"></td>
+    </tr>
+    <tr>
+      <td>비밀번호</td>
+    </tr>
+    <tr>
+      <td><input type="password" name="password"
+                 th:field="*{password}" readonly="readonly"></td>
+    </tr>
+    <tr>
+      <td>이름</td>
+    </tr>
+    <tr>
+      <td><input type="text" name="name"
+                 th:field="*{name}" readonly="readonly"></td>
+    </tr>가기
+    <tr>
+      <td>생년원일</td>
+    </tr>
+    <tr>
+      <td><input type="text" name="birthday"
+                 th:field="*{birthday}" readonly="readonly"></td>
+    </tr>
+    <tr>
+      <td>성별</td>
+    </tr>
+    <tr>
+      <td><input type="text" name="gender"
+                 th:field="*{gender}" readonly="readonly"></td>
+    </tr>
+  </table>
+</form>
+<button id="removebtn">회원삭제하기!</button>
+<button id="memberlistbtn">회원리스트보기</button>
+</body>
+</html>

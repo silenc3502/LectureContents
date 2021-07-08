@@ -8,24 +8,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Slf4j
 @Controller
+@RequestMapping(value = "/member")
 public class MembershipController {
 
 
     @Autowired
     private MembershipService service;
 
-    @GetMapping("/memRegister")
+    @GetMapping("/register")
     public String getMemRegister(Membership membership, Model model) {
         log.info("getMemRegister");
 
         return "/membership/register";
     }
 
-    @PostMapping("/memRegister")
+    @PostMapping("/register")
     public String postRegister (Membership membership, Model model) throws Exception {
         log.info("postRegister()");
         log.info("Membership: " + membership);

@@ -11,6 +11,7 @@ import java.util.List;
 
 @Service
 public class marketServiceImp implements  marketService{
+  int num = 0;
   @Autowired
   private MarketRepository repository;
     @Override
@@ -44,8 +45,14 @@ public class marketServiceImp implements  marketService{
   }
 
   @Override
-  public void login(Login login) {
-    repository.create3(login);
+  public int login(Login login) {
+    num = repository.create3(login);
+    return num;
+  }
+
+  @Override
+  public boolean logincheck(Login login, Signup signup) {
+    return repository.logincheck(login,signup);
   }
 }
 

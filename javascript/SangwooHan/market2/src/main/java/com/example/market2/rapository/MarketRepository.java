@@ -16,6 +16,7 @@ import java.util.List;
 
 @Repository
 public class MarketRepository {
+    int num = 0;
     @Autowired
     private JdbcTemplate jdbcTemplate;
     public void create(Market market){
@@ -28,11 +29,35 @@ public class MarketRepository {
 
         jdbcTemplate.update(query,signup.getUserid(),signup.getPassword(),signup.getName(),signup.getBirthday(),signup.getGender());
     }
-    public void create3(Login login){
-        String query = "insert into login (id, pw) values (?,?)";
+    public int create3(Login login){
+            String query = "SELECT * FROM signup WHERE userid = ? and password = ?";
 
-        jdbcTemplate.update(query,login.getId(),login.getPw());
+                jdbcTemplate.query(query,new RowMapper<Login>(){
+
+                @Override
+                public Login mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    System.out.println("jdbc들어옴");
+                    Login login = new Login();
+                    login.setId(rs.getString("userid"));
+                    login.setPw(rs.getString("password"));
+                    num = 1;
+                    return login;
+                }
+            },login.getId(),login.getPw());
+
+            return num;
+
     }
+    public boolean logincheck(Login login, Signup signup){
+
+        if(login.getId()==signup.getUserid()&login.getPw()==signup.getPassword()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public List<Market> list() throws  Exception {
 
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니

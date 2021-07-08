@@ -15,5 +15,8 @@ public class Join {
     private String name;
     private String tel;
     private String addr;
+    private String gender;
+    private String email;
+    private String birth;
     private Date regDate;
 }

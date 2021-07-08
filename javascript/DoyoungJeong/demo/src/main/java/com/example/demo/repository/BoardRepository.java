@@ -69,7 +69,9 @@ public class BoardRepository {
 
                         return board;
                     }
-                }, boardNo); //service에서 인자로 받은 boardNo? 얘는 어떤 역할을 하는지 모르겠습니다.
+                }, boardNo);
+        //service에서 인자로 받은 boardNo? 얘는 어떤 역할을 하는지 모르겠습니다.
+        //이 boardNo이 ?로 들어가는것이 맞다.
 
         return results.isEmpty() ? null : results.get(0);
         //어짜피 boardNo과 일치하는 한 줄만 가져오니 0번째 줄을 result로 지정한다.
@@ -79,6 +81,12 @@ public class BoardRepository {
         String query = "delete from board where board_no = ?";
 
         jdbcTemplate.update(query, boardNo);
+    }
+
+    public void update(Board board) throws Exception {
+        String query = "update board set title = ?, content = ? where board_no = ?";
+
+        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
     }
 
 

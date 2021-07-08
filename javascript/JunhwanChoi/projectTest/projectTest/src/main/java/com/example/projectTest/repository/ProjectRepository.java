@@ -87,7 +87,7 @@ public class ProjectRepository {
         jdbcTemplate.update(query, project.getPassword(), project.getSignupNo());
     }
 
-  /*  public void login(Project project) throws Exception {
+    public void login(Project project) throws Exception {
 
         List<Project> results = jdbcTemplate.query(
                 "select id, password from project where id = ?",
@@ -112,5 +112,5 @@ public class ProjectRepository {
         } else {
             log.info("Password Incorrect");
         }
-    }*/
+    }
 }

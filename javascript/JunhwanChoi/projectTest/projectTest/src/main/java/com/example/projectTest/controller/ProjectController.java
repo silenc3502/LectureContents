@@ -14,10 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-
-import org.springframework.jdbc.core.JdbcTemplate;
-
-
 @Slf4j
 @Controller
 public class ProjectController {
@@ -133,7 +129,7 @@ public class ProjectController {
         return "/project/login";
     }
 
-  /*  @PostMapping("/login")
+    @PostMapping("/login")
     public String postLogin (Project project, Model model) throws Exception {
         log.info("postLogin(): " + project);
 

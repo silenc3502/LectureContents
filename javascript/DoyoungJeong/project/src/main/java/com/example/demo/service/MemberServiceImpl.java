@@ -22,4 +22,10 @@ public class MemberServiceImpl implements MemberService{
     public List<Member> list() throws Exception {
         return repository.list();
     }
+
+    @Override
+    public Boolean loginCheck(Member member) throws Exception {
+        repository.loginCheck(member);
+        return repository.loginCheck(member);
+    }
 }

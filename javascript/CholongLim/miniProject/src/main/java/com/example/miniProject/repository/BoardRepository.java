@@ -54,7 +54,6 @@ public class BoardRepository {
         return results;
     }
 
-    // 게시판 읽기
     public Board read(Integer boardNo) throws Exception {
         List<Board> results = jdbcTemplate.query(
                 "select board_no, title, content, writer, reg_date from board where board_no = ? ",
@@ -72,14 +71,20 @@ public class BoardRepository {
                         return board;
                     }
                 }, boardNo);
+
         return results.isEmpty() ? null : results.get(0);
     }
 
-    // 게시글 삭제
     public void delete(Integer boardNo) throws Exception {
         String quary = "delete from board where board_no = ? ";
 
         jdbcTemplate.update(quary, boardNo);
+    }
+
+    public void update(Board board) throws Exception {
+        String query = "update board set title = ?, content = ? where board_no = ?";
+
+        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
     }
 }
 

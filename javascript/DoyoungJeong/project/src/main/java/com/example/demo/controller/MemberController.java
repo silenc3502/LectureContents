@@ -27,8 +27,35 @@ public class MemberController {
     public String postSignupSuccess(Member member, Model model) throws Exception {
         log.info("postMemberSignup()");
 
-        service.memberSignup(member);
-        model.addAttribute("msg", "가입되셨습니다!");
+//        String pw = member.getPw();
+//        if(pw.length() <= 8) {
+//            return "/redirect:/member/memberSignup";
+//        } else {
+          // 8자리보다 짧게 입력하면 에러.
+
+            service.memberSignup(member);
+            model.addAttribute("msg", "가입되셨습니다!");
+            return "/member/signupSuccess";
+//       }
+    }
+
+    @GetMapping("/memberLogin")
+    public String getMemberLogin(Member member, Model model) {
+        log.info("getMemberLogin()");
+
+        return "/member/memberLogin";
+    }
+
+    @PostMapping("/memberLogin")
+    public String postMemberLogin(Member member, Model model) throws Exception {
+        log.info("postMemberLogin()");
+
+
+        if (service.loginCheck(member) == true) {
+            model.addAttribute("msg", "로그인되셨습니다!");
+        } else {
+            model.addAttribute("msg", "로그인 실패!");
+        }
 
         return "/member/signupSuccess";
     }

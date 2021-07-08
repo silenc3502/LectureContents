@@ -16,16 +16,41 @@ public class JoinController {
     private JoinService service;
 
     @GetMapping("/join")
-    public String join (Join join, Model model) throws Exception{
-        log.info("join()");
-        return "join/join_p";
-    }
+    public String getJoin (Join join, Model model) throws Exception{
+        log.info("getJoin()");
 
+        return "join/join";
+    }
     @PostMapping("/join")
-    public String joinForm (Join join, Model model) throws Exception{
-        log.info("joinForm()");
-        service.register(join);
-        model.addAttribute("success", "회원가입이 완료되었습니다!");
+    public String postJoin (Join join, Model model) throws Exception{
+        log.info("postJoin()");
+
+        String pw = join.getPw();
+        if(pw.length() < 8 ){
+            return "redirect:/signup";
+        }
+
+        service.signup(join);
+
+        model.addAttribute("msg", "회원가입이 완료되었습니다!");
+
         return "join/success";
     }
+    @GetMapping("/login")
+    public String getLogin (Join join, Model model) throws Exception{
+        log.info("getLogin()");
+
+        return "join/login";
+    }
+    @PostMapping("/login")
+    public String postLogin (Join join, Model model) throws Exception{
+        log.info("postLogin()");
+
+        service.login(join);
+
+        model.addAttribute("msg", "로그인이 완료되었습니다.");
+
+        return "join/success";
+    }
+
 }

@@ -50,6 +50,14 @@ public class ProductController {
         log.info("getmovietest()");
         return "/movietest";
     }
+
+
+    @GetMapping("/rogin")
+    public String getRogin() {
+        log.info("getRogin()");
+
+        return "/rogin/roginRegister";
+    }
 }
 
 

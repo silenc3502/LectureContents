@@ -46,16 +46,15 @@ public class BoardController {
 
     }
 
-    // 게시판 제목 클릭
     @GetMapping("/read")
     public String getRead(int boardNo, Model model) throws Exception {
         log.info("read");
+
         model.addAttribute(service.read(boardNo));
 
         return "/board/read";
     }
 
-    // 게시글 지우기
     @PostMapping("/remove")
     public String remove (int boardNo, Model model) throws Exception {
         log.info("remove");
@@ -65,5 +64,24 @@ public class BoardController {
 
         return "/board/success";
 
+    }
+
+    @GetMapping("/modify")
+    public String getModify (int boardNo, Model model) throws Exception {
+        log.info("getModify()");
+
+        model.addAttribute(service.read(boardNo));
+
+        return "/board/modify";
+    }
+
+    @PostMapping("/modify")
+    public String postModify (Board board, Model model) throws Exception {
+        log.info("postModify(): " + board);
+
+        service.modify(board);
+        model.addAttribute("msg", "수정이 성공적으로 완료되었습니다!");
+
+        return "/board/success";
     }
 }

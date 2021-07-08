@@ -1,5 +1,5 @@
 server:
-  port: 7777
+  port: 99999
 
 spring:
   datasource:

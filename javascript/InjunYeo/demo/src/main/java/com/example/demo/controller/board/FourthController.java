@@ -22,8 +22,9 @@ public class FourthController {
     //HTML에서 th:object와 같은 키워드를 통해 정보를 획들할수 있다
     //즉 board객체의 정보를 획득할수 있음을 의미한다.
     @GetMapping("/register")
-    public String getRegister(Board board, Model model){
+    public String getRegister(Board board){
         log.info("getRegister()");
+
 
         return "/board/fourth/register";
     }
@@ -36,8 +37,9 @@ public class FourthController {
     @PostMapping("/register")
     //entity에 있는 Board클래스?
     public String postRegister (Board board, Model model) throws Exception {
-        log.info("getRegister()");
+        log.info("postRegister()");
         log.info("Board:"+board);
+        log.info("Model"+model);
 
         service.register(board);
 

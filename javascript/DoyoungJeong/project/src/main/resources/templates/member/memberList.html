@@ -62,10 +62,8 @@
             <td align="center" th:text="${memberElem.gender}"></td>
             <td align="center" th:text="${memberElem.age}"></td>
             <td align="center" th:text="${memberElem.location}"></td>
-        <!-- <td align="center" th:text="${memberElem.interestedGenre}"></td> -->
 
             <td align="center" th:href="@{|read?memberNo=${memberElem.memberNo}|}" th:text="${memberElem.interestedGenre}"></td>
-            <!-- 위에 다른 표기방식과 어떤 차이가 있는지 궁금합니다 -->
 
             <td align="center" th:text="${memberElem.interestedArtist}"></td>
             <td align="center" th:text="${#dates.format(memberElem.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>

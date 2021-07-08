@@ -43,6 +43,6 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void login(Project project) throws Exception {
-        controllerRepo.login(project);
+        repository.login(project);
     }
 }

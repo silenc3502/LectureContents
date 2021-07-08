@@ -26,7 +26,7 @@ public class NinthController {
 
     @GetMapping("getBackgroundClipTest")
     public String getBackgroundClipTest () {
-        log.info("getBackgroundClipTest");
+        log.info("getBackgroundClipTest()");
 
         return "/csstest/ninth/backgroundClipTest";
     }
@@ -37,4 +37,40 @@ public class NinthController {
 
         return "/csstest/ninth/gradientTest";
     }
+
+    @GetMapping("customBoxTest")
+    public String getCustomBoxTest () {
+        log.info("getCustomBoxTest()");
+
+        return "/csstest/ninth/customBoxTest";
+    }
+
+    @GetMapping("getInlineBlockTest")
+    public String getInlineBlockTest () {
+        log.info("getInlineBlockTest");
+
+        return "/csstest/ninth/inlineBlockTest";
+    }
+
+    @GetMapping("getNavigationBarTest")
+    public String getNavigationBarTest () {
+        log.info("getNavigationBarTest()");
+
+        return "/csstest/ninth/navigationBarTest";
+    }
+
+    @GetMapping("getParentChildTest")
+    public String getParentChildTest () {
+        log.info("getParentChildTest()");
+
+        return "/csstest/ninth/parentChildTest";
+    }
+
+    @GetMapping("getBackgroundUrlTest")
+    public String getBackgroundUrlTest () {
+        log.info("getBackgroundUrlTest()");
+
+        return "/csstest/ninth/backgroundUrlTest";
+    }
+
 }

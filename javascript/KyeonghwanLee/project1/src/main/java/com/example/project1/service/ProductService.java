@@ -12,4 +12,6 @@ public interface ProductService {
     public Product read(Integer productNo) throws Exception;
 
     public void remove (Integer productNo) throws Exception;
+
+    public void modify(Product product) throws Exception;
 }

@@ -14,11 +14,9 @@ public class PurchaseMemberServiceImpl implements PurchaseMemberService {
     private PurchaseMemberRepository PurchaseMemberRepository;
 
 
+
     @Override
     public void PurchaseMember(PurchaseMember purchaseMember) throws Exception {
         PurchaseMemberRepository.purchasingSignUpCreate(purchaseMember);
-
-
-
     }
 }

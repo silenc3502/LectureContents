@@ -11,8 +11,8 @@
     $(document).ready(function() {
         var formObj = $("#member");
 
-        $("#btnSignUp").on("click", function() {
-            formObj.attr("action", "signup");
+        $("#btnRegister").on("click", function() {
+            formObj.attr("action", "login");
             formObj.attr("method", "post");
             formObj.submit();
         });
@@ -20,8 +20,7 @@
 </script>
 
 <body>
-<h2>회원가입</h2>
-
+<h2>로그인</h2>
 <form id="member" th:object="${member}" method="post">
   <table>
     <tr>
@@ -34,13 +33,13 @@
     </tr>
     <tr>
       <td>비밀번호</td>
-      <td><input type="text" name="pw" th:field="*{pw}"></td>
+      <td><input type="password" id="password" name="pw" th:field="*{pw}"></td>
     </tr>
   </table>
 </form>
 
 <div>
-  <button type="submit" id="btnSignUp">회원가입</button>
+  <button type="submit" id="btnRegister">로그인</button>
 </div>
 </body>
 </html>

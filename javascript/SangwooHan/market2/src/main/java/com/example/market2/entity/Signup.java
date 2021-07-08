@@ -12,7 +12,7 @@ import java.util.Date;
 public class Signup {
     private int bulletinNo;
     private String userid;
-    private int password;
+    private String password;
     private String name;
     private int birthday;
     private String  gender;

@@ -18,12 +18,32 @@ public class MemberSeviceImpl implements MemberService {
     public void join(Member member) throws Exception {
         repository.create(member);
     }
-/*
+
     @Override
     public List<Member> list() throws Exception {
-        return repository.list();
+       return repository.list();
     }
 
+    @Override
+    public void login(Member member) throws Exception {
+        repository.login(member);
+    }
+
+    @Override
+    public Member read(Integer memberNo) throws Exception {
+        return repository.read(memberNo);
+    }
+
+    @Override
+    public void remove(Integer memberNo) throws Exception {
+        repository.delete(memberNo);
+    }
+
+    @Override
+    public void modify(Member member) throws Exception {
+        repository.update(member);
+    }
+/*
 
     @Override
     public Member read(Integer boardNo) throws Exception {

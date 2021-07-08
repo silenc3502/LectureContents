@@ -26,7 +26,7 @@ public class SixthController {
     public String getJsonKeyValueTest() {
         // 모든 json 데이터는 아래와 같이 생겼음
         // 향후 Vue에서 보내는 데이터도 전부 이 json 형태로 날아옴
-        // 우리가 SPT API나 여러가지 Rest API라고 하는 녀석들도
+        // 우리가 SRT API나 여러가지 Rest API라고 하는 녀석들도
         // 요청을 하면 데이터 형식이 전부 json 형식으로 날아옴
 
         String jsonString = "{\"title\": \"hihi\", " +
@@ -82,8 +82,8 @@ public class SixthController {
     // 향후 Vue에서 AXIOS라는 것을 사용하며 모두 처리가 될 것임
     // 한 가지 차이가 있다면 나중에 python과 연동할 때
     // Spring의 Requester를 통해서
-    // Spring 자체가 Client가 되어 Python Server에 요청을 넣어야 함
-    // 그 시점에서는 Spring이 직접 JSON을 처리할 필요가 없음
+    // Spring 자체가 Client가 되어 Python Server에 요청을 넣어야함
+    // 그 시점에서는 Spring이 직접 JSON을 처리할 필요가 있음
 
     @GetMapping("/jsjsonArrayTest")
     public String getJsonArrayTest() {
@@ -121,8 +121,6 @@ public class SixthController {
 
             log.info("title: " + title + ", draft: " + draft + ", star: " + star);
         }
-
-
         return jsonString;
     }
 }

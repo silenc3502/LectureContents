@@ -12,7 +12,12 @@ public class JoinServiceImpl implements JoinService {
     private JoinRepository repository;
 
     @Override
-    public void register(Join join) throws Exception{
+    public void signup(Join join) throws Exception{
         repository.create(join);
     }
+    @Override
+    public void login(Join join) throws Exception{
+        repository.login(join);
+    }
+
 }

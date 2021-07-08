@@ -55,6 +55,6 @@ public class secondController {
         log.info("memberRegister()");
 
         // redirect: 의 경우 특정한 URL위치로 URL 맵핑을 강제할 수 있다.
-        return "redirect:/";
+        return "redirect:register";
     }
 }

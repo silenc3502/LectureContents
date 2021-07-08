@@ -8,7 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Customer {
-    private int cos_no;
+    private int cus_no;
     private String id;
     private String password;
     private String name;

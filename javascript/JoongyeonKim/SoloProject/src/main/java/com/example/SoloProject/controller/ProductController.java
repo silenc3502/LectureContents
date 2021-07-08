@@ -48,7 +48,7 @@ public class ProductController {
 
     @GetMapping("/productread")
     public String getProductRead (int productNo, Model model) throws Exception{
-        log.info("productread");
+        log.info("productread(): productNo = " + productNo);
 
         model.addAttribute(productservice.productread(productNo));
 
@@ -60,7 +60,7 @@ public class ProductController {
     // 애초에 중간에 지워진 값을 채우는 것 또한 큰 낭비다
     @PostMapping("/productremove")
     public String productremove (int productNo, Model model) throws Exception{
-        log.info("productremove");
+        log.info("productremove()");
 
         productservice.productremove(productNo);
 

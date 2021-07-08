@@ -39,4 +39,5 @@ public class BoardServiceImpl implements BoardService {
     public void modify(Board board) throws Exception {
         repository.update(board);
     }
+
 }

@@ -24,7 +24,7 @@
   </tr>
   <tr th:each="productElem : ${product}">
     <td align="center" th:text="${productElem.productNo}"></td>
-    <td align="left"> <a th:href="@{|read?productNo=${productElem.productNo}|}" th:text="${productElem.name}"/></td>
+    <td align="left"> <a th:href="@{|productread?productNo=${productElem.productNo}|}" th:text="${productElem.name}"/></td>
     <td align="right" th:text="${productElem.price}"></td>
     <td th:text="${productElem.description}"></td>
     <td align="right" th:text="${productElem.writer}"></td>

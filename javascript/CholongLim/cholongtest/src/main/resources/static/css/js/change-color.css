@@ -1,0 +1,10 @@
+body {
+    text-align : center;
+}
+#heading {
+    color: green;
+}
+#text {
+    color: gray;
+    font-size: 15px;
+}

@@ -14,11 +14,12 @@ public class PurchaseMember {
 
     private String id;
     private String pw;
+    private String pwCheck;
     private String name;
     private String dateOfBirth;
-    private String gender;
     private String phoneNumber;
     private String email;
     private String address;
+    private String gender;
     private String interest;
 }

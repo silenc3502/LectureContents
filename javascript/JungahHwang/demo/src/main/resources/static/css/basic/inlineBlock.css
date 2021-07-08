@@ -1,0 +1,15 @@
+div {
+    margin: 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+#inline img {
+    /* inline: 가로로 배치(자리가 없으면 아래로) */
+    /* display: inline (default임) */
+    margin: 5px;
+}
+#block img {
+    /* block: 세로로 배치 */
+    display: block;
+    margin: 5px;
+}

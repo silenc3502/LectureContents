@@ -12,7 +12,7 @@ import java.util.Date;
 public class Login {
     private int BulletinNo;
     private String id;
-    private int pw;
+    private String pw;
     private Date regdate;
 
 }

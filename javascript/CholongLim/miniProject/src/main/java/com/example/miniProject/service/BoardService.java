@@ -9,11 +9,10 @@ public interface BoardService {
 
     public List<Board> list() throws Exception;
 
-    //read
     public Board read(Integer boardNo) throws Exception;
 
-    //remove
     public void remove(Integer boardNo) throws Exception;
 
+    public void modify(Board board) throws Exception;
 }
 

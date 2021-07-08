@@ -2,16 +2,18 @@ use non_jpa_db;
 
 // 회원가입
 create table purchasingMemberSignUp(
-purchasingMemeberSignUp_no int not null auto_increment,
+purchasingMemberSignUp_no int not null auto_increment,
  id varchar(200) not null,
  pw varchar(200) not null,
+ pwCheck varchar(200) not null,
  name varchar(20) not null,
- dateOfBirth varchar(20) not null,
+ dateOfBirth varchar(50) not null,
  gender varchar(20) not null,
  phoneNumber varchar(200) not null,
  email varchar(200) not null,
  address varchar(200) not null,
- primary key(purchasingMemeberSignUp_no));
+ interest varchar(50) not null,
+ primary key(purchasingMemberSignUp_no));
 
 // 그림구매,렌탈
  create table artWorkPurchaseBoard(

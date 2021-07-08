@@ -10,6 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
 
 @Slf4j
 @Controller
@@ -128,20 +134,49 @@ public String getModify(int productNo, Model model)throws  Exception{
         return "/market/nagnetshoppingmall";
     }
     @GetMapping("/login")
-    public  String getLogin (Login login , Model model) throws  Exception{
+    public  String getLogin (Login login , Model model,Signup signup) throws  Exception{
         log.info("getLogin");
 
 
         return "/market/login";
     }
     @PostMapping("/login")
-    public String postLogin(Login login,Model model) throws  Exception{
-        log.info("postLogin()");
-        service.login(login);
+    public String postLogin(Login login, Model model, Signup signup, HttpServletResponse response, HttpServletRequest request) throws  Exception {
+        PrintWriter out = response.getWriter();
+        request.setCharacterEncoding("UTF-8");
 
-        model.addAttribute("msg","로그인이 성공적으로 되었습니다.");
-        return "/market/success";
+
+        log.info("postLogin()");
+        int num = service.login(login);
+        System.out.println("성공여부 = " +num);
+        if(num == 1){
+
+            num = 0;
+            return "/market/success";
+        }else{
+            response.setContentType("text/html; charset=UTF-8");
+            response.setCharacterEncoding("UTF-8");
+            String htmlResponse = "<script>alert('login fail'); location.href='/login';</script>";
+            out.println(htmlResponse);
+            out.close();
+        }
+
+
+        //   service.logincheck(login,signup);
+        // if(service.logincheck(login,signup)==true){
+
+        // model.addAttribute("msg","로그인이 성공적으로 되었습니다.");
+        // return "/market/success";
+        // }else{
+        //     model.addAttribute("msg","정보가일치하지않습니다 다시로그인해주세요");
+        //    return "/market/success";
+
+        // }
+    return "/market/success";
     }
+
+
+
 
 
 }

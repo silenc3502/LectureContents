@@ -33,6 +33,7 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void remove(Integer boardNo) throws Exception {
         repository.delete(boardNo);
+
     }
 
     @Override

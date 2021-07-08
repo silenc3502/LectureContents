@@ -33,4 +33,11 @@ public class FirstController {
 
         return "/signup/first/success";
     }
+
+    @GetMapping("/mainPage")
+    public String getMainPage () {
+        log.info("getMainPage()");
+
+        return "/signup/first/mainPage";
+    }
 }

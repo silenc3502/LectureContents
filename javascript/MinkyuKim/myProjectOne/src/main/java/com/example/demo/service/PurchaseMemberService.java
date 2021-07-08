@@ -7,4 +7,8 @@ import com.example.demo.entity.PurchaseMember;
 
 public interface PurchaseMemberService {
     public void PurchaseMember(PurchaseMember purchaseMember) throws Exception;
+
+
+
+
 }

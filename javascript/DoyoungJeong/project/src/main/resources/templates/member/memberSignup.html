@@ -14,25 +14,34 @@
            padding: 13px;
         }
     </style>
+    <link rel="stylesheet" href="/css/css.css">
 </head>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-           var formObj = $("#member");
+    $(document).ready(function() {
+        var formObj = $("#member");
 
            $("#btnSignup").on("click", function() {
+              var passwordObj = $("#pw").val();
+
+              if(passwordObj.length <= 8) {
+              alert("비밀번호를 8자 이상 입력해주세요. " + passwordObj.length);
+              } else {
               formObj.attr("action", "memberSignup");
               formObj.attr("method", "post");
               formObj.submit();
+              }
            });
-
            $("#btnMemberList").on("click", function() {
               self.location = "memberList";
            });
+           $("#btnLogin").on("click", function() {
+              self.location = "memberLogin";
+           });
         });
-
     </script>
+
 <body>
     <center><h2>회원가입</h2></center>
     <form id="member" th:action="@{memberRegister}" th:object="${member}" method="post">
@@ -41,7 +50,7 @@
                 <tr><td>ID<small>(e-mail)</small>
                     <input type="text" name="id" th:field="*{id}">
                 <tr><td>비밀번호
-                    <input type="text" name="pw" th:field="*{pw}"></td>
+                    <input type="text" name="pw" th:field="*{pw}" id="pw"></td>
                 </tr>
                 <tr><td>이름
                     <input type="text" name="name" th:field="*{name}"></td>
@@ -74,6 +83,8 @@
            <button type="submit" id="btnSignup">가입</button>
            <button type="submit" id="btnMemberList">가입 회원 목록</button>
         </h4>
+        <div class="box"><h3>이미 계정이 있으신가요? 바로 로그인하세요</h3></div>
+        <button type="submit" id="btnLogin">로그인</button>
     </center>
 
 </body>

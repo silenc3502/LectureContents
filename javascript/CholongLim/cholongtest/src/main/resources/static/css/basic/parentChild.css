@@ -1,0 +1,8 @@
+#container > ul {
+    /* 부모 > 자식 조건에서만 성립함
+       자식에게만 성립하며 손자 등등은 적용이 안됨
+        container 안에 있는 ul에만 적용되며,
+        container 안에 있는 ul이 아니라면 적용되지 않음 */
+
+    border: 1px dotted blue;
+}

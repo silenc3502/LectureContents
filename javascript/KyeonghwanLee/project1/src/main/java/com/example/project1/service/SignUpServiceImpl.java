@@ -12,7 +12,12 @@ public class SignUpServiceImpl implements SignUpService {
     private SignUpRepository repository;
 
     @Override
-    public void signup(Member member) {
+    public void signup(Member member) throws Exception {
         repository.create(member);
+    }
+
+    @Override
+    public void login(Member member) throws Exception {
+        repository.login(member);
     }
 }

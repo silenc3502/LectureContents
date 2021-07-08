@@ -62,6 +62,7 @@ public class ProductRepository {
                         product.setName(rs.getString("name"));
                         product.setPrice(rs.getInt("price"));
                         product.setWeight(rs.getInt("weight"));
+                        product.setDescription(rs.getString("description"));
                         product.setRegDate(rs.getDate("reg_date"));
 
                         return product;
@@ -76,5 +77,10 @@ public class ProductRepository {
 
         jdbcTemplate.update(query, productNo);
 
+    }
+    public void update(Product product) throws Exception{
+        String query = "update product set name = ?, price = ?, weight = ? , description = ?where product_no = ?";
+
+        jdbcTemplate.update(query, product.getName(), product.getPrice(),product.getWeight(),product.getDescription(), product.getProductNo());
     }
 }

@@ -25,7 +25,7 @@ public class ProductController {
 
     @PostMapping("/register")
     public String registerForm (Product product, Model model) throws Exception {
-        log.info("postRegister()");
+        log.info("postRegister()" + product);
 
         service.register(product);
 

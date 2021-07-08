@@ -9,9 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
+@RequestMapping(value = "/css")
 public class SignupController {
 
     // 스프링이 자동으로 객체를 찾을 수 있게 서포트함
@@ -25,7 +27,7 @@ public class SignupController {
     public String getsignupRegister (Signup signup, Model model) {
         log.info("getsignupRegister()");
 
-        return "/signup/signupregister";
+        return "/member/signupregister";
     }
 
     // MVC(Model View Controller) Pattern

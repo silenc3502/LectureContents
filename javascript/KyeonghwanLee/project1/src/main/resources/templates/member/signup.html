@@ -11,11 +11,15 @@
     $(document).ready(function() {
         var formObj = $("#member");
 
-        $("#btnSignUp").on("click", function() {
+         $("#btnSignUp").on("click", function() {
+            var passwordObj = $("#password");
+            alert("member: " + JSON.stringify(member));
+
             formObj.attr("action", "signup");
             formObj.attr("method", "post");
             formObj.submit();
         });
+
     });
 </script>
 
@@ -30,24 +34,24 @@
         </tr>
         <tr>
             <td>비밀번호</td>
-            <td><input type="text" name="pw" th:field="*{pw}"></td>
+            <td><input type="password" name="pw" th:field="*{pw}"></td>
         </tr>
         <tr>
             <td>이름</td>
             <td><input type="text" name="name" th:field="*{name}"></td>
-</tr>
-<tr>
-    <td>전화번호</td>
-    <td><input type="text" name="phoneNumber" th:field="*{phoneNumber}"></td>
-</tr>
-<tr>
-    <td>이메일</td>
-    <td><input type="text" name="email" th:field="*{email}"></td>
-</tr>
-<tr>
-    <td>주소</td>
-    <td><input type="text" name="address" th:field="*{address}"></td>
-</tr>
+        </tr>
+        <tr>
+            <td>전화번호</td>
+            <td><input type="text" name="phoneNumber" th:field="*{phoneNumber}"></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="text" name="email" th:field="*{email}"></td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td><input type="text" name="address" th:field="*{address}"></td>
+        </tr>
 </table>
 </form>
 

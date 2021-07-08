@@ -26,7 +26,7 @@ public class ProductRepository {
     public List<Product> list() throws Exception {
 
         List<Product> results = jdbcTemplate.query(
-                "select product_no, brandname, price, content, writer, reg_date from product " +
+                "select product_no, brandname, price, content, writer, reg_date from signup " +
                         "where product_no > 0 order by product_no desc",
 
                 new RowMapper<Product>() {

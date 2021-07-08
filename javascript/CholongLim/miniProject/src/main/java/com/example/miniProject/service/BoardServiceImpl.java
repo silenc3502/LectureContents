@@ -23,15 +23,18 @@ public class BoardServiceImpl implements BoardService {
         return  repository.list();
     }
 
-    // read
     @Override
     public Board read(Integer boardNo) throws Exception {
-        return  repository.read(boardNo);
+        return repository.read(boardNo);
     }
 
-    //remove
     @Override
     public void remove(Integer boardNo) throws Exception {
         repository.delete(boardNo);
+    }
+
+    @Override
+    public void modify(Board board) throws Exception {
+        repository.update(board);
     }
 }

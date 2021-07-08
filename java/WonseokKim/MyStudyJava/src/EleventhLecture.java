@@ -24,7 +24,7 @@ class Exam {
 
 //다른 클래스 예시!!!!!
 
-public class Coffee{
+class Coffee{
     //커피판매점
     // 1. 메뉴종류 Hot 아메리카노 / Iced 아메리카노
     // 2. 주문 수량
@@ -34,7 +34,6 @@ public class Coffee{
 
     private String americano;  //아메리카노
     // 카페라떼
-    private String americano;
     private char temperatureType; // Y: hot, N; Iced
     private String size; //음료의 사이즈
 

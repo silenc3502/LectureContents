@@ -11,9 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
+@RequestMapping("/customer")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
@@ -25,14 +27,17 @@ public class CustomerController {
         return "/customer/join";
     }
 
-    // MVC(Model View Controller) Pattern
-    // Model: 다루는 데이터
-    // View: 눈에 보이는 화면
-    // Controller: URL 제어
+
     @PostMapping("/join")
     public String postJoin (Customer customer, Model model) throws Exception {
         log.info("postJoin()");
         log.info("customer: " + customer);
+
+        String pw = customer.getPassword();
+
+        if(pw.length() <= 8) {
+            return "redirect:/customer/join";
+        }
 
         customerService.join(customer);
 
@@ -42,4 +47,34 @@ public class CustomerController {
 
         return "/customer/joinsuccess";
     }
+    @GetMapping("/login")
+    public String getLogin (Customer customer, Model model) {
+        log.info("getLogin()");
+
+        return "/customer/login";
+    }
+
+    @PostMapping("/login")
+    public String postLogin (Customer customer, Model model) throws Exception {
+        log.info("postLogin(): " + customer);
+
+        customerService.login(customer);
+
+        model.addAttribute("msg", "로그인 성공!");
+
+        return "/customer/joinsuccess";
+    }
+
+
+    @GetMapping("/lists")
+    public String getLists (Model model) throws Exception {
+        log.info("getLists(): " + customerService.list());
+
+        model.addAttribute("customer", customerService.list());
+
+        return "/customer/customerIdList";
+    }
+
+
+
 }

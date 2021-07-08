@@ -10,9 +10,9 @@
     line-height: 60px;     /* 텍스트 줄간격 */
 }
 .box:hover {
-    -webkit-transform: rotate(15deg);
+    /*-webkit-transform: rotate(15deg);
     -moz-transform: rotate(15deg);
     -o-transform: rotate(15deg);
-    -ms-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);*/
     transform: rotate(15deg);
 }

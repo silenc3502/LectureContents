@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-.ng-font{
-    font-family: 'Roboto', '로보토';  /*웹 폰트 지정*/
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display&display=swap');
+.ng-font {
+    font-family: 'Big Shoulders Inline Display', cursive; /*웹 폰트 지정*/
 }
 p {
     font-size: 30px;

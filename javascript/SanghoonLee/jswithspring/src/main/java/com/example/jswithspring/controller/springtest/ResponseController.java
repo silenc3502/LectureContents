@@ -71,4 +71,11 @@ public class ResponseController {
 
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
+
+    @GetMapping("/jsonString")
+    public ResponseEntity<String> jsonString () {
+        log.info("jsonString()");
+
+        return new ResponseEntity<String>("Success", HttpStatus.OK);
+    }
 }

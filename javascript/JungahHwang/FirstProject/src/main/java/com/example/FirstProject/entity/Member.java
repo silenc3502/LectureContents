@@ -9,7 +9,8 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Join {
+public class Member {
+    private int idNo;
     private String id;
     private String pw;
     private String name;

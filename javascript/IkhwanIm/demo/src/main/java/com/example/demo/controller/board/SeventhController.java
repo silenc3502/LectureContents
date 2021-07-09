@@ -17,7 +17,7 @@ public class SeventhController {
 
     @GetMapping("/read")
     public String getRead (int boardNo, Model model) throws Exception {
-        log.info("read");
+        log.info("getRead");
 
         model.addAttribute(service.read(boardNo));
 

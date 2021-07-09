@@ -11,11 +11,6 @@
                     active-class="active">
                 Test
             </router-link>
-             <router-link :to="{ name: 'MonsterGame' }"
-                    class="nav-link"
-                    active-class="active">
-                MonsterGame
-            </router-link>
         </div>
     </div>
 </template>

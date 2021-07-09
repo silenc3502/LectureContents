@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<!-- 버튼 누르면 동작하는 과정을 서포트하는 라이브러리 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script>
+
+    $(document).ready(function() {
+        var formObj = $("#drawingPurchase");
+
+
+        $("#btnPurchaseBoard").on("click", function() {
+            // URL artworkPurchase 보낸다.
+            formObj.attr("action", "artworkPurchase");
+            // PostMapping
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnPurchaseList").on("click", function() {
+            // 마찬가지로 URL입니다.
+            self.location = "lists_PB";
+        });
+    });
+</script>
+
+<body>
+<h1>판매 및 대여 상품글 작성</h1>
+    <formd id="artworkPurchase" th:action="@{artworkPurchase}" th:object="${artworkPurchaseBoard}" method="post">
+        <table>
+            <tr>
+                <td>제목</td>
+                <!-- th:field의 경우엔 Board 객체에 있는 title과 직접 맵핑시킴. 즉 제목칸에 적으면 Board의 title로 맵핑이된다는 의미.-->
+                <td><input type="text" name="saleTitle" th:field="*{saleTitle}"></td>
+            </tr>
+
+            <tr>
+                <td>내용</td>
+                <td><textarea cols="50" rows="20" name="saleContent" th:field="*{saleContent}"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>작성자</td>
+                <td><input type="text" name="saleWriter" th:field="*{saleWriter}"></td>
+            </tr>
+
+            <tr>
+                <td>상품명</td>
+                <td><input type="text" name="productName" th:field="*{productName}"></td>
+            </tr>
+
+            <tr>
+                <td>판매가격</td>
+                <td><input type="text" name="salePrice" th:field="*{salePrice}"></td>
+            </tr>
+
+            <tr>
+                <td>렌탈가격</td>
+                <td><input type="text" name="rentalPrice" th:field="*{rentalPrice}"></td>
+            </tr>
+<!--
+            <tr>
+                <td>사이즈</td>
+                <td><input type="text" name="size" th:field="*{size}"></td>
+            </tr> 가로세로높이
+            -->
+
+
+
+        </table>
+
+    </formd>
+    <div>
+        <button type="submit" id="btnPurchaseBoard">판매글 등록</button>
+        <button type="submit" id="btnPurchaseList">판매글 목록 보기</button>
+    </div>
+
+</body>
+</html>

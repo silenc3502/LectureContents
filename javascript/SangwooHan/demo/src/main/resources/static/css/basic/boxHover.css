@@ -1,0 +1,20 @@
+.box{
+  position: absolute;    /* 박스가 배치되는 위치를 적대적으로 지정 */
+  left: 50px;
+  top: 70px;
+  width: 150px;
+  height: 60px;
+  background: #FFFFFF;
+  border: 3px solid blue;
+  text-align: center;
+  line-height: 60px;
+
+
+}
+.box:hover {
+-webkit-transform: rotate(15deg);
+-moz-transform: rotate(15deg);
+-o-transform: rotate(15deg);
+-ms-transform: rotate(15deg);
+transform: rotate(15deg);
+}

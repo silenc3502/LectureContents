@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /* 박스 영역은 테두리까지 지정 */
+}
+#container {
+    margin: 0 auto;
+    width: 1200px;
+}
+header {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+}
+
+#logo {
+    float: left;
+    width: 250px;
+    height: 100px;
+    background-color: white;
+}
+
+/*내비게이션 영역*/
+nav {
+    float: right; /* 오른쪽으로 플로팅 */
+    width: 900px;
+    height: 100px; /* 내비게이션 영역 높이 */
+    background-color: rgb(242, 249, 250);
+}
+
+/* 이미지 슬라이드 쇼 영역 */
+#slideShow {
+    clear: both; /* 플로팅해제 */
+    width: 100%; /* 너비 */
+    height: 300px; /* 높이 */
+    background-color: paleturquoise;
+    overflow: hidden; /* 영역 넘치면 감춤 */
+}
+
+/* 콘텐츠 영역 */
+#contents {
+    width: 100%;
+    height: 300px;
+}
+
+/* 탭 메뉴 영역 */
+#tabMenu {
+    float: left;
+    width: 600px;
+    height: 100%;
+    background-color: rgb(111, 234, 243);
+}
+
+/* 퀵 링크 영역 */
+#links {
+    float: right;
+    width: 600px;
+    height: 100%;
+    background-color: skyblue;
+}
+
+#attention {
+    float: center;
+    width: 1200px;
+    height: 100%;
+    background-color: rgb(82, 155, 100);
+}
+
+
+#crawl {
+    float: center;
+    width: 1200px;
+    height: 100%;
+    background-color: paleturquoise;
+}
+
+/* 푸터 영역 */
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: springgreen;
+}

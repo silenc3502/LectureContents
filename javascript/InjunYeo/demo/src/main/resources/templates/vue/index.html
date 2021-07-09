@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+  <div id="vueapp">
+      <h1>{{message}}</h1>
+  </div>
+</body>
+
+<script>
+  var app= new Vue({
+      el: ' #vueapp',
+      data:{
+        message: '엄청나게 긴메시지. 마구마구 늘려쓰지'+
+              '이히히 이건 모를걸 하지만 마구 메시지'+
+              '필요하면 또 재활용 하먄돼'
+      }
+
+  })
+
+</script>
+
+</html>

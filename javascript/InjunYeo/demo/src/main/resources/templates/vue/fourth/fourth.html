@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div id="app">
+      <label>
+        <input type="checkbox" v-model="val">{{val}}
+      </label>
+      <label>
+          <input type="checkbox" v-model="groupVal" value="A">A
+      </label>
+      <label>
+          <input type="checkbox" v-model="groupVal" value="B">B
+      </label>
+      <label>
+          <input type="checkbox" v-model="groupVal" value="C">c
+      </label>
+      <p>{{ groupVal }}</p>
+      <br>
+
+      <label><input type="radio" v-model="radioGroupVal" value="A">A</label>
+      <label><input type="radio" v-model="radioGroupVal" value="B">B</label>
+      <label><input type="radio" v-model="radioGroupVal" value="C">C</label>
+      <p>{{ radioGroupVal }}</p>
+      <br>
+
+      <select v-model="selectVal" multiple>
+          <option value="a">A</option>
+          <option value="b">B</option>
+          <option value="c">C</option>
+      </select>
+      <p>{{selectVal}}</p>
+      <br>
+
+      <select v-model="selectOnce">
+          <option disabled="disabled">전직종류</option>
+          <option  value="berserker">광전사</option>
+          <option  value="nowmad">나우매드</option>
+          <option  value="damwon">담원</option>
+
+      </select>
+      <p>{{selectOnce}}</p>
+
+  </div>
+
+  <script src="/vue/fourth/fourth.js"></script>
+
+</body>
+</html>

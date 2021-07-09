@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var formObj = $("#membership");
+
+        $("#btnRegister").on("click", function() {
+            var passwordObj = $("#password");
+            alert("member: " + JSON.stringify(membership));
+
+            formObj.attr("action", "m_register");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+    });
+</script>
+
+<body>
+<h2>회원가입</h2>
+
+<form id="membership" th:action="@{m_register}" th:object="${membership}" method="post">
+    <table>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" name="name" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" id="password" name="password" th:field="*{password}"></td>
+        </tr>
+        <tr>
+            <td>사용할 ID</td>
+            <td><input type="text" name="user_id" th:field="*{user_id}"></td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td><input type="text" name="address" th:field="*{address}"></td>
+        </tr>
+    </table>
+</form>
+<script src="/Js/passwordAlert.js"></script>
+<div>
+    <button type="submit" id="btnRegister">등록</button>
+</div>
+</body>
+</html>

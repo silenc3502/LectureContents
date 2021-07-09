@@ -1,0 +1,36 @@
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul li {
+    cursor: pointer;
+    /* 상대적인 위치 */
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #dac1f7;
+    font-size: 18px;
+}
+
+ul li:nth-child(odd){
+    background-color: rgb(249, 208, 245);
+}
+
+ul li:hover{
+    background-color: #facdcd;
+}
+
+.close{
+    /* 절대 위치 */ 
+    position: absolute;
+    right:0;
+    top:0;
+    padding: 12px 16px;
+    border: none;
+    background:rgb(254, 217, 217)
+}
+
+.close:hover{
+    background-color:#c2fef3;
+    color: white;
+}

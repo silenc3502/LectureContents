@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e7b13e87-a62c-434d-a2dc-513da7c6e4d7" name="Default Changelist" comment="5일차 학습 내용 추가 추가 추가 추가 추가~~~~~">
+      <change afterPath="$PROJECT_DIR$/../../SanghoonLee/Quiz1/Quiz1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FifthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FourthLecture/FourthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FourthLecture/src/AverageWithForTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThirdLecture/ThirdLecture.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Quiz23.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quiz23.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThirdLecture/src/ThirdReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThirdLecture/src/ThirdReview.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1sTV8acROLCiwpXco8o49Cn2kBD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.Quiz23">
+    <configuration name="InterruptComment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InterruptComment" />
+      <module name="FifthLecture" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Quiz23" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Quiz23" />
+      <module name="FifthLecture" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Review5_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Review5_1" />
+      <module name="FifthLecture" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="FifthLecture" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test2" />
+      <module name="FifthLecture" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Quiz23" />
+        <item itemvalue="Application.test2" />
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.Review5_1" />
+        <item itemvalue="Application.InterruptComment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7b13e87-a62c-434d-a2dc-513da7c6e4d7" name="Default Changelist" comment="" />
+      <created>1620896409843</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620896409843</updated>
+    </task>
+    <task id="LOCAL-00001" summary="5일차 학습 내용">
+      <created>1620931240008</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620931240008</updated>
+    </task>
+    <task id="LOCAL-00002" summary="5일차 학습 내용 추가 추가">
+      <created>1620975762698</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620975762699</updated>
+    </task>
+    <task id="LOCAL-00003" summary="5일차 학습 내용 추가 추가 추가">
+      <created>1620978280431</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620978280431</updated>
+    </task>
+    <task id="LOCAL-00004" summary="5일차 학습 내용 추가 추가 추가 추가">
+      <created>1620978650069</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620978650069</updated>
+    </task>
+    <task id="LOCAL-00005" summary="5일차 학습 내용 추가 추가 추가 추가 추가~~">
+      <created>1620980059927</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620980059927</updated>
+    </task>
+    <task id="LOCAL-00006" summary="5일차 학습 내용 추가 추가 추가 추가 추가~~~~~">
+      <created>1620980248501</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620980248502</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="5일차 학습 내용" />
+    <MESSAGE value="5일차 학습 내용 추가 추가" />
+    <MESSAGE value="5일차 학습 내용 추가 추가 추가" />
+    <MESSAGE value="5일차 학습 내용 추가 추가 추가 추가" />
+    <MESSAGE value="5일차 학습 내용 추가 추가 추가 추가 추가~~" />
+    <MESSAGE value="5일차 학습 내용 추가 추가 추가 추가 추가~~~~~" />
+    <option name="LAST_COMMIT_MESSAGE" value="5일차 학습 내용 추가 추가 추가 추가 추가~~~~~" />
+  </component>
+</project>

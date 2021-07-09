@@ -1,0 +1,21 @@
+p {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+/* center로는 완벽히 가운데 정렬이 안된다. 기준이 없기 때문에 center는 무조건 가운데*/
+.align-center {
+    text-align: center;   /* 가운데 정렬 */
+}
+
+/*양쪽을 기존으로하여 가운데 정렬, 진정한 가운데 정렬 (시작과 끝점을 기준으로 함. 즉, 양쪽 정렬) */
+.align-justify {
+    text-align: justify;
+}

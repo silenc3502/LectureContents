@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>회원가입</title>
+</head>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/join.js"></script>
+
+<body>
+<h2>간만에 <a style="color:blue">풋살</a>하고싶으면</h2>
+<h2 style="color:blue">데일리풋볼!</h2>
+<h4>회원가입</h4>
+<form id="member" th:action="@{join}" th:object="${member}" method="post">
+  <table>
+    <tr>
+      <td>아이디</td>
+      <td><input type="text" name="userId" th:field="*{userId}"></td>
+      <td>비밀번호</td>
+      <td><input id="password" type="password" name="userPass" th:field="*{userPass}"></td>
+    </tr>
+    <tr>
+      <td>이름</td>
+      <td><input type="text" name="name" th:field="*{name}"></td>
+      <td>성별</td>
+      <td><input type="text" name="sex" th:field="*{sex}"></td>
+    </tr>
+    <tr>
+      <td>휴대폰 번호</td>
+      <td><input type="text" name="phoneNo" th:field="*{phoneNo}"></td>
+    </tr>
+    <tr>
+      <td>생년월일(yyyy-mm-dd)</td>
+      <td><input type="text" name="birth" th:field="*{birth}"></td>
+    </tr>
+  </table>
+</form>
+
+<div>
+  <button type="submit" id="btnMember">회원가입</button>
+</div>
+
+</body>
+</html>

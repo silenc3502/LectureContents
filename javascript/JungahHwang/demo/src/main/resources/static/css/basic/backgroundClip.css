@@ -1,0 +1,33 @@
+div {
+    width: 300px;
+    padding: 50px;
+    border: 5px dotted #222222;
+    background: skyblue;
+    margin-bottom: 20px;
+}
+.bg1 {
+    background-clip: border-box; /* background색이 border까지 채움 */
+}
+.bg2 {
+    background-clip: padding-box;  /* background색이 padding까지 채움(border 안쪽까지) */
+}
+.bg3 {
+    background-clip: content-box;  /* background색이 content까지 채움(글씨 영역까지) */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

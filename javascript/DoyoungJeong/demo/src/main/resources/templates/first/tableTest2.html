@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <style>
+        table, th, td {
+        /* 여기서 th나 td를 빼면 굵은 글자칸이나 그냥 글자칸에 적용이 안돼 사라진다 */
+          border: 1px solid #000000;
+          }
+          th {
+          padding: 13px;
+          }
+          tr > td:nth-child(odd) {
+          width: 130px; <!--홀수, 짝수열의 길이 넓이 지정-->
+          }
+          tr > td:nth-child(even) {
+          width: 200px;
+    </style>
+<body>
+    <table>
+      <tr>
+        <th>Name</th> <!-- th는 글자 크기가 굵고 가운데 정렬됨, td는 왼쪽 정렬에 얇음-->
+          <td></td> <!-- 위 Name 칸 옆에 빈 칸이 생겨난다 -->
+        <th>Contact</th>
+          <td></td>
+      </tr> <!-- tr사이에 있는 내용은 한 열에 속해있다 -->
+        <tr>
+            <th>Address</th>
+            <td colspan="3"></td> <!-- colspan ""안의 수 만큼 나눠진 열을 병합 -->
+        </tr>
+        <tr>
+            <th>Self Introduction</th>
+            <td colspan="3"></td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/js/change-color.css">
+</head>
+<body>
+    <h1 id="heading">자바 스크립트가 간닷</h1>
+    <p id="text">글자를 클릭하세요!</p>
+    <!--id="heading"에서 얻어온 정보가 script에 var로 선언된 heading에 들어감-->
+    <script>
+        //얘네들은 사실상 모두 비동기 방식으로 동작함
+        //doucment.querySelector()은 무엇을 하나?
+        //HTML에 태그내에 있는 id를 찾는 역할을 수행함.
+        var heading = document.querySelector('#heading');
+
+        heading.onclick = function () {
+            heading.style.color = "red";
+            }
+
+    </script>
+</body>
+</html>

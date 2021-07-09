@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    ul {
+        list-style: none;
+      }
+      li {
+        margin: 20px;
+        }
+  </style>
+</head>
+<body>
+<!-- lable의 경우 줄바꿈이 lable단위로 이루어지게 된다
+     name="subject"의 경우 하나만 선택이 된다.(없으면 여러개 선택가능)
+     margin은 여백을 주게된다. -->
+<!-- input에서 id를 사용할 때 id에 특정 정보를 맵핑하는 목적으로 사용함
+     현재로선 별 의미는 없지만 각 행별로 나눈다는 느낌만 가지고 있음 -->
+<h3>1개만 선택할 수 있습니다.</h3>
+<ul>
+  <li>
+    <lable><input type="radio" name="subject" value="grammar">영문법</lable>
+    <input type="radio" value="grammar">영문법
+  </li>
+  <li>
+    <lable><input type="radio" name="subject" value="writting">영작법</lable>
+    <input type="radio" value="writting">영작법
+  </li>
+  <li>
+    <lable><input type="radio" name="subject" value="reading">영독법</lable>
+    <input type="radio" value="reading">영독법
+  </li>
+  <li>
+    <lable><input type="radio" name="subject" value="listening">영어 듣기</lable>
+    <input type="radio" value="listening">영어 듣기
+  </li>
+
+</ul>
+</body>
+</html>

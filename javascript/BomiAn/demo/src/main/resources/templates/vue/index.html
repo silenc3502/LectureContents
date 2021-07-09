@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div id="vueapp">
+    <h1>{{ message }}</h1>
+    <p>{{ repeatText }}</p>
+    <p>{{ repeatText }}</p>
+    <p>{{ repeatText }}</p>
+    <p>{{ repeatText }}</p>
+    <p>{{ repeatText }}</p>
+  </div>
+
+</body>
+<script>
+  var app = new Vue ({
+    el: '#vueapp',
+    data: {
+      message: '나는 주구장장 긴놈인가 편리한가',
+      repeatText : '재활용이 최곱니다요?'
+    }
+  })
+</script>
+</html>

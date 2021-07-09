@@ -1,0 +1,5 @@
+.greenBoldText {
+    color: green;
+    font-weight: bold;
+}
+/* . 으로 하면 class로 선택하여 부를 수 있다. */

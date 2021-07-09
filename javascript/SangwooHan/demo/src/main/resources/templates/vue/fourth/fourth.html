@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+  <label>
+    <input type="checkbox" v-model="val"> {{ val }}
+  </label>
+  <label>
+    <input type ="checkbox" v-model="groupVal" value="A">A
+  </label>
+  <label>
+    <input type ="checkbox" v-model="groupVal"value="B">B
+  </label>
+  <label>
+    <input type ="checkbox" v-model="groupVal" value="C">C
+  </label>
+  <p>{{ groupVal }}</p>
+  <br>
+  <br>
+  <label><input type ="radio" v-model="radioGroupVal" value="a">A</label>
+  <label><input type ="radio" v-model="radioGroupVal" value="b">B</label>
+  <label><input type ="radio" v-model="radioGroupVal" value="c">C</label>
+  <p>{{ radioGroupVal }}</p>
+
+  <select v-model="selectVal" multiple>
+    <option value="a">A</option>
+    <option value="b">B</option>
+    <option value="c">C</option>
+  </select>
+  <p>{{ selectVal }}</p>
+  <br>
+  <h3>2차전직소</h3>
+  <select v-model="selectOnce">
+    <option disabled="disabled">[50레벨이상 ]!! 직업선택하십시오<option>
+    <option value="Warrior">전사</option>
+    <option value="Magician">법사</option>
+    <option value="thief">도적</option>
+    <option value="archer">궁수</option>
+    <option value="pirate">해적</option>
+    <option value="knight">기사</option>
+    <option value="army">군인</option>
+  </select>
+  <p>{{ selectOnce }}</p>
+
+</div>
+<script src="/vue/fourth/fourth.js"></script>
+</body>
+</html>

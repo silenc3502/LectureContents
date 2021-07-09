@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="memberShipTest">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/memberShipTest.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

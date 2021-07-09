@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+      var formObj = $("#concert");
+
+      $("#btnRegister").on("click", function() {
+          formObj.attr("action", "concertRegister");
+          formObj.attr("method", "post");
+          formObj.submit();
+      });
+
+      $("#btnConcertList").on("click", function() {
+          self.location = "concertList";
+      });
+  });
+</script>
+
+<body>
+  <center><h2>콘서트 목록 등록</h2></center>
+  <form id="concert" th:action="@{concertRegister}" th:object="${concert}" method="post">
+    <center><table>
+      <tr><td>콘서트이름</td></tr>
+      <tr>
+        <td><input type="text" name="concertName" th:field="*{concertName}"></td>
+      </tr>
+      <tr><td>아티스트</td></tr>
+      <tr>
+        <td><input type="text" name="concertArtist" th:field="*{concertArtist}"></td>
+      </tr>
+      <tr><td>장소</td></tr>
+      <tr>
+        <td><input type="text" name="concertVenue" th:field="*{concertVenue}"></td>
+      </tr>
+      <tr><td>일시</td></tr>
+      <tr>
+        <td>달
+        <select name="month" th:field="*{month}">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        일 <input type="number" name="day" value="1" min="1" max="31" th:field="*{day}">
+        년 <select name="year" th:field="*{year}">
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr><td>가격</td></tr>
+      <tr>
+        <td><input type="text" name="price" th:field="*{price}"></td>
+      </tr>
+      <tr><td>공연정보</td></tr>
+      <tr>
+        <td><textarea cols="50" rows="10" name="concertInfo" th:field="*{concertInfo}"></textarea></td>
+      </tr>
+    </table></center>
+  </form>
+
+  <center>
+  <button type="submit" id="btnRegister">콘서트 목록에 업데이트</button>
+  <button type="submit" id="btnConcertList">콘서트 목록 보기</button>
+  </center>
+
+</body>
+</html>

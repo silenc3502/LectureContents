@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <p>몬스터 도감</p>
+    <ul>
+      <li v-for="(monster, index) in monsters"
+          v-bind:key="monster.id"
+          v-bind:class="{ strong: monster.hp > 300 }">
+          ID.{{ monster.id  }} {{ monster.name }} HP.{{ monster.hp }}
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <button v-on:click="summonsMonster">랜덤몬스터 생성!!</button>
+        <transition>
+            <button v-on:click="userAttack(index)">평타</button>
+        </transition>
+        </li>
+    </ul>
+</div>
+    <script src="/vue/second/prob77.js"></script>
+</body>
+</html>

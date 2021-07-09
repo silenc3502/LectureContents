@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Review23_1 {
     public static void main(String[] args) {
-        int port = Integer.parseInt("44444");
+        int port = 44444;
 
         try {
             ServerSocket servSock = new ServerSocket(port);

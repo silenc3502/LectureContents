@@ -32,17 +32,18 @@ interface Remocon {
 
 // sout() ===> System.out.println()
 
-class AbstractTest {
-    Remocon rc = new Remocon() {
-        @Override
-        public void turnOn() {
-            System.out.println("나는 RC 자동차용 리모콘이야! RF 송수신기가 지금 활성화되었어!");
-        }
-        @Override
-        public void turnOff() {
+    class AbstractTest {
+        Remocon rc = new Remocon() {
+            @Override
+            public void turnOn() {
+                System.out.println("나는 RC 자동차용 리모콘이야! RF 송수신기가 지금 활성화되었어!");
+            }
+
+            @Override
+            public void turnOff() {
                 System.out.println("이제 헤어질 시간이야! RF 송수신기 신호 출력을 차단할게!");
             }
-    };
+        };
         Remocon radio = new Remocon() {
             @Override
             public void turnOn() {

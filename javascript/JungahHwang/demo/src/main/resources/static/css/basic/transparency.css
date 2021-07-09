@@ -1,0 +1,36 @@
+body {
+    background: #222222;
+}
+.text1 {
+    color: rgb(255, 255, 255);
+}
+.text2 {
+    color: rgba(255, 255, 255, 0.8);  /* transparency: 투명도 조절 */
+}
+.text3 {
+    color: rgba(255, 255, 255, 0.6);
+}
+.text4 {
+    color: rgba(255, 255, 255, 0.4);
+}
+.text5 {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

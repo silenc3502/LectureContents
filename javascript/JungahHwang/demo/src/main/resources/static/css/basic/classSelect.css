@@ -1,0 +1,4 @@
+.greenBoldText { /* .: class 삽입한 곳만 적용 */
+    color: green;
+    font-weight: bold;
+}

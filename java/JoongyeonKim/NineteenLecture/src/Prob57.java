@@ -64,7 +64,7 @@ class ThreePoker {
     public static Boolean checkDuplicate (
             int patternIdx, int randNum, int[][] randCheckArr) {
 
-        if (randCheckArr[patternIdx][randNum] > 0) {  //중복체크
+        if (randCheckArr[patternIdx][randNum] > 0) {
             return true;
         }
 

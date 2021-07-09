@@ -1,105 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="529329de-7a2d-478a-8a14-b9c86ae0530d" name="Default Changelist" comment="[김도연] 22일차 복습">
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/TwentyThreethLecture.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/NetworkDiceGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/Prob62Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/Prob62Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/SocketClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TwentyThreethLecture/src/SocketServerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TwentiethLecture1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TwentiethLecture1/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d31e9fb7-2137-4b28-a042-7613ad3538a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/controller/board/fifthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/resources/templates/board/fifth/lists.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/JswithspringApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/JswithspringApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/controller/board/FourthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/controller/board/FourthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/repository/BoardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/service/BoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/service/BoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/java/com/example/jswithspring/service/BoardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/resources/templates/board/fourth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/resources/templates/board/fourth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/resources/templates/board/fourth/scuccese.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../javascript/DoyeonKim/mytest/src/main/resources/templates/board/fourth/scuccese.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1teepYc7HoB3fZL9ddAgBiBnikV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1uApeAdruD2VfJFBEjGK1b4Yf5O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-  </component>
-  <component name="RunManager" selected="Application.SocketClientTest">
-    <configuration name="SocketClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SocketClientTest" />
-      <module name="TwentyTwothLecture" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SocketServerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SocketServerTest" />
-      <module name="TwentyTwothLecture" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.SocketClientTest" />
-        <item itemvalue="Application.SocketServerTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="529329de-7a2d-478a-8a14-b9c86ae0530d" name="Default Changelist" comment="" />
-      <created>1623134169872</created>
+      <changelist id="d31e9fb7-2137-4b28-a042-7613ad3538a6" name="Default Changelist" comment="" />
+      <created>1624118343358</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1623134169872</updated>
+      <updated>1624118343358</updated>
     </task>
-    <task id="LOCAL-00001" summary="[김도연] 22일차 복습">
-      <created>1623218693240</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1623218693240</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="[김도연] 22일차 복습" />
-    <option name="LAST_COMMIT_MESSAGE" value="[김도연] 22일차 복습" />
   </component>
 </project>

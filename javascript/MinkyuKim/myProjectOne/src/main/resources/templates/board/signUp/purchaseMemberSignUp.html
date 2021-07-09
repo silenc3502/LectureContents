@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 아래 파트는 Run-Time에 작동하므로 오류에 좀 더 민감할 필요가 있음(발견하기 쉽지 않음) -->
+<script>
+    $(document).ready(function() {
+        var formObj = $("#purchaseMember");
+
+        $("#btnSignUp").on("click", function() {
+            formObj.attr("action", "purchaseMemberSignUp");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+    });
+</script>
+
+<body>
+<h1>회원가입(구매 회원)</h1>
+<h4>(*)필수항목</h4>
+
+<!-- form id="board"객체를 formObj에 대입한다.-->
+<!-- entity에 member를 받을 수 있도록 만든다. -->
+<form name="twin" id="purchaseMember" th:action="@{purchaseMemberSignUp}" th:object="${purchaseMember}" method="post">
+    <table>
+        <tr>
+            <td>*아이디</td>
+            <!-- th:field의 경우엔 Board 객체에 있는 title과 직접 맵핑시킴. 즉 제목칸에 적으면 Board의 title로 맵핑이된다는 의미.-->
+            <td>
+                <input type="text" name="id" th:field="*{id}">
+                <input type="submit" name="idCheck" value="아이디중복확인" th:field="*{id}" >
+            </td>
+        </tr>
+        <tr>
+            <td>*비밀번호</td>
+            <td><input type="password" id="pw" name="pw" th:field="*{pw}" onchange="pwIsSame()"></td>
+        </tr>
+
+        <tr>
+            <td>*비밀번호 확인</td>
+            <td><input type="password" id="pwCheck" name="pwCheck" th:field="*{pwCheck}" onchange="pwIsSame()"><span id="same"></span></td>
+
+        </tr>
+
+        <tr>
+            <td>*이름</td>
+
+            <td><input type="text" name="name" th:field="*{name}"></td>
+        </tr>
+
+        <tr>
+            <td>*생년월일</td>
+            <td><input type="text" name="dateOfBirth" th:field="*{dateOfBirth}"></td>
+        </tr>
+
+        <tr>
+            <td>*전화번호</td>
+            <td><input type="number" name="phoneNumber" th:field="*{phoneNumber}">
+            <input type="submit" name="certification" value="인증번호발송" th:field="*{phoneNumber}">
+            </td>
+        </tr>
+        <tr>
+            <td>*이메일</td>
+            <td><input type="text" name="email" th:field="*{email}"></td>
+        </tr>
+
+        <tr>
+            <td>*배송받을 주소</td>
+            <td><input type="text" name="address" th:field="*{address}">
+               <!-- <input type="submit" name="searchAddress" value="주소검색" th:field="*{searchAddress}" >-->
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            *성별
+            <label for="male">남성</label>
+            <input type="radio" name="gender" id="male" value="male" th:field="*{gender}">
+            <label for="female">여성</label>
+            <input type="radio" name="gender" id="female" value="female" th:field="*{gender}">
+        </tr>
+
+        <tr>
+            <br>관심사
+            그림<input type="checkbox" name="interest" value="drawing" th:field="*{interest}">
+            소품<input type="checkbox" name="interest" value="prop" th:field="*{interest}">
+            대형작품(그림 및 동상)<input type="checkbox" value="lageArtwork" name="interest" th:field="*{interest}">
+        </tr>
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnSignUp">가입</button>
+    <button type="submit" id="btnCancelSignUp">취소</button>
+</div>
+<script src="/js/signUpPasswordCheck.js"></script>
+</body>
+</html>

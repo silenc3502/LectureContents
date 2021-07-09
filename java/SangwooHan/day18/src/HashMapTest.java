@@ -3,7 +3,7 @@ import java.util.Map;
 
 class student{
 int age;
-    String name;
+String name;
 
     public student(int age, String name) {
         this.age = age;
@@ -26,7 +26,6 @@ public class HashMapTest {
         st.put(4, new student(23,"최피자"));
         st.put(6, new student(54,"한버거"));
         System.out.println(st);
-
 
 
          }

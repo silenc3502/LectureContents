@@ -9,7 +9,5 @@ public class HashSetTest {
         set.add("베이컨");
         set.add("소시지");
         set.add("파스타");
-
-        System.out.println(set);
     }
 }

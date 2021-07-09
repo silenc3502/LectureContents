@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf16b3ce-d5ad-4cb4-a10d-51d8e113281c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/java/NamkyoKim/EighteenthLecture/src/InterfaceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/EleventhLecture/src/Prob43Remind.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/NamkyoKim/EleventhLecture/src/Prob43Remind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/FifteenLecture/src/Prob51.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/NamkyoKim/FifteenLecture/src/Prob51.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/FifthLecture/src/5일차 복습, 숙제 ,질문정리.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/FourteenthLecture/src/Prob48.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/NamkyoKim/FourteenthLecture/src/Prob48.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/FourthLecture/src/복습 , 숙제 , 질문 정리(수정).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/SeventhLecture/src/7일차복습및숙제정리.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/SixteenthLeture/src/Prob51.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/NamkyoKim/SixteenthLeture/src/Prob51.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/SixthLecture/src/6일차 복습,숙제질문정리(수정).pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/TenthLecture/src/Prob43.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/NamkyoKim/TenthLecture/src/Prob43.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/TenthLecture/src/QuestionAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/NamkyoKim/TenthLecture/src/QuestionAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/ThirdLecture/3일차/스크린샷 2021-05-11 오후 10.25.17.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/ThirdLecture/3일차/스크린샷 2021-05-11 오후 9.48.58.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/NamkyoKim/ThirteenthLecture/src/Prob45Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/NamkyoKim/ThirteenthLecture/src/Prob45Answer.java" afterDir="false" />
+    <list default="true" id="fd018d39-a1af-4fe6-a0f9-c96ab5114adc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LectureContents.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1tNxN5fr4F7fpW1V5RxC80lfaur" />
+  <component name="ProjectId" id="1tyREzEX4MCSRo23Gn7mBpTsYJC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,15 +24,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cf16b3ce-d5ad-4cb4-a10d-51d8e113281c" name="Default Changelist" comment="" />
-      <created>1622623304915</created>
+      <changelist id="fd018d39-a1af-4fe6-a0f9-c96ab5114adc" name="Default Changelist" comment="" />
+      <created>1623739238830</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1622623304915</updated>
+      <updated>1623739238830</updated>
     </task>
     <servers />
   </component>

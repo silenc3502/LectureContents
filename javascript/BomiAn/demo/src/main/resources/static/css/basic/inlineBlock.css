@@ -1,0 +1,17 @@
+div {
+    margin: 20px;
+    border: 1px solid #cccccc;
+
+    text-align: center;
+}
+
+#inline img {
+
+    display: inline;
+    margin: 10px;
+}
+
+#block img {
+    display: block;
+    margin: 10px;
+}

@@ -1,0 +1,17 @@
+p {
+    border: 1px solid #cccccc;
+    padding: 10px;                   /* padding 테두리 */
+    margin: 10px;
+}
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+.align-center {
+    text-align: center;              /* 가운데 정렬 */
+}
+.align-justify {
+    text-align: justify;            /*  양쪽 끝점에서 부터의 가운데, 양쪽 정렬  */
+}

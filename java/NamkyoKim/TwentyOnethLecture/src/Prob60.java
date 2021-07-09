@@ -26,7 +26,7 @@ class FrequencyChecker {
     }
     public void allocRandomFrequency(int num){
         for (int i = 0; i < num; i++){
-            int tmp = (int)(Math.random() + 10);
+            int tmp = (int)(Math.random() * 10);
             int key = backUp[tmp];
 
            // System.out.println(key);
@@ -61,14 +61,9 @@ public class Prob60 {
 
         FrequencyChecker fc = new FrequencyChecker(testSet);
 
-        fc.allocRandomFrequency(20);
+        fc.allocRandomFrequency(200);
 
         System.out.println(fc.getFrequencyMap());
-
-
-
-
-
 
     }
 }

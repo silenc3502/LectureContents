@@ -92,13 +92,15 @@ public class Controller0709Response {
         // }
     }
     @GetMapping("/jsonVoid")
-    // ResponseEntity에 대한 Void
+    // ResponseEntity<Void>: 전달할 데이터는 없고 전달완료만 알리고 싶을 때
     public ResponseEntity<Void> jsonVoid () {
         log.info("jsonVoid()");
 
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
     @GetMapping("/jsonString")
+    // ResponseEntity<String>: 데이터를 string으로 받고 싶을 때
+    // <>안에 전달하고자 하는 데이터 타입을 입력하면 됨 ex) Boolean ...
     public ResponseEntity<String> jsonString () {
         log.info("jsonString()");
 

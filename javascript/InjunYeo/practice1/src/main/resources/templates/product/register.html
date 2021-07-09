@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type ="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        var formObj = $("#board");
+        $("#btnRegister").on("click",function(){
+            formObj.attr("action","register");
+            formObj.attr("method","post");
+            formObj.submit();
+            });
+
+            $("#btnList").on("click",function() {
+                self.location = "lists";
+                });
+    });
+
+</script>
+
+<body>
+<h2>게시글 등록</h2>
+
+<!--Controller에서 getRegister에서 전달받은 Board 객체(현재 텅빔)
+    th:action에는 이동시킬 URL주소를 작성한다
+    보통 action에는 @를 사용한다.
+
+    th:object는 Board객체를 전달받기 위한 목적으로 사용
+    객체를 전달 받을 경우엔 $를 사용한다.
+    GetMapping에서 주는 Product객체의 정보
+    -->
+
+<form id="board" th:object="${product}" method="post">
+    <table>
+        <tr>
+            <td>상품이름</td>
+            <!-- th:field="*{title} Board객체에 있는 title과 직접맵핑시킴-->
+            <td><input type="text" name="productName" th:field="*{productName}"></td>
+        </tr>
+        <tr>
+            <td>상품가격</td>
+            <!-- th:field="*{title} Board객체에 있는 title과 직접맵핑시킴-->
+            <td><input type="text" name="productPrice" th:field="*{productPrice}"></td>
+        </tr>
+        <tr>
+            <td>상품 정보</td>
+            <td><textarea cols="50" rows="20" name="productInfo" th:field="*{productInfo}"></textarea></td>
+        </tr>
+
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnRegister">게시글 등록</button>
+    <button type="submit" id="btnList">게시글 목록보기</button>
+
+</div>
+
+</body>
+</html>

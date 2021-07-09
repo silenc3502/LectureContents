@@ -1,0 +1,4 @@
+*{                      /* *로 설정하면 html파일 전부가 바뀐다 */
+    margin: 20px;
+    color: blue;
+}

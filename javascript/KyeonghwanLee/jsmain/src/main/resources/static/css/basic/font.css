@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+.ng-font {
+    font-family: 'Jua', '주아'; /* 웹 폰트 지정 */
+}
+p {
+    font-size: 50px;
+}

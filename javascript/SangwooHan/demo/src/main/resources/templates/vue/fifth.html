@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+
+  <p>캐릭터 상태 창</p>
+  <p>HP: {{ Math.floor(characterStatus.hp) }} MP: {{ Math.floor( characterStatus.mp )}}
+    ATK: {{ Math.floor( characterStatus.atk) }} Lv: {{ characterStatus.level }}</p>
+  <p>STR: {{ Math.floor( characterStatus.str )}} INT: {{ Math.floor( characterStatus.intelligence) }}
+    DEX: {{ Math.floor( characterStatus.dex )}} VIT: {{  Math.floor(characterStatus.vit) }}
+    DEF: {{ Math.floor( characterStatus.def) }} MEN: {{ Math.floor( characterStatus.men) }}</p>
+  <p>현재 경험치 상태: {{ characterStatus.currentLevelBar }} /
+    {{ characterStatus.totalLevelBar }}</p>
+  <p>소지금: {{ characterStatus.money }}</p><br><br>
+  <h3>2차전직소</h3>
+  <select v-model="characterStatus.selectJob" v-if="firstformerview">
+    <option disabled="disabled">[50레벨이상 ]!! 직업선택하십시오<option>
+    <option value="Warrior">전사(전직시 힘과 체력 대폭증가)</option>
+    <option value="Magician">법사(전직시 지력과 마나 대폭증가)</option>
+    <option value="thief">도적(전직시 운대폭증가 민첩함 대폭증가)</option>
+    <option value="archer">궁수(전직시 민첩함 대폭즉가 운 대폭증가)</option>
+    <option value="pirate">해적(전직시 체력과 민첩 중폭증가, 힘 대폭증가.)</option>
+    <option value="knight">기사(전직시 체력,힘,민첩 대폭증가.마나 소폭증가)</option>
+    <option value="army">군인(모든 능력치 중폭증가. )</option>
+  </select>
+  <button v-on:click="warrior2chaSkill()" v-if="ifyouwarrior">
+     휠윈드 (전사2차스킬)
+  </button>
+  <button v-on:click="Magician2chaSkill()" v-if="ifyouMagician">
+    매직클로(법사2차스킬)
+ </button>
+ <button v-on:click="thief2chaSkill()" v-if="ifyouthief">
+  새비지블로우(도적2차스킬)
+</button>
+<button v-on:click="archer2chaSkill()" v-if="ifyouarcher">
+  해드샷(궁수2차스킬)
+</button>
+<button v-on:click="pirate2chaSkill()" v-if="ifyoupirate">
+  혀어어업상(해적2차스킬)
+</button>
+<button v-on:click="knight2chaSkill()" v-if="ifyouknight">
+  성기사의침묵 (성기사2차스킬)
+</button>
+<button v-on:click="army2chaSkill()" v-if="ifyouarmy">
+  k-2 연사 (군인2차스킬)
+</button>
+  <p>당신이 선택한 직업(은)는{{ characterStatus.selectJob }}입니다.</p>
+  <br>
+  <h3>인벤토리</h3>
+  <label>
+    <input type="checkbox" v-model="inventoryView">소지품보기
+  </label>
+  <button v-on:click="equipItem()">아이템적용!</button>
+  <table border="1" v-if="inventoryView">
+    <tr>
+      <th align="center" width="40">번호</th>
+      <th align="center" width="120">아이템명</th>
+      <th align="center" width="320">아이템 설명</th>
+      <th align="center" width="40">장착</th>
+    </tr>
+
+    <tr v-for="(list, idx) in myInventory"
+        v-bind:key="list.idx">
+      <th align="center" width="40">{{ idx + 1 }}</th>
+      <th align="center" width="120">{{ list.name }}</th>
+      <th align="center" width="320">{{ list.effect.desc }}</th>
+      <th align="center" width="40">
+        <label>
+          <input type="checkbox"
+                 v-model="myInventoryValue"
+                 v-bind:value="idx">
+        </label>
+      </th>
+    </tr>
+
+  </table>
+  <h3>상점</h3>
+  <label>
+    <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">판매 목록
+  </label>
+  <button v-on:click="calcBuy()">구매확정!</button>
+  <table border="1" v-if="shopView">
+    <tr>
+      <th align="center" width="40">번호</th>
+      <th align="center" width="120">아이템명</th>
+      <th align="center" width="160">가격</th>
+      <th align="center" width="320">아이템 설명</th>
+      <th align="center" width="40">구매</th>
+    </tr>
+    <tr v-for="(list, idx) in shopList"
+        v-bind:key="list.idx">
+      <th align="center" width="40">{{ idx + 1 }}</th>
+      <th align="center" width="120">{{ list.name }}</th>
+      <th align="center" width="160">{{ list.price }}</th>
+      <th align="center" width="320">{{ list.effect.desc }}</th>
+      <th align="center" width="40">
+        <label>
+          <input type="checkbox"
+                 v-model="shopListValue"
+                 v-bind:value="idx">
+        </label>
+      </th>
+    </tr>
+  </table>
+  <button v-on:click="warriorAttack" v-if="iamWarrior"></button>
+  <button v-on:click="myDarknessDragon()">내안의흑염룡</button>
+
+  <!-- 1. 몬스터 도감을 적당히 아무렇게나 만든다
+       2. 랜덤과 몬스터 도감을 활용하여 몬스터 생성시 랜덤하게 몬스터를 생성 -->
+
+  <!-- 추가적으로 몬스터를 통해 게임 머니를 획득할 수 있도록 만들어보자! -->
+  <input v-model="monsterName">
+  <button v-on:click="addMonster">몬스터 추가하기</button>
+  <button v-on:click="addManyMonster">몬스터 100마리씩 리젠시키기</button>
+  <ul>
+    <li v-for="(monster, index) in monsters"
+        v-bind:key="monster.id"
+        v-bind:class="{ strong: monster.hp > 300 }">
+      ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }}
+      <span v-if="monster.hp > 300">짱쎄다</span>
+      <button v-on:click="userAttack(index)">평타</button>
+      <button v-on:click="removeMonster(index)">몬스터 삭제</button>
+      <button v-on:click="calltheHeart(index)">심장을부르는일격</button>
+    </li>
+  </ul>
+
+  <p>몬스터 도감이며 앞으로 계속 업데이트 될 예정입니다!</p>
+  <ul>
+    <li v-for="monsterInfo in monsterBook"
+        v-bind:key="monsterInfo.name">
+      이름: {{ monsterInfo.name }}, HP: {{ monsterInfo.hp }},
+      경험치: {{ monsterInfo.exp }}, 드랍머니: {{ monsterInfo.money }}
+    </li>
+  </ul>
+</div>
+
+<script src="/vue/fifth/fifth.js"></script>
+</body>
+</html>

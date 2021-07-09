@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+  <style>
+        table, th, td {
+        border : 1px solid #000000;
+        text-align: center;
+        }
+        table {
+        margin-left:auto;
+        margin-right:auto;
+        }
+        th {
+        padding 15px; /* 셀 테두리와 내용 사이의 간격(패딩) */
+        }
+        tr > td:nth-child(odd){
+        width: 120px; /* 홀수번째 열의 너비 지정 */
+        }
+        tr >td:nth-child(even) {
+        width: 300px;  /* 짝수번째 열의 너비 지정 */
+        }
+        body {
+        background-color: #CEECF5;
+        color: #0B3861;
+        }
+
+  </style>
+</head>
+<body>
+    <table>
+        <caption>
+            <strong>이력서(Resume)</strong>
+            <p> 나를 소개하는 이력서 입니다. </p>
+        <tr>
+            <th>Name</th>
+            <td>Bomi An</td>
+            <th>Contact</th>
+            <td>qhal4686@gmail.com</td>
+        </tr>
+
+        <tr>
+            <th>blood type</th>
+            <td>O형</td>
+            <th>date of birth</th>
+            <td>1996.07.14</td>
+        </tr>
+
+        <tr>
+            <th>Address</th>
+            <!-- colspan="3"은 열 3개를 하나로 묶음 -->
+            <td colspan="3">경기도 남양주시....</td>
+        </tr>
+        <tr>
+            <th>Self Introduction</th>
+            <td colspan="3">hello word!</td>
+        </tr>
+    </table>
+
+</body>
+</html>

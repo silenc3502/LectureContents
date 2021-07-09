@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:width="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+
+  <p>캐릭터 상태 창</p>
+  <p> HP: {{ Math.floor(characterStatus.hp) }} MP: {{ characterStatus.mp }}
+    ATK: {{ characterStatus.atk }} LV: {{ Math.floor(characterStatus.level) }}</p>
+  <p>STR: {{ characterStatus.str }} INT: {{ characterStatus.int }}
+    DEX: {{ characterStatus.dex }} DEF: {{ characterStatus.def }}
+    MEN: {{ characterStatus.men }} VIT: {{ characterStatus.vit }}
+    totalLevelBar: {{ characterStatus.totalLevelBar }} currentLevelBar: {{ characterStatus.currentLevelBar }}
+    leftExp: {{ characterStatus.needExp }} </p>
+  <p>현재 경험치 상태 {{ characterStatus.currentLevelBar }} / {{ characterStatus.totalLevelBar}}</p>
+  <p>현재 머니 : {{ characterStatus.money }}</p><br><br>
+
+  <h3>상점</h3>
+
+  <label>
+    <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList">판매목록
+  </label>
+  <table border="1" v-if="shopView">
+    <tr>
+      <th align="center" width="40">번호</th>
+      <th align="center" width="120">아이템명</th>
+      <th align="center" width="160">가격</th>
+      <th align="center" width="320">아이템 설명</th>
+      <th align="center" width="40">구매</th>
+    </tr>
+    <tr v-for="(list, idx) in shopList" v-bind:key="list.name">
+      <th align="center" width="40">{{ idx + 1}}</th>
+      <th align="center" width="120">{{ list.name }}</th>
+      <th align="center" width="160">{{ list.price }}</th>
+      <th align="center" width="320">{{ list.effect.desc }}</th>
+      <th align="center" width="40">
+        <label>
+          <input type="checkbox" v-model="shopListValue" v-bind:value="list">
+        </label>
+      </th>
+    </tr>
+  </table>
+  <button v-if="shopView" v-on:click="purchase">구매하기</button>
+
+  <p> {{ shopListValue }} </p>
+    <p> {{ Inventory }} </p>
+  <br>
+  <br>
+  <br><br>
+  <label>
+    <input type="checkbox" v-model="InvenView" >인벤토리
+  </label>
+  <table border="1" v-if="InvenView">
+    <tr>
+      <th align="center" width="40">번호</th>
+      <th align="center" width="120">아이템명</th>
+      <th align="center" width="160">가격</th>
+      <th align="center" width="320">아이템 설명</th>
+      <th align="center" width="80">장착/사용</th>
+    </tr>
+    <tr v-for="(Inven, idx) in Inventory" >
+      <th align="center" width="120">{{ idx + 1 }}</th>
+      <th align="center" width="120">{{ Inven.name }}</th>
+      <th align="center" width="160">{{ Inven.price }}</th>
+      <th align="center" width="320">{{ Inven.desc }} 공격력 : {{ Inven.atk }}</th>
+      <th align="center" width="40">
+        <label>
+          <input type="checkbox" v-model="equipment" v-bind:value="Inven.atk">
+        </label>
+      </th>
+    </tr>
+  </table>
+  <button v-if="InvenView" v-on:click="equip">장착하기</button>
+  <br><br><br><br>
+<p>{{ equipment }}</p>
+
+
+
+
+    <button v-on:click="MDG">MDG</button>
+    <button v-on:click="addManyMonster">몬스터 100마리 리젠</button>
+
+    <input v-model="monsterName">
+    <button v-on:click="addMonster">몬스터 추가하기</button>
+    <ul>
+      <li v-for="(monster, index) in monsters"
+          v-bind:key="monster.id"
+          v-bind:class="{ strong: monster.hp > 300 }">
+        ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }} EXP.{{ monster.exp }}
+        <span v-if="monster.hp > 300">개쎄다</span>
+        <button v-on:click="userAttack(index)">평타</button>
+        <button v-on:click="removeMonster(index)">몬스터 삭제</button>
+      </li>
+    </ul>
+
+    <p>몬스터 도감이며 앞으로 계속 업데트 될 예정입니다.</p>
+    <ul>
+      <li v-for="monsterInfo in monsterBook"
+          v-bind:key="monsterInfo.name">
+        이름: {{ monsterInfo.name }} HP: {{ monsterInfo.hp }} EXP : {{ monsterInfo.exp }}
+        경험치: {{ monsterInfo.money }} 드랍머니 : {{ monsterInfo.money }}
+      </li>
+    </ul>
+
+</div>
+<script src="/vue/third/third.js"></script>
+</body>
+</html>

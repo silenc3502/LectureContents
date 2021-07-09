@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9bb838c9-3871-4cc1-bf7b-ba89f1f3d1a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../17일차수업/17일차수업.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../18일차수업/18일차수업.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/19일차수업.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/a_Quiz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/b_HowToRefactoringprob56.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/c_.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20일차수업/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20일차수업/20일차수업.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20일차수업/src/a_BankBobEventTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20일차수업/src/b_Counter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20일차수업/src/c_Worker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20일차수업/src/d_BankLockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20일차수업/src/e_ParrelConcepTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20일차수업/src/f_SequenceThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../20일차수업/src/g_AccelThread.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1tQXe7LauIAbABsKoItUrAhB81h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.c_">
+    <configuration name="b_HowToRefactoringprob56" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="b_HowToRefactoringprob56" />
+      <module name="19일차수업" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="c_" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="c_" />
+      <module name="19일차수업" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="doing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="doing" />
+      <module name="19일차수업" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.c_" />
+        <item itemvalue="Application.b_HowToRefactoringprob56" />
+        <item itemvalue="Application.doing" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9bb838c9-3871-4cc1-bf7b-ba89f1f3d1a6" name="Default Changelist" comment="" />
+      <created>1622702380462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622702380462</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

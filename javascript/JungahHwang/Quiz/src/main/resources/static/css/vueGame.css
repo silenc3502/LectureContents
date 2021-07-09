@@ -1,0 +1,22 @@
+#itemBtn {
+    margin: 10px;
+    margin-left: 428px;
+}
+#shopBtn {
+    margin: 10px;
+    margin-left: 540px;
+}
+table {
+    border-collapse:collapse;
+    border-spacing: 0;
+}
+table tr {
+    height: 30px;
+}
+ul li {
+    list-style: none;
+}
+#job {
+    font-size: 20px;
+    background-color: beige;
+}

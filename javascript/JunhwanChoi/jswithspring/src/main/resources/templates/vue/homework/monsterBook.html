@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<body>
+
+  <div id="monsterApp">
+    <p>{{ message }}</p>
+
+      <input v-model="MapleMonsterName">
+      <button v-on:click="addMonster">몬스터 추가하기</button>
+      <ul>
+      <li v-for="(monster, index) in monsters"
+          v-bind:key="monster.id"
+          v-bind:class="{ strong: monster.hp>300}">
+        ID.{{monster.id}} {{monster.name}} HP.{{monster.hp}}
+        <span v-if="monster.hp>300">개쌔다</span>
+        <button v-on:click="userAttack(index)">평타</button>
+        <button v-on:click="removeMonster(index)">몬스터 삭제</button>
+      </li>
+    </ul>-->
+  </div>
+
+
+  <script src="/js/vue/homework/monster.js"></script>
+
+</body>
+</html>

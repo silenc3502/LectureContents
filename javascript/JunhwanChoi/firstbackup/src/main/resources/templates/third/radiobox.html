@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+     <style>
+        ul{
+            list-style: none;
+        }
+        li {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h3>1개만 선택할 수 있습니다.</h3>
+
+<ul>
+  <li>
+    <lable><input type="radio" name="subject" value="grammer">영문법</lable>    <!--  <lable>태그로 감싼것과 아닌거 차이까지 같이보기!  감싼거는 앞에 들여쓰기 같이 공백과 함께 출력 -->
+      <input type="radio" name="subject2" value="grammer">영문법
+  </li>
+  <li>
+    <lable><input type="radio" name="subject" value="writting">영작문</lable>  <!-- name은 단위를 묶는것 ! 같은 name내에서는 버튼 1개만 선택가능 -->
+      <input type="radio" name="subject2" value="writting">영작문
+  </li>
+  <li>
+    <lable><input type="radio" name="subject" value="reading">영독해</lable>
+      <input type="radio" name="subject2" value="reading">영독해
+  </li>
+  <li>
+    <lable><input type="radio" name="subject" value="listening">영어듣기</lable>
+      <input type="radio" name="subject2" value="listening">영어듣기
+  </li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        var formObj = $("#board");
+
+         $("#btnModify").on("click", function() {
+            // 아래 절차를 통해 실제 boardNo 값을 획득한다.
+            var voardNo = $("#boardNo"); //보드넘버로 되어있는 데이터(name,id같은 값)가 있다는 뜻
+            var boardNoVal = boardNo.val();
+
+            self.location = "mpdify?boardNo=" + boardNoVal;
+        });
+
+        $("#btnRemove").on("click", function() {
+            // URL register로 보낸다.
+            formObj.attr("action", "remove");
+            formObj.submit();
+        });
+
+	        $("#btnList").on("click", function() {
+            self.location = "lists";
+        });
+    });
+</script>
+<body>
+<h2>게시글 등록</h2>
+
+<form id="board" th:object="${board}" method="post">
+    <input type="hidden" name="boardNo" th:field="*{boardNo}"/>
+
+    <table>
+        <tr>
+            <td>제목</td>
+            <!-- th:field의 경우엔 Board 객체에 있는 title과 직접 맵핑시킴 -->
+            <td><input type="text" name="title"
+                       th:field="*{title}" readonly="readonly"></td>
+            <!-- 남의 글 함부로 수정 못하게 readonly-->
+        </tr>
+        <tr>
+            <td>작성자</td>
+            <td><input type="text" name="writer"
+                       th:field="*{writer}" readonly="readonly"></td>
+        </tr>
+        <tr>
+            <td>본문</td>
+            <!-- textarea는 글자를 여러개 입력할 수 있는 글 입력창이다 -->
+            <td><textarea cols="50" rows="20" name="content"
+                          th:field="*{content}" readonly="readonly"></textarea></td>
+            </tr>
+        </table>
+    </form>
+
+        <div>
+    <button type="submit" id="btnRegister">게시물 수정</button>
+    <button type="submit" id="btnRemove">게시물 삭제</button>
+    <button type="submit" id="btnList">게시글 목록 보기</button>
+    </div>
+</body>
+</html>

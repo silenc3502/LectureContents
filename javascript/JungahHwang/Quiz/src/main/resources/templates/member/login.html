@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var formObj = $("#member");
+
+        $("#btnSignUp").on("click", function() {
+            formObj.attr("action", "login");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+        $("#btnLists").on("click", function() {
+            self.location = "memberLists";
+        });
+    });
+</script>
+
+<body>
+<h2>Login Now!!</h2>
+<form id="member" th:object="${member}" method="post">
+  <table>
+    <tr>
+      <td>id</td>
+      <td><input type="text" name="id" th:field="*{id}"></td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td><input type="password" name="pw" th:field="*{pw}"></td>
+    </tr>
+  </table>
+</form>
+<div>
+  <button type="submit" id="btnSignUp">Login</button>
+  <button type="submit" id="btnLists">Member Lists</button>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1da0aec1-2d61-480a-8c01-caa081b2a676" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/controller/MemberSignUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/entity/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/repository/SignUpRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/service/SignUpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/java/com/example/memberShipTest/service/SignUpServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/resources/templates/member/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/main/resources/templates/member/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../homework/memberShipTest/src/sql/member.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/JswithspringApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/board/SixthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/board/fifthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fifth/lists.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../frontend/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentyTwothLecture/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentyTwothLecture/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentyTwothLecture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/DoyeonKim/TwentyTwothLecture/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/JswithspringApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/HtmlTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/HtmlTestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/board/FourthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/board/FourthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/firstController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/controller/FirstController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/repository/BoardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/service/BoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/service/BoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/service/BoardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Server2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/java/com/example/jswithspring/utility/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fourth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fourth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fourth/scuccese.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mytest/src/main/resources/templates/board/fourth/scuccese.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1tnOc7yOL82VW8BRciRpQyZ1TUk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1da0aec1-2d61-480a-8c01-caa081b2a676" name="Default Changelist" comment="" />
+      <created>1623401467308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623401467308</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

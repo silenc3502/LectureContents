@@ -1,0 +1,32 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  cursor: pointer;
+
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background-color: turquoise;
+  font-size: 18px;
+}
+
+ul li:nth-child(odd) {
+  background-color: thistle;
+}
+
+ul li:hover {
+  background-color: violet;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px;
+  border: none;
+  background-color: skyblue;
+  color: white;
+}

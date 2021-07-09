@@ -21,6 +21,7 @@ class Vehicle {
                 '}';
     }
 }
+
 class Airplane extends Vehicle {
     private float aileron;
     private float pitch;

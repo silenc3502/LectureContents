@@ -114,7 +114,6 @@ public class QuestionAnswer {
         atD2.calcMean();
         atE2.calcMean();
 
-
         System.out.println("A반 평균 = " + atA2.getMean());
         System.out.println("B반 평균 = " + atB2.getMean());
         System.out.println("C반 평균 = " + atC2.getMean());

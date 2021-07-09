@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/memberLists.css">
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var formObj = $("#member");
+
+        $("#btnBack").on("click", function() {
+            self.location = "login";
+        });
+    });
+</script>
+<body>
+    <h2 id="head">Member Lists</h2>
+    <div class="container">
+        <table border="1" id="table">
+            <tr>
+                <th>Id</th>
+            </tr>
+            <tr th:each="member : ${memberLists}">
+                <td align="center" th:text="${member.id}"></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button type="submit" id="btnBack">Back</button>
+    </div>
+</body>
+</html>

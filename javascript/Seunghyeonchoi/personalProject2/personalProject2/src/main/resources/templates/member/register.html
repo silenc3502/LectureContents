@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>MemberRegister</title>
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {                    //모든 html 페이지가 화면에 뿌려지고 나서 저 ready 안에 서술된 이벤트들이 동작준비완료
+        var formObj = $("#member");
+
+        $("#btnRegister").on("click", function() {
+            var passwordObj = $("#password");  
+
+            formObj.attr("action", "register");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+         $("#btnPwCheck").on("click", function() {
+            var passwordObj = $("#password");
+            var valueByPw = $('#password').val();
+
+            if (valueByPw.length  <= 8)  {
+              alert("비밀번호는 8자리 이상만 ㄱㄴ")
+            }else if(valueByPw.search(/\s/) != -1) {
+              alert("비밀번호에 공백 있잖아")
+            }else {    
+              alert("사용 가능한 비밀번호입니다.")
+            }
+
+
+
+<!--            개인공부            -->
+<!--            console.log(password);-->
+<!--            console.log(passwordObj);-->
+<!--            var pass2 = '{ "NAME" : "ggmouse", "AGE" : 30 }';-->
+<!--            console.log(pass2);-->
+<!--            var jsonObj = JSON.parse(pass2);-->
+<!--            console.log(jsonObj.NAME);-->
+<!--            var pass3 = jsonObj.NAME;-->
+<!--            console.log(pass3.length);-->
+<!--            console.log(+valueById);-->
+<!--            console.log(+valueById.length);-->
+
+
+        });
+
+
+    });
+</script>
+
+<body>
+<h2>회원 가입</h2>
+
+<form id="member" th:object="${member}" method="post">
+  <table>
+    <tr>
+      <td>아이디</td>
+      <td><input type="text" name="id" th:field="*{id}"></td>
+    </tr>
+    <tr>
+      <td>닉네임</td>
+      <td><input type="text" name="name" th:field="*{name}"></td>
+    </tr>
+    <tr>
+      <td>비밀번호</td> 
+      <td><input type="password" id="password" name="pw" th:field="*{pw}"></td>
+
+    </tr>
+  </table>
+</form>
+
+<div>
+  <button type="submit" id="btnRegister">회원 가입</button>
+  <button type="submit" id="btnPwCheck">비밀번호 확인</button>
+</div>
+
+</body>
+</html>

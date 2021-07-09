@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="/css/rogin.css">
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js">
+    $(document).ready(function() {
+        var formObj = $("#rogin");
+        $("#btnRogin").on("click", function() {
+            formObj.attr("action", "roginRegister");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnRegister").on("click", function() {
+        self.location = "/signup/signupregister";
+        });
+    });
+</script>
+<body>
+<fieldset style="width:500px; height:250px color:white;">
+
+<h1>로그인</h1>
+  <table align="center">
+    <tr>
+    <td class="id">아이디</td>
+  <td><input type="text" placeholder="아이디" name="id"></td>
+    </tr>
+
+    <tr>
+    <td class="password">비밀번호</td>
+    <td><input type="text" placeholder="비밀번호" name="password"></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+    <div align="center">
+      <button type="submit" id="btnLogin" >로그인</button>
+      <button type="submit" id="btnRegister">회원가입</button>
+    </div>
+
+
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/css.css">
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var formObj = $("#member");
+
+        $("#btnWithdrawal").on("click", function() {
+            formObj = $("#member");
+            formObj.attr("action", "postMemberWithdrawal");
+            formObj.submit();
+        });
+
+        $("#btnMainPage").on("click", function() {
+            self.location = "concertList";
+        });
+    });
+</script>
+<body>
+<center>
+    <h2 th:text="${msg}"></h2>
+
+    <form id="member" th:object="${member}" method="post">
+    <div class="box2">
+        <p>ID를 입력해주세요</p>
+        <input type="text" name="id" id="id">
+        <p>비밀번호를 입력해주세요</p>
+        <input type="text" name="pw" id="pw">
+        <!-- <input type="text" name="pw" th:field="*{pw}">
+        위에 이렇게 적었을 때는 500에러가 났다. th:field="*{pw}"를 넣은게 문제였다. 빼니까 해결
+        th:field는 데이터를 받아서 화면에 넣는 용도이지 보내는 용도로 쓰면 안되는것같다.-->
+    </div>
+    </form>
+
+    <button type="submit" id="btnMainPage">메인 페이지로</button>
+    <button type="submit" id="btnWithdrawal">회원 탈퇴</button>
+</center>
+
+</body>
+</html>

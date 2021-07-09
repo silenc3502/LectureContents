@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="/cssfile/login.css">
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var formObj = $("#board");
+
+        $("#btnRegister").on("click", function() {
+            formObj.attr("action", "login");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+    });
+</script>
+
+<body>
+<form id="board" th:object="${project}" method="post" class="loginForm">
+  <h2>Login</h2>
+  <div class="idForm">
+    <input type="text" class="id" placeholder="ID" name="id" th:field="*{id}">
+  </div>
+  <div class="passForm">
+    <input type="password" class="pw" placeholder="PW" name="password " th:field="*{password}">
+  </div>
+  <button type="submit" class="btn" id="btnRegister" onclick="button()">
+    LOG IN
+  </button>
+  <div class="bottomText">
+    Don't you have ID? <a href="/register">sign up</a>
+  </div>
+ </form>
+</body>
+</html>

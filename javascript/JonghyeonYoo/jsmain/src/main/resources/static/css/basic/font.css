@@ -1,0 +1,11 @@
+/*https://fonts.google.com/ 여기서 폰트 받아오기 가능 */
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Indie+Flower&family=Nanum+Myeongjo&display=swap');
+
+.ng-font{
+font-family: 'Indie Flower', '인디플로워'; /* 웹 폰트 지정 */
+}
+
+p{
+font-size: 30px;
+}

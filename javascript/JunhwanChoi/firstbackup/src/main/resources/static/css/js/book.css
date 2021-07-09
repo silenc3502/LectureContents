@@ -1,0 +1,22 @@
+body {
+    /* background:url('/img/sale.png') repeat-x top left; */
+    background:url('/img/sale.png') repeat-x top;
+}
+/*h1 {
+    text-align: center;
+    margin-top: 400px;
+    color: blue;
+}*/
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-top: 400px;
+  padding: 0.7rem 0.7rem 0.7rem 2rem;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgb(254, 107, 139) 30%, rgb(255, 142, 83) 90%);
+  box-shadow: rgba(255, 105, 135, 0.3) 0px 3px 5px 2px;
+}
+p {
+    text-align: center;
+    width: 98%; margin-bottom: 10px; padding: 10px; border: 1px solid #cccccc;
+}

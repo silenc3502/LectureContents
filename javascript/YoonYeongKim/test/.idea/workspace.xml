@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="71c55241-d676-490d-a538-9a4d9e0eb602" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day22Lecture/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day23Lecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenLecture/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenLecture/EighteenLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenthLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenthLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenthLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenthLecture/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenthLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighteenthLecture/EighteenthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighthLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighthLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighthLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighthLecture/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighthLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EighthLecture/EighthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EleventhLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EleventhLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EleventhLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EleventhLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/EleventhLecture/EleventhLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifteenLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifteenLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifteenLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifteenLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifteenLecture/FifteenLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifthLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifthLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifthLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifthLecture/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifthLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FifthLecture/FifthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourteenthLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourteenthLecture/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourteenthLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourteenthLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourteenthLecture/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourteenthLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourteenthLecture/FourteenthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourthLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourthLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourthLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourthLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/FourthLecture/FourthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/KhTest/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/KhTest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/KhTest/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/KhTest/KhTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NineteenthLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NineteenthLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NineteenthLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NineteenthLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NineteenthLecture/NineteenthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NinethLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NinethLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NinethLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NinethLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/NinethLecture/NinethLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventeenLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventeenLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventeenLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventeenLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventeenLecture/SeventeenLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventhLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventhLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventhLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventhLecture/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventhLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SeventhLecture/SeventhLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixteenLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixteenLecture/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixteenLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixteenLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixteenLecture/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixteenLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixteenLecture/SixteenLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixthLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixthLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixthLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixthLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/SixthLecture/SixthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TenthLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TenthLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TenthLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TenthLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TenthLecture/TenthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/ThirteenthLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/ThirteenthLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/ThirteenthLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/ThirteenthLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/ThirteenthLecture/ThirteenthLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwelvethLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwelvethLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwelvethLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwelvethLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwelvethLecture/TwelvethLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwentiethLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwentiethLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwentiethLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwentiethLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/TwentiethLecture/TwentiethLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/views/About.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/views/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/Test/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day21Lecture/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/Test/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day21Lecture/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/Test/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/KhTest/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/Test/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day21Lecture/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/Test/Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day21Lecture/Day21Lecture.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]Test/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day22Lecture/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]Test/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day22Lecture/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]Test/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day21Lecture/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]Test/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day22Lecture/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]Test/[김윤영]Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day22Lecture/Day22Lecture.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]Test/src/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]숙제(05.03)/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day23Lecture/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]숙제(05.03)/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day23Lecture/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]숙제(05.03)/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day22Lecture/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]숙제(05.03)/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day23Lecture/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]숙제(05.03)/[김윤영]숙제(05.03).iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/YoonYeongKim/Day23Lecture/Day23Lecture.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/YoonYeongKim/[김윤영]숙제(05.03)/src/PrintTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1tyRM28vHPTrlGTJOnaEvSzbq86" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../vueprojectsample" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="test" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71c55241-d676-490d-a538-9a4d9e0eb602" name="Default Changelist" comment="" />
+      <created>1623739296045</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623739296045</updated>
+    </task>
+    <servers />
+  </component>
+</project>

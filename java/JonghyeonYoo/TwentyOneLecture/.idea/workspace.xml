@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3c6f9b37-0e13-4500-95f5-3c61d2c9237b" name="Default Changelist" comment="[유종현] 21일차 수업">
+      <change afterPath="$PROJECT_DIR$/../EighteenthLecture/src/Quiz56.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EleventhLecture/src/Pro44.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EleventhLecture/src/Quiz44.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TenthLecture/src/Quiz43.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecthure/src/Prob57.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecthure/src/Prob61.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecthure/src/SocketClientTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TwentyTwothLecthure/src/SoketSeverTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TwelvethLecture/src/Quiz45.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TwentiethLecture/src/SequenceConceptTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TwentiethLecture/src/SequenceConceptTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1tcKoJe4Sge1zawqT5XnIIfLUaR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.Prob60">
+    <configuration name="Prob60" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Prob60" />
+      <module name="TwentyOneLecture" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SortingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SortingTest" />
+      <module name="TwentyOneLecture" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Prob60" />
+        <item itemvalue="Application.SortingTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c6f9b37-0e13-4500-95f5-3c61d2c9237b" name="Default Changelist" comment="" />
+      <created>1623063114311</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623063114311</updated>
+    </task>
+    <task id="LOCAL-00001" summary="[유종현] 21일차 수업">
+      <created>1623133575791</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623133575791</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[유종현] 21일차 수업" />
+    <option name="LAST_COMMIT_MESSAGE" value="[유종현] 21일차 수업" />
+  </component>
+</project>

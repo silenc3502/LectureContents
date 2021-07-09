@@ -1,0 +1,13 @@
+div {
+    margin: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+#inline img{ /*  inline 은 가로 배치이지만 사이즈에 따라서 꽉 차게되면 내려간다.  */
+    /* 디폴트가 display: inline */
+    margin: 10px;
+}
+#block img{/*  inline 은 무조건 세로 배치 */
+    display: block;/*  display는 보여주는 방식을 의미한다. */
+    margin: 10px;
+}

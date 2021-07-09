@@ -1,0 +1,13 @@
+div {
+    width: 300px;
+    height: 300px;
+    boder-redius: 10px;
+}
+.grad {
+    backgrond: purplr;
+    background: -webkit-linear-gradient(left top, blue, white);
+    background: -moz-linear-gradient(left top, blue, white);
+    background: -o-linear-gradient(left top, blue, white);
+    background: linear-gradient(left top, blue, white);
+
+    }

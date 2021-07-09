@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <label>
+      <!-- model: 양방향 -->
+      <input type="checkbox" v-model="val"> {{ val }}
+    </label>
+    <!-- value 값을 지정하지 않으면 다 같은 groupVal로 연결되어 있기 때문에 세개 모두 체크 됨
+         value 값을 지정하면 체크한 값만 groupVal배열에 들어 감 -->
+    <label><input type="checkbox" v-model="groupVal" value="A">A</label>
+    <label><input type="checkbox" v-model="groupVal" value="B">B</label>
+    <label><input type="checkbox" v-model="groupVal" value="C">C</label>
+    <p>{{ groupVal }}</p>
+    <br>
+    <label><input type="radio" v-model="radioGroupVal" value="a">A</label>
+    <label><input type="radio" v-model="radioGroupVal" value="b">B</label>
+    <label><input type="radio" v-model="radioGroupVal" value="c">C</label>
+    <p>{{ radioGroupVal }}</p>
+    <br>
+    <!-- multiple: 다중 선택 가능 -->
+    <select v-model="selectVal" multiple>
+      <option value="a">A</option>
+      <option value="b">B</option>
+      <option value="c">C</option>
+    </select>
+    <p>{{ selectVal }}</p>
+    <br>
+    <select v-model="selectOnce">
+      <option disabled="disabled">선택하세요.</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <p>{{ selectOnce }}</p>
+   </div>
+  <script src="/vue/vueModel.js"></script>
+</body>
+</html>

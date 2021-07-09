@@ -1,0 +1,16 @@
+div {
+    margin: 20px;
+    border: 1px solic #cccccc;
+    border-radius: 5px;
+}
+#inline img {
+    /* 디폴트가 display: inline */
+    /* inline은 무조건 가로로 나오는가?
+       ㄴㄴ 꽉 차면 아래로 배치된다 */
+    margin: 10px;
+}
+#block img  {
+    /* block은 무조건 세로로 나온다 */
+    display: block;
+    margin: 10px;
+}

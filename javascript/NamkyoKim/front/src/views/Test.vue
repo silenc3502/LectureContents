@@ -32,6 +32,8 @@
 
 <!-- javascript 관련 파트 작성 -->
 <script>
+import Vue from 'vue'
+import GlobalComponent from '../components/GlobalComponent.vue'
 import LocalComponent from "../components/LocalComponent.vue"
 export default {
     components:{

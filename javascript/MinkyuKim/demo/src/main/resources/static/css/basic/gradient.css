@@ -1,0 +1,16 @@
+div {
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+
+}
+
+.grad {
+    background: purple;
+    /*gradient를 왼쪽위에서 오른쪽아래쪽으로 그라데이션 */
+    background: -webkit-linear-gradient(left top, blue, white);
+    background: -moz-linear-gradient(left top, blue, white);
+    background: -o-linear-gradient(left top, blue, white);
+    background: linear-gradient(left top, blue, white);
+
+}

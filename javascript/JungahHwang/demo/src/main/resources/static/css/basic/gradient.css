@@ -1,0 +1,13 @@
+div {
+    width: 500px;
+    height: 300px;
+    border-radius: 10px; /* radius: 모서리 둥글게 */
+}
+.grad {
+    background: purple;
+    background: -webkit-linear-gradient(left top, blue, white);
+    /* 왼쪽위 파란색, 오른쪽 아래 흰색으로 그라데이션 */
+    background: -moz-linear-gradient(left top, blue, white);
+    background: -o-linear-gradient(left top, blue, white);
+    background: linear-gradient(left top, blue, white);
+}

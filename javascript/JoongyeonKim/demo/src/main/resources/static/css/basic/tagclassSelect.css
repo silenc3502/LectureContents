@@ -1,0 +1,5 @@
+h2.greenHighlight{    /* h2.greenHighlight라는 클래스를 만든다(h2에만 해당하게 한다) */
+    color:green;
+    font-weight:bold;
+    background-color: black;
+}

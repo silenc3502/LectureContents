@@ -1,0 +1,7 @@
+/* > ul한테만 들어간다 이 말 */
+/* 그것도 처음 만나는 ul한테만 */
+
+#container > ul {
+    border: 1px dotted blue;
+
+}

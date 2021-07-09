@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Daheng';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Daheng.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.ng-font{
+    font-family: 'Daheng';
+}
+
+p{
+    font-size: 25px;
+}

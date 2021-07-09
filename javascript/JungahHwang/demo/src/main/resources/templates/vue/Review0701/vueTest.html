@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="/css/vue/vueTest.css">
+</head>
+<body>
+  <div id="app">
+    <p>{{ message }}</p>
+    <ol>
+      <li v-for="item in list">{{ item }}</li>
+    </ol>
+    <!-- 버튼을 클릭했을 때 -->
+    <button v-on:click="buttonClickTest">클릭해보세요!</button>
+    <!-- v-model: thypleaf에서 th:feild="*{}" 처럼 양방향으로 데이터 전달과 압력이 됨 -->
+    <input v-model="initMsg">
+    <p>{{ initMsg }}</p>
+    <button v-on:click="show = !show">눌러보세요.</button>
+    <transition>
+      <p v-if="show">invisibility</p>
+    </transition>
+    <p>Hello {{ message }}</p>
+    <p>{{ message.length }}</p>
+    <p>{{ list[3] }}</p>
+    <p>{{ list[num] }}</p>
+    <button v-on:click="increment">카운팅 해보기!</button>
+    <p>{{ count }}번 클릭했습니다.</p>
+    <svg xmLns="http://www.w3.org/2000/svg" version="1.1">
+      <!-- v-bind: 데이터가 단방향으로 전달 됨 
+           cx, cy: 원의 중심을 기준으로 x값, y값 -->
+      <circle cx="100" cy="75" v-bind:r="radius" fill="lightblue"/>
+    </svg>
+    <input type="range" min="0" max="100" v-model="radius"><br><br><br>
+    
+    <!-- 간단한 게임 만들기 -->
+    <p>{{ randomNumber }}</p>
+    <button v-on:click="randomGeneration">랜덤 숫자 발생!</button>
+    <input v-model="monsterName">
+    <button v-on:click="addMonster">몬스터 추가하기</button>
+    <ul>
+      <!-- (monster, index) in monsters: monsters 배열에 있는 monster와 index를 같이 가져옴 -->
+      <li v-for="(monster, index) in monsters"
+        v-bind:key="monster.id"
+        v-bind:class="{ strong: monster.hp > 300 }">
+        ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }}
+        <span v-if="monster.hp > 300">강하다</span>
+        <button v-on:click="userAttack(index)">평타</button>
+        <button v-on:click="removeMonster(index)">몬스터 삭제</button>
+      </li>
+    </ul>
+  </div>
+  <script src="/vue/vueTest.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

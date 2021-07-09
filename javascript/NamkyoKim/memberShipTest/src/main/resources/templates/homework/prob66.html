@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+</head>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script>
+    // document는 현재 웹 상에 떠 있는 페이지 자체를 의미한다고 보면 됨
+    $(document).ready(function() {
+
+        var formObj = $("#homework");
+
+ // id="btnRegister"를 클릭했을때
+        $("#btnHomework").on("click", function() {
+            // URL register로 보낸다.
+            formObj.attr("action", "prob66");
+            // PostMapping
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+    });
+</script>
+
+<body>
+<h2>회원가입</h2>
+<form id="homework" th:action="@{prob66}" th:object="${homework}" method="post">
+    <table>
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" name="id" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="text" name="password" th:field="*{password}"></td>
+        </tr>
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnHomework">회원가입</button>
+</div>
+</body>
+</html>

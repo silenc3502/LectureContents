@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+#wrapper{
+    width: 600px;
+    margin: 0 auto;
+}
+
+h2{
+    text-align: center;
+}
+
+form{
+    background-color: rgb(120, 90, 189);
+    padding: 30px 30px;
+    color: rgb(45, 29, 29);
+    text-align: center;
+}
+
+input{
+    border: none;
+    width: 440px;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+.addBtn{
+    padding: 10px;
+    width: 80px;
+    border: none;
+    background-color: #f46f6f;
+    box-shadow: 2px 4px 6px #bd328a;
+    color : #e6dfdf;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    /* transform: 0.3;  /* 포커싱에 걸리는 시간 및 변경 타이밍 */
+}

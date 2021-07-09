@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url("/img/background3.jpg");
+    background-size: cover;
+    background-position: center center;
+    min-height: 93vh;
+    color: white;
+    margin: 0;
+}
+#page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-weight: bold;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 4.5rem;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+.countdown-container {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+.big-text {
+    font-weight: bold;
+    font-size: 6.5rem;
+    line-height: 1;
+    margin: 0 2rem;
+}
+.countdown {
+    text-align: center;
+}
+.times {
+    font-size: 1.3rem;
+}
+#bottom {
+    text-align: right;
+    margin-top: 10rem;
+    margin-right: 5%;
+}

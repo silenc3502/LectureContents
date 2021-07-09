@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js">
+
+</script>
+<body>
+
+<h1>회원 가입</h1>
+<fieldset style="width:500px; height:250px;">
+    <legend>회원 정보</legend>
+    <form id="signup" th:action="@{signupregister}" th:object="${signup}" method="post">
+        <table align="center">
+            <tr>
+                <td>아이디</td>
+                <!-- th:field의 경우엔 Signup 객체에 있는 id와 직접 맵핑시킴 -->
+                <td><input type="text" name="id" th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="password" th:field="*{password}"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="name" th:field="*{name}"><br>
+                    <!--cols="값", rows="값" 으로 입력창의 크기를 설정할 수 있다. -->
+            </tr>
+            <tr>
+                <td>핸드폰번호</td>
+                <td><select name="phone" th:field="*{phone}">
+                    <option value="">-- 선택 --</option>
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                    <option value="016">016</option>
+                </select>
+                    -
+                    <input type="text" name="phone" size="5" >
+                    -
+                    <input type="text" name="phone" size="5">
+                </td>
+            </tr>
+            <tr>
+                <td>생년월일</td>
+                <td>
+                    <select name="year" th:field="*{dateofbirth}">
+                        <option value="">-- 선택 --</option>
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                    </select>
+                    년
+                    <select name="month" th:field="*{dateofbirth}">
+                        <option value="">-- 선택 --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    월
+                    <select name="day" th:field="*{dateofbirth}">
+                        <option value="">-- 선택 --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                    일
+                </td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="text" name="email1" style="width:100px" th:field="*{email}"> @
+                    <input type="text" name="email2"  style="width:100px;" th:field="*{email}">
+                </td>
+            </tr>
+            <br>
+        </table>
+        <br>
+        <div align="center">
+            <button type="submit" id="btnSignup" >가입하기</button>
+            <button type="reset" id="btnReset">재입력</button>
+        </div>
+
+    </form>
+</fieldset>
+</body>
+</html>

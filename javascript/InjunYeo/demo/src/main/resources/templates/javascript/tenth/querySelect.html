@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/js/change-color.css">
+
+</head>
+<body>
+  <h1 id="heading">자바스크립트가 간닷</h1>
+  <p id="text">글자를 클릭하세요</p>
+
+  <script>
+    //사실상 모두 비동기 방식으로 동작함
+    //document.querySelector()는 HTML 태그내에 있는 id를찾는역할을 수행함
+    //객체값을 얻어온것이다.
+    var heading = document.querySelector('#heading');
+
+    //객체를 클릭했을때.function(작동) -> heading.style을 바꾼다.
+    heading.onclick = function(){
+      heading.style.color = "red";
+  }
+  </script>
+
+</body>
+</html>

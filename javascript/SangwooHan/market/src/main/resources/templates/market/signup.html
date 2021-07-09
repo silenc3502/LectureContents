@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:td="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        var formObj = $("#signupBoard");
+
+        $("#signupbtn").on("click", function() {
+
+            formObj.attr("action", "signup");
+
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+
+         });
+</script>
+<body>
+<h1>나그넷 회원가입.</h1>
+<form id="signupBoard" th:acthion="@{signup}" th:object="signup" method="post">
+    <table>
+        <tr>
+            <td>아이디</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="userid" th:field="userid"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+        </tr>
+        <tr>
+            <td><input type="password" name="password" th:field="password"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="name" th:field="name"></td>
+        </tr>
+        <tr>
+            <td>생년원일</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="birthday" th:field="birthday"></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="gender" th:field="gender"></td>
+        </tr>
+    </table>
+</form>
+<button id="signupbtn">회원가입하기!</button>
+</body>
+</html>

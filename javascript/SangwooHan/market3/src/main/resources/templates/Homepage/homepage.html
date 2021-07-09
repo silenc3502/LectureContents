@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        table, th, td {
+    border: 1px solid #000000;
+    }
+    th {
+    padding: 15px;    /* 셀 테두리와 내용 사이의 간격 (패딩)*/
+    }
+    tr > td:nth-child(odd) {
+    width: 120px;    /*홀수번째 열의 너비 지정*/
+    }
+    tr > td:nth-child(even) {
+    width: 300px;    /*짝수번째 열의 너비 지정*/
+    }
+      p{
+    font-size: 32px; /* 글자크기*/
+    line-height: 25px; /* 줄 간격 */
+    }
+    </style>
+</head>
+<link rel="stylesheet" href="css/homepage/homepage.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        var formObj = $("#marketBoard");
+
+        $("#goMarketbtn").on("click", function() {
+        self.location = "MarketPage";
+        });
+         });
+</script>
+<style>
+img {
+    margin-left: 28%
+}
+
+a:first-child {
+    margin-left: 37%;
+}
+    h1{
+        margin-inline-start: 37%;
+
+        color: black;
+    }
+h2 {
+    margin-left: 1400px;
+
+    font-size: 1em;
+}
+
+</style>
+<body>
+<img src="homepagetop/img.png" width="800">
+<h1>나그넷에 오신것을 환영합니다!</h1>
+<h2><a id="dd" href="/signup">회원가입</a>
+    <a href="/loginpage">로그인</a>
+</h2>
+<div class="bar"> 안녕
+       <a href="/Community">커뮤니티</a>
+        <a  href="/Reservation">티켓예매</a>
+        <a href="/lists">회원장터</a>
+       <a href="/nagnetshoppingmall">나그넷마켓</a>
+      <a href="/memberList">회원정보</a>
+</div>
+
+
+
+</body>
+</html>

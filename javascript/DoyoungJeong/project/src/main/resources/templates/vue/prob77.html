@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <script>
+        #prob77 {
+            line-height: 10px;
+        }
+    </script>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="prob77">
+        <button v-on:click="showCreature(ranNum)">show Creature</button>
+        <p>등장할 크리처 번호 : {{ ranNum }}</p>
+
+        <ul>
+            <li v-for="(summonedCreature, index) in summonedCreatures"
+                v-bind:key="summonedCreature.id">
+                <!-- <span v-if="creature.id = ranNum">
+                이 아니라 밑에 것처럼 == 이었다.-->
+                <!-- <span v-if="creature.id == ranNum">-->
+
+                <!-- ID.{{ creature.id }} {{ creature.name }} HP.{{ creature.hp }} -->
+                ID.{{ summonedCreature.id }} {{ summonedCreature.name }} HP.{{ summonedCreature.hp }}
+                <button v-on:click="normalAttack(index)">평타</button>
+                <button v-on:click="ultimateAttack(index)">궁</button>
+            </li>
+        </ul>
+
+    </div>
+    <script src="/vue/second/prob77.js"></script>
+</body>
+</html>

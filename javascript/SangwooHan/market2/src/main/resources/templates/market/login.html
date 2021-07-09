@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       #loginbtn {
+        margin-inline-start: 40%;
+       }
+
+      table, th, td {
+      margin-left: auto;
+    margin-right: auto;
+      }
+        h2{
+        margin-inline-start: 37%;
+        }
+    </style>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        var formObj = $("#marketBoard");
+
+         $("#loginbtn").on("click", function() {
+
+            formObj.attr("action", "login");
+
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#signupbtn").on("click", function() {
+
+        self.location = "signup";
+        });
+
+        $("#gohomepages").on("click", function() {
+        self.location = "homepage";
+        });
+
+         });
+</script>
+<body>
+<h2>나그넷 로그인</h2>
+<form id="marketBoard" th:action="@{login}" th:object="${login}" method="post">
+    <table>
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" name="id" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" name="pw" th:field="*{pw}"></td>
+        </tr>
+    </table>
+
+    <button type="submit" id="loginbtn">로그인!</button>
+    <button type="submit" id="signupbtn">회원가입하기</button>
+    <button type="submit" id="gohomepages">홈페이지</button>
+</form>
+</body>
+</html>

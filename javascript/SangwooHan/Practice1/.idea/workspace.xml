@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="34f8b888-44d7-4e3f-a85f-c100a8e805f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Exam/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/src/main/java/com/example/Exam/Controller/controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/src/main/java/com/example/Exam/ExamApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/src/main/resources/templates/ddd.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/src/main/resources/templates/product/lists.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/src/main/resources/templates/product/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/src/main/resources/templates/product/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exam/src/test/java/com/example/Exam/ExamApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/src/main/java/com/example/Pratice/PraticeApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice/src/test/java/com/example/Pratice/PraticeApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/java/com/example/Pratice2/Pratice2Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/java/com/example/Pratice2/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/java/com/example/Pratice2/newcontroller/productcontroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/java/com/example/Pratice2/repository/ProductReopsitory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/java/com/example/Pratice2/sevice/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/java/com/example/Pratice2/sevice/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/resources/static/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/resources/templates/Product/lists.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/resources/templates/Product/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/resources/templates/Product/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/resources/templates/first/product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/main/resources/templates/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/sql/product.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pratice2/src/test/java/com/example/Pratice2/Pratice2ApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Verygood/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Verygood/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Verygood/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Verygood/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Verygood/Verygood.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/newcontroller/board/fifthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/newcontroller/product/productcontroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/fifth/lists.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/fifth/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/repository/BoardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/repository/NagNetReopsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/repository/NagNetReopsitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/service/BoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/service/BoardServicempl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/service/BoardServicempl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/templates/Test/NagNet/loginsite.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/Test/NagNet/loginsite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/fourth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/fourth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/fourth/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/templates/board/fourth/success.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1u46vdH8bBPzzcrc6A3VBvfKjia" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34f8b888-44d7-4e3f-a85f-c100a8e805f7" name="Default Changelist" comment="" />
+      <created>1623912756030</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623912756030</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

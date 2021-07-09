@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/vue/second.css">
+</head>
+    <script>
+    </script>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="prob80">
+
+        <p>userLev.{{ userStat.lev }} userStr.{{ userStat.str }} userVit.{{ userStat.vit }}
+            userDex.{{ userStat.dex }} userMana.{{ userStat.mana }}</p>
+        <p>직업.{{ userJob }}</p>
+        <p>사용자 경험치 / 레벨업. "{{ userExp }}" / "{{ levUp }}"</p>
+        <p>사용자 소지금 : {{ userMoney }}</p>
+
+        <div id="changeCareer" v-if="changeCareer">
+
+        <select v-model="job">
+            <option disabled="disabled">Choose Your Path!</option>
+            <option value="warrior">warrior</option>
+            <option value="archer">archer</option>
+            <option value="thief">thief</option>
+            <option value="magician">magician</option>
+        </select>
+
+        <button v-on:click="chooseJob">직업 선택</button></p>
+        </div>
+
+        <p>인벤토리 - 소지 아이템</p>
+        <ul>
+            <li v-for="(item, index) in inventory" v-bind:key="item.index">
+                <p>Name.{{ item.name }} Price.{{ item.price }} Effect.{{ item.effect }}
+                <button v-on:click="attach(index)">장착</button></p>
+            </li>
+        </ul>
+
+        <p>장착된 아이템</p>
+        <ul>
+            <li v-for="(item, index) in attachedItems" v-bind:key="item.index">
+                <p>Name.{{ item.name }} Price.{{ item.price }} Effect.{{ item.effect }}
+                    <button v-on:click="detach(index)">탈착</button></p>
+            </li>
+        </ul>
+
+        <label>
+            <input type="checkbox" v-model="showShopList" v-on:click="shuffleShopList">상점 목록 보기
+        </label>
+
+        <table border="1" v-if="showShopList">
+            <!-- showShopList이 true일 때만 table이 보인다 -->
+            <tr>
+                <th align="center" width="40">no</th>
+                <th align="center" width="120">name of item</th>
+                <th align="center" width="80">price</th>
+                <th align="center" width="200">item info</th>
+                <th align="center" width="40">buy</th>
+            </tr>
+            <tr v-for="(item, index) in shopList" v-bind:key="index + 1">
+                <th align="center" width="40">{{ index + 1 }}</th>
+                <th align="center" width="120">{{ item.name }}</th>
+                <th align="center" width="80">{{ item.price }}</th>
+                <th align="center" width="200">{{ item.effect }}</th>
+                <th align="center" width="40">
+                    <label>
+                    <input type="checkbox" v-model="shopListValue" v-bind:value="index">
+                    <!-- 개개별로 체크하려면 v-bind:value가 필요 -->
+                    </label>
+                </th>
+            </tr>
+        </table>
+
+        <button v-on:click="buyItem">아이템 구매</button>
+        <p>선택한 아이템 번호. {{ shopListValue }}</p>
+        <br>
+
+        <button v-on:click="showCreature">show Creature</button>
+        <p>등장할 크리처 번호 : {{ ranNum }}</p>
+        <button v-on:click="show5Creature">show 5 Creature</button>
+        <button v-on:click="meteorStrike">meteor Strike!!</button>
+        <dic v-if="userJob != 'none'">
+        <button v-on:click="advancedWideSkill">전직 전용 광역기!!</button>
+        <transition>
+        <p>{{ usedSkillName }} 사용!</p>
+        </transition>
+        </dic>
+        <ul>
+            <li v-for="(summonedCreature, index) in summonedCreatures"
+                v-bind:key="summonedCreature.id">
+                <!-- <span v-if="creature.id = ranNum">
+                이 아니라 밑에 것처럼 == 이었다.-->
+                <!-- <span v-if="creature.id == ranNum">-->
+
+                <!-- ID.{{ creature.id }} {{ creature.name }} HP.{{ creature.hp }} -->
+                <span v-if="summonedCreature.hp > 700">!!BOSS!!</span>
+                ID.{{ summonedCreature.id }} {{ summonedCreature.name }} HP.{{ summonedCreature.hp }}
+                <button v-on:click="normalAttack(index)">평타</button>
+                <button v-on:click="ultimateAttack(index)">궁</button>
+                <button v-on:click="advancedSkill(index)" v-if="userJob != 'none'">전직 전용 단일기!!</button>
+            </li>
+        </ul>
+
+    </div>
+    <script src="/vue/second/prob80.js"></script>
+</body>
+</html>

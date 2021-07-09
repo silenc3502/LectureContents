@@ -1,0 +1,67 @@
+body {
+    margin: 0; /*body의 바깥 여백을 없앰으로서 내비게이션 바가 페이지에 바짝 붙게 함*/
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    margin: 0; /*쓸 데 없는 공백 제거*/
+    padding: 0; /*쓸 데 없는 공백 제거*/
+    background-color: darkslategrey;
+    list-style-type: none; /*목록 기호 제거*/
+}
+/* .nav-container { position: fixed; top: 0; } */
+.nav-item {
+    padding: 15px;
+    cursor: pointer; /*마우스 커서를 pointer 모양으로 함*/
+}
+.nav-item a { /*nav-item 클래스 아래의 a 요소를 선택함*/
+    text-align: center;
+    text-decoration: none; /*밑줄 없앰*/
+    color: white;
+}
+
+.nav-item:nth-child(1) {
+    background-color: lightseagreen;
+}
+
+.nav-item:hover {
+    background-color: grey;
+    /*글자 및 배경색 수정*/
+}
+
+
+
+.main{
+    padding-top: 52px;
+}
+.main-display {
+    background-color: grey;
+    border: 1px solid #cccccc;
+    width: 100%;
+    height: 500px
+}
+.main-board1 {
+    float: left;
+    background-color: grey;
+    border: 1px solid #cccccc;
+    width: 49.8%;
+    height: 300px;
+}
+.main-board2 {
+    float: right;
+    background-color: grey;
+    border: 1px solid #cccccc;
+    width: 49.8%;
+    height: 300px;
+}
+
+.main-board3 {
+    display: inline-block;
+    background-color: grey;
+    border: 1px solid #cccccc;
+    width: 100%;
+    height: 300px;
+}

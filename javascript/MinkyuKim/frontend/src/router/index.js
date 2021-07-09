@@ -19,6 +19,10 @@ const routes = [
     // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+
+    // path: 는 실제 url 맵핑되는 경로가 설정된다.
+    // 보편적으로는 name과 component는 같은 이름을 사용하며
+    // 눈에 보여질 페이지가 배치된다(views에 보통 배치되어 있음)
     path: '/test',
     name: 'Test',
     component: Test

@@ -27,10 +27,10 @@ class Salary{
     public void printRandomSalary(){ // 초기랜덤 연봉값 출력구문
         System.out.printf("%s의 초기연봉은 = %d\n",employee,emSalary);
     }
-    public void printCalcSalary(int i){ // 계산후 출력구문
+    public void printCalcSalary(){ // 계산후 출력구문
         // 아래처럼 몇퍼센트 올랐는지도 표기하고싶어서 했는데 에러가 뜨네욤
         //System.out.printf("%s의 %d퍼 인상된 연봉은 = %d\n",employee,increase,emSalary);
-        System.out.printf("%s의 %d몇년차 인상된 연봉은 = %d\n",employee,i+1,emSalary);
+        System.out.printf("%s의 인상된 연봉은 = %d\n",employee,emSalary);
     }
 
     public String getEmployee() {
@@ -41,9 +41,6 @@ class Salary{
         return emSalary;
     }
 
-    public float getIncrease() {
-        return increase;
-    }
 }
 
 // 랜덤 연봉 적용을 해보자
@@ -56,6 +53,7 @@ class Salary{
 
 
 public class Prob43Remind {
+
     public static void main(String[] args) {
         // 직원들의 이름 배열 생성
         String []employeeArr = { "강한별","강떙떙","김아무","이아무"," 박아무",
@@ -82,7 +80,7 @@ public class Prob43Remind {
 
                 sum += sa[j].getEmSalary(); // 계산된 값을 get로 불러와서 sum =  sum + sa[j].getEmSalary()
                                             // 전체 연봉의 합산
-                sa[j].printCalcSalary(i);    // 따로 계산 print매서드를 만들어서 불러옴
+                sa[j].printCalcSalary();    // 따로 계산 print매서드를 만들어서 불러옴
 
             }
 

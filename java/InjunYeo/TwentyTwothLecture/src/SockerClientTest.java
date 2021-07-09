@@ -1,4 +1,5 @@
 import java.io.*;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
@@ -8,11 +9,13 @@ public class SockerClientTest {
     public static void main(String[] args) {
 
         //사설망이라 컴퓨터 털릴일 없으니 걱정 no!
-        String hostname = "192.168.0.13";
+        String hostname;
+                //= "192.168.0.13";
         int port = 33333;
 
         for(int i=0;i<10;i++){
             try{
+                hostname = InetAddress.getLocalHost().getHostAddress();
                 //클라이언트 자신의 소켓을 생성한다.
                 //생성할 때 나는 서버의 ip주소(hostname)에 서비스(port)에 접속하고 싶다는 요청을하면서 소켓을 만든다.
                 Socket sock = new Socket(hostname,port);

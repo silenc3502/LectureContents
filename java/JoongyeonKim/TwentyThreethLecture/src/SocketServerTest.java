@@ -13,7 +13,7 @@ import java.util.Date;
 public class SocketServerTest {
     //누군가 접속하면 접속 시간을 알려주는 서비스를 제공함
     public static void main(String[] args) {
-        int port = Integer.parseInt("33333");  //포트 번호를 33333으로 지정한다
+        int port = Integer.parseInt("33333");
 
         try{
             //소켓이란?
@@ -40,9 +40,11 @@ public class SocketServerTest {
                 // 클라이언트(입력) <-------------- 서버(출력)
                 // 클라이언트(출력) --------------> 서버(입력)
                 OutputStream out= sock.getOutputStream();
-                // PrintWriter에 소신용 객체를 배치함으로써
+
+                // PrintWriter에 송신용 객체를 배치함으로써
                 // writer.println 으로 구동시키는 것이 전송되게 만들었음
-                PrintWriter writer = new PrintWriter(out, true);
+                PrintWriter writer = new PrintWriter(out, true); //자동으로 flush 된다 = AutoFlush (즉 전송)
+
                 //현재 시간정보가 클라이언트에게 전송됨
                 writer.println(new Date().toString());
 
@@ -50,8 +52,10 @@ public class SocketServerTest {
                 InputStream in = sock.getInputStream();
                 // InputStream을 사용해서 들어오는 객체는 반드시 아래와 같이 읽어야 합니다.
                 // InputStreamReadder(): InputStream 읽기
+
                 // BufferedReader(): 데이터가 많이 들어오거나 빈번하게 지속적으로 들어올 수 있어
                 //                    버퍼를 가진 상태에서 읽기를 지원하기 위함
+                // 버퍼란? : 만약 데이터의 크기가 Buffer보다 크다면 나머지 데이터는 대기한다.
                 BufferedReader reader = new BufferedReader(new InputStreamReader((in)));
                 System.out.println("msg:"+reader.readLine());
             }

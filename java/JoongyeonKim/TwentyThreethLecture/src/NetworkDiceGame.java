@@ -8,7 +8,7 @@ class ServerCriticalSection {
     static int currentMyDice = 0;
 }
 
-public class NetworkDiceGame {
+public class NetworkDiceGame {  //게임을 실행하는 클래스
     int myDice;
     int targetDice;
 
@@ -34,7 +34,7 @@ public class NetworkDiceGame {
     }
 }
 
-class GameResultThread extends NetworkDiceGame implements Runnable {
+class GameResultThread extends NetworkDiceGame implements Runnable {  //승패를 가리는 클래스
 
     @Override
     public void run() {

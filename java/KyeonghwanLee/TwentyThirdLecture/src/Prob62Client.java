@@ -5,7 +5,6 @@ public class Prob62Client {
         GameStartProcess gsp = new GameStartProcess();
 
         gsp.createClient();
-        gsp.startGame();
         gsp.startThread();
     }
 }

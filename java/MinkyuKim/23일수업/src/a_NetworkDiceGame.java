@@ -168,4 +168,11 @@ class GameStartProcess extends a_NetworkDiceGame {
         sender.start();
         receiver.start();
     }
+
+    public String aaaa ( ) {
+        return "";
+    }
+    public String aaaa (GameRecvThread a) {
+        return "";
+    }
 }

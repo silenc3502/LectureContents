@@ -26,8 +26,6 @@ class Shop{
         myList = new ArrayList<String>();
         sc = new Scanner(System.in);
         isTrue = true;
-        listArr = new String[10];
-
 
     }
     public void PurchasList(){
@@ -37,23 +35,17 @@ class Shop{
     public void SaleList(){
         // 판매목록 / 판매후 목록
         System.out.println(saleslist);
-
         while (isTrue){
-            int i = 0;
             System.out.print("상품을 고르세요!! : ");
-            listArr[i] = sc.nextLine();
-                 myList.add(listArr[i]);
-                 saleslist.remove(listArr[i]);
-                 i++;
-            System.out.println(myList);
+           saleslist.remove(sc.nextLine());
+           // remove해서 remove한것을 구매자의 소지품myList에넣고싶었는데 계속 에러뜨고 막힌다 ..
+
             System.out.println(saleslist);
-                // remove해서 remove한것을 구매자의 소지품myList에넣고싶었는데 계속 에러뜨고 막힌다 ..
-            }
-
-
+            System.out.println(myList);
 
         }
 
+    }
 
     @Override
     public String toString() {

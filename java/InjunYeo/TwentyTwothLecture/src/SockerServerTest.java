@@ -20,8 +20,9 @@ public class SockerServerTest {
         // 결국 우리가 어떤 서비스에 접근하기 위해서는 무엇을 알아야한다 ? 아이피와 포트
         //도메인하고 연동이 되어있기때문에 도메인주소만 치면 아이피번호와 포트번호가 나온다.
 
-        int port = Integer.parseInt("33333");
+        //int port = Integer.parseInt("33333");
 
+        int port = 33333;
         try{/*
             소켓이란?
             전기분야에서 소켓에 전원코드를 연결 하면 전기 제품들이 구동하는것과  마찬가지로

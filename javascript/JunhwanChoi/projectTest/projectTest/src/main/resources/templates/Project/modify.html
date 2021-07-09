@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/cssfile/modify.css">
+
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var formObj = $("#board");
+
+        $("#btnModify").on("click", function() {
+            formObj.attr("action", "modify");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+            self.location = "lists";
+        });
+    });
+</script>
+
+
+</head>
+<body>
+<!-- header -->
+<div id="header">
+  <h2>회원정보 수정</h2>
+</div>
+
+<!-- wrapper -->
+<div id="wrapper">
+
+  <!-- content-->
+  <div id="content">
+    <form id="board"  th:object="${project}" method="post">
+      <input type="hidden" name="signupNo" th:field="*{signupNo}"/>
+
+      <div>
+        <h3 class="join_title">
+          <label for="id">아이디</label>
+        </h3>
+        <span class="box int_id">
+                        <input type="text" id="id" class="int" maxlength="20" th:field="*{id}" readonly="readonly">
+                    </span>
+      </div>
+
+
+      <div>
+        <h3 class="join_title"><label for="password">비밀번호</label></h3>
+        <span class="box int_pass">
+                        <input type="text" id="password" class="int" maxlength="20" th:field="*{password}">
+                    </span>
+      </div>
+
+
+      <div>
+        <h3 class="join_title"><label for="username">이름</label></h3>
+        <span class="box int_name">
+                         <input type="text" id="username" class="int" maxlength="20" th:field="*{username}" readonly="readonly">
+                    </span>
+        <span class="error_next_box"></span>
+      </div>
+
+      <div>
+        <h3 class="join_title"><label for="birth">생년월일</label></h3>
+        <span class="box">
+                        <input type="text" id="birth" class="int" maxlength="6" th:field="*{birth}" readonly="readonly">
+                        <span class="step">생년월일 6자리</span>
+                     </span>
+      </div>
+
+      <br>
+    </form>
+    <div><center>
+      <button type="submit" id="btnModify">회원정보 수정</button>
+      <button type="submit" id="btnList">목록 보기</button>
+    </center></div>
+  </div>
+</div>
+
+
+</body>
+</html>
+

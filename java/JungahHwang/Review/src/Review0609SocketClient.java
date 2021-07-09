@@ -15,12 +15,13 @@ public class Review0609SocketClient {
                 // 하면서 소켓을 만든다
                 Socket sock = new Socket(hostname, port);
                 OutputStream out = sock.getOutputStream();
+                PrintWriter writer = new PrintWriter(out, true);
                 // 서버에게 전송(송신)하기 위한 객체를 준비
 
                 String str = "Hollo Network Programming!!";
                 // 이 내용을 서버에게 write를 이용하여 전송함\
                 // 서버는 이 내용을 InputStream에서 읽는다
-                out.write(str.getBytes());
+                writer.println(str);
 
                 InputStream in = sock.getInputStream();
                 // 서버에서 입력(수신)받을 객체 생성을 준비

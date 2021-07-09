@@ -9,5 +9,6 @@ public class Prob62Server {
 
         gsp.createServer();
         gsp.startGame();
+        gsp.startThread();
     }
 }

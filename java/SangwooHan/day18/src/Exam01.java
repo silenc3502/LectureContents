@@ -28,4 +28,3 @@ public class Exam01 {
 //map 안에서의  Integer가 key를 말하는거 같고 inscect가 value를 말하는 것같다.
     }
 }
-//

@@ -16,7 +16,6 @@ public class AccelThread extends OperationAccelerator implements Runnable {
         localStart = id * threadPerData + 1;
         localEnd = localStart + threadPerData - 1;
         threadId = id;
-
     }
 
     public synchronized void addAll(double localSum) {
@@ -33,6 +32,7 @@ public class AccelThread extends OperationAccelerator implements Runnable {
         }
 
         System.out.printf("threadId = %d, localSum = %f\n", threadId, localSum);
+
         addAll(localSum);
 
         System.out.printf("threadId = %d, totalSum = %f\n", threadId, totalSum);

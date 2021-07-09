@@ -1,0 +1,15 @@
+/*v enter: 실제 HTML요소가 삽입되기 이전에 적용되고 한프레임 이후에 제거됨*/
+/*V enter active: enter에 대한 활성 및 종료 상태*/
+/* html 요소가 삽입 되기 이전에 적용됨
+transition이완료되면 제거됨*/
+/*v leave active v leav에 대한 활성 및 종료 상태로
+transition이 동작하여 적용된 이후 다시 transition이 동작하면 제거됨*/
+/*v leave to: transistion이 동작되고 transition이 끝나면 제거됨*/
+.v-enter-active, .v-leave-active {
+    transition: opacity 2s;
+}
+
+/*투명도를 2초동안 Fade in Fade out*/
+.v-enter, .v-leave-to {
+    opacity: 0;
+}

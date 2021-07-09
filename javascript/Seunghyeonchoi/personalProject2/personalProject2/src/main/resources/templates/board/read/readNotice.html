@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--//SeventhController 추가 내용. 게시물 본문 보기 등-->
+<script>
+    $(document).ready(function() {
+        var formObj = $("#boardnotice");
+
+        $("#btnModify").on("click", function() {
+            // 아래 절차를 통해 실제 boardNo 값을 획득한다.
+            var boardNoNotice = $("#boardNoNotice");
+            var boardNoNoticeVal = boardNo.val();
+
+            self.location = "modify?boardNoNotice=" + boardNoNoticeVal;
+        });
+           //method default 값은 post
+
+        $("#btnRemove").on("click", function() {
+            formObj.attr("action", "removeNotice");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+            self.location = "listsNotice";
+        });
+    });
+
+
+</script>
+
+<body>
+<h2>게시글</h2>
+
+<form id="boardnotice" th:object="${boardNotice}" method="post">
+    <input type="hidden" name="boardNoNotice" th:field="*{boardNoNotice}"/>
+
+    <table>
+        <tr>
+            <td>제목</td>
+            <td><input type="text" name="titleNotice"
+                       th:field="*{titleNotice}" readonly="readonly"></td>
+        </tr>
+        <tr>
+            <td>작성자</td>
+            <td><input type="text" name="writerNotice"
+                       th:field="*{writerNotice}" readonly="readonly"></td>
+        </tr>
+        <tr>
+            <td>본문</td>
+            <td><textarea cols="50" rows="20" name="content"
+                          th:field="*{contentNotice}" readonly="readonly"></textarea></td>
+        </tr>
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnModify">게시물 수정</button>
+    <button type="submit" id="btnRemove">게시물 삭제</button>
+    <button type="submit" id="btnList">게시글 목록 보기</button>
+</div>
+</body>
+</html>

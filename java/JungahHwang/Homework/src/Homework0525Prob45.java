@@ -91,15 +91,13 @@ class Player {
                     who[0], d[0].getSumDice(),who[1], d[1].getSumDice());
             meMoney += num;
             youMoney -= num;
-            System.out.printf("%s의 잔액은 %d원, %s의 잔액은 %d원 입니다.\n",
-                    who[0], meMoney, who[1], youMoney);
+            System.out.printf("%s의 잔액은 %d원, %s의 잔액은 %d원 입니다.\n",who[0], meMoney, who[1], youMoney);
         }else if(d[0].getSumDice() < d[1].getSumDice()){
             System.out.printf("%s: %d vs %s: %d로 상대방이 승리하였습니다.\n",
                     who[0], d[0].getSumDice(),who[1], d[1].getSumDice());
             meMoney -= num;
             youMoney += num;
-            System.out.printf("%s의 잔액은 %d원, %s의 잔액은 %d원 입니다.\n",
-                    who[0], meMoney, who[1], youMoney);
+            System.out.printf("%s의 잔액은 %d원, %s의 잔액은 %d원 입니다.\n",who[0], meMoney, who[1], youMoney);
         }else if(d[0].getSumDice() == d[1].getSumDice()){
             System.out.printf("%s: %d vs %s: %d로 무승부입니다. 게임을 다시시작합니다.\n",
                     who[0], d[0].getSumDice(),who[1], d[1].getSumDice());}

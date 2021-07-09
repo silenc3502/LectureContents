@@ -1,0 +1,19 @@
+body {
+    background: #222222;
+}
+
+.text1 {
+    color: rgb(255, 255, 255);
+}
+
+.text2 {
+    color: rgba(255, 255, 255, 0.8);
+}
+/* rgba의 a는 알파값을 의미함 */
+.text3 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.text4 {
+    color: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans|Jua');
+.bar {
+
+
+    padding-left: 15px;
+    height: 38px;
+    background: #66d28c;
+    color: #ffffff;
+    font-size: 1.2em;
+    line-height: 40px;
+
+
+}
+.font {
+
+font-family: 'Jua', sans-serif;
+
+}

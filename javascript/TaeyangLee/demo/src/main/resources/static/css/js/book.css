@@ -1,0 +1,13 @@
+body {background:url('/img_2.png') repeat-x top;}
+
+h1 {
+
+    text-align: center;
+    margin-top: 400px;
+}
+p {
+    background-color: skyblue;
+    width: 98%; margin-bottom:10px; padding: 10px; border: 3px solid #cccccc;
+    text-align: center;
+
+}

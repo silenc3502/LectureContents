@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="chooseTest">
+      <input type="checkbox" v-model="val">value: {{ val }}
+      <br>
+      <label>
+      <input type="checkbox" v-model="groupVal" value="A">A
+      </label>
+      <label>
+      <input type="checkbox" v-model="groupVal" value="B">B
+      </label>
+      <label>
+      <input type="checkbox" v-model="groupVal" value="C">C
+      </label>
+      <p>{{ groupVal }}</p>
+
+      <input type="radio" v-model="radioGroupVal" value="a">a
+      <input type="radio" v-model="radioGroupVal" value="b">b
+      <input type="radio" v-model="radioGroupVal" value="c">c
+      <p>{{ radioGroupVal }}</p>
+
+      <select v-model="selectVal" multiple>
+        <!-- multiple 다중 선택 가능 -->
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+      <p>{{ selectVal }}</p>
+      <br>
+
+      <select v-model="selectOne">
+        <option disabled="disabled">전직 선택</option>
+        <option value="warrior">전사</option>
+        <option value="thief">도적</option>
+        <option value="archer">궁수</option>
+        <option value="magician">법사</option>
+      </select>
+      <p>{{ selectOne }}</p>
+
+    </div>
+    <script src="/vue/second/chooseTest.js"></script>
+
+</body>
+</html>

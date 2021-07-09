@@ -1,0 +1,12 @@
+.box {
+    position: absoulte;         /* 박스가 배치되는 위치를 절대값으로 지정*/
+    left: 70px;
+    top: 50px;
+    width: 199px;
+    height: 59px;
+    background: #FFFFFF;
+    border: 3px solid blue;
+    text-align: center;
+    line-height: 60px;    /*줄간격*/
+
+}

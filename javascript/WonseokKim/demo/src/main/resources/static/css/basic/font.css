@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+.ng-font {
+    font-family: 'Nanum+Myeongjo', '나눔명조';  /* 웹 폰트 지정 한국어를 넣은 이유는 한국말도 쓸거라는 뜻*/
+}
+p {
+    font-size: 30px;
+}

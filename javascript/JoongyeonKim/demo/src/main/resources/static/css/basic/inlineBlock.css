@@ -1,0 +1,14 @@
+div {
+    border: 1px solid #cccccc;
+    border-radious: 5px;
+}
+#inline img {
+    /* 디폴트가 display: inline */
+    /* inline은 한줄 꽉 차면 아래로 배치됨 */
+    margin: 5px;
+}
+#block img {
+    /* block은 무조건 세로로 나옴 */
+    display: block;    /* display는 출력방법을 설정함 */
+    margin: 5px;
+}

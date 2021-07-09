@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form>
+    <fieldset>  <!-- <fieldset> 요소는 웹 양식의 여러 컨트롤과 레이블(<label>)을 묶을 때 사용합니다. -->
+      <legend>수강 신청하세요!</legend>  <!--  <legend>는 <fieldset>요소 그룹의 설명을 제공할 수 있습니다 -->
+      <ul>
+        <li>
+          <label for="lectures">교과목</label>  <!--<<label> 을 <input> 요소와 연관시키려면, <input> 에 id 속성을 넣어야합니다.
+                                               그런 다음 <label> 에 id 와 같은 값의  for 속성을 넣어야합니다.(요약:label for이 id를 제어함)-->
+          <select id="lectures">
+            <optgroup label="컴퓨터 공학">  <!-- optgroup는 각 카테고리같은 것을 만드는 기능이다  -->
+              <option value="os">운영체제 개론</option>  <!--<option value="os">에 "os"는 spring에 보낼때 명시된다 -->
+              <option value="ddd">도메인 주도 개발</option>
+              <option value="tdd">테스트 주도 개발</option>
+              <option value="dp">디자인 패턴</option>
+              <option value="vue">뷰</option>
+              <option value="react">리액트</option>
+            </optgroup>
+
+            <optgroup label="전자 공학">
+              <option value="circuit">회로이론</option>
+              <option value="firmware">펌웨어 프로그래밍</option>
+            </optgroup>
+
+            <optgroup label="경영학">
+              <option value="basic">경영학개론</option>
+              <option value="marketing">마케팅원론</option>
+            </optgroup>
+          </select>
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+</body>
+</html>

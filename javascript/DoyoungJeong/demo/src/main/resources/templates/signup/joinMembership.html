@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var formObj = $("#signup");
+
+        $("#btnSignup").on("click", function() {
+        formObj.attr("action", "joinMembership")
+        formObj.attr("method", "post");
+        formObj.submit();
+
+        });
+    });
+
+</script>
+<body>
+    <center><h3>Join Membership</h3></center>
+    <form id="signup" th:action="@{joinMembership}" th:object="${signup}" method="post">
+        <center><table>
+            <tr>
+                <td>ID</td>
+                <td><input type="text" name="ID" th:field="*{ID}"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" name="PW" th:field="*{PW}"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Birth Month</td>
+                <td><input type="number" name="birthMonth" value="1" min="1" max="12" step="1" th:field="*{birthMonth}"></td>
+            </tr>
+            <tr>
+                <td>Birth Day</td>
+                <td><input type="number" name="birthDay" value="1" min="1" max="31" step="1" th:field="*{birthDay}"></td>
+            </tr>
+            <tr>
+                <td>가입인사</td>
+                <td><textarea cols="40" rows="5" name="comment" th:field="*{comment}"></textarea></td>
+            </tr>
+        </table></center>
+    </form>
+    <div>
+        <center><button type="submit" id="btnSignup">가입</button></center>
+        <center><button type="submit" id="btnBack">뒤로가기</button></center>
+    </div>
+    <!--- xxx -->
+</body>
+</html>

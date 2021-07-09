@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<!-- 버튼 누르면 동작하는 과정을 서포트하는 라이브러리 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 아래 파트는 Run-Time에 작동하므로 오류에 좀 더 민감할 필요가 있음(발견하기 쉽지 않음) -->
+<script>
+    // document는 현재 웹 상에 떠 있는 페이지 자체를 의미한다고 보면 됨
+    $(document).ready(function() {
+        // form 태그에 id="item"에 해당하는 객체를 얻어옴
+        var formObj = $("#item");
+
+        // id="btnRegister"를 클릭했을때
+        $("#btnRegister").on("click", function() {
+            // URL register로 보낸다.
+            formObj.attr("action", "registerItem");
+            // PostMapping
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+            // 마찬가지로 URL입니다.
+            self.location = "list";
+        });
+    });
+</script>
+
+<body>
+<center>
+  <h3>상품 등록하기</h3>
+
+  <form id="item" th:action="@{registerItem}" th:object="${item}" method="post">
+    <table>
+      <tr>
+        <td>*상품명</td>
+      </tr>
+      <tr>
+        <td><input type="text" name="name"  placeholder="상품명을 입력해주세요."
+                   style="width:350px;height:40px;font-size:15px;"
+                   th:field="*{name}"></td>
+      </tr>
+      <tr>
+        <td>*판매 가격</td>
+      </tr>
+      <tr>
+        <td><input type="text" name="price" placeholder="ex) 18000"
+                   style="width:350px;height:40px;font-size:15px;"
+                   th:field="*{price}"></td>
+      </tr>
+      <tr>
+        <td>*판매자명</td>
+      </tr>
+      <tr>
+        <td><input type="text" name="seller" placeholder="판매자명을 입력하세요"
+                   style="width:350px;height:40px;font-size:15px;"
+                   th:field="*{seller}"></td>
+      </tr>
+    </table>
+  </form>
+  <div>
+    <button style="background-color: pink; border-color: pink; color: white"
+            type="submit" id="btnRegister">상품 등록하기</button>
+    <button style="background-color: pink; border-color: pink; color: white"
+            type="submit" id="btnList">상품 목록보기</button>
+  </div>
+</center>
+</body>
+</html>

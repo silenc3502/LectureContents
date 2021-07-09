@@ -1,0 +1,44 @@
+h2 {
+    font-size: 2em;
+    color: #2F5D62;
+    text-shadow: 0px -2px 3px #5A7C4BC;
+}
+.container {
+    background-color: #FDFAF6;
+    text-align: center;
+    width: 450px;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #cccccc;
+    border-radius: 2%;
+    padding: 20px;
+}
+#table {
+    border: 1px solid black;
+    font-size: 1.5em;
+    width: 400px;
+    height: 200px;
+    margin: auto;
+}
+#table th {
+    border-bottom: 1px solid gray;
+    background-color: #E4EFE7;
+    color: #2F5D62;
+}
+#table td {
+    background-color: #FAF1E6;
+    color: #5E8B7E;
+}
+#year1 {
+    border-left: 1px solid gray;
+}
+#year3 {
+    border-left: 1px solid gray;
+}
+#year10 {
+    border-left: 1px solid gray;
+}
+#thLine {
+    border-left: 1px solid gray;
+}

@@ -1,0 +1,7 @@
+h2 {
+    font-size:20px; / *글자크기 20픽셀*/
+    color: orange; /* 글자색 오렌지 */
+  }
+p {
+    color: purple;
+  }

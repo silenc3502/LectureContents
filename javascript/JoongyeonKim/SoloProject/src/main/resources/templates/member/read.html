@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+         //form id랑 같아야 한다
+        var formObj = $("#memberread");
+
+        $("#btnModify").on("click", function() {
+            var memberNo = $("#memberNo");
+            var memberNoVal = memberNo.val();
+
+            self.location = "modify?memberNo=" + memberNoVal;
+        });
+
+        $("#btnRemove").on("click", function() {
+            // form에는 url값이 와야한다
+            formObj.attr("action", "remove");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+            self.location = "memberIdLists";
+        });
+    });
+</script>
+
+<body>
+<h2>회원 정보</h2>
+
+<form id="memberread" th:object="${member}" method="post">
+    <input type="hidden" name="memberNo" th:field="*{memberNo}"/>
+
+    <table>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" name="name" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" name="id" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" id="password" name="pw" th:field="*{pw}"></td>
+        </tr>
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnModify">회원 정보 수정</button>
+    <button type="submit" id="btnRemove">회원 탈퇴</button>
+    <button type="submit" id="btnList">회원 목록 보기</button>
+</div>
+</body>
+</html>

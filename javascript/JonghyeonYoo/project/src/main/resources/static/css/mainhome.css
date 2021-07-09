@@ -1,0 +1,89 @@
+html, body{100%; background-color: #1b1b1b;}
+
+*{list-style: none;
+text-decoration: none;
+}
+
+header{text-align: center;}
+header h1 {position: absolute; left: 50px; top: 0;}
+header h1 a {width: 110px; height: 81px;color: red;}
+header .spot {position: absolute; right: 50px; top: 0;}
+header .lnb li {display: inline-block;}
+header .lnb li a{ display: block; height: 81px; padding: 0 35px; font-size: 25px; color: white;
+line-height: 55px;}
+header .spot {position: absolute; right: 50px; top: 0;}
+header .spot li {float: left;}
+header .spot li a{display: block; height: 81px; padding: 0 10px;
+line-height: 55px; color: white;}
+header .spot li:first-child:after {display: none;}
+header .spot li:last-child a{padding-right: 0;}
+
+.section input[id*="slide"] {
+    display:none;
+}
+.section .slidelist {
+    max-width:1400px;
+    margin: auto;
+    overflow:hidden;
+}
+.section .slidelist{
+    white-space:nowrap;
+    font-size:0;
+}
+.section .slidelist > li {
+    display:inline-block;
+    vertical-align:top;
+    width: 100%;
+    transition:all .5s;
+}
+.section .slidelist > li > a {
+    display:block;
+    position:relative;
+}
+.section .slidelist > li > a img{
+    width:100%;
+}
+.section .slide-control label {
+    position:absolute;
+    z-index:10;
+    top:50%;
+    transform:translateY(-50%);
+    padding: 50px;
+    cursor:pointer;
+}
+.section .slide-control .left {
+    left:100px;
+    background:url('/img/left-arrow.png')center center / 100% no-repeat;
+}
+.section .slide-control .right {
+    right:100px;
+    background:url('/img/right-arrow.png')center center / 100% no-repeat;
+}
+.section [id="slide01"]:checked ~ .slidelist .slideitem {transform:translateX(0%);}
+.section [id="slide02"]:check ~ .slidelist .slideitem {transform:translateX(100%);}
+.section [id="slide03"]:check ~ .slidelist .slideitem {transform:translateX(200%);}
+
+
+.visual {position: relative; padding: 0 50px;}
+.visual .con > div {height: 640px;}
+.visual .con .slide {background: url(/img/intro.png) no-repeat; center;}
+.visual .left{ font-size: 50px; color: white; position: absolute; left: 100px; margin-top: 320px;}
+.visual .right{font-size: 50px; color: white; position: absolute; right: 100px; margin-top: 320px;}
+.visual .control {position: absolute; left: 0; bottom: 55px; width: 100%; text-align: center;}
+.visual .control > div {display: inline-block; position: relative; padding: 0 45px 0 0;}
+.visual .control > div > div { position:absolute; right: 0;}
+.visual .control ul { display: inline-block; font-size: 0;}
+.visual .control li { display: inline-block; padding: 0 3px;}
+.visual .control li .on a {background: #fff;}
+.visual .control li a {display: block; width: 50px; height: 3px; background:rgba(255, 255, 255, 0.5); border: none;}
+.visual .control a {color: transparent;}
+
+
+
+.sub-title{display: table; width: 100%; height: 49px; text-align: center; vertical-align: middle; color: #a5a5a5; background-color: #252525;}
+.content{position: relative; padding: 30px 200px;}
+.content .movie1 {height: 300px;}
+.content .movie1 {display: block; float: left; padding: 0 5px; color: black;}
+.content .movie1 .parasite{width: 240px; height: 394px; display: block; border: 1px solid;}
+.content .movie1 .parasite .img {width: 240px; height: 346px; background: url(/img/img.png)no-repeat; background-size: cover;}
+

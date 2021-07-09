@@ -1,0 +1,41 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    cursor: pointer;
+    /* 상대 위치 */
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: rgba(254, 220, 255, 0.466);
+    font-size: 18px;
+}
+/* 격자 무늬: 홀수 번째에 색깔 주기 */
+ul li:nth-child(odd){
+    background-color: #f3c6ef7a;
+}
+
+ul li:hover {
+    background-color: #f3c6ef7a;
+} 
+
+ul li:hover:nth-child(odd){
+    background: rgba(254, 220, 255, 0.466)
+}
+
+.close {
+    /* 절대 위치 */
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px;
+    border: none;
+    background: lavenderblush;
+}
+
+.close:hover {
+    background-color: #f3c6ef;
+    color: rgb(207, 131, 207);
+}

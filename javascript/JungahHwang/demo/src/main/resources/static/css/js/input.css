@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+#wrapper {
+    width: 600px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    background-color: rgb(248, 241, 248);
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+    border-radius: 10%;
+}
+
+input {
+    border: none;
+    width: 440px;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+.addBtn {
+    padding: 10px;
+    width: 50px;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 1px 2px 4px #f3c6ef;
+    color: rgb(207, 131, 207);
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3;  /* 포커싱에 걸리는 시간 0.3초 */
+    font-weight: bold;
+}
+
+/* 후처리 */
+form::after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -20,7 +20,7 @@ public class SocketServerTest {
         try {
             // 소켓이란 ?
             // 전기 분야에서 소켓에 전원 코드를 연결하면 전기 제품들이 구동 가능한것과 마찬가지로
-            // 프로그래밍 분야에서 소켓이란 다른 컴퓨터와 내 컴퓨터를 연결하는 통로 역할을 한다.
+            // 프로그래밍 분야에서 소켓이란 다른 컴퓨터와 내 컴퓨터를 연결 n하는 통로 역할을 한다.
             // 그러니까 통신을 수행할 수 있도록 내 소켓을 만들었음
             ServerSocket servSock = new ServerSocket(port);
             System.out.println("Server: Listening - " + port);

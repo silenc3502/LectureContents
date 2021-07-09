@@ -11,9 +11,10 @@ public class SocketClientTest {
             try{
                 Socket sock = new Socket(hostname, port);
                 OutputStream out = sock.getOutputStream();
+                PrintWriter writer = new PrintWriter(out,true);
 
                 String str = "Hello NetWork Programming!!!";
-
+    writer.println(str);
                 out.write(str.getBytes());
 
                 InputStream in =sock.getInputStream();

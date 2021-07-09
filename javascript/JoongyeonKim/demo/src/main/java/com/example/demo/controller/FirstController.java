@@ -51,7 +51,7 @@ public class FirstController {
         return "first/tableTest2";
     }
 
-    @GetMapping("/Resume")  //  홈페이지의 주소값을 설정하는 부분 @GetMapping()을 통해서 설정한다
+    @GetMapping("/Resume")  //  Url을 맵핑한다 설정하는 부분 @GetMapping()을 통해서 설정한다
     public String Resume(){
         log.info("Resume()"); //Resume페이지에 들어갈때마다 Run창에 표시된다
 

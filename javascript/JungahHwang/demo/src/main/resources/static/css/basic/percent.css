@@ -1,0 +1,12 @@
+body {
+    background-color: #0094ff;
+}
+div{
+    background-color: white;
+    width: 40%;  /* 전체화면에서 div의 가로길이가 차지하는 영역을 퍼센트로 표시 */
+    padding: 15px;
+    border: 1px solid black;
+}
+p {
+    line-height: 30px;
+}

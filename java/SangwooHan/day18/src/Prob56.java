@@ -94,10 +94,10 @@ public class Prob56 {
             do{
 
                 randNum2 = (int)(Math.random() * 10);
-                addNum2.add(randNum2);//[2 1]
+                addNum2.add(randNum2);//[2  3 5 5 6]
                 if(checkOverlap2.indexOf(addNum2.get(i)) == -1){
 
-                    checkOverlap.add(addNum.get(i));//[2]
+                    checkOverlap.add(addNum.get(i));
                 }else if(checkOverlap2.indexOf(addNum2.get(i)) >= 0){
                     addNum2.remove(0);
 

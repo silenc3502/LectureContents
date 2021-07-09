@@ -22,7 +22,7 @@ public class SocketClientTest {
                 InputStream in = sock.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-                String time = reader.readLine();
+                String time = reader.r  eadLine();
                 System.out.println(time);
             } catch (UnknownHostException e) {
                 System.out.println("Server Not Found: " + e.getMessage());

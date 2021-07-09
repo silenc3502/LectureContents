@@ -3,6 +3,10 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
+class ServerCriticalSection {
+    static int currentMyDice = 0;
+}
+
 public class NetworkDiceGame {
     int myDice;
     int targetDice;
@@ -10,7 +14,7 @@ public class NetworkDiceGame {
     ServerSocket servSock;
     Socket sock;
 
-    final String SERVER_IP = "192.168.97.175";
+    final String SERVER_IP = "192.168.30.141";
     final int PORT = 33333;
 
     public NetworkDiceGame () {
@@ -60,6 +64,8 @@ class GameSendThread implements Runnable {
 
         this.dice = dice;
         this.sock = sock;
+
+        System.out.println("sock: " + sock);
     }
 
     @Override
@@ -72,14 +78,22 @@ class GameSendThread implements Runnable {
             System.out.print("게임을 진행하시겠습니까(y/n) ? ");
             String str = scan.nextLine();
 
+            System.out.println("str: " + str);
+
             if (str.equals("y")) {
+                ServerCriticalSection.currentMyDice = (int)(Math.random() * 6 + 1);
+
+                System.out.println("내 주사위 값: " + ServerCriticalSection.currentMyDice);
+
                 try {
                     out = sock.getOutputStream();
                     writer = new PrintWriter(out, true);
-                    writer.println(dice);
+                    writer.println(ServerCriticalSection.currentMyDice);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            } else {
+                break;
             }
         }
     }
@@ -110,9 +124,9 @@ class GameRecvThread implements Runnable {
                     System.out.println("msg: " + targetDice);
 
                     if (targetDice != 0) {
-                        if (myDice > targetDice) {
+                        if (ServerCriticalSection.currentMyDice > targetDice) {
                             System.out.println("나의 승리");
-                        } else if (myDice < targetDice) {
+                        } else if (ServerCriticalSection.currentMyDice < targetDice) {
                             System.out.println("상대편의 승리");
                         } else {
                             System.out.println("무승부");
@@ -132,9 +146,6 @@ class GameStartProcess extends NetworkDiceGame {
 
     public GameStartProcess () {
         super();
-
-        sender = new Thread(new GameSendThread(sock, myDice));
-        receiver = new Thread(new GameRecvThread(sock, myDice));
     }
 
     public void startGame () throws IOException {
@@ -142,7 +153,18 @@ class GameStartProcess extends NetworkDiceGame {
         System.out.println("[" + sock.getInetAddress() + "] client connected");
     }
 
+    // public void startClientThread () {
+    //     new GameSendClientThread();
+    //     new GameRecvClientThread();
+    // }
+
+    // public void startServerThread
     public void startThread () {
+        // new GameSendServerThread()
+        sender = new Thread(new GameSendThread(sock, myDice));
+        // new GameRecvServerThread()
+        receiver = new Thread(new GameRecvThread(sock, myDice));
+
         sender.start();
         receiver.start();
     }

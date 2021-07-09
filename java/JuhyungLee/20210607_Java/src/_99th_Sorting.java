@@ -9,7 +9,7 @@ public class _99th_Sorting {
 
         Integer[] numbers = {1, 2, 3, 33, 212, 213, 5135, 341, 545345, 8787};
         ArrayList<Integer> numbers_arrayList = new ArrayList<>(Arrays.asList(numbers));
-        // = List<Integer> numbers_arrayList = Arrays.asList(numbers) 라고 해도 됨.
+        // List<Integer> numbers_arrayList = Arrays.asList(numbers) 라고 해도 됨.
         Collections.sort(numbers_arrayList);
         System.out.println(numbers_arrayList);
 

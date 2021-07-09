@@ -3,29 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <title>자기소개서</title>
+    <style>
+      table, th, td {
+         border: 1px solid #000000;
+      }
+      th {
+        padding: 9px; /*셀 테두리와 내용 사이의 간격(패딩) */
+      }
+      tr > td:nth-child(odd){  /*홀수번째 열의 너비 지정 */
+        width: 180px;
+      }
+      tr > td:nth-child(even){  /*짝수번째 열의 너비 지정 */
+        width: 150px;
+      }
+    </style>
 </head>
 <body>
-<caption>
-    <h1><strong><mark style="background-color: gold;">[김중연]자기소개서</mark></strong></h1>
-</caption>
-  <h1>소개</h1>
-    <img src="img.png">
-    <ul>
-        <li>이름 : 김중연</li>
-        <li>군복무: 만기전역</li>
-        <li>취미: 독서, 요리, 달리기, 음악감상</li>
-        <li>Email: jjjr69@naver.com</li>
-        <li>GitHub: github.com/Kimjoongyeon</li>
-    </ul>
+  <table>
+      <caption>
+          <h1><strong>이력서</strong></h1>
+      </caption>
+      <th rowspan="6">1. 인적사항 </th>
+      <th rowspan="6"> 사진 </th>
+      <tr>
+          <th>이름(한글)</th>
+          <td colspan="4"></td>
+          <th>이름(영어)</th>
+          <td colspan="4"></td>
+      </tr>
+      <tr>
+          <th>생년월일</th>
+          <td colspan="4"></td>
+          <th>성별</th>
+          <td colspan="4"></td>
+      </tr>
+      <tr>
+          <th>병역사항</th>
+          <td colspan="4"></td>
+          <th>보훈대상여부</th>
+          <td colspan="4"></td>
+      </tr>
+      <tr>
+          <th>현주소</th>
+          <td colspan="8"></td>
+      </tr>
+      <tr>
+          <th>연락처</th>
+          <td colspan="4"></td>
+          <th>이메일</th>
+          <td colspan="4"></td>
+      </tr>
 
-<h2>경력</h2>
- <ul>
-     <li></li>
- </ul>
+         <th rowspan="6">2. 학력사항</th>
+      <tr>
+          <th>기간(년,월)</th>
+          <th>학교명(학위)</th>
+          <th colspan="2">전공학과</th>
+          <th colspan="2">학점/만점 </th>
+          <th colspan="2">소재지</th>
+      </tr>
+      <tr>
+          <th></th>
+          <th></th>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+      </tr>
+      <tr>
+          <th></th>
+          <th></th>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+      </tr>
+      <tr>
+          <th></th>
+          <th></th>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+      </tr>
+      <tr>
+          <th></th>
+          <th></th>
+          <th colspan="2"></th>
+          <th colspan="2"> </th>
+          <th colspan="2"></th>
+      </tr>
 
-<h2>학력</h2>
-<ul>
-    <li>Kh정보교육원 자바기반웹프로그래밍( 2021. 05. 07 ~ 2021. 12. 08)</li>
-</ul>
+      <th rowspan="5">3. 자격증 및 교육사항</th>
+      <tr>
+          <th colspan="2">취득일자(년,월)</th>
+          <th colspan="2">자격 및 교육명</th>
+          <th colspan="3">발급기관</th>
+          <th>점수/등급</th>
+      </tr>
+      <tr>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+          <th colspan="3"></th>
+          <th></th>
+      </tr>
+      <tr>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+          <th colspan="3"></th>
+          <th></th>>
+      </tr>
+      <tr>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+          <th colspan="3"></th>
+          <th></th>
+      </tr>
+      <tr>
+          <th rowspan="4">4. 외국어 공인사항</th>
+      </tr>
+      <tr>
+          <th colspan="2"></th>
+          <th colspan="4"></th>
+          <th colspan="2"></th>
+      </tr>
+      <tr>
+          <th colspan="2"></th>
+          <th colspan="4"></th>
+          <th colspan="2"></th>
+      </tr>
+      <tr>
+          <th colspan="2"></th>
+          <th colspan="4"></th>
+          <th colspan="2"></th>
+      </tr>
+
+      <th rowspan="4">5. 수 상 경 력</th>
+      <tr>
+          <th colspan="2">일자</th>
+          <th colspan="2">단체</th>
+          <th colspan="4">내용</th>
+      </tr>
+      <tr>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+          <th colspan="4"></th>
+      </tr>
+      <tr>
+          <th colspan="2"></th>
+          <th colspan="2"></th>
+          <th colspan="4"></th>
+      </tr>
+
+      <th rowspan="4">6.경 력 사 항</th>
+      <tr>
+          <th>회사명</th>
+          <td colspan="10"></td>
+      </tr>
+      <tr>
+          <th>근무기간</th>
+          <td colspan="10"></td>
+      </tr>
+      <tr>
+          <th>근무부서/직위</th>
+          <td colspan="10"></td>
+      </tr>
+  </table>
+
 </body>
 </html>

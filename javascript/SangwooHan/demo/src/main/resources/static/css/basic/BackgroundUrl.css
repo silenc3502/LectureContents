@@ -1,0 +1,12 @@
+div{
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+    display: block;
+    border: 2px solid;
+    border-radius: 70px/40px; /*라운딩을 통해 둥글게*/
+}
+.bg {
+    background: url(/mark1.jpg) no-repeat;
+    background-size: cover;
+}

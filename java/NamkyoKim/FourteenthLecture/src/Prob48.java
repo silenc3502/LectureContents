@@ -1,57 +1,40 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+// 숙제는 강사님이 풀이해주신코드를 완성하기 !
+// 일단 출력하는 구문부터 다듬고
+// 할수있다면 중복까지 제거 해보자 !
+
 class Roulette {
-    // ArrayList를 통해 사람 이름을 여러개 받을 수 있도록 구성
-    ArrayList<String> nameLists;
-    // 임시로 저장하는데 활용하기 위한 백업용 배열
-    String[] tmpArr;
-    // 랜덤한 숫자를 할당하는데 사용할 백업용 인덱스 배열
-    int[] tmpIdx;
-    // 당첨자들의 인덱스를 저장할 배열
-    int[] success;
-    // 실제 몇명의 참가자가 있는지
-    int nameLength;
-    // 중복 검사를 위한 변수
-    Boolean isRedundant;
+    ArrayList<String> nameLists; // ArrayList<String> <여기엔 데이터 타입!> 선언
+    String[] tmpArr; // 이름을 받을 String 배열 선언
+    int[] tmpIdx; // 이름배열의 길이로 만들고 인덱스에 랜덤값을부여하려는 목적의 변수?
+    int[] success; // 3개의 번호를 뽑아서 담을 배열 선언?
 
-    final int SUCCESS_MAX = 3;
+    int nameLength; // 이름배열의 길이를 담을 변수 선언
+    Boolean isRedundant; // 참과 거짓을 나타내는 변수선언
 
-    final int DATA_INT = 1;
-    final int DATA_STRING = 2;
+    public Roulette (String[] names) { // 생성자에 인자에 이름값들을 담을 매개변수선언
+        nameLength = names.length; // 변수에 이름배열길이 초기화
+        isRedundant = true; // Boolean타입을  true로 초기화
 
-    // 생성자 ===> 초기화
-    public Roulette (String[] names) {
-        nameLength = names.length;
-        isRedundant = true;
+        nameLists = new ArrayList<String>(); // ArrayList의 객체 생성?
+        tmpArr = new String[nameLength]; // tmpArr에 이름값들의 배열를 생성
+        tmpIdx = new int[nameLength]; // tmpIdx에 이름(인덱스값)배열의 길이만큼 배열을 생성
 
-        nameLists = new ArrayList<String>();
-        tmpArr = new String[nameLength];
-        tmpIdx = new int[nameLength];
+        success = new int[3]; // 위에서 선언 한 success에 3개의 인덱스방을 초기화?생성?
 
-        success = new int[SUCCESS_MAX];
-
-        // for 문 사용하지 않고 배열 저장하기
-        // names 배열을 tmpArr 배열에 대입함
-        tmpArr = names;
-
-        /*
         int i = 0;
-        for (String name : names) {
-            tmpArr[i++] = name;
+
+        for (String name : names) { // forEach로 생성자에서 인자로 받은값들을 순서대로 하나하나씩 넣어줌
+              tmpArr[i++] = name; // 무슨 기능인지 이해안됨 ..
         }
-         */
     }
 
-    // idx는 현재 할당받은 인덱스 값
-    // | B | A | C |
-    //          idx
-    //   0   1
-    // 현재 인덱스가 중복인지 아닌지 보는 것이므로
-    // 현재 인덱스 앞에 있는 녀석까지중에 같은게 있는지 없는지만 보면 된다.
-    private Boolean checkDuplicate (int[] arr, int idx) {
-        for (int i = 0; i < idx; i++) {
-            if (arr[i] == arr[idx]) {
+    private Boolean checkDuplicate (int idx) { // 중복값을 체크하는 매서드 매개변수를 두었음
+        for (int i = 0; i < idx; i++) {         // 다른 매서드에서 인자로 값을 주고 중복값을 체크하는 기능?
+           if (tmpIdx[i] == tmpIdx[idx]) {
+
                 return true;
             }
         }
@@ -59,184 +42,88 @@ class Roulette {
         return false;
     }
 
-    public void doGemble () {
-        checkDuplicateArr(tmpIdx);
-        checkDuplicateArr(success);
-        // printSuccessArr();
-        printIntArr(tmpIdx);
-        printStringArr(tmpArr);
-        printIntArr(success);
-
-        printWinner();
-    }
-
-    public void checkDuplicateArr (int[] arr) {
-        int i = 0;
-
-        isRedundant = true;
-
-        do {
-            arr[i] = (int)(Math.random() * nameLength);
-            //success[i] = (int)(Math.random() * nameLength);
-
-            if (checkDuplicate(arr, i)) {
-                continue;
-            }
-
-            i++;
-
-            if (i == arr.length) {
-                isRedundant = false;
-            }
-        } while (isRedundant);
-    }
-
-    // 셔플(카드 섞기랑 동일)
     public void shuffle () {
         int i = 0;
 
         isRedundant = true;
 
-        // 중복 검사를 하며 각각에 모든 중복되지 않는 숫자(0 ~ 사람숫자 - 1)를 할당함
-        // 현재는 shuffle() 매서드와 checkSuccess() 매서드가 사실상 동일 패턴을 가지고 있음
-        // 그러므로 리팩토링을 통해 이 부분의 중복을 제거할 수 있다.
         do {
-            // 랜덤값 아무거나 가져옴
-            tmpIdx[i] = (int)(Math.random() * nameLength);
+            tmpIdx[i] = (int)(Math.random() * nameLength); // 사람들의 값들을 랜덤으로 만드는 구문
 
-            // 중복 검사
-            if (checkDuplicate(tmpIdx, i)) {
-                // 중복이면 다시 랜덤값 할당
+            if (checkDuplicate(i)) { // 체크하기위해 if로 조건을 걸고 조건이 성립한다면 continue로 다음진행
                 continue;
             }
 
-            // 중복이 아니라면 다음 인덱스에 랜덤값을 받기 위해 인덱스 하나 증가
-            i++;
+            i++; // i를 1씩 증가
 
-            // 전체 사람 숫자만큼 랜덤을 모두 할당했다면 더 이상 반복이 필요 없으므로 루프 탈출
-            if (i == nameLength) {
-                isRedundant = false;
+            if (i == nameLength) { // 증가하다가 이름의 길이와 같다면 isRedundant = false로
+                isRedundant = false; // do~while문 끝
             }
         } while (isRedundant);
     }
 
-    // 리팩토링 대상
-    public void checkSuccess () {
+    public void checkSuccess () { // 3명의 당첨자를 뽑기위한 매서드
         int i = 0;
 
         isRedundant = true;
 
         do {
-            success[i] = (int)(Math.random() * nameLength);
+            success[i] = (int)(Math.random() * nameLength); // 이제 랜덤으로 3명을 뽑을 랜덤값 추출구문
 
-            if (checkDuplicate(success, i)) {
-                continue;
+            if (checkDuplicate(i)) { // 중복의 체크 구문 근데 중복이 나고있는데 ..가끔씩.. 원인을 찾질못하겠다 ..
+                continue;           // 위에 매서드와 같은원리 조건이 성립한다면 다음 진행
             }
 
-            i++;
+            i++;        // i 값 1씩 증가
 
-            if (i == 3) {
-                isRedundant = false;
+            if (i == 3) { // 0번 인덱스 1번인덱스 2번인덱스 값만 뽑을 것이기 떄문에 i가 3과 같다면 false로
+                isRedundant = false; // do~while문 끝
             }
         } while (isRedundant);
     }
 
-    // 아래 두개의 매서드도 유사한듯 유사하지 않은 성향을 가짐
-    // 그러므로 이 또한 리팩토링 대상이다.
-    public void printSuccessArr () {
+    public void printSuccessArr () { // 출력하는 구문을 만들어봤음
         for (int i = 0; i < 3; i++) {
-            System.out.printf("success[%d] = %d\n", i, success[i]);
+            System.out.printf("%d번이 뽑혔습니다 !! 당첨자는 !?! %s 입니다!!! 축하드립니다!!\n",
+                    success[i],tmpArr[success[i]]);
+            //  이것저것 적어보면서 돌려봤는데 이렇게 출력하는게 아래에 적어놓은 순서로 뽑아서
+            // 이런식으로 설정했습니다 그리고 알아보기 쉽게 사람이름에 순서대로 번호를 부여함
+
+
         }
     }
 
-    // 위의 코드를 현재 상황에서 그나마 예쁘게 리팩토링 한다면
-    public void printIntArr (int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.printf("arr[%d] = %d  ", i, arr[i]);
-
-            if (i % 5 == 4) {
-                System.out.println();
-            }
-        }
-        System.out.println();
-    }
-
-    // 문자열 출력 <<< 리팩토링 대상
-    public void printArr () {
-        for (int i = 0; i < nameLength; i++) {
-            System.out.printf("tmpArr[%d] = %s\n", i, tmpArr[i]);
-        }
-    }
-
-    public void printStringArr (String[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.printf("arr[%d] = %s   ", i, arr[i]);
-
-            if (i % 5 == 4) {
-                System.out.println();
-            }
-        }
-        System.out.println();
-    }
-
-    // 아직 멀티 데이터 타입 처리하는 방식을 학습하지 않았기 때문에
-    // String 타입의 배열, int 타입의 배열을 혼성하여 인자로 받을 수 없음
-    public void printVariousArr (int[] arr, int option) {
-        for (int i = 0; i < arr.length; i++) {
-            if (option == DATA_INT) {
-                System.out.printf("arr[%d] = %d\n", i, arr[i]);
-            } else if (option == DATA_STRING) {
-                System.out.printf("arr[%d] = %s\n", i, arr[i]);
-            }
-        }
-    }
-    public void printWinner(){
-        for(int i = 0; i < success.length; i++){
-            System.out.printf("당첨자의 이름은 = %s\n",tmpArr[tmpIdx[success[i]]]);
-        }
-    }
-
-    // sout(클래스 객체)
-    // 클래스 객체 내부에 우리가 지정한 내용물을 볼 수 있다.
-    // 지정한 내용물이란 ? return에서 뿌려주는 내용
     @Override
-    public String toString() {
-        return "Roulette{" +
-                "tmpIdx=" + Arrays.toString(tmpIdx) +
-                '}';
+    public String toString() { // 랜덤으로 돌린 값들을 출력
+        return "랜덤으로 사람이름순서를 바꿉니다!!" +
+                "바꾼 번호를 나열합니다 !! : \n" + Arrays.toString(tmpIdx);
     }
 }
 
 public class Prob48 {
     public static void main(String[] args) {
-        String[] names = {
-                "박세진", "김창욱", "김민규", "김중연", "문성호",
-                "강병화", "최승현", "유종현", "한상우", "전승리",
-                "이경환", "최준환", "김원석", "여인준", "이태양",
-                "김윤영", "정도영", "황정아", "임초롱", "김남교",
-                "이주형", "김도연", "최혜주", "김도혜", "고재권",
-                "임익환", "안보미", "이상훈"
+        String[] names = { // 이름 초기화 이부분도 매서드로 하면 좋을듯 하다 !
+                "0.박세진", "1.김창욱", "2.김민규", "3.김중연", "4.문성호",
+                "5.강병화", "6.최승현", "7.유종현", "8.한상우", "9.전승리",
+                "10.이경환", "11.최준환", "12.김원석", "13.여인준", "14.이태양",
+                "15.김윤영", "16.정도영", "17.황정아", "18.임초롱", "19.김남교",
+                "20.이주형", "21.김도연", "22.최혜주", "23.김도혜", "24.고재권",
+                "25.임익환", "26.안보미", "27.이상훈"
         };
 
-        Roulette r = new Roulette(names);
+        Roulette r = new Roulette(names); // 생성자에서 인자를 두었기때문에 입력을 names함 이름배열의 입력
 
-        // 여기서 첫 번째 출력이 으아아앜 으로 바뀐다는 것은
-        // 역시나 객체(메모리)를 전달하면 규칙이 불변함을 의미한다.
-        // (규칙: 메모리는 원본이 전달, 값은 복제)
-        names[0] = "으아앜";
-        //r.printArr();
-
-        System.out.println(r);
-
-        /*
+        //---------------------------
+        // 실질적으로 r.shuffle() 값을 섞어준다는 의미에서 셔플인듯하다 셔플매서드부터 게임시작
         r.shuffle();
-        System.out.println(r);
-        r.checkSuccess();
-        r.printSuccessArr();
-         */
-
-        r.doGemble();
-
-        System.out.println(r);
+        System.out.println(r);          // 순서를 바꿔서 해봤지만 안된다 매서드를 하나하나
+        r.checkSuccess();               // 읽어보면서 순서의 의미를 조금은 알았다 ..
+        r.printSuccessArr();            // 수업시간에 설명해주실때 집중해서 들어야겠다 .. 아직
+                                        // 이 클래스 자체가 돌아가는 흐름만알지 구체적으로는 잘모르겠고
+                                        // 중복제거 하는 방법도 한번더 보고 따라해보면서 습득해야겠다 ..
+        //---------------------------------
+        // 중복 제거를 하려고 노력했지만 실패했습니다 ..
+        // 그리구 출력구문을 바꿨는데 강사님이 중복번호안뜨게 체크하는 매서드를 만들었는데
+        // 가끔 중복이 발생하네요 ㅠ 찾아봐도 보이질 않네요 제가 출력을 잘못해서 그런건지 ..
     }
 }

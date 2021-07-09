@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="vueapp">
+        <h1>{{ message }}</h1>
+        <p>{{ repeatText }}</p>
+        <p>{{ repeatText }}</p>
+        <p>{{ repeatText }}</p>
+        <p>{{ repeatText }}</p>
+        <p>{{ repeatText }}</p>
+        <p>{{ repeatText }}</p>
+        <p>{{ repeatText }}</p>
+    </div>
+</body>
+
+    <script>
+        var app = new Vue ({
+            el: '#vueapp',
+            data: {
+                message: '길어도 편하게 쓸 수 있다.' +
+                      '늘여서 쓸 필요가 없다.' +
+                      '허허허허허허허허허',
+                repeatText: '재활용 짱'
+            }
+        })
+    </script>
+</html>

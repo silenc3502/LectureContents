@@ -1,0 +1,8 @@
+/* 구글 웹폰트에서 퍼오기  pairings -> Roboto +항목 누르기 -> @import에서 긁어오기 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.ng-font {
+    font-family: 'Roboto', '로보토'; /*웹 폰트 지정, 폰트찾기 위하여 '로보토'도 적어둠 */
+}
+p {
+    font-size: 30px;
+}

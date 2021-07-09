@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //document 는 현재 웹상에 떠있는 페이지 자체를의미한다고 보면 됨
+    $(document).ready(function(){
+
+        var formObj = $("#board");
+        $("#btnRegister").on("click",function(){
+            //URL register로 보낸다.
+            formObj.attr("action","register");
+            //PostMapping
+            formObj.attr("method","post");
+            formObj.submit();
+            });
+
+            $("#btnList").on("click",function() {
+            //마찬가지로 URL
+                self.location = "lists";
+                });
+    });
+
+</script>
+<body>
+
+<h2>상품 등록</h2>
+
+<form id="board"  th:object="${product}" method="post">
+    <table>
+        <tr>
+            <td>상품이름</td>
+            <!-- th:field="*{title} Board객체에 있는 title과 직접맵핑시킴-->
+            <td><input type="text" name="productName" th:field="*{productName}"></td>
+        </tr>
+        <tr>
+            <td>상품가격</td>
+            <!-- th:field="*{title} Board객체에 있는 title과 직접맵핑시킴-->
+            <td><input type="text" name="productPrice" th:field="*{productPrice}"></td>
+        </tr>
+        <tr>
+            <td>상품설명</td>
+            <td><textarea cols="50" rows="20" name="productInfo" th:field="*{productInfo}"></textarea></td>
+        </tr>
+
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnRegister">상품 등록</button>
+    <button type="submit" id="btnList">상품 목록보기</button>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+div {
+    width: 300px;
+    padding: 35px;
+    border: 5px dotted #222222;
+    background: skyblue;
+    margin-bottom: 20px;
+}
+.bg1 {
+    background-clip: border-box;  /* boredr에 맞춰짐  */
+}
+.bg2 {
+    background-clip: padding-box;   /* padding 맞춰짐  */
+}
+.bg3 {
+    background-clip: content-box;   /* 입력된 글자(content)에 맞춰짐  */
+}

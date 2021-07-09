@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 450px;
+    margin: 0 auto;
+    border: 1px solid #cccccc;
+    border-radius: 2%;
+    box-shadow: 2px 2px 5px #333333;
+}
+
+.day1 {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.day h3 {
+    font-size: 12.em;
+    color: #666666;
+}
+
+.accent {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 3.5em;
+    color: #222222;
+}
+
+.bar {
+    width: 100%;
+    /* f12를 눌러써 꼭 확인해봐야함. 적용이 되었는지. auto같은 경우는 되는경우도있고, 안되는 경우도 있기에 특히 */
+    margin: 60px auto 0 auto;
+    padding-left: 15px;
+    height: 40px;
+    background: #747474;
+    color: #ffffff;
+    font-size: 1.2em;
+    line-height: 40px;
+}
+
+.day2 {
+    width: 420px;
+    margin: 20px auto 20px auto;
+}
+
+.day2 ul {
+    /* 동글뱅잉 없애기 */
+    list-style: none;
+    border-bottom: 1px dashed #cccccc;
+    height: 60px;
+}
+
+/*ul의 마지막을 의미함*/
+.day2 ul:last-child {
+    border-bottom: none;
+}
+
+.item-title {
+    float: left;
+    width: 160px;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 60px;
+}
+
+.item-date {
+    float: left;
+    margin-left: 60px;
+    font-size: 1.1em;
+    color: #222222;
+    line-height: 60px;
+}

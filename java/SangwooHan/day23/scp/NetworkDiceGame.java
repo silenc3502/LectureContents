@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class NetworkDiceGame {
     int myDice;
     int targetDice;
-`
+
     ServerSocket servSock;
     Socket sock;
 

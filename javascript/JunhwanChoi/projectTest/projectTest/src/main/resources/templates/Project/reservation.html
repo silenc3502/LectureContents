@@ -1,0 +1,68 @@
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+  <title>코로나19 선별진료소 - 보건복지부</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta name="author" content="보건복지부, 코로나바이러스감염증-19(COVID-19)">
+  <meta name="keywords" content="코로나바이러스감염증-19(COVID-19), 코로나바이러스감염증-19, 코로나바이러스, 코로나, 선별진료소, 선별 진료소, 선별진료소 목록다운로드">
+  <meta name="copyright" content="보건복지부">
+  <meta name="description" content="코로나바이러스감염증-19,선별진료소, 선별진료소검색, 선별진료소 지도검색, 선별진료소 목록다운로드, 전체선별진료소, ">
+  <meta name="format-detection" content="telephone=yes">
+  <meta property="og:url" content="http://www.mohw.go.kr/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="전체 선별진료소 - 보건복지부">
+  <meta property="og:locale" content="ko">
+  <meta property="og:title" content="전체 선별진료소 목록 - 보건복지부">
+  <meta property="og:image" content="http://ncov.mohw.go.kr/static/image/header/homeimg.png">
+  <meta property="og:description" content="코로나바이러스감염증-19,선별진료소, 선별진료소검색, 선별진료소 지도검색, 선별진료소 목록다운로드, 전체선별진료소, ">
+
+  <link rel="icon" type="image/png" sizes="64x64" href="/images/react/ROK.png">
+  <link rel="stylesheet" href="/css/react/base.css" />
+  <script src="/js/react/jquery-1.11.0.min.js"></script>
+
+  <style>
+		body { overflow-y:hidden; }
+		iframe { box-sizing:border-box; margin:0; padding:0;}
+	</style>
+
+  <script>
+	var url = window.location.href;
+
+	if( url.indexOf("https") == -1 ){
+		location.replace("https://www.mohw.go.kr/react/popup_200128_3.html");
+	}
+
+	function docHeight( where ) {
+		var thisH = $(document).outerHeight();
+		$(where).css({
+			"width" : "100%",
+			"height" : thisH + "px"
+		});
+	}
+	$(document).ready(function() {
+		docHeight( "#innerSrc" );
+	});
+	$(window).resize(function () {
+		docHeight( "#innerSrc" );
+	});
+	</script>
+</head>
+<body>
+
+<iframe src="ncov/selclinic04ls.jsp" id="innerSrc" title="선별진료소 목록" scrolling="yes" style="" />
+
+<!-- Global site tag (gtag.js) - Google Analytics //-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159814989-1"></script>
+<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-159814989-1');
+	</script>
+
+</body>
+</html>

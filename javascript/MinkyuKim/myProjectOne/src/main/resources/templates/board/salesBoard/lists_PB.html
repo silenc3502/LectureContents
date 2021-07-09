@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h2>판매글 목록 보기</h2>
+<a href="/drawingPurchase">글쓰기</a>
+
+<table border="1">
+  <tr>
+    <th align="center" width="640">제목</th>
+    <th align="center" width="150">작성자</th>
+    <th align="center" width="300">크기</th>
+  </tr>
+
+  <tr th:if="${#lists_PB.isEmpty(lists)}">
+    <td colspan="3">
+      현재 등록된 게시물이 없습니다!
+    </td>
+  </tr>
+
+  <tr th:each="artworkPurchaseBoard : ${lists_PB}">
+    <td align="left" th:text="${artworkPurchaseBoard.saleWriter}" th:text="${board.title}"></td>
+
+    <td align="center" th:text="${artworkPurchaseBoard.saleContent}"></td>
+
+    <td align="right" th:text="${artworkPurchaseBoard.size}"></td>
+
+  </tr>
+</table>
+
+</body>
+</html>

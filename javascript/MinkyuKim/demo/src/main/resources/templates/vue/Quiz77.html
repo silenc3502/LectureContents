@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id ="book">
+        <input v-model="monsterName">
+        <button v-on:click="appearingMonster">랜덤 몬스터 생성</button>
+
+        <ul>
+            <!-- v-bind:key - 키 밸류를 의미 -->
+            <!--아이디는 숫자, hp도 숫자 name은 그냥 그대로니  name.은 따로 필요가 없다 -->
+
+            <!--<li v-for="monster in monsters" 는 monster에 대한 정보만
+                 아래처럼 작성할 시 monster의 index를 함께 가져올 수 있다.-->
+            <li v-for="(monster, index) in monsterBook"
+                v-bind:key="monster.id">
+                ID.{{ monster.id }} {{ monster.name}} HP.{{ monster.hp }}
+            </li>
+        </ul>
+    </div>
+    <script src="/vue/second/quiz77.js"></script>
+</body>
+</html>

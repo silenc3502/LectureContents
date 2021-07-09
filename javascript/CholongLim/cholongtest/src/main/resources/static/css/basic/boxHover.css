@@ -1,0 +1,18 @@
+.box {
+    position: absolute;   /* 박스가 배치되는 위치를 절대값으로 지정 */
+    left: 100px;
+    top: 70px;
+    width: 200px;
+    height: 60px;
+    background: #ffffff;
+    border: 3px solid blue;
+    text-align: center;  /* 글자 위치 가운데 적용 */
+    line-height: 60px;
+}
+.box:hover {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+}

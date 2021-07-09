@@ -1,0 +1,4 @@
+.greenBoldtext{       /* .은 클래스를 만들어서 html에서 클래스를 불러낼수 있다 */
+    color:green;
+    font-weight:bold;
+}

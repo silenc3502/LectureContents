@@ -5,7 +5,6 @@ public class OperationAccelerator {
     private int dataEnd;
     private int numOfData;
     private int maxThreadNum;
-
     public OperationAccelerator(int start, int end, int maxThreadNum) {
         dataStart = start;
         dataEnd = end;

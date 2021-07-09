@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Free</title>
+</head>
+<body>
+<h2>게시판 목록 보기</h2>
+<a href="/registerFree">글쓰기</a>
+<table border="1" width="800" cellpadding ="10" cellspacing="0"
+       bordercolor="black">
+  <tr>
+    <th align="center" width="100">번호</th>
+    <th align="center" width="640">제목</th>
+    <th align="center" width="150">작성자</th>
+    <th align="center" width="240">등록일자</th>
+  </tr>
+  <tr th:if="${#lists.isEmpty(listsFree)}">
+    <td colspan="4">
+      현재 등록된 게시물이 없습니다!
+    </td>
+  </tr>
+  <!--아래 애들은 entity 애들-->
+  <tr th:each="boardfree : ${listsFree}">
+    <td align="center" th:text="${boardfree.boardNoFree}"></td>
+    <td align="left"><a th:href="@{|readFree?boardNoFree=${boardfree.boardNoFree}|}" th:text="${boardfree.titleFree}"/></td>
+    <td align="right" th:text="${boardfree.writerFree}"></td>
+    <td align="center" th:text="${#dates.format(boardfree.regDateFree, 'yyyy-MM-dd HH:mm:ss')}"></td>
+  </tr>
+
+</table>
+</body>
+</html>

@@ -16,9 +16,6 @@ class AA extends A{
     }
 }
 
-
-
-
 public class Review0601Extends {
     public static void main(String[] args) {
         A a = new A();

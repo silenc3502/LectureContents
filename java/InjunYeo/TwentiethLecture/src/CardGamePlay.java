@@ -72,6 +72,7 @@ class Game{
     int patternLength;
     int cardLength;
 
+
     Deck deck;
     Card[][] playDecks;
     Card[] myCards;
@@ -79,6 +80,10 @@ class Game{
 
     String[] patternDuplicationCheck;
     int[] numberOrderCheck;
+
+    Set<String> backupPattern;
+    Map<String,Integer>myCardDupliCounts;
+    Map<String,Integer>computerCardDupliCounts;
 
     Game(){
 
@@ -89,6 +94,17 @@ class Game{
         computerCards = new Card[DISTRIBUTED_CARD_NUMBER];
         patternDuplicationCheck = new String[DISTRIBUTED_CARD_NUMBER];
         numberOrderCheck = new int[DISTRIBUTED_CARD_NUMBER];
+        myCardDupliCounts = new HashMap<String,Integer>();
+        computerCardDupliCounts = new HashMap<String,Integer>();
+        backupPattern = new HashSet<>();
+
+
+        for(int i=0;i<deck.patternLength;i++){
+            String pattern = deck.patternType[i];
+            computerCardDupliCounts.put(pattern,0);
+            myCardDupliCounts.put(pattern,0 );
+            backupPattern.add(pattern);
+        }
 
         patternLength = deck.patternLength;
         cardLength = deck.cardNumberLength;
@@ -144,36 +160,38 @@ class Game{
 
      */
 
-    private void patternDuplicationCheck(Card[] checkingCards){
-        int duplicount=0;
-        HashSet<String> dupliPattern = new HashSet<String>();
+    private void patternDuplicationCheck(Card[] userCards,Map<String,Integer>cardsDuplicounts) {
 
-        for(int i=0;i<checkingCards.length;i++){
-            String pattern = checkingCards[i].cardPattern;
-            if(!dupliPattern.add(pattern)){
-                duplicount+=1;
+        for (int i = 0; i <userCards.length; i++) {
+            String key = userCards[i].cardPattern;
+            if(backupPattern.contains(key)){
+                int count = cardsDuplicounts.get(key);
+                cardsDuplicounts.put(key,++count);
             }
 
         }
-
-
-
-
     }
 
 
 
     //승리 조건 확인 메소드
+    public void conditionWhat(Map<String,Integer> DupliPatternCounts){
 
+    }
 
 
     public void playGame(){
         distributeCard(myCards);
         distributeCard(computerCards);
-        for(int i=0;i<4;i++){
-            System.out.println("내카드 :"+myCards[i].cardPattern+myCards[i].cardNumber);
-            System.out.println("컴퓨터 카드 :"+computerCards[i].cardPattern+computerCards[i].cardNumber);
-        }
+//        for(int i=0;i<4;i++){
+//            System.out.println("내카드 :"+myCards[i].cardPattern+myCards[i].cardNumber);
+//            System.out.println("컴퓨터 카드 :"+computerCards[i].cardPattern+computerCards[i].cardNumber);
+//        }
+        patternDuplicationCheck(myCards,myCardDupliCounts);
+        patternDuplicationCheck(computerCards,computerCardDupliCounts);
+//        System.out.println(myCardDupliCounts);
+//        System.out.println(computerCardDupliCounts);
+
     }
 
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<!-- 버튼 누르면 동작하는 과정을 서포트하는 라이브러리 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 아래 파트는 Run-Time에 작동하므로 오류에 좀 더 민감할 필요가 있음(발견하기 쉽지 않음) -->
+<script>
+    $(document).ready(function() {
+        var formObj = $("#product");
+        $("#btnRegister").on("click", function() {
+            formObj.attr("action", "register");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+        self.location = "lists";
+        });
+    });
+</script>
+
+<body>
+<h2>게시글 등록</h2>
+<form id="product" th:action="@{register}" th:object="${product}" method="post">
+  <table>
+    <tr>
+      <td>상품명</td>
+      <!-- th:field의 경우엔 Board 객체에 있는 title과 직접 맵핑시킴 -->
+      <td><input type="text" name="brandname" th:field="*{brandname}"></td>
+    </tr>
+    <tr>
+      <td>가격</td>
+      <td><input type="text" name="price" th:field="*{price}"></td>
+    </tr>
+    <tr>
+      <td>상품설명</td>
+      <!-- textarea는 글자를 여러개 입력할 수 있는 글 입력창이다 -->
+      <td><textarea cols="50" rows="20" name="content" th:field="*{content}"></textarea></td>
+      <!--cols="값", rows="값" 으로 입력창의 크기를 설정할 수 있다. -->
+    </tr>
+    <tr>
+      <td>작성자</td>
+      <td><input type="text" name="writer" th:field="*{writer}"></td>
+    </tr>
+  </table>
+</form>
+
+<div>
+  <button type="submit" id="btnRegister">상품 등록</button>
+  <button type="submit" id="btnList">상품 목록 보기</button>
+</div>
+</body>
+</html>

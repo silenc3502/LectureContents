@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h2>게시판 목록 보기</h2>
+<!-- '글쓰기'를 클릭하면 /register 페이지로 넘어가면서 게시글 등록 가능
+     a href="/": URL요청 -->
+<a href="/register">글쓰기</a>
+<table border="1">
+  <tr>
+    <th align="center" width="100">번호</th>
+    <th align="center" width="600">제목</th>
+    <th align="center" width="150">작성자</th>
+    <th align="center" width="240">등록일자</th>
+  </tr>
+  <!-- lists.isEmpty(): Thymeleaf 전용 검사 메소드 -->
+  <tr th:if="${#lists.isEmpty(lists)}">
+    <td colspan="4">
+      현재 등록된 게시물이 없습니다!
+    </td>
+  </tr>
+  <!-- th:each: Controller에서 넘어온 board 속성에 맵핑된 정보들을 하나씩 board에 집어넣음
+                자바에서 foreach랑 같음 -->
+  <tr th:each="board : ${lists}">
+    <td align="center" th:text="${board.boardNo}"></td>
+    <!-- |read?boardNo=${board.boardNo}|: read?boardNo=1, read?boardNo=3,
+         read?boardNo=7 형태로 게시물 번호에 해당하는 값을 셋함 -->
+    <td align="left"> <a th:href="@{|read?boardNo=${board.boardNo}|}" th:text="${board.title}"/></td>
+    <td align="right" th:text="${board.writer}"></td>
+    <!-- dates.format: 특정한 형식으로 날짜를 나타냄(아래는 년-월-일 시:분:초)-->
+    <td align="center" th:text="${#dates.format(board.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+  </tr>
+
+</table>
+
+</body>
+</html>

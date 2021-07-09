@@ -1,0 +1,4 @@
+.greenBoldText {      /* . <--이건 클래스 */
+    color: green;
+    font-weight: bold;
+}

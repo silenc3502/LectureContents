@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>게시글 목록</h2>
+    <table border="1">
+      <tr>
+        <td align="center" width="80">번호</td>
+        <td align="center" width="120">제목</td>
+        <td align="center" width="120">작성자</td>
+        <td align="center" width="80">등록일자</td>
+      </tr>
+
+      <tr th:if="${#lists.isEmpty(boardList)}">
+        <td colspan="4">
+          등록 게시물이 없습니다.
+        </td>
+      </tr>
+      <tr th:each="board : ${boardList}">
+        <td align="center" th:text="${board.boardNo}"></td>
+        <td align="center"><a th:href="@{|read?boardNo=${board.boardNo}|}" th:text="${board.title}"/></td>
+        <!-- ${board.boardNo}의 값과 같은 boardNo에 담긴 값을 가진 read로 이동할까?라고 물어보는 링크 이동이라고 생각하면 되겠다. -->
+
+        <td align="center" th:text="${board.writer}"></td>
+        <td align="center" th:text="${#dates.format(board.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+      </tr>
+    </table>
+
+</body>
+</html>

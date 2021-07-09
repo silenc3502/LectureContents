@@ -1,0 +1,43 @@
+h1 {
+    font-size: 30px;
+    font-family: "Arial Rounded MT";
+}
+
+.shadow {
+    color: orange;
+    background: gray;
+    text-shadow: 1px 1px;  /* 글자에 그림자 넣기 */
+}
+
+.rb-shadow {
+    text-shadow: 5px 5px 3px #ff0000;  /* RRGGBB 색상값(f가 최대, 0이 최소) #ff0000 -> red */
+    /* 1 2 3 -> 1: 오른쪽 그림자, 2: 아래 그림자, 3: 퍼지게
+               -1: 왼쪽 그림자, -2: 위 그림자 */
+}
+
+.bwb-shadow {
+    background-color: pink;
+    color: #ffffff;  /* #ffffff: white */
+    text-shadow: 7px -7px 5px #000000;  /* #000000: black */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

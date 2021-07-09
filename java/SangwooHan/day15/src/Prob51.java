@@ -57,8 +57,7 @@ class store{
         }
         else if (Money>0){
             System.out.println("현재 잔액="+Money);
-            itemList.remove(solditem-1);
-            pricePcs.remove(solditem-1);
+
         }
     }
 

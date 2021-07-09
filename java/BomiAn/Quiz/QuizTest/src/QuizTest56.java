@@ -43,7 +43,6 @@ class CardGame {
     randPattern = new ArrayList<String>();
     randNumber = new ArrayList<Integer>();
 
-
     isTrue = false;
 
 
@@ -153,10 +152,6 @@ class CardGame {
 
 
 }
-
-
-
-
 
 
 

@@ -9,14 +9,14 @@ class Test{
 
     Test() {
 
-        System.out.println(" 심부름시작.");
+        System.out.println("상점 구매할 물건을 적어주세요");
 
     }
     public void addlist(){
 
         for(int i =0; i<3;i++){
 
-        System.out.printf(" 동생에게 시킬 물품을 말하세요 시킬물건(%d/3)",i+one);
+        System.out.printf(" 구매할 물품을 말하세요 구매물건(%d/3)",i+one);
         list.add(sc.nextLine());
     }
     }

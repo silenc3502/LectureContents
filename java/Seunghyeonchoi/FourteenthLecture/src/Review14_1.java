@@ -114,6 +114,7 @@ public class Review14_1 {
         lists.add("과자");
         lists.add("우유");
         lists.add("빵");
+        
 
         for (String list : lists)   {
             System.out.println("현재 항목은 = " +list);

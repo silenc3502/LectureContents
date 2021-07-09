@@ -18,7 +18,10 @@ class Practice2Test{
             System.out.println(num+"cm\n-----");
         }
     }
+ public void average(){
 
+
+ }
 
 
 

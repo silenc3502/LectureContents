@@ -80,6 +80,7 @@ public class SequenceConceptTest {
 
         for (int i = 0; i < 16; i++) {
             System.out.println("최종 결과 확인: " + SequenceThread.getSequenceProcessingArr()[i]);
+
         }
 
         long endTime = System.currentTimeMillis();

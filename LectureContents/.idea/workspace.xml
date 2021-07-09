@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="23eec5e0-316e-4df3-9124-cacfc566ff76" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../java/NamkyoKim/TwelvethLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/NamkyoKim/TwelvethLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/NamkyoKim/TwelvethLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/NamkyoKim/TwelvethLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/NamkyoKim/TwelvethLecture/TwelvethLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/NamkyoKim/TwelvethLecture/src/ConstructorCallTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/NamkyoKim/TwelvethLecture/src/Prob45.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/NamkyoKim/TwelvethLecture/src/ScannerClassRoomTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/NamkyoKim/EleventhLecture/src/Prob43Remind.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/NamkyoKim/EleventhLecture/src/Prob43Remind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/NamkyoKim/FifthLecture/src/5일차 복습, 숙제 ,질문정리.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/NamkyoKim/FourthLecture/src/복습 , 숙제 , 질문 정리(수정).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/NamkyoKim/SeventhLecture/src/7일차복습및숙제정리.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/NamkyoKim/SixthLecture/src/6일차 복습,숙제질문정리(수정).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/NamkyoKim/TenthLecture/src/Prob43.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/NamkyoKim/TenthLecture/src/Prob43.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/NamkyoKim/TenthLecture/src/QuestionAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/NamkyoKim/TenthLecture/src/QuestionAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/NamkyoKim/ThirdLecture/3일차/스크린샷 2021-05-11 오후 10.25.17.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/NamkyoKim/ThirdLecture/3일차/스크린샷 2021-05-11 오후 9.48.58.pdf" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1t3XreGucwwzLIw5Q4scJk4UVmp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="23eec5e0-316e-4df3-9124-cacfc566ff76" name="Default Changelist" comment="" />
+      <created>1621998946425</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621998946425</updated>
+    </task>
+    <servers />
+  </component>
+</project>

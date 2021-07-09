@@ -30,6 +30,7 @@ class Market {
     Scanner scan;
 
     final int DEFAULT_IDX = 1;
+    final int MAX_MONEY = 10000000;
 
     public Market () {
         userBuyList = new ArrayList<String>();
@@ -39,7 +40,7 @@ class Market {
 
         scan = new Scanner(System.in);
 
-        myMoney = 3000000; // 수중에 있는돈 300만원으로 생성자에서 초기화
+        myMoney = MAX_MONEY; // 수중에 있는돈 300만원으로 생성자에서 초기화
         sumPayMent = 0; // 총 결제 합산금액을 구하기위해 생성자에서 초기화
         sum = 0;
     }
@@ -64,10 +65,10 @@ class Market {
 
     private void checkContinueShopping () {
         Boolean isOK = false;
+        scan.nextLine();
 
         do {
             System.out.print("쇼핑을 계속하시겠습니까 ? Y/N : ");
-
             String res = scan.nextLine();
 
             if (res.equals("Y")) {
@@ -96,13 +97,44 @@ class Market {
         // 구매한 물품의 수량만큼 가격에 곱해주면 구매한 총금액 나오는데
         for (int i = 0; i < userBuyList.size(); i++) {
             for (int j = 0; j < marketSellList.length; j++) {
-                if (userBuyList.get(i) == marketSellList[j]) {
+                if (userBuyList.get(i).equals(marketSellList[j])) {
                     sum = marketSellListPrice[j]*userBuyListStock.get(i);
-                    sumPayMent +=sum;
                 }
             }
         }
-        System.out.printf("총 결제 금액은 %d 입니다 !  \n",sumPayMent);
+        sumPayMent += sum;
+        System.out.printf("총 결제 금액은 %d 입니다 ! 남은 잔고는  : %d  \n",sumPayMent , myMoney - sumPayMent);
+
+      /*  int length = marketSellList.length;
+
+        // userBuyList는 별도의 연결리스트
+        // marketSellList는 별도의 배열
+        for(int i = 0; i < length; i++){
+            for(String element : userBuyList) {
+                // 해당 i 번째 인덱스의 요소 위치에 price를 사용하면됨
+                // "선풍기" , "키보드" , "마우스" ,"모니터" <<<<---- marketSellList의 순서
+                // 우리가 키보드 입력을 통해서 받는 userBuyList는 위의 순서대로 배치되지 않는다.
+                // "모니터", "마우스", "키보드", "선풍기" 순이라 가정해보자
+                if (marketSellList[i].equals(element)){
+                    // myMoney -= marketSellListPrice[i] * (수량)
+                    myMoney -= marketSellListPrice[i] * userBuyListStock.get(userBuyList.indexOf(element));
+                    System.out.printf("찾은 물품 = %s, 가격 = %d, 수량 = %d\n",
+                            element,marketSellListPrice[i],
+                            userBuyListStock.get(userBuyList.indexOf(element)));
+
+                    // (방법 1) 결제 완료 이후 구매리스트를 비울 필요가 있음 (방법 1)
+                    //      현재 케이스에서는 값을 지워버리면 루프를 도는 중에 지워지기 때문에 문제가 발생함!
+                     int deleteIdx = userBuyList.indexOf(element);
+                     userBuyListStock.remove(deleteIdx);
+                     userBuyList.remove(deleteIdx);
+                }
+            }
+        }
+        System.out.printf("현재 당신은 %d 원을 가지고있습니다.\n", myMoney); */
+
+        /* 방법 2
+        userBuyListStock.clear();
+        userBuyList.clear();  */
 
     }
     private void checkMoney(){
@@ -110,9 +142,13 @@ class Market {
             System.out.println("돈이 부족합니다!! 물건을 다시고르시도록 초기화 화면으로 돌아갑니다!");
             userBuyList.clear();
             userBuyListStock.clear();
+            sumPayMent = 0;
+            myMoney = MAX_MONEY;
             doShopping();
         } else {
             myMoney -= sumPayMent;
+            userBuyList.clear();
+            userBuyListStock.clear();
 
             System.out.println("결제가 완료되었습니다 ! 다음에 또 뵙겠습니다 ! 남은잔고는 : " +myMoney + "원");
         }

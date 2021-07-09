@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+ul{
+ list-style: none;
+  }
+  li{
+  list-style: none;
+  margin: 20px;
+  }
+  </style>
+</head>
+<body>
+<h3>나그넷에 오신길 환영합니다.</h3>
+<h2>성별을 선택하여주세요.</h2>
+<li><input type="checkbox" value="male">남자</li>
+<li><input type="checkbox" value="female">여자</li>
+<form>
+  <fieldset>
+    <legend>아이디 비밀번호</legend>
+    <ul>
+      <Li>
+      <label for="id">아이디</label>
+        <input type="text" id="id">
+      </Li>
+      <Li>
+      <label for="pw">비밀번호</label>
+        <input type="password" id="pw">
+      </Li>
+    </ul>
+
+    <legend>동료는 몇명이십니까?</legend>
+    <ul>
+      <li>
+        <label for="member">멤버숫자<small>(최대15명)</small></label>
+        <input type="number" id="member" value="1" min="1" max="15" step="1">
+      </li>
+    </ul>
+    <legend>지역 선택</legend>
+    <ul>
+      <li>
+       <label for="local">지역</label>
+        <select id="local">
+          <optgroup label="수도권">
+            <option value="seoul">서울</option>
+            <option value="gunggy">경기</option>
+            <option value="incheon">인천</option>
+            <option value="kimpo">김포</option>
+            <option value="ganghwa">강화도</option>
+          </optgroup>
+          <optgroup label="충청도">
+            <option value="nam">충청남도</option>
+            <option value="buk">충청북도</option>
+          </optgroup>
+          <optgroup label="경상도">
+            <option value="nam1">경상남도</option>
+            <option value="buk2">경상북도</option>
+          </optgroup>
+          <optgroup label="전라도">
+            <option value="nam2">전라남도</option>
+            <option value="buk2">전라북도</option>
+          </optgroup>
+          <optgroup label="섬">
+            <option value="jeju">
+              제주도
+            </option>
+          </optgroup>
+        </select>
+      </li>
+    </ul>
+
+  </fieldset>
+<fieldset>
+  <input type="button" value="나그넷입장을 시작합니다." onclick="window.open(`NagNet`)">
+</fieldset>
+</form>
+</body>
+</html>

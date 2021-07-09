@@ -30,7 +30,7 @@ class ThreePoker {
     private int[][] usrCard;
     private int[][] comCard;
 
-    public ThreePoker () {
+    public ThreePoker() {
         map = new HashMap<String, Map<String, Integer>>();
         preparedMap = new HashMap[PATTERN_MAX]; //문양
 
@@ -57,11 +57,11 @@ class ThreePoker {
         }
     }
 
-    public void printMap () {
+    public void printMap() {
         System.out.println(map);
     }
 
-    public static Boolean checkDuplicate (
+    public static Boolean checkDuplicate(
             int patternIdx, int randNum, int[][] randCheckArr) {
 
         if (randCheckArr[patternIdx][randNum] > 0) {
@@ -71,7 +71,7 @@ class ThreePoker {
         return false;
     }
 
-    public void distributeCard (int[][] arr, int identity) {
+    public void distributeCard(int[][] arr, int identity) {
         String sculpture;
         int sculptureIdx;
         int randNum;
@@ -103,7 +103,7 @@ class ThreePoker {
         }
     }
 
-    private Boolean checkTrippleWeapon (int[][] arr, int identity) {
+    private Boolean checkTrippleWeapon(int[][] arr, int identity) {
         // 1. 문양도 일치해야하고
         // 2. 숫자가 연속되어야함
         if (!checkTripplePattern(arr, identity)) {
@@ -121,12 +121,70 @@ class ThreePoker {
     }
 
     /* 아래 두 가지를 완성하면 자동으로 checkTrippleWeapon()은 완성이됩니다. */
-    private Boolean checkTrippleNumber (int[][] arr, int identity) {
+    private Boolean checkTrippleNumber(int[][] arr, int identity) {
         return false;
     }
-    private Boolean checkTrippleHarmonic (int[][] arr, int identity) {
+    //서로 다른 문양의 숫자가 연속되게 3개 나옴
+
+    private Boolean checkHarmonic (Map<Integer,Integer> map, int identity) {
+        int[] checkContinuousNumArr = new int[DISTRIBUTED_CARD_NUM];
+        int[] checkPatternArr = new int[PATTERN_MAX];
+
+
+    }
+    private Boolean checkTrippleHarmonic(int[][] arr, int identity) {
+        //1.먼저 제각기 다른 문양들이 배치되어 있는지 검사
+        //제각기 다른 문양이 아닌 경우에도 flase
+        // 2. 서로 연속된 숫자가 아니라면 바로 false 처리
+
+        //두개를 모두 만족하는 경우에만 true
+
+        Boolean isHarmonicPattern = false;
+        int patternCnt = 0;
+        int cardCnt = 0;
+        for (int i = 0; i < PATTERN_MAX; i++) {
+            for (int j = 0; j < DISTRIBUTED_CARD_NUM; j++) {
+                // 같은 패턴인 경우는 훨씬 쉬웠지만
+                // 서로 다른 패턴을 찾아야 하는 경우는
+                // 각각의 패턴을 채웠늕 ㅣ여부 채크
+                if (arr[i][j] != -1) {
+                    checkPatternArr[i]++;
+                    checkContinuousNumArr[cardCnt++] = arr[i][j];
+                }
+            }
+
+            System.out.printf("checkPatternArr[%d] = %d\n", i, checkPatternArr[i]);
+        }
+        for (int i = 0; i < DISTRIBUTED_CARD_NUM; i++) {
+            if (checkPatternArr[i] > 0) {
+                System.out.printf("checkContinuousNumArr[%d] = %d\n", i, checkContinuousNumArr[i]);
+            }
+        }
+        for (int i = 0; i < PATTERN_MAX; i++) {
+            if (checkPatternArr[i] > 0) ;
+            {
+                patternCnt++;
+            }
+        }
+        if (patternCnt == 3) {
+            isHarmonicPattern = true;
+        } else {
+            return false;
+        }
+
+        System.out.printf("isHarmonicPattern" + isHarmonicPattern);
+        //모든 패턴이이
+
+
+        Map<Integer, Integer> cardsMap = new HashMap<Integer, Integer>();
+
         return false;
     }
+
+    for (Map.Entry)
+}
+
+
     private Boolean checkTripplePattern (int[][] arr, int identity) {
         // 1. 전체를 순회하며 처음 나오는 값을 찾는다.
         // 2. 처음 나오는 값의 숫자와 패턴을 파악한다.
@@ -273,6 +331,6 @@ public class Prob57 {
         tp.playGame();
 
         // 여러분들이 알고 있는 수학의 그 파이가 맞습니다.
-        System.out.println("원주율 PI = " + Math.PI);
+      //  System.out.println("원주율 PI = " + Math.PI);
     }
 }

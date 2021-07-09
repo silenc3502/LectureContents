@@ -8,7 +8,7 @@ public class _2nd_BankLockTest {
         Thread substracter = new Thread(new Worker(counter, false, 1000));
         substracter.start();
 
-        adder.join();
+//        adder.join();
         substracter.join();
 
         System.out.println("Final count: " + counter.getCount());

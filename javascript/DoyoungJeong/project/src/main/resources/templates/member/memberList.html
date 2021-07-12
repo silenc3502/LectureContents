@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <style>
+        table, th, td {
+           border: 1px solid #000000;
+        }
+        th {
+           padding: 10px;
+        }
+        td {
+           padding: 8px;
+        }
+        p {
+          font-size: 15px;
+          line-height: 30px;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#btnToMain").on("click", function() {
+                self.location = "concertList";
+            });
+
+            $("#btnBack").on("click", function() {
+                self.location = "memberSignup";
+            });
+        });
+    </script>
+<body>
+    <h2>가입 회원 목록</h2>
+    <button type="submit" id="btnToMain">메인으로</button>
+    <button type="submit" id="btnBack">로그인화면으로</button>
+    <table>
+        <tr>
+            <th align="center" width="40">No.</th>
+            <th align="center" width="120">ID</th>
+            <th align="center" width="130">PW</th>
+            <th align="center" width="110">이름</th>
+            <th align="center" width="80">성별</th>
+            <th align="center" width="80">나이</th>
+            <th align="center" width="130">지역</th>
+            <th align="center" width="150">관심장르</th>
+            <th align="center" width="150">아티스트</th>
+            <th align="center" width="150">가입일시</th>
+        </tr>
+        <tr th:if="${#lists.isEmpty(memberList)}"> <!-- 자꾸 실수로 #를 빼먹게된다. ()안에는 컨트롤러에서 addAttr한 attrName이들어간다. -->
+            <td colspan="10">
+                아직 등록한 회원이 없습니다.
+            </td>
+        </tr>
+        <tr th:each="memberElem : ${memberList}"> <!-- 컨트롤러에서 addAttr한 attrName이 {}에 들어간다. -->
+            <td align="center" th:text="${memberElem.memberNo}"></td>
+            <td align="center" th:text="${memberElem.id}"></td>
+            <td align="center" th:text="${memberElem.pw}"></td>
+            <td align="center" th:text="${memberElem.name}"></td>
+            <td align="center" th:text="${memberElem.gender}"></td>
+            <td align="center" th:text="${memberElem.age}"></td>
+            <td align="center" th:text="${memberElem.location}"></td>
+
+            <td align="center" th:href="@{|read?memberNo=${memberElem.memberNo}|}" th:text="${memberElem.interestedGenre}"></td>
+
+            <td align="center" th:text="${memberElem.interestedArtist}"></td>
+            <td align="center" th:text="${#dates.format(memberElem.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

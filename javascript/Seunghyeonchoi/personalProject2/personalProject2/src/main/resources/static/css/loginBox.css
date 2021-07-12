@@ -1,0 +1,12 @@
+/*   . 이니깐 class겠지?   */
+.loginBox    {
+position: absolute;
+left: 50px;
+top: 70px;
+width: 300px;
+height: 50px;
+border: 3px solid blue;
+text-align: center;
+line-height: 60px;
+
+}

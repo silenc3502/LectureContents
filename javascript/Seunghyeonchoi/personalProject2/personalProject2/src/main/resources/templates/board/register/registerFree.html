@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Free</title>
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var formObj = $("#boardFree");
+        $("#btnRegisterFree").on("click", function() {
+            formObj.attr("action", "registerFree");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnListFree").on("click", function() {
+        self.location = "listsFree";
+        });
+    });
+</script>
+
+<body>
+<h2>게시글 등록</h2>
+<form id="boardFree" th:action="@{registerFree}" th:object="${boardFree}" method="post">
+    <table>
+        <tr>
+            <td>제목</td>
+            <td><input type="text" name="titleFree" th:field="*{titleFree}"></td>
+        </tr>
+        <tr>
+            <td>작성자</td>
+            <td><input type="text" name="writerFree" th:field="*{writerFree}"></td>
+        </tr>
+        <tr>
+            <td>본문</td>
+            <td><textarea cols="50" rows="20" name="contentFree" th:field="*{contentFree}"></textarea></td>
+        </tr>
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnRegisterFree">게시글 등록</button>
+    <button type="submit" id="btnListFree">게시글 목록 보기</button>
+</div>
+</body>
+</html>

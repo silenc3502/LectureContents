@@ -1,0 +1,6 @@
+#container {                    /* #을 통해 id만 변경하여 설정해줄 수 있다. */
+    width: 600px;               /* 너비 */
+    padding: 15px;              /* 테두리와 내용 사이의 여백 */
+    border: 1px dotted gray;    /* 테두리 스타일, 1px는 테두리 두께 */
+    margin: 20px;
+}

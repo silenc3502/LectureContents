@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/vue/second.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+        <p>{{ message }}</p>
+        <ol>
+          <li v-for="char in list">{{ char }}</li>
+            <!-- char는 {{ }}속 이름과 같아야하고 list는 js안에 있는 list와 이름이 같아야한다. -->
+        </ol>
+        <button v-on:click="buttonClickTest">Click GoGo!</button>
+
+        <input v-model="initMsg"> <!-- th:field역할 -->
+        <p>{{ initMsg }}</p>
+        <button v-on:click="show = !show">보였다 숨겼다</button>
+        <!-- 클릭하면 js에 지정한 show의 값 true가 !show인 false로 바뀌게된다 -->
+        <transition>
+            <p v-if="show">보이기 숨기기 제어</p>
+        </transition>
+        <p>Hello {{ message }}</p>
+        <p>{{ message.length }}</p>
+        <!-- 글자의 숫자 -->
+
+        <p>{{ list[3] }}</p>
+        <p>{{ list[num] }}</p>
+        <button v-on:click="increment">num count!</button>
+        <p> {{ count }} times this button has been clicked.</p>
+
+        <svg xmLns="http://www.w3.org/2000/svg" version="1.1">
+            <circle cx="150" cy="100" v-bind:r="radius" v-bind:fill="color"></circle>
+            <!-- v-bind는 단방향, v-model은 양방향 -->
+        </svg>
+        <input type="range" min="0" max="100" v-model="radius"></br>
+
+        <input v-model="monsterName">
+        <button v-on:click="addMonster">Add Monsters</button>
+        <ul>
+            <!-- 밑 v-for문에서 ()안에는 자연스럽게 첫 변수가 배열 안의 요소 이름이고 두번째는 인덱스 번호 값을 가진다! -->
+            <li v-for="(monster, index) in monsters"
+                v-bind:key="monster.id"
+                v-bind:class="{ strong: monster.hp > 300 }">
+                <!-- 이 monster의 hp가 300보다 많으면 monster의 class는 strong이라는 뜻 -->
+
+                ID.{{ monster.id }} {{ monster.name }} HP.{{ monster.hp }}
+                <span v-if="monster.hp > 300">강하다.</span>
+                <button v-on:click="userAttack(index)">평타</button>
+                <button v-on:click="removeMonster(index)">몬스터 삭제</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="/vue/second/for.js"></script>
+
+</body>
+</html>

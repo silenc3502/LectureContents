@@ -1,0 +1,17 @@
+body {
+    /* repeat-x top left: 왼쪽 위부터 반복 */
+    background:url('/img/sale.png') repeat-x top left;
+}
+h1 {
+    margin-top: 250px;
+    text-align: center;
+}
+p {
+    text-align: center;
+    width: 300px;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+    border: 1px solid #cccccc;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+        var formObj = $("#product");
+
+        $("#btnRegister").on("click", function() {
+            formObj.attr("action", "shopRegister");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+        self.location = "shopLists";
+        });
+    });
+</script>
+<body>
+<h2>상품 등록</h2>
+
+<!-- Controller의 getRegister 에서 전달받은 Board 객체(현재 텅 빔) -->
+<form id="product" th:action="@{register}" th:object="${product}" method="post">
+    <table>
+        <tr>
+            <td>상품 명</td>
+            <!-- th:field의 경우엔 Board 객체에 있는 title과 직접 맵핑시킴+ -->
+            <td><input type="text" name="productName" th:field="*{productName}"></td>
+        </tr>
+        <tr>
+            <td>상호 명</td>
+            <td><input type="text" name="writer" th:field="*{writer}"></td>
+        </tr>
+        <tr>
+            <td>상품 설명</td>
+            <td><textarea cols="50" rows="20" name="content" th:field="*{content}"></textarea></td>
+        </tr>
+    </table>
+</form>
+
+<div>
+    <button type="submit" id="btnRegister">게시글 등록</button>
+    <button type="submit" id="btnList">상품 목록 보기</button>
+</div>
+</body>

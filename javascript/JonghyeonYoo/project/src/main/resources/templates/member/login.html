@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js">
+   $(document).ready(function() {
+        var formObj = $("#login");
+        $("#btnRogin").on("click", function() {
+            formObj.attr("action", "login");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+    </script>
+
+<body>
+<header>
+    <h1><a href="movietest">WARNING</a></h1>
+    <nav class="lnb">
+        <ul>
+            <li><a href="movietest">홈</a></li>
+            <li><a href="2">TV프로그램</a> </li>
+            <li><a href="2">영화</a></li>
+            <li><a href="2">뉴스</a></li>
+        </ul>
+    </nav>
+    </div>
+    <nav class="spot">
+        <ul>
+            <li><a href="login">로그인</a> </li>
+            <li><a href="signupregister">회원가입</a> </li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="login-form">
+        <h1>LOGIN</h1>
+        <form action="">
+            <div class="int-area">
+                <input type="text" name="id" id="id" autocomplete="off" required>
+                <label for="id">USER ID</label>
+            </div>
+            <div class="int-area">
+                <input type="password" name="pw" id="pw" autocomplete="off" required>
+                <label for="pw">PASSWORD</label>
+            </div>
+            <div class="btn-area">
+                <button type="submit" id="btnLogin">LOGIN</button>
+            </div>
+        </form>
+        <div class="caption">
+        <a href="signupregister">SIGNUP</a>
+        </div>
+    </section>
+
+
+
+</body>
+</html>

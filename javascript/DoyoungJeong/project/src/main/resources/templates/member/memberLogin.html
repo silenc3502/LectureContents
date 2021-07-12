@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/css.css">
+</head>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var formObj = $("#member");
+
+        $("#btnLogin").on("click", function() {
+            formObj.attr("action", "memberLogin");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnMemberSignup").on("click", function() {
+              self.location = "memberSignup";
+        });
+    });
+</script>
+
+<body>
+    <center><h2>로그인</h2></center>
+    <div class="box2">
+    <form id="member" th:object="${member}" method="post">
+        <center>
+        <table>
+            <tr>
+                <td>id</td>
+                <td><input type="text" name="id" th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <td>pw</td>
+                <td><input type="text" name="pw" th:field="*{pw}"></td>
+            </tr>
+        </table>
+        </center>
+    </form>
+    </div>
+    <center>
+        <button type="submit" id="btnLogin">로그인</button>
+        <button type="submit" id="btnMemberSignup">회원가입하기</button>
+    </center>
+</body>
+</html>

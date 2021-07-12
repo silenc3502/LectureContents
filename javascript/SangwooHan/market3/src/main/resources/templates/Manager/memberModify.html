@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:td="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        var formObj = $("#signupBoard");
+
+        $("#memberModifybtn").on("click", function() {
+
+            formObj.attr("action", "memberModify");
+
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+
+         });
+</script>
+<body>
+<h1>회원 정보수정.</h1>
+<form id="signupBoard" th:action="@{signup}" th:object="${signup}" method="post">
+    <input type="hidden" name="bulletinNo" th:field="*{bulletinNo}"/>
+    <table>
+        <tr>
+            <td>아이디</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="userid"
+                       th:field="*{userid}" readonly="readonly"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="password" th:field="*{password}"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="name"
+                       th:field="*{name}" readonly="readonly"></td>
+        </tr>
+        <tr>
+            <td>생년원일</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="birthday" th:field="*{birthday}"></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="gender" th:field="*{gender}"></td>
+        </tr>
+        <tr>
+            <td>주소</td>
+        </tr>
+        <tr>
+            <td><textarea cols="30" rows="2"  name="address"관리자
+                          th:field="*{address}" ></textarea></td>
+        </tr>
+        <tr>
+            <td>휴대전화</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="phoneNo" th:field="*{phoneNo}"></td>
+        </tr>
+
+    </table>
+</form>
+<button type="submit" id="memberModifybtn">회원정보수정하기!</button>
+</body>
+</html>

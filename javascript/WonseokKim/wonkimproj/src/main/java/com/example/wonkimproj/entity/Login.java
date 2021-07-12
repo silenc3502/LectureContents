@@ -9,9 +9,9 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class SignUp {
-    private int boardNo;
+public class Login {
+    private int loginNo;
     private String id;
-    private String password;
+    private String pw;
     private Date regDate;
 }

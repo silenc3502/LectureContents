@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Slf4j
 @Controller
-
 public class HttpMethodMainController {
 
-        @GetMapping("/main")
-        public String getMain () {
-            log.info("getMain()");
+    @GetMapping("/main")
+    public String getMain () {
+        log.info("getMain()");
 
-            return "/httpmethod/main";
-        }
+        return "httpmethod/main";
+    }
 }

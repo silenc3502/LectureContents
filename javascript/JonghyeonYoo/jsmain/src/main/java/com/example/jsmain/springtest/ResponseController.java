@@ -4,7 +4,6 @@ import com.example.jsmain.entity.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,14 +17,14 @@ import java.util.Map;
 public class ResponseController {
 
     @GetMapping("/jsonMember")
-    public Member JsonMember() {
-        log.info("JsonMember()");
+    public Member jsonMember () {
+        log.info("jsonMember()");
 
-        Member memeber = new Member();
-        memeber.setId("name");
-        memeber.setPw("test");
+        Member member = new Member();
+        member.setId("name");
+        member.setPw("test");
 
-        return memeber;
+        return member;
     }
 
     @GetMapping("/jsonListMember")
@@ -67,16 +66,16 @@ public class ResponseController {
     }
 
     @GetMapping("/jsonVoid")
-    public ResponseEntity<Void> jsonVoid(){
+    public ResponseEntity<Void> jsonVoid () {
         log.info("jsonVoid()");
 
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
     @GetMapping("/jsonString")
-    public ResponseEntity<String> jsonString() {
+    public ResponseEntity<String> jsonString () {
         log.info("jsonString()");
 
-        return new ResponseEntity<String>("Success",HttpStatus.OK);
+        return new ResponseEntity<String>("Success", HttpStatus.OK);
     }
 }

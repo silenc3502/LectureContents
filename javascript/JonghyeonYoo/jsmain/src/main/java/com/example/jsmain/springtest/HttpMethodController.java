@@ -1,4 +1,4 @@
-package com.example.jsmain.springtest;
+package com.example.jsmain.controller.springtest;
 
 import com.example.jsmain.entity.Board;
 import com.example.jsmain.service.BoardService;
@@ -24,17 +24,19 @@ public class HttpMethodController {
     }
 
     @PostMapping("/modify")
-    public String postMethodModify ()  {
+    public String postMethodModify () {
         log.info("postMethodModify()");
 
         return "/httpmethod/modify";
     }
+
     @GetMapping("/lists")
     public String getMethodLists () {
         log.info("getMethodLists()");
 
         return "/httpmethod/lists";
     }
+
     @GetMapping("/register")
     public String getMethodRegister () {
         log.info("getMethodRegister()");
@@ -48,9 +50,10 @@ public class HttpMethodController {
 
         return "/httpmethod/register";
     }
+
     @GetMapping("/read/{boardNo}")
     public String getMethodRead (@PathVariable("boardNo") int boardNo) {
-        log.info("getMethodRead():" + boardNo);
+        log.info("getMethodRead(): " + boardNo);
 
         return "httpmethod/read";
     }
@@ -58,7 +61,6 @@ public class HttpMethodController {
     @PostMapping("/remove")
     public String postMethodRemove () {
         log.info("postMethodRemove()");
-
 
         return "httpmethod/remove";
     }

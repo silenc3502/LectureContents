@@ -1,6 +1,7 @@
 <template>
     <div class="todo">
         <todo-header></todo-header>
+        <todo-input v-on:addTodo="onAddTodo"></todo-input>
     </div>
 </template>
 

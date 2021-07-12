@@ -16,11 +16,11 @@
         <div id="app">
             <p>{{ msg }}</p>
 
-            <global-component v-bind:initial-test="counter">
+            <global-component v-bind:monsterBook-test="counter">
             </global-component>
 
             <local-component v-bind:num="value"></local-component>
-            <button v-on:click="plus">클릭해봐!</button>
+            <button v-on:click="plus">몬스터 한마리 리젠</button>
         </div>
     </div>
 </template>
@@ -38,7 +38,7 @@ export default {
         return {
             counter: 0,
             value: 0,
-            msg: 'Vue 객체 데이터'
+            msg: '몬스터 100마리 리젠'
         }
     },
     methods: {

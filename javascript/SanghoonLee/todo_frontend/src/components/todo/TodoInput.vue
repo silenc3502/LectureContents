@@ -20,6 +20,7 @@ export default {
                 var value = this.newTodoItem && this.newTodoItem.trim()
                 console.log('addTodo')
 
+                // emit의 역할은 무엇인가 ?
                 this.$emit('addTodo', value)
                 this.clearInput()
             }

@@ -84,10 +84,10 @@ public class HttpMethodController {
     }
 
     @GetMapping("/jsonString")
-    public ResponseEntity<String> jsonString() {
+    public ResponseEntity<String> jsonString () {
         log.info("jsonString()");
 
-        return new ResponseEntity<String>("Success",HttpStatus.OK);
+        return new ResponseEntity<String>("success", HttpStatus.OK);
     }
 }
 

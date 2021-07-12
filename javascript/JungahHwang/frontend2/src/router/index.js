@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
+import Todo from '../views/Todo.vue'
+import Quiz from '../views/Quiz.vue'
 
 Vue.use(VueRouter)
 
@@ -18,6 +20,16 @@ const routes = [
     // 눈에 보여질 페이지가 배치(보통 views 폴더에 생성)
     name: 'Test',
     component: Test
+  },
+  {
+    path: '/todo',
+    name: 'Todo',
+    component: Todo
+  },
+  {
+    path: '/quiz',
+    name: 'Quiz',
+    component: Quiz
   }
   
 ]

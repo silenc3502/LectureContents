@@ -16,10 +16,10 @@
                    active-class="active">
         Todo
       </router-link>
-      <router-link :to="{ name:'FantasyOnline'}"
+      <router-link :to="{ name:'Homework'}"
                    class="nav-link"
                    active-class="active">
-        Fantasy
+        Homework
       </router-link>
     </div>
   </div>

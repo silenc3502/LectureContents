@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
 import Todo from '../views/Todo.vue'
-import FantasyOnline from "../views/FantasyOnline";
+import Homework from "../views/Homework";
 
 Vue.use(VueRouter)
 
@@ -24,9 +24,9 @@ const routes = [
     component: Todo
   },
   {
-    path: '/fantasyonline',
-    name: 'FantasyOnline',
-    component: FantasyOnline
+    path: '/homework',
+    name: 'Homework',
+    component: Homework
   }
 ]
 

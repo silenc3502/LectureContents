@@ -16,6 +16,11 @@
                     active-class="active">
                 Todo
             </router-link>
+            <router-link :to="{ name: 'Homework' }"
+                    class="nav-link"
+                    active-class="active">
+                Homework
+            </router-link>
         </div>
     </div>
 </template>

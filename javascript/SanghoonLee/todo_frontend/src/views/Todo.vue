@@ -20,6 +20,8 @@ export default {
         'todo-input': TodoInput
     },
     methods: {
+        // store에서 중앙 관리를 하고
+        // 중앙 관리에 사용하는 동작들을 action에 몰아넣음
         ...mapActions ([
             'addTodo',
             'save'

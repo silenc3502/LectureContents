@@ -4,7 +4,7 @@ import java.util.Set;
 public class _2nd_HashSetEdu {
     public static void main(String[] args) {
         HashSet<String> food = new HashSet<String>();
-         // = HashSet<String> food = new HashSet<String>();
+
         food.add("우유");
         food.add("빵");
         food.add("베이컨");

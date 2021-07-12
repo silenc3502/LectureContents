@@ -29,10 +29,6 @@ class Company {
 
     }
 
-    public void averSalary(){
-
-    }
-
 
     public int randSalary() {
         salary = (int) (Math.random() * 1100 + 2400);
@@ -64,15 +60,7 @@ public class Homework0521Prob43 {
       }
 
 
-          int sum = 0;
-
-          for(int j = 0; j < name.length; j++){
-              sum += c[j].getYearSalary()[j];
-              System.out.printf("%d년차 평균 연봉: %d\n", (j+1), (sum/ name.length));
-          }
-
-
-
+      // 선생님.. 연별로 연봉 평균 구하는거는 고민해봤지만 풀지 못했어요...ㅠㅠㅠㅠㅠㅠㅠ
 
 
 

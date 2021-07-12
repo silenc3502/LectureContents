@@ -1,7 +1,4 @@
 class A {
-    public A(){
-        System.out.println("되나 한 번 볼까");
-    }
     int a = 10;
     void b (){
         System.out.println("A");

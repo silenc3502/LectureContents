@@ -1,12 +1,16 @@
 <template>
-    <div>{{ num }}</div>
+    <div>{{ num }}
+        {{ aMonster }}
+    </div>
 </template>
 
 <script>
 export default {
     name: 'LocalComponent',
-    props: {
-        num: Number
-    }
+    props: ['num', 'aMonster']
+    // props: {
+    //     num: Number,
+    //     aMonster: String
+    // }
 }
 </script>

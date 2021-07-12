@@ -30,7 +30,9 @@
 import Vue from 'vue'
 import GlobalComponent from '../components/GlobalComponent.vue'
 import LocalComponent from '../components/LocalComponent.vue'
+
 Vue.component(GlobalComponent.name, GlobalComponent)
+
 export default {
     components: {
         'local-component': LocalComponent

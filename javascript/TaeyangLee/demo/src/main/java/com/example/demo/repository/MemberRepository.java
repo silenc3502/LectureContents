@@ -55,7 +55,7 @@ public class MemberRepository {
 
     public List<Member> list() throws Exception {
         List<Member> results = jdbcTemplate.query(
-                "select memberNo, id, pw, reg_date from member " +
+                "select memberNo, id, pw, regDate from member " +
                         "where memberNo > 0 order by memberNo desc",
                 new RowMapper<Member>() {
                     @SneakyThrows

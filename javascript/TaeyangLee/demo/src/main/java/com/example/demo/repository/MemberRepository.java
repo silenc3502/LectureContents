@@ -55,21 +55,21 @@ public class MemberRepository {
 
     public List<Member> list() throws Exception {
         List<Member> results = jdbcTemplate.query(
-                "select member_no, id, pw, reg_date from member " +
-                        "where member_no > 0 order by member_no desc",
+                "select memberNo, id, pw, reg_date from member " +
+                        "where memberNo > 0 order by memberNo desc",
                 new RowMapper<Member>() {
                     @SneakyThrows
                     @Override
                     public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Member member = new Member();
 
-                        member.setMemberNo(rs.getInt("member_no"));
+                        member.setMemberNo(rs.getInt("memberNo"));
                         member.setId(rs.getString("id"));
                         member.setPw(rs.getString("pw"));
 
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-                        member.setRegDate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));
+                        member.setRegDate(sdf.parse(rs.getDate("regDate") + " " + rs.getTime("regDate")));
 
                         return member;
                     }

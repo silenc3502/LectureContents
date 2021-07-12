@@ -70,6 +70,7 @@ public class ResponseController {
     }
     // json에서 void로 보내는 방식
     // ResponseEntity<Void>를 사용해야 한다.
+    // 만약 참거짓을 판별하려면 Boolean을 사용해야 한다.(대문자 조심, 항상 전달은 객체를 던져야 한다)
     @GetMapping("/jsonVoid")
     public ResponseEntity<Void> jsonVoid() {
         log.info("jsonVoid()");

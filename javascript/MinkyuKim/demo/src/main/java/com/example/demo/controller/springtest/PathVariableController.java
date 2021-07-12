@@ -32,9 +32,7 @@ public class PathVariableController {
 
 
     @PostMapping("/modify")
-
     public String modify (Board board, Model model) throws Exception {
-
         log.info("postModify()" + board);
 
         service.modify(board);

@@ -54,8 +54,8 @@ export default {
             const coefficient = { content }
             this.monsters.hp -= coefficient.content * this.character.atk
         },
-        onDeath (id) {
-            this.death(id)
+        onDeath (monsterId) {
+            this.death(monsterId)
             this.save()
         }
     }

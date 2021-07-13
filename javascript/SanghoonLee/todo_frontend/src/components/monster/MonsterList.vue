@@ -3,7 +3,7 @@
         <ul>
             <h3>몬스터 리스트</h3>
             <monster-element v-for="monster in monsterElements"
-                    v-bind:key="monster.id"
+                    v-bind:key="monster.monsterId"
                     v-bind:monster="monster"
                     v-bind:editingId="editingId"
                     v-on:death="onDeath"
@@ -41,8 +41,8 @@ export default {
             SET_EDITTING_ID,
             RESET_EDITTING_ID
         ]),
-        onDeath (id) {
-            this.$emit('death', id)
+        onDeath (monsterId) {
+            this.$emit('death', monsterId)
         },
         onEditTodo (content, id) {
             this.$emit('editTodo', content, id)

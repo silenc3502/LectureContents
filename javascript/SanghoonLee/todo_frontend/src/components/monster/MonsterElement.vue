@@ -33,18 +33,18 @@ export default {
     },
     methods: {
         death () {
-            const id = this.monster.id
-            this.$emit('death', id)
+            const monsterId = this.monster.monsterId
+            this.$emit('death', monsterId)
         },
         editTodo (event) {
-            const id = this.monster.id
+            const monsterId = this.monster.monsterId
             const name = event.target.value.trim()
 
             if (name.length <= 0) {
                 return false
             }
 
-            this.$emit('editTodo', name, id)
+            this.$emit('editTodo', name, monsterId)
             this.$refs.name.blur()
         },
         handleBlur () {

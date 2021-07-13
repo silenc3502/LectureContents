@@ -20,6 +20,9 @@ export default {
     props: {
         todoItem: {
             type: Object
+        },
+        editingId: {
+            type: Number
         }
     },
     // VDOM 변화가 없어도 계산값이 적용되도록 서포트함

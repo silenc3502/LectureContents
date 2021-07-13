@@ -11,14 +11,23 @@
                     active-class="active">
                 Test
             </router-link>
+            <router-link :to="{ name: 'Todo' }"
+                class="nav-link"
+                active-class="active">
+            Todo
+            </router-link>
+                        <router-link :to="{ name: 'Homework' }"
+                class="nav-link"
+                active-class="active">
+            Homework
+            </router-link>
         </div>
     </div>
 </template>
 
 <script>
-  export default {
-    name: 'Home',
-    components: {
-    },
-  }
+export default {
+  name: "Home",
+  components: {},
+};
 </script>

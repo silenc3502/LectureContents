@@ -3,9 +3,6 @@
     <h3>Monster Attack!</h3>
     <p id="target">name: {{ monster.name }} hp: {{ monster.hp }}</p>
     <button v-on:click="attackMonster">공격 -10</button> <br><br>
-    <h3>스킬 사용</h3>
-        <input type="text" v-on:keypress.enter="firstSkill">
-        <button v-on:click="firstSkill">파이어볼</button>
   </div>
 </template>
 
@@ -17,7 +14,6 @@ export default {
         name: 'gogomon',
         hp: 200
       },
-      atk_coefficient: 3.7
     }
   },
   methods: {
@@ -30,10 +26,6 @@ export default {
         target.classList.add('clear');
       }
     },
-     firstSkill () {
-            console.log('firstSkill')
-            this.$emit('firstSkill', this.atk_coefficient)
-     }
   },
 }
 </script>

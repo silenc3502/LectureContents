@@ -1,6 +1,7 @@
 package com.example.wonkimproj.controller;
 
 import com.example.wonkimproj.entity.Login;
+import com.example.wonkimproj.entity.Register;
 import com.example.wonkimproj.service.LoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +33,5 @@ public class LoginController {
         model.addAttribute("msg", "로그인을 환영합니다!");
 
         return "/login/success";
-    }
-
-    @GetMapping("/mainPage")
-    public String getMainPage () {
-        log.info("getMainPage()");
-
-        return "/mainpage/mainPage";
     }
 }

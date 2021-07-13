@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
+import Todo from '../views/Todo.vue'
+import Homework from '../views/Homework.vue'
 
 Vue.use(VueRouter)
 
@@ -20,6 +22,11 @@ const routes = [
     path: '/todo',
     name: 'Todo',
     component: Todo
+  },
+  {
+    path: '/homework',
+    name: 'Homework',
+    component: Homework
   }
 ]
 

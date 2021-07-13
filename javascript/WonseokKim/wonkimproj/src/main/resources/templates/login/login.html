@@ -24,7 +24,14 @@
             // URL register로 보낸다.
             formObj.attr("action", "register");
             // PostMapping
-            formObj.attr("method", "post");
+            formObj.attr("method", "get");
+            formObj.submit();
+        });
+        $("#btnModify").on("click", function() {
+            // URL register로 보낸다.
+            formObj.attr("action", "modify");
+            // PostMapping
+            formObj.attr("method", "get");
             formObj.submit();
         });
     });
@@ -41,7 +48,7 @@
         </tr>
         <tr>
             <td>비밀번호</td>
-            <td><input type="text" name="pw" th:field="*{pw}"></td>
+            <td><input type="password" name="pw" th:field="*{pw}"></td>
         </tr>
     </table>
 </form>
@@ -49,6 +56,7 @@
     <div>
         <button type="submit" id="btnLogin">로그인</button>
         <button type="submit" id="btnRegister">회원가입</button>
+        <button type="submit" id="btnModify">수정하기</button>
     </div>
 </body>
 </html>

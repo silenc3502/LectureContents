@@ -3,5 +3,8 @@ export default {
         if (!state.filter) {
             return state.todoItems
         }
+    },
+    getMonsterElements (state) {
+        return state.monsterElements
     }
 }

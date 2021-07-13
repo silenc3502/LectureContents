@@ -3,7 +3,8 @@ import {
     EDIT_TODO,
     REMOVE_TODO,
     SET_EDITTING_ID,
-    RESET_EDITTING_ID
+    RESET_EDITTING_ID,
+    DEATH
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -28,5 +29,9 @@ export default {
     },
     [RESET_EDITTING_ID] (state) {
         state.editingId = 0
+    },
+    [DEATH] (state) {
+        const targetIndex = state.monsterElements.findIndex(v => v.id === id)
+        state.monsterElements.splice(targetIndex, 1)
     }
 }

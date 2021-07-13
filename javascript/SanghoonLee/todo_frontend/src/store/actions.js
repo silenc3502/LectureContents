@@ -23,5 +23,8 @@ export default {
     },
     editTodo ({ commit }, payload) {
         commit(EDIT_TODO, payload)
+    },
+    death ({ commit }, payload) {
+        commit(DEATH, payload)
     }
 }

@@ -30,6 +30,7 @@ export default {
     },
     methods: {
         onFirstSkill (content) {
+            // { } 로 받으면 객체로 받게됨
             const coefficient = { content }
             this.monsters.hp -= coefficient.content * this.character.atk
         }

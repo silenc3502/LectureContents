@@ -1,5 +1,7 @@
 import {
-    ADD_TODO
+    ADD_TODO,
+    REMOVE_TODO,
+    EDIT_TODO
 } from './mutation-types'
 
 // 보통 action에서 처리하는 것은 비동기 처리를 함
@@ -15,5 +17,11 @@ export default {
 
         // DB 대신 임시적으로 사용하고 있음
         localStorage.setItem('todo-app-data', JSON.stringify(data))
+    },
+    removeTodo (context, payload) {
+        context.commit(REMOVE_TODO, payload)
+    },
+    editTodo ({ commit }, payload) {
+        commit(EDIT_TODO, payload)
     }
 }

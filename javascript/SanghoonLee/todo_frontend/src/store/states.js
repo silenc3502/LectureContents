@@ -1,3 +1,5 @@
 export default {
-    todoItems: []
+    todoItems: [],
+    editingId: 0,
+    filter: null
 }

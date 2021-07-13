@@ -1,9 +1,12 @@
 import {
+    // TODO
     ADD_TODO,
     EDIT_TODO,
     REMOVE_TODO,
     SET_EDITTING_ID,
     RESET_EDITTING_ID,
+    // 몬스터
+    ADD_MONSTER,
     DEATH
 } from './mutation-types'
 
@@ -30,8 +33,13 @@ export default {
     [RESET_EDITTING_ID] (state) {
         state.editingId = 0
     },
-    [DEATH] (state) {
-        const targetIndex = state.monsterElements.findIndex(v => v.id === id)
+    [ADD_MONSTER] (state, payload) {
+        const { name } = payload
+        state.monsterElements.push({ monsterId: state.nextMonsterId, name })
+        state.nextMonsterId++
+    },
+    [DEATH] (state, monsterId) {
+        const targetIndex = state.monsterElements.findIndex(v => v.monsterId === monsterId)
         state.monsterElements.splice(targetIndex, 1)
     }
 }

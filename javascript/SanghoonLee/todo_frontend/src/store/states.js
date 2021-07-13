@@ -5,5 +5,6 @@ export default {
     nextTodoId: 1,
     filter: null,
     // 몬스터
-    monsterElements: []
+    monsterElements: [],
+    nextMonsterId: 1
 }

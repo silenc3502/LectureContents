@@ -40,12 +40,12 @@ export default {
             const id = this.monster.id
             const name = event.target.value.trim()
 
-            if (content.length <= 0) {
+            if (name.length <= 0) {
                 return false
             }
 
             this.$emit('editTodo', name, id)
-            this.$refs.content.blur()
+            this.$refs.name.blur()
         },
         handleBlur () {
             this.$emit('resetEditingId')

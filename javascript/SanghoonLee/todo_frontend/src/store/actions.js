@@ -1,7 +1,11 @@
 import {
+    // TODO
     ADD_TODO,
     REMOVE_TODO,
-    EDIT_TODO
+    EDIT_TODO,
+    // 몬스터
+    ADD_MONSTER,
+    DEATH
 } from './mutation-types'
 
 // 보통 action에서 처리하는 것은 비동기 처리를 함
@@ -23,6 +27,9 @@ export default {
     },
     editTodo ({ commit }, payload) {
         commit(EDIT_TODO, payload)
+    },
+    addMonster (context, payload) {
+        context.commit(ADD_MONSTER, payload)
     },
     death ({ commit }, payload) {
         commit(DEATH, payload)

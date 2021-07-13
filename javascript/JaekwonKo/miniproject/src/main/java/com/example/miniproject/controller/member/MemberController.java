@@ -33,7 +33,7 @@ public class MemberController {
         /* 비밀번호 길이 체크 로직 시작 */
         String pw = member.getPw();
         if (pw.length() <= 8) {
-            // model.addAttribute("alertMsg", "8자리 이상의 비밀번호를 기입해주세요");
+             model.addAttribute("alertMsg", "8자리 이상의 비밀번호를 기입해주세요");
             return "redirect:/member/register";
         }
         /* 비밀번호 길이 체크 로직 끝 */

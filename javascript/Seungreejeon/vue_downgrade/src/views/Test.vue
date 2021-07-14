@@ -21,16 +21,23 @@
 
             <local-component v-bind:num="value"></local-component>
             <button v-on:click="plus">클릭해봐!</button>
+            <!-- $store 뷰의 내장 store의 getter에서 randomFromSpring데이터를 가져옴 -->
+            <b> random: {{ this.$store.getters.randomFromSpring }} </b><br>
+            <input type="button" @click="randomNumber()" value="random"/><br>
         </div>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 
 import Vue from 'vue'
 import GlobalComponent from '../components/GlobalComponent.vue'
 import LocalComponent from '../components/LocalComponent.vue'
+
 Vue.component(GlobalComponent.name, GlobalComponent)
+
 export default {
     components: {
         'local-component': LocalComponent
@@ -43,8 +50,14 @@ export default {
         }
     },
     methods: {
+        ...mapActions([
+            'generateRandomNumber'
+        ]),
         plus () {
             this.value++
+        },
+        randomNumber() {
+            this.generateRandomNumber()
         }
     }
 }

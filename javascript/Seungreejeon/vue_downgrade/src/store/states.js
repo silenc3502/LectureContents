@@ -6,5 +6,7 @@ export default {
     filter: null,
     // 몬스터
     monsterElements: [],
-    nextMonsterId: 1
+    nextMonsterId: 1,
+    randomFromSpring: 0
+
 }

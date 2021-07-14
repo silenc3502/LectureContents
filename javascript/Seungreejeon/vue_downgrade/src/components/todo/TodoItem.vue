@@ -2,13 +2,15 @@
 <template>
     <div class="todo">
         <li>
-            <span v-if="!isEditing">
+            <span v-if="!isEditing" @dblclick="handleDoubleClick">
                 {{ todoItem.content }}
             </span>
             <input v-else type="text" ref="content"
                     v-bind:value="todoItem.content"
                     v-on:blur="handleBlur"
                     v-on:keydown.enter="editTodo"/>
+            <input type="checkbox" v-bind:checked="todoItem.done"
+                    v-on:change="toggleTodoStatus()"/>
             <button v-on:click="removeTodo">지우기</button>
         </li>
     </div>
@@ -48,6 +50,21 @@ export default {
         },
         handleBlur () {
             this.$emit('resetEditingId')
+        },
+        toggleTodoStatus () {
+            const id = this.todoItem.id
+            console.log("toggleTodoStatus()-id: " + id)
+            this.$emit('toggleTodoStatus', id)
+        },
+        handleDoubleClick () {
+            const { id } = this.todoItem
+            this.$emit('setEditingId', id)
+            console.log("handleDoubleClick-id: " + JSON.stringify(id))
+
+            //짧은 sleep 정도로 이해하면됨$
+            this.$nextTick(() => {
+                this.$refs.content.focus()
+            }) 
         }
     }
 }

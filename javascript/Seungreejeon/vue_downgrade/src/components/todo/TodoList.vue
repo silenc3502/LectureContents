@@ -10,7 +10,8 @@
                     v-on:removeTodo="onRemoveTodo"
                     v-on:editTodo="onEditTodo"
                     v-on:setEditingId="SET_EDITTING_ID"
-                    v-on:resetEditingId="RESET_EDITTING_ID"/>
+                    v-on:resetEditingId="RESET_EDITTING_ID"
+                    v-on:toggleTodoStatus="onToggleTodoStatus"/>
         </ul>
     </div>
      <!--todo에서 v-bind를 통해서 props에 값을 보내줌 -->
@@ -47,6 +48,9 @@ export default {
         },
         onEditTodo (content, id) {
             this.$emit('editTodo', content, id)
+        },
+        onToggleTodoStatus(id) {
+            this.$emit('toggleTodoStatus', id)
         }
     }
 }

@@ -6,5 +6,9 @@ export default {
     },
     getMonsterElements (state) {
         return state.monsterElements
+    },
+    randomFromSpring(state){
+        return state.randomFromSpring
     }
+
 }

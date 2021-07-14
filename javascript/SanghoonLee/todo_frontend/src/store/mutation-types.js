@@ -8,3 +8,6 @@ export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS'
 
 export const ADD_MONSTER = 'ADD_MONSTER'
 export const DEATH = 'DEATH'
+
+export const SUCCESS_GEN_RAND_NUM = 'SUCCESS_GEN_RAND_NUM'
+export const FAIL_GEN_RAND_NUM = 'FAIL_GEN_RAND_NUM'

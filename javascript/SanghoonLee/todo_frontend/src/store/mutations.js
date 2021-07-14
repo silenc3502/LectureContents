@@ -9,7 +9,10 @@ import {
     TOGGLE_TODO_STATUS,
     // 몬스터
     ADD_MONSTER,
-    DEATH
+    DEATH,
+    // 스프링 랜덤 데이터 통신
+    SUCCESS_GEN_RAND_NUM,
+    FAIL_GEN_RAND_NUM
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -59,5 +62,13 @@ export default {
     [DEATH] (state, monsterId) {
         const targetIndex = state.monsterElements.findIndex(v => v.monsterId === monsterId)
         state.monsterElements.splice(targetIndex, 1)
+    },
+    // 스프링 랜덤 데이터 통신
+    [SUCCESS_GEN_RAND_NUM] (state, payload) {
+        console.log('payload = ' + payload)
+        state.randomFromSpring = payload
+    },
+    [FAIL_GEN_RAND_NUM] () {
+        console.log('통신 에러!')
     }
 }

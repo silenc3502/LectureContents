@@ -7,8 +7,13 @@ import {
     TOGGLE_TODO_STATUS,
     // 몬스터
     ADD_MONSTER,
-    DEATH
+    DEATH,
+    // 스프링 랜덤 데이터 통신
+    SUCCESS_GEN_RAND_NUM,
+    FAIL_GEN_RAND_NUM
 } from './mutation-types'
+
+import axios from 'axios'
 
 // 보통 action에서 처리하는 것은 비동기 처리를 함
 export default {
@@ -42,5 +47,17 @@ export default {
     },
     death ({ commit }, payload) {
         commit(DEATH, payload)
+    },
+    // Spring과 랜덤 데이터 통신
+    generateRandomNumber ({ commit }) {
+        console.log(commit)
+
+        axios.get('http://localhost:7777/random')
+                .then((res) => {
+                    commit(SUCCESS_GEN_RAND_NUM, parseInt(res.data.randNumber))
+                })
+                .catch((res) => {
+                    commit(FAIL_GEN_RAND_NUM, res)
+                })
     }
 }

@@ -1,21 +1,27 @@
 <template>
-  <div class="quiz">
-    <quiz-header></quiz-header>
-    <p>{{ monsters.name }} - hp: {{ monsters.hp }}</p>
-    <monster-attack v-on:attack="onAttack"></monster-attack>
+  <div class="monster">
+    <monster-header></monster-header>
+    <monster-input v-on:addMonster="onAddMonster"></monster-input>
+    <monster-list v-on:death="onDeath"></monster-list>
   </div>
 </template>
 
 
 <script>
-import QuizHeader from '../components/quiz/QuizHeader.vue'
-import MonsterAttack from '../components/quiz/MonsterAttack.vue'
+import { mapActions } from 'vuex'
+import MonsterHeader from '../components/quiz/MonsterHeader.vue'
+// import MonsterAttack from '../components/quiz/MonsterAttack.vue'
+import MonsterInput from '../components/quiz/MonsterInput.vue'
+import MonsterList from '../components/quiz/MonsterList.vue'
+
 
 export default {
-  name: 'Quiz',
+  name: 'Monster',
   components: {
-    'quiz-header': QuizHeader,
-    'monster-attack': MonsterAttack
+    'monster-header': MonsterHeader,
+    // 'monster-attack': MonsterAttack
+    'monster-input': MonsterInput,
+    'monster-list': MonsterList
   },
   data () {
     return {
@@ -29,10 +35,24 @@ export default {
     }
   },
   methods: {
+    ...mapActions ([
+      'addMonster',
+      'death',
+      'save'
+    ]),
+    onAddMonster (name) {
+      const monsterElement = { name }
+      this.addMonster(monsterElement)
+      this.save()
+    },
     onAttack (content) {
       // {}로 받으면 객체로 받게 됨
       const skill = { content }
       this.monsters.hp -= this.me.atk * skill.content
+    },
+    onDeath (monsterId) {
+      this.death(monsterId)
+      this.save()
     }
   }
 }

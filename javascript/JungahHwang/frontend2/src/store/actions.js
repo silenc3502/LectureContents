@@ -2,9 +2,14 @@
 // (비동기 처리(action) <-> 동기 처리(mutation))
 
 import {
+  // Todo
   ADD_TODO,
   REMOVE_TODO,
-  EDIT_TODO
+  EDIT_TODO,
+
+  // Monster
+  ADD_MONSTER,
+  DEATH
 } from './mutation-types'
 
 export default {
@@ -29,5 +34,13 @@ export default {
   // commit으로 바로 받으려면 {객체}로 받고 commit 작성
   editTodo ({ commit }, payload) {
     commit(EDIT_TODO, payload)
+  },
+
+// Monster
+  addMonster (context, payload) {
+    context.commit(ADD_MONSTER, payload)
+  },
+  death ({ commit }, payload) {
+    commit(DEATH, payload)
   }
 }

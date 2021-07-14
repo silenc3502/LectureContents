@@ -6,6 +6,7 @@ export const RESET_EDITTING_ID = 'RESET_EDITTING_ID'
 export const CLEAR_ALL = 'CLEAR_ALL'
 export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS'
 
+export const ADD_MANY_MONSTER = 'ADD_MANY_MONSTER'
 export const ADD_MONSTER = 'ADD_MONSTER'
 export const DEATH = 'DEATH'
 

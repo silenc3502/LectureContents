@@ -8,6 +8,7 @@ import {
     CLEAR_ALL,
     TOGGLE_TODO_STATUS,
     // 몬스터
+    ADD_MANY_MONSTER,
     ADD_MONSTER,
     DEATH,
     // 스프링 랜덤 데이터 통신
@@ -54,6 +55,12 @@ export default {
         })
     },
     // 판타지 온라인
+    [ADD_MANY_MONSTER] (state, payload) {
+        for (var i = 0; i < payload.length; i++) {
+            state.monsterElements.push(payload[i])
+            state.nextMonsterId++
+        }
+    },
     [ADD_MONSTER] (state, payload) {
         const { name } = payload
         state.monsterElements.push({ monsterId: state.nextMonsterId, name })

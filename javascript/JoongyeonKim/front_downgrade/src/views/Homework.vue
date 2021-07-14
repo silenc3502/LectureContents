@@ -1,25 +1,33 @@
 <template>
     <div class="homework">
         <homework-header></homework-header>
-         <homework-skill v-on:firstSkill="onFirstSkill"></homework-skill>
-         <p>이름: {{ monsters.name }} hp: {{ monsters.hp }}</p>
+        <monster-input v-on:addMonster="onAddMonster"></monster-input>
+        <!-- <homework-skill v-on:firstSkill="onFirstSkill"></homework-skill> -->
+        <monster-list
+                v-on:death="onDeath">
+        </monster-list>
+        <!-- <p>이름: {{ monsters.name }} hp: {{ monsters.hp }}</p> -->
     </div>
 </template>
 
 <script>
-
 import HomeworkHeader from '../components/homework/HomeworkHeader.vue'
-import HomeworkSkill from '../components/homework/HomeworkSkill.vue'
+import MonsterInput from '../components/monster/MonsterInput.vue'
+// import HomeworkSkill from '../components/homework/HomeworkSkill.vue'
+import MonsterList from '../components/monster/MonsterList.vue'
 
+import { mapActions } from 'vuex'
 
 export default {
     name: 'Homework',
     components: {
         'homework-header': HomeworkHeader,
-        'homework-skill': HomeworkSkill
+        'monster-input': MonsterInput,
+        // 'homework-skill': HomeworkSkill,
+        'monster-list': MonsterList
     },
-    data(){
-        return{
+    data () {
+        return {
             character: {
                 atk: 5
             },
@@ -30,21 +38,32 @@ export default {
         }
     },
     methods: {
-        onFirstSkill(content) {
-            const coefficient = {content}
-
+        ...mapActions ([
+            'addMonster',
+            'death',
+            'save'
+        ]),
+        onAddMonster (name) {
+            const monsterElement = { name }
+            this.addMonster(monsterElement)
+            this.save()
+        },
+        onFirstSkill (content) {
+            // { } 로 받으면 객체로 받게됨
+            const coefficient = { content }
             this.monsters.hp -= coefficient.content * this.character.atk
+        },
+        onDeath (monsterId) {
+            this.death(monsterId)
+            this.save()
         }
-    } 
+    }
 }
-
 </script>
 
 <style>
-
 body {
     text-align: center;
-    background-color: cadetblue;
+    background-color: #CEDEBD;
 }
-
 </style>

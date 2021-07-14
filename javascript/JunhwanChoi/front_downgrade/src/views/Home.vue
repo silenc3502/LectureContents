@@ -5,17 +5,22 @@
                     class="nav-link"
                     active-class="active">
                 Home
-            </router-link>
+            </router-link><br><br>
             <router-link :to="{ name: 'Test' }"
                     class="nav-link"
                     active-class="active">
                 Test
-            </router-link>
-            <router-link :to="{ name: 'Regend' }"
+            </router-link><br><br>
+            <router-link :to="{ name: 'Todo' }"
                     class="nav-link"
                     active-class="active">
-                Regend!!!
-            </router-link>
+                Todo-List
+            </router-link><br><br>
+            <router-link :to="{ name: 'Homework' }"
+                    class="nav-link"
+                    active-class="active">
+                Homework
+            </router-link><br><br>
         </div>
     </div>
 </template>

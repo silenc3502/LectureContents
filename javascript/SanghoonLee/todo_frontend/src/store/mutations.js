@@ -5,6 +5,7 @@ import {
     REMOVE_TODO,
     SET_EDITTING_ID,
     RESET_EDITTING_ID,
+    CLEAR_ALL,
     // 몬스터
     ADD_MONSTER,
     DEATH
@@ -33,6 +34,10 @@ export default {
     [RESET_EDITTING_ID] (state) {
         state.editingId = 0
     },
+    [CLEAR_ALL] (state) {
+        state.todoItems = []
+    },
+    // 판타지 온라인
     [ADD_MONSTER] (state, payload) {
         const { name } = payload
         state.monsterElements.push({ monsterId: state.nextMonsterId, name })

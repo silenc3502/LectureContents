@@ -3,6 +3,7 @@ import {
     ADD_TODO,
     REMOVE_TODO,
     EDIT_TODO,
+    CLEAR_ALL,
     // 몬스터
     ADD_MONSTER,
     DEATH
@@ -28,6 +29,10 @@ export default {
     editTodo ({ commit }, payload) {
         commit(EDIT_TODO, payload)
     },
+    clearAll (context) {
+        context.commit(CLEAR_ALL)
+    },
+    // 판타지 온라인
     addMonster (context, payload) {
         context.commit(ADD_MONSTER, payload)
     },

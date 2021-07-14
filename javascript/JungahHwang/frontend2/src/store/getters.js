@@ -1,13 +1,18 @@
 export default {
-  // Todo
+// Todo
   filteredTodoItems (state) {
     if (!state.filter) {
       return state.todoItems
     }
   },
 
-  // Monster
+// Monster
   getMonsterElements (state) {
     return state.monsterElements
+  },
+
+// Spring
+  randomFromSpring (state) {
+    return state.randomFromSpring
   }
 }

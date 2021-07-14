@@ -1,19 +1,27 @@
 // mutation: 동기 처리를 하기 때문에 데이터 무결성이 보장
+// (동기처리만 하면 되는 것은 mutation만 작성, 비동기처리도 해야하는 것은 action까지 작성)
 
 import {
-  // Todo
+// Todo
   ADD_TODO,
   REMOVE_TODO,
   EDIT_TODO,
   SET_EDITING_ID,
   RESET_EDITING_ID,
+  CLEAR_ALL,
+  TOGGLE_TODO_STATUS,
 
-  // Monster
+// Monster
   ADD_MONSTER,
-  DEATH
+  DEATH,
+
+// Spring
+  SUCCESS_GEN_RAND_NUM,
+  FAIL_GEN_RAND_NUM
 } from './mutation-types'
 
 export default {
+// Todo
   [ADD_TODO] (state, payload) {
     const { content } = payload
     // false: todo를 실행하지 않았으므로 초기값은 false, todo를 하고 체크하면 true가 되도록
@@ -37,8 +45,23 @@ export default {
   [RESET_EDITING_ID] (state) {
     state.editingId = 0
   },
+  [CLEAR_ALL] (state) {
+    state.todoItems = []
+  },
+  [TOGGLE_TODO_STATUS] (state, id) {
+    // 현재 todoItems 배열에 id로 들어온 todoItem을 찾음(id값을 비교하고 해당하는 todoItem을 찾음)
+    const filtered = state.todoItems.filter(todoItem => {
+      return todoItem.id === id
+    })
+    // json형식의 데이터를 상세하게 볼 수 있음
+    console.log('filtered: ' + JSON.stringify(filtered))
 
-  // Monster
+    filtered.forEach(todoItem => {
+      todoItem.done = !todoItem.done
+    })
+  },
+
+// Monster
   [ADD_MONSTER] (state, payload) {
     const { name } = payload
     state.monsterElements.push({ monsterId: state.nextMonsterId, name })
@@ -47,5 +70,14 @@ export default {
   [DEATH] (state, monsterId) {
     const targetIndex = state.monsterElements.findIndex(v => v.monsterId === monsterId)
     state.monsterElements.splice(targetIndex, 1)
-  }
+  },
+
+// Spring
+  [SUCCESS_GEN_RAND_NUM] (state, payload) {
+    console.log('payload: ' + payload)
+    state.randomFromSpring = payload
+  },
+  [FAIL_GEN_RAND_NUM] () {
+    console.log('통신에러!')
+  }  
 }

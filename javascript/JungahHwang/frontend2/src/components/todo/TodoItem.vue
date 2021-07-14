@@ -1,13 +1,15 @@
 <template>
   <div class="todo">
     <li>
-      <span v-if="!isEditing">
+      <span v-if="!isEditing" v-on:dblclick="handleDoubleClick">
         {{ todoItem.content }}
       </span>
       <!-- blur: 입력창의 포커싱 제거 -->
       <input v-else type="text" ref="content" v-bind:value="todoItem.content"
         v-on:blur="handleBlur" v-on:keydown.enter="editTodo">
-      <button v-on:click="removeTodo">remove</button>
+      <input type="checkbox" v-bind:checked="todoItem.done"
+        v-on:change="toggleTodoStatus">
+      <button v-on:click="removeTodo">Remove</button>
     </li>
   </div>
 </template>
@@ -17,7 +19,7 @@
 
 export default {
   name: 'TodoItem',
-  // TodoList에서 전달한 값을 props로 받음
+  // TodoList에서 전달한 값을 props로 받음(props는 bind로 전달)
   props: {
     todoItem: {
       type: Object
@@ -50,7 +52,28 @@ export default {
     },
     handleBlur () {
       this.$emit('resetEditingId')
+    },
+    toggleTodoStatus () {
+      const id = this.todoItem.id
+      this.$emit('toggleTodoStatus', id)
+    },
+    handleDoubleClick () {
+      const { id } = this.todoItem
+      this.$emit('setEditingId', id)
+      // nextTick: 한 텀 쉬고 동작    
+      this.$nextTick(() => {
+         this.$refs.content.focus()
+      })
+     
     }
   }
 }
 </script>
+
+
+<style scoped>
+
+button {
+  background-color: pink;
+}
+</style>

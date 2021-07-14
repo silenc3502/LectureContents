@@ -2,17 +2,26 @@
 // (비동기 처리(action) <-> 동기 처리(mutation))
 
 import {
-  // Todo
+// Todo
   ADD_TODO,
   REMOVE_TODO,
   EDIT_TODO,
+  CLEAR_ALL,
+  TOGGLE_TODO_STATUS,
 
-  // Monster
+// Monster
   ADD_MONSTER,
-  DEATH
+  DEATH,
+
+// Spring
+  SUCCESS_GEN_RAND_NUM,
+  FAIL_GEN_RAND_NUM
 } from './mutation-types'
 
+import axios from 'axios'
+
 export default {
+// Todo
   // context: 자바스크립트에서 사용하는 일련의 동작 흐름
   // payload: todoItem(웹에서 입력한 데이터)
   addTodo (context, payload) {
@@ -35,6 +44,13 @@ export default {
   editTodo ({ commit }, payload) {
     commit(EDIT_TODO, payload)
   },
+  // commit하면 mutation이 동작
+  clearAll (context) {
+    context.commit(CLEAR_ALL)
+  },
+  toggleTodoStatus ({ commit }, id) {
+    commit(TOGGLE_TODO_STATUS, id)
+  },
 
 // Monster
   addMonster (context, payload) {
@@ -42,5 +58,21 @@ export default {
   },
   death ({ commit }, payload) {
     commit(DEATH, payload)
+  },
+
+// spring과 랜덤 데이터 통신
+  generateRandomNumber ({ commit }) {
+    
+    // axios.get: GET 요청
+    // axios.post: POST 요청
+    // 특정 URL로 GET 혹은 POST, 그 외의 요청을 보낼 수 있음
+    // .then((res)): 데이터를 수신 (응답받은 데이터는 res가 가지고 있음)
+    // .catch((res)): 오류가 발생한 경우
+    // randNumber는 spring에 있는 변수
+    axios.get('http://localhost:7777/random').then((res) => {
+      commit(SUCCESS_GEN_RAND_NUM, parseInt(res.data.randNumber))
+    }).catch((res) => {
+      commit(FAIL_GEN_RAND_NUM, res)
+    })
   }
 }

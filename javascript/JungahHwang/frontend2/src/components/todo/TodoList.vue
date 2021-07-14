@@ -6,7 +6,8 @@
       <todo-item v-for="todoItem in todoItems" v-bind:key="todoItem.id" 
         v-bind:todoItem="todoItem" v-bind:editingId="editingId" 
         v-on:removeTodo="onRemoveTodo" v-on:editTodo="onEditTodo"
-        v-on:setEditingId="SET_EDITING_ID" v-on:resetEditingId="RESET_EDITING_ID">
+        v-on:setEditingId="SET_EDITING_ID" v-on:resetEditingId="RESET_EDITING_ID"
+        v-on:toggleTodoStatus="onToggleTodoStatus">
       </todo-item>
     </ul>
   </div>
@@ -46,6 +47,9 @@ export default {
     },
     onEditTodo (content, id) {
       this.$emit('editTodo', content, id)
+    },
+    onToggleTodoStatus (id) {
+      this.$emit('toggleTodoStatus', id)
     }
   }
 }

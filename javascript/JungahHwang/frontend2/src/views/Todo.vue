@@ -5,6 +5,8 @@
          상위 컴포넌트(Todo)가 onAddTodo()를 수신 -->
     <todo-input v-on:addTodo="onAddTodo"></todo-input>
     <todo-list v-on:removeTodo="onRemoveTodo" v-on:editTodo="onEditTodo"></todo-list>
+    <br>
+    <todo-footer v-on:removeAll="onClearAll"></todo-footer>
   </div>
 </template>
 
@@ -13,6 +15,7 @@
 import TodoHeader from '../components/todo/TodoHeader.vue'
 import TodoInput from '../components/todo/TodoInput.vue'
 import TodoList from '../components/todo/TodoList.vue'
+import TodoFooter from '../components/todo/TodoFooter.vue'
 
 import { mapActions } from 'vuex'
 
@@ -21,7 +24,8 @@ export default {
   components: {
     'todo-header': TodoHeader,
     'todo-input': TodoInput,
-    'todo-list': TodoList
+    'todo-list': TodoList,
+    'todo-footer': TodoFooter,
   },
   methods: {
     // store에서 중앙관리를 하고 중앙관리하여 사용할 동작들을 actions에 넣음
@@ -31,7 +35,9 @@ export default {
       'addTodo',
       'save',
       'removeTodo',
-      'editTodo'
+      'editTodo',
+      'clearAll',
+      'toggleTodoStatus'
     ]),
     onAddTodo (content) {
       // content: TodoInput의 value값
@@ -45,6 +51,14 @@ export default {
     },
     onEditTodo (content, id) {
       this.editTodo({ id, content })
+      this.save()
+    },
+    onClearAll () {
+      this.clearAll()
+      this.save()
+    },
+    onToggleTodoStatus (id) {
+      this.toggleTodoStatus(id)
       this.save()
     }
   }

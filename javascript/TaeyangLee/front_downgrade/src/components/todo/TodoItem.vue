@@ -1,24 +1,24 @@
 <template>
     <div class="todo">
         <li>
-            <span v-if="!isEditing">
+            <span v-if="!isEditing" v-on:dblclick="handleDoubleClick">
                 {{ todoItem.content }}
             </span>
             <input v-else type="text" ref="content"
                     v-bind:value="todoItem.content"
                     v-on:blur="handleBlur"
                     v-on:keydown.enter="editTodo"/>
+            <input type="checkbox"
+                    v-bind:checked="todoItem.done"
+                    v-on:change="toggleTodoStatus()"/>
             <button v-on:click="removeTodo">지우기</button>
-
-            <button v-on:click="addMonster">몬스터추가</button>
         </li>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'MonsterElement',
-    //v-on:bind로 보낸걸 props로받는다
+    name: 'TodoItem',
     props: {
         todoItem: {
             type: Object
@@ -50,8 +50,19 @@ export default {
         handleBlur () {
             this.$emit('resetEditingId')
         },
-        addMonster () {
-
+        toggleTodoStatus () {
+            const id = this.todoItem.id
+            console.log('toggleTodoStatus() - id: ' + id)
+            
+            this.$emit('toggleTodoStatus', id)
+        },
+        handleDoubleClick () {
+            const { id } = this.todoItem
+            console.log('handleDoubleClick() - id: ' + JSON.stringify(id))
+            this.$emit('setEditingId', id)
+            this.$nextTick(() => {
+                this.$refs.content.focus()
+            })
         }
     }
 }

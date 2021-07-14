@@ -4,6 +4,7 @@ import {
     REMOVE_TODO,
     EDIT_TODO,
     CLEAR_ALL,
+    TOGGLE_TODO_STATUS,
     // 몬스터
     ADD_MONSTER,
     DEATH
@@ -31,6 +32,9 @@ export default {
     },
     clearAll (context) {
         context.commit(CLEAR_ALL)
+    },
+    toggleTodoStatus ({ commit }, id) {
+        commit(TOGGLE_TODO_STATUS, id)
     },
     // 판타지 온라인
     addMonster (context, payload) {

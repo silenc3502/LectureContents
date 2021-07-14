@@ -6,6 +6,7 @@ import {
     SET_EDITTING_ID,
     RESET_EDITTING_ID,
     CLEAR_ALL,
+    TOGGLE_TODO_STATUS,
     // 몬스터
     ADD_MONSTER,
     DEATH
@@ -36,6 +37,18 @@ export default {
     },
     [CLEAR_ALL] (state) {
         state.todoItems = []
+    },
+    [TOGGLE_TODO_STATUS] (state, id) {
+        // 현재 todoItems 배열에서 id로 들어온 todoItem을 찾는다.
+        const filtered = state.todoItems.filter(todoItem => {
+            return todoItem.id === id
+        })
+
+        console.log('filtered: ' + JSON.stringify(filtered))
+
+        filtered.forEach(todoItem => {
+            todoItem.done = !todoItem.done
+        })
     },
     // 판타지 온라인
     [ADD_MONSTER] (state, payload) {

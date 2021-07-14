@@ -8,6 +8,9 @@
                     v-bind:value="todoItem.content"
                     v-on:blur="handleBlur"
                     v-on:keydown.enter="editTodo"/>
+            <input type="checkbox"
+                    v-bind:checked="todoItem.done"
+                    v-on:change="toggleTodoStatus()"/>
             <button v-on:click="removeTodo">지우기</button>
         </li>
     </div>
@@ -49,6 +52,10 @@ export default {
         },
         handleBlur () {
             this.$emit('resetEditingId')
+        },
+        toggleTodoStatus () {
+            const id = this.todoItem.id
+            this.$emit('toggleTodoStatus', id)
         }
     }
 }

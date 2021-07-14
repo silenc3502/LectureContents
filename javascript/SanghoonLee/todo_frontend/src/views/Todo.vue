@@ -37,7 +37,8 @@ export default {
             'removeTodo',
             'editTodo',
             'save',
-            'clearAll'
+            'clearAll',
+            'toggleTodoStatus'
         ]),
         onAddTodo (content) {
             const todoItem = { content }
@@ -54,6 +55,10 @@ export default {
         },
         onClearAll () {
             this.clearAll()
+            this.save()
+        },
+        onToggleTodoStatus (id) {
+            this.toggleTodoStatus(id)
             this.save()
         }
     }

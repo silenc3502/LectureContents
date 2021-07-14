@@ -6,10 +6,7 @@
 export default {
     name: 'LocalComponent',
     props: {
-        num: Number,
-       monster: String
+        num: Number
     }
 }
-
-
 </script>

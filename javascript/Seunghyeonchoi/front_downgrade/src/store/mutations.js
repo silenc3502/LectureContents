@@ -66,7 +66,8 @@ export default {
     },
     [ADD_MONSTER] (state, payload) {
         const { name } = payload
-        state.monsterElements.push({ monsterId: state.nextMonsterId, name })
+        var randHp = Math.floor(Math.random() * 5000) + 1
+        state.monsterElements.push({ monsterId: state.nextMonsterId, name, hp: randHp })
         state.nextMonsterId++
     },
     [DEATH] (state, monsterId) {

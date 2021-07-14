@@ -3,7 +3,7 @@
         <li>
             <span v-if="!isEditing">
                 {{ monster.name }}
-                (HP: {{ monster.hp}})
+                (HP:{{ monster.hp}})
             </span>
             <input v-else type="text" ref="name"
                     v-bind:value="monster.name"

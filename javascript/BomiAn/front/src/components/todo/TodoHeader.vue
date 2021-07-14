@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <h2>Todo 헤더</h2>
-  </div>
+    <div>
+        <h2>Todo 헤더</h2>
+    </div>
 </template>
 
 <script>
-export default {  }
+export default { }
 </script>
 
 <style scoped>
-    div {
-      background-color: #77cce3;
-    }
+div {
+    background-color: #77cce3;
+}
 </style>

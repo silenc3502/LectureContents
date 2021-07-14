@@ -36,7 +36,7 @@ export default {
             this.$emit('death', monsterId)
         },
         editTodo (event) {
-            const id = this.monster.monsterId
+            const monsterId = this.monster.monsterId
             const name = event.target.value.trim()
             if (name.length <= 0) {
                 return false

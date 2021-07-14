@@ -38,11 +38,11 @@ export default {
             SET_EDITTING_ID,
             RESET_EDITTING_ID
         ]),
-        onDeath (id) {
+        onDeath (monsterId) {
             this.$emit('death', monsterId)
         },
-        onEditTodo (content, monsterId) {
-            this.$emit('editTodo', content, monsterId)
+        onEditTodo (content, id) {
+            this.$emit('editTodo', content, id)
         }
     }
 }

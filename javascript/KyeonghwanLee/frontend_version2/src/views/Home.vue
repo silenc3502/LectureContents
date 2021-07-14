@@ -19,7 +19,7 @@
             <router-link :to="{ name: 'Homework' }"
                     class="nav-link"
                     active-class="active">
-                Todo
+                Homework
             </router-link>
             
         </div>

@@ -17,6 +17,6 @@ export default {
 
 <style scoped>
 div {
-    background-color: #77cce3;
+    background-color: #07ce21dc;
 }
 </style>

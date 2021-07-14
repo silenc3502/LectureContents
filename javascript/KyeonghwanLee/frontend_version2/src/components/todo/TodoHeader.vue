@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>판타지 온라인에 접속한것을 환영합니다.</h2>
+        <h2>하이루</h2>
     </div>
 </template>
 

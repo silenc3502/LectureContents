@@ -11,6 +11,16 @@
                     active-class="active">
                 Test
             </router-link>
+            <router-link :to="{ name: 'Todo' }"
+                    class="nav-link"
+                    active-class="active">
+                Todo
+            </router-link>
+            <router-link :to="{ name: 'Prob82' }"
+                    class="nav-link"
+                    active-class="active">
+                Prob82
+            </router-link>
         </div>
         <div>
             <!-- <button v-on:click="addManyMonster">몬스터 100마리 리젠</button>-->
@@ -81,4 +91,4 @@ import LocalComponent from '../components/LocalComponent.vue'
     }
   }
 </script>
-        GlobalComponent
+       

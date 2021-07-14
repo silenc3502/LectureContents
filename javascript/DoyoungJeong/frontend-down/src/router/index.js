@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
+import Todo from '../views/Todo.vue'
+import Prob82 from '../views/Prob82.vue'
 
 Vue.use(VueRouter)
 
@@ -15,7 +17,18 @@ const routes = [
     path: '/test',
     name: 'Test',
     component: Test
-  }
+  },
+  {
+    path: '/todo',
+    name: 'Todo',
+    component: Todo
+  },
+  {
+    path: '/prob82',
+    name: 'Prob82',
+    component: Prob82
+  },
+  
 ]
 
 const router = new VueRouter({

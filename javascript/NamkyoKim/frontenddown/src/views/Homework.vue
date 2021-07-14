@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import HomeworkHeader from '../components/homework/HomeworkHeader.vue'
-import MonsterInput from '../components/monster/MonsterInput.vue'
+import HomeworkHeader from '../components/homework/HomeworkHeaderBackup.vue'
+import MonsterInput from '../components/monster/MonsterInputBackup.vue'
 // import HomeworkSkill from '../components/homework/HomeworkSkill.vue'
-import MonsterList from '../components/monster/MonsterList.vue'
+import MonsterList from '../components/monster/MonsterListBackup.vue'
 import { mapActions } from 'vuex'
 export default {
     name: 'Homework',

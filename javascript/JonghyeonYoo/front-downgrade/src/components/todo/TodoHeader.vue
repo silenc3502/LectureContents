@@ -5,14 +5,11 @@
 </template>
 
 <script>
-export default {}
-
+export default { }
 </script>
 
 <style scoped>
-
-div{
-    background-color: #77CCE3;
+div {
+    background-color: #77cce3;
 }
-
 </style>

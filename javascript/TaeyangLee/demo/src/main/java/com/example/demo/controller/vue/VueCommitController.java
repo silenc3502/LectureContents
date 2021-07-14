@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class VueCommitController {
     @Autowired
     private RandNumService randNumService;
+
+    //서버의 정의는? 클라이언트에 서비스제공
+    //클라이언트는 어떤 서비스를 받는가? 클라이언트가 요청한 서비르를받음
     @GetMapping("/random")
     @ResponseBody
     public ResponseEntity<RandNumMessage> getRandom() {

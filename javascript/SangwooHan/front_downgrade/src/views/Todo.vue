@@ -5,8 +5,11 @@
         <todo-input v-on:addTodo="onAddTodo"></todo-input>
         <todo-list
                 v-on:removeTodo="onRemoveTodo"
-                v-on:editTodo="onEditTodo">
+                v-on:editTodo="onEditTodo"
+                v-on:toggleTodoStatus="ontoggleTodoStatus">
+
         </todo-list>
+        <todo-footer v-on:removeAll="onClearAll"></todo-footer>
     </div>
 </template>
 
@@ -14,13 +17,15 @@
 import TodoHeader from '../components/todo/TodoHeader.vue'
 import TodoInput from '../components/todo/TodoInput.vue'
 import TodoList from '../components/todo/TodoList.vue'
+import TodoFooter from '../components/todo/TodoFooter.vue'
 import { mapActions } from 'vuex'
 export default {
-    name: 'Todo',
+    name: 'Todo',    
     components: {
         'todo-header': TodoHeader,
         'todo-input': TodoInput,
-        'todo-list': TodoList
+        'todo-list': TodoList,
+        'todo-footer' : TodoFooter
     },
     methods: {
         // store에서 중앙 관리를 하고
@@ -29,7 +34,9 @@ export default {
             'addTodo',
             'removeTodo',
             'editTodo',
-            'save'
+            'save',
+            'clearAll',
+            'toggleTodoStatus'
         ]),
         onAddTodo (content) {
             const todoItem = { content }
@@ -42,6 +49,15 @@ export default {
         },
         onEditTodo (content, id) {
             this.editTodo({ id, content })
+            this.save()
+        },
+        onClearAll () {
+            this.clearAll()
+            this.save()
+
+        },
+        onToggleTodoStatus(id){
+            this.toggleTodoStatus(id)
             this.save()
         }
     }

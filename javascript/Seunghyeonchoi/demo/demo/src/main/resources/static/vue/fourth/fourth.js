@@ -24,7 +24,6 @@ var app = new Vue ({
     },
     beforeUpdate() {
         console.log('VDOM의 변화를 감지합니다.')
-        console.log(this.selectOnce)
     },
     updated() {
         console.log('VDOM의 변화를 적용합니다.')

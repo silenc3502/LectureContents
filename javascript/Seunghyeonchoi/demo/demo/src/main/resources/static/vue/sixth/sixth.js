@@ -1,12 +1,4 @@
 var app = new Vue ({
-//  현재 상점에서 아이템 리스트를 만들었다.
-//  무기를 구매할 수 있게 하였다.
-//
-//  1. 구매 버튼을 눌러서 무기를 구매하도록 한다.
-//  2. 소지금에서 구매한 값만큼 차감시킨다.
-//  3. 구매후 착용하여 캐릭터 스탯을 상승시킨다.
-//  4. 인벤토리창을 구현하여 현재 가지고 있는 장비 물품을 볼 수 있도록 만들어보자!
-
     el: '#app',
     data: {
         message: '우왕 뷰 짱',
@@ -17,17 +9,21 @@ var app = new Vue ({
         count: 0,
         radius: 50,
         randomNumber: 0,
+        isTheif: false,
+        firstFormerView: false,
+        firstFormerStat: false,
         shopView: false,
         shopList: [],
         shopListValue: [],
-        totalPrice: 0,
-        inventory: [],
-        tempNumber: 0,
         inventoryView: false,
+        myInventory: [],
+        myInventoryValue: [],
         characterStatus: {
             level: 1,
             hp: 70,
             mp: 30,
+            itemAtk: 0,
+            defaultAtk: 10,
             atk: 10,
             str: 10,
             intelligence: 10,
@@ -39,7 +35,8 @@ var app = new Vue ({
             totalLevelBar: 10,
             // 현재 누적한 경험치량
             currentLevelBar: 0,
-            money: 10000000000
+            money: 0,
+            selectJob: '모험가'
         },
         monsterName: '',
         monsters: [
@@ -67,8 +64,21 @@ var app = new Vue ({
             { name: '귀인', hp: 2800, exp: 180, money: 28000 },
             { name: '킹 슬라임', hp: 3000, exp: 200, money: 30000 },
             { name: '고스트', hp: 3200, exp: 250, money: 32000 },
+            { name: '흡혈귀', hp: 4000, exp: 300, money: 44000 },
+            { name: '스켈레톤 나이트', hp: 5500, exp: 350, money: 55000 },
+            { name: '메탈 슬라임', hp: 7000, exp: 40000, money: 70000 },
             { name: '리치', hp: 9000, exp: 500, money: 90000 },
+            { name: '듀라한', hp: 15000, exp: 700, money: 150000 },
             { name: '리치 킹', hp: 90000, exp: 2500, money: 900000 },
+            { name: '뱀파이어 로드', hp: 150000, exp: 4500, money: 1500000 },
+            { name: '이무기', hp: 300000, exp: 10000, money: 3000000 },
+            { name: '베헤모스', hp: 500000, exp: 20000, money: 5000000 },
+            { name: '하급 악마', hp: 1000000, exp: 40000, money: 10000000 },
+            { name: '리치 로드', hp: 1500000, exp: 60000, money: 15000000 },
+            { name: '베헤모스 킹', hp: 2000000, exp: 80000, money: 20000000 },
+            { name: '드래곤', hp: 4000000, exp: 150000, money: 40000000 },
+            { name: '데스 나이트', hp: 10000000, exp: 300000, money: 100000000 },
+            { name: '고위 악마', hp: 12000000, exp: 600000, money: 200000000 },
             { name: '카오스 드래곤', hp: 99999999, exp: 10000000, money: 100000000 },
             { name: '리무루 템페스트', hp: 999999999999999, exp: 999999999, money: 9999999999 }
         ],
@@ -86,117 +96,6 @@ var app = new Vue ({
         ]
     },
     methods: {
-        purchase() {
-            console.log('')
-            console.log('purchase ()')   
-
-            // var jsonData = JSON.stringify(this.shopList[1], ['price'])       
-
-            
-            
-            // console.log(JSON.stringify(this.shopList[1], ['price']))
-            // console.log(JSON.parse(jsonData).price)
-            // console.log(this.totalPrice)
-            // console.log(JSON.stringify(this.shopList[1], ['price']))
-            // console.log(JSON.parse(JSON.stringify(this.shopList[1], ['price'])).price)
-            // var jsonData = JSON.stringify(this.shopList[1], ['price']) 
-            // console.log(JSON.parse(jsonData).price)
-            
-            
-
-            console.log('shopListValue : ' + this.shopListValue)
-            console.log('shopListValue.length : ' + this.shopListValue.length)
-
-            console.log(':: 계산서 ::')
-            for (var i = 0; i < this.shopListValue.length; i++)    {
-              
-                var j = this.shopListValue[i]                
-                console.log('shopList[' + i + ']의 상품이름은 : '+ JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name +
-                '이고 가격은 : ' + JSON.parse(JSON.stringify(this.shopList[j], ['price'])).price + '원이다')
-
-                this.totalPrice +=  JSON.parse(JSON.stringify(this.shopList[j], ['price'])).price
-
-                
-            console.log('연습 중1 : ' + JSON.parse(JSON.stringify(this.shopList[j], ['price'])).price)
-            //둘 다 같은 표현이네
-            console.log('연습 중2 : ' + JSON.parse(JSON.stringify(this.shopList[j].price)))
-            }
-            console.log('합계금액 : ' + this.totalPrice)
-
-        },
-        equipItem () {
-            console.log('')
-            console.log('equipItem ()')
-            for (var i = 0; i < this.shopListValue.length; i++)    {
-              
-                var j = this.shopListValue[i]
-
-                
-                if (JSON.parse(JSON.stringify(this.shopList[j].effect.desc)) == 'hp 회복') {
-                    this.characterStatus.hp += JSON.parse(this.shopList[j].effect.amount)
-                    console.log("체력이 " + JSON.parse(this.shopList[j].effect.amount) + " 올랐습니다.")
-                } else {
-                    this.characterStatus.atk += JSON.parse(this.shopList[j].effect.atk)
-                    console.log("공격력이 " + JSON.parse(this.shopList[j].effect.atk) + " 올랐습니다.")
-                }
-
-                // if (JSON.parse(JSON.stringify(this.shopList[j].effect.desc)) == 'hp 회복') {
-                //     this.characterStatus.amout += JSON.parse(this.shopList[j].effect.amout)
-                //     console.log("체력이 " + JSON.parse(this.shopList[j].effect.amount) + " 올랐습니다.")
-                // } else {
-                //     this.characterStatus.atk += JSON.parse(this.shopList[j].effect.atk)
-                //     console.log("공격력이 " + JSON.parse(this.shopList[j].effect.atk) + " 올랐습니다.")
-                // }
-                
-                // this.characterStatus.hp += JSON.parse(this.shopList[j].effect.amount)
-                // console.log("체력이 " + JSON.parse(this.shopList[j].effect.amount) + " 회복됐습니다.")
-                // var temp01 = JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name  
-                // console.log(temp01)
-                // console.log(typeof temp01)
-                // console.log(temp01 == 'HP 포션 II')
-                // console.log('잠시 쉬고')
-                // console.log('잠시 쉬고')
-                // var temp02 = JSON.parse(JSON.stringify(this.shopList[j].effect.desc))  
-                // console.log(temp02)
-                // console.log(typeof temp02)
-                // console.log(temp02 == 'hp 회복')
-                // console.log(JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name)
-            }
-            
-        },
-        myInventory () {
-            console.log('')
-            console.log('myInventory ()')  
-         
-            for (var i = 0; i < this.shopListValue.length; i++)    {
-                var j = this.shopListValue[i]
-                var e = this.tempNumber
-
-                this.inventory[e+i+1] = JSON.parse(JSON.stringify(this.shopList[j], ['name'])).name                 
-            }
-            this.tempNumber += this.shopListValue.length
-
-            console.log(':: Inventory ::')
-
-            for (var i = 1; i < this.inventory.length; i++) {          
-                console.log(+ i +'번 아이템 : ' + this.inventory[i])
-            }
-            console.log('장바구니 비우기 실행')
-            this.shopListValue.length = 0
-            console.log(this.shopListValue.length)
-            
-
-            
-            
-            // console.log(this.shopList.length)
-            // console.log('this.shopList.splice(0, this.shopList.length) 실행')
-            // this.shopList.splice(0, this.shopList.length)
-            // console.log(this.shopList.length)
-            // console.log('this.shopList.length = 0 실행')
-            // this.shopList.length = 0
-            // console.log(this.shopList.length)
-
-        },
         shuffleShopList () {
             if (!this.shopView) {
                 this.shopListValue = []
@@ -206,6 +105,64 @@ var app = new Vue ({
                 var randIdx = Math.floor(Math.random() * this.itemBook.length)
                 this.shopList[i] = this.itemBook[randIdx]
             }
+        },
+        calcBuy: function () {
+            var tmpSum = 0
+
+            console.log('calcBuy(): ' + this.shopListValue.length)
+            console.log('shoplist length: ' + this.shopList.length)
+
+            for (var i = 0; i < this.shopListValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.shopListValue[i])
+
+                for (var j = 0; j < this.shopList.length; j++) {
+                    console.log('내부 루프')
+
+                    if (this.shopListValue[i] == j) {
+                        console.log('매칭 성공!')
+                        tmpSum += this.shopList[j].price
+                        break
+                    }
+                }
+            }
+
+            if (this.characterStatus.money - tmpSum >= 0) {
+                this.characterStatus.money -= tmpSum
+
+                // 사용자 인벤토리 구현시 필요한 로직 작성
+                for (var i = 0; i < this.shopListValue.length; i++) {
+                    this.myInventory.push({
+                        name: this.shopList[this.shopListValue[i]].name,
+                        effect: this.shopList[this.shopListValue[i]].effect
+                    })
+                }
+            } else {
+                alert('돈.벌.어.와!')
+            }
+        },
+        equipItem () {
+            var tmpSum = 0
+
+            console.log('equipItem(): ' + this.myInventoryValue.length)
+            console.log('myInventory length: ' + this.myInventory.length)
+
+            for (var i = 0; i < this.myInventoryValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.myInventoryValue[i])
+
+                for (var j = 0; j < this.myInventory.length; j++) {
+                    console.log('내부 루프')
+
+                    if (this.myInventoryValue[i] == j) {
+                        console.log('매칭 성공!')
+
+                        tmpSum += this.myInventory[j].effect.atk
+                        break
+                    }
+                }
+            }
+
+            this.characterStatus.itemAtk = tmpSum
+            this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSum
         },
         buttonClickTest: function (event) {
             alert('뷰 짱')
@@ -249,13 +206,34 @@ var app = new Vue ({
         userAttack: function (index) {
             this.monsters[index].hp -= this.characterStatus.atk
         },
+        spiritChaosDevilBlade (index) {
+            this.monsters[index].hp -= this.characterStatus.atk * 20 +
+                                        this.characterStatus.str * 8 +
+                                        this.characterStatus.dex * 3 +
+                                        this.characterStatus.intelligence * 0.7
+        },
+        savageBlow (index) {
+            this.monsters[index].hp -= this.characterStatus.atk * 50 +
+                                        this.characterStatus.str * 25 +
+                                        this.characterStatus.dex * 100 +
+                                        this.characterStatus.intelligence * 3
+        },
         randomGeneration () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
         },
         myDarknessDragon () {
             for (var i = 0; i < this.monsters.length; i++) {
-                this.monsters[i].hp =
+                this.monsters[i].hp = 
                     parseInt(this.monsters[i].hp - this.characterStatus.atk * 3.5)
+            }
+        },
+        suddenRaid () {
+            for (var i = 0; i < this.monsters.length; i++) {
+                this.monsters[i].hp = 
+                    parseInt(this.monsters[i].hp - (this.characterStatus.dex * 10 +
+                        this.characterStatus.atk * 10 + 
+                        this.characterStatus.intelligence * 1.5 +
+                        this.characterStatus.str * 3))
             }
         }
     },
@@ -273,23 +251,31 @@ var app = new Vue ({
     },
     beforeUpdate() {
         console.log('VDOM의 변화를 감지합니다.')
-        // console.log('totalPrive의 현재 상태는 : ' + this.totalPrice)
 
-
-        // 1, 2번 기능 : 구매 및 소지금 차감
-        if ( this.totalPrice > 0) {
-            console.log('')
-            console.log('계산 실행')
-            console.log("소지금액 : " + this.characterStatus.money)
-            console.log("결제금액 : " + this.totalPrice)
-            this.characterStatus.money = this.characterStatus.money - this.totalPrice 
-            console.log("결제 후 소지금액 : " + this.characterStatus.money )
-            this.totalPrice = 0
-            j = this.shopListValue.length
-            this.shopListValue.splice(j, 1)
-            this.totalPrice = 0
+        if (this.characterStatus.selectJob === 'thief') {
+            this.isTheif = true
         }
 
+        if ((this.characterStatus.level >= 50) && (this.characterStatus.selectJob === '모험가')) {
+            this.firstFormerView = true
+        } else {
+            this.firstFormerView = false
+        }
+
+        if (!(this.characterStatus.selectJob === '모험가') && !(this.firstFormerStat))
+        {
+            this.characterStatus.atk += 1000
+            this.characterStatus.defaultAtk += 1000
+
+            this.characterStatus.str += 500
+            this.characterStatus.int += 50
+            this.characterStatus.dex += 1000
+            this.characterStatus.vit += 50
+            this.characterStatus.def += 50
+            this.characterStatus.men += 50
+
+            this.firstFormerStat = true
+        }
 
         var i
         for (i = 0; i < this.monsters.length; i++) {
@@ -309,12 +295,42 @@ var app = new Vue ({
 
         for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
             this.characterStatus.currentLevelBar =
-                parseInt(this.characterStatus.currentLevelBar -
+                parseInt(this.characterStatus.currentLevelBar - 
                     this.characterStatus.totalLevelBar)
-            this.characterStatus.level += 1
-            this.characterStatus.hp *= 1.2
-            this.characterStatus.atk += 3
-            this.characterStatus.def += 1
+
+            if (this.characterStatus.selectJob === '모험가') {
+                console.log('모험가입니다.')
+
+                this.characterStatus.level += 1
+                this.characterStatus.hp *= 1.2
+                this.characterStatus.defaultAtk += 3
+                this.characterStatus.atk += 3
+                this.characterStatus.def += 1
+                this.characterStatus.str *= 1.1
+                this.characterStatus.intelligence *= 1.1
+                this.characterStatus.dex *= 1.1
+                this.characterStatus.vit *= 1.1
+                this.characterStatus.def *= 1.1
+                this.characterStatus.men *= 1.1
+            } else if (this.characterStatus.selectJob === 'thief') {
+                console.log('도적입니다.')
+
+                var tmpSub = this.characterStatus.atk - this.characterStatus.defaultAtk
+
+                this.characterStatus.level += 1
+                this.characterStatus.hp *= 1.1
+                this.characterStatus.defaultAtk *= 1.1
+
+                this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSub
+
+                this.characterStatus.def += 1
+                this.characterStatus.str *= 1.15
+                this.characterStatus.intelligence *= 1.1
+                this.characterStatus.dex *= 1.5
+                this.characterStatus.vit *= 1.05
+                this.characterStatus.def *= 1.05
+                this.characterStatus.men *= 1.05
+            }
 
             // 레벨링 시스템 구축
             if (this.characterStatus.level < 10) {
@@ -322,22 +338,22 @@ var app = new Vue ({
                     parseInt(this.characterStatus.totalLevelBar * 1.1)
             } else if (this.characterStatus.level < 20) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.2)
+                    parseInt(this.characterStatus.totalLevelBar * 1.15)
             } else if (this.characterStatus.level < 30) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.3)
+                    parseInt(this.characterStatus.totalLevelBar * 1.2)
             } else if (this.characterStatus.level < 40) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.4)
+                    parseInt(this.characterStatus.totalLevelBar * 1.25)
             } else if (this.characterStatus.level < 50) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.5)
+                    parseInt(this.characterStatus.totalLevelBar * 1.3)
             } else if (this.characterStatus.level < 80) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 1.7)
+                    parseInt(this.characterStatus.totalLevelBar * 1.35)
             } else if (this.characterStatus.level < 100) {
                 this.characterStatus.totalLevelBar =
-                    parseInt(this.characterStatus.totalLevelBar * 2)
+                    parseInt(this.characterStatus.totalLevelBar * 1.4)
             }
         }
     },
@@ -350,4 +366,4 @@ var app = new Vue ({
     destroyed() {
         console.log('Vue 객체를 파괴하였습니다.')
     }
-})
+}) 

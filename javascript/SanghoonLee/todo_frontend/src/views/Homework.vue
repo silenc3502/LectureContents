@@ -97,6 +97,7 @@ export default {
             for (var i = 0; i < 100; i++) {
                 var rand = Math.floor(Math.random() * this.monsterBook.length)
                 // i값을 state를 통해서 얻어와야함
+                // 숙제: 오류나는 id 값과 몬스터 hp 출력하기
                 monsterList.push({ monsterId: i, name: this.monsterBook[rand].name, hp: this.monsterBook[rand].hp })
             }
 

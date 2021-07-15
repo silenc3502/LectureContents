@@ -30,8 +30,9 @@ export default {
     [EDIT_TODO] (state, payload) {
         const { id, content } = payload
         const targetIndex = state.todoItems.findIndex(v => v.id === id)
-        const targetTodoItem = state.todoItems[targetIndex]
-        state.todoItems.splice(targetIndex, 1, { ...targetTodoItem, content })
+        // const targetTodoItem = state.todoItems[targetIndex]
+        // state.todoItems.splice(targetIndex, 1, { ...targetTodoItem, content })
+        state.todoItems.splice(targetIndex, 1, { content })
     },
     [SET_EDITTING_ID] (state, id) {
         state.editingId = id

@@ -27,6 +27,9 @@ class FrequencyChecker {
 
             System.out.printf("%6d", key);
 
+            // 0 ~ 19: 20개
+            // 20 ~ 39: 20개
+            // 40 ~ 59: 20개 ...
             if (i % 20 == 19) {
                 System.out.println();
             }

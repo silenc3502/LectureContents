@@ -1,0 +1,2 @@
+public class exam01 {
+}

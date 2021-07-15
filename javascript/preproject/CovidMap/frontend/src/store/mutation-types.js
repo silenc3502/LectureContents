@@ -1,0 +1,16 @@
+export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN'
+export const SET_AUTH_TOKENS = 'SET_AUTH_TOKENS'
+export const DESTROY_AUTH_TOKEN = 'DESTROY_AUTH_TOKEN'
+
+export const SET_LOGIN_INFO = 'SET_LOGIN_INFO'
+export const DESTROY_LOGIN_INFO = 'DESTROY_LOGIN_INFO'
+
+export const SET_BOARD_LIST = 'SET_BOARD_LIST'
+export const SET_BOARD = 'SET_BOARD'
+
+export const SET_MAP = 'SET_MAP'
+export const SET_CENTER_MARKER = 'SET_CENTER_MARKER'
+export const SET_MARKERS = 'SET_MARKERS'
+export const SET_CIRCLE = 'SET_CIRCLE'
+
+export const SET_LOGIN_LOACTION_XY = 'SET_LOGIN_LOACTION_XY'

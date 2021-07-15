@@ -1,0 +1,18 @@
+nav ul {
+    list-style-type: none;
+}
+nav ul li {
+/*각각의 list에 해당되는 정보는 inline으로 출력합니다.*/
+    display: inline;
+    padding: 10px 15px;
+    margin-right: 20px;
+    border-top: 3px solid #222222;
+}
+nav ul li:hover {
+/* hover(마우스를 가져다 되면) 다음의 색 표시 한다. */
+    background-color: rgb(196, 196, 196);
+}
+nav ul li a {
+    color: black;
+    text-decoration: none; /*밑에 파랑줄 표시 없게 설정한다.*/
+}

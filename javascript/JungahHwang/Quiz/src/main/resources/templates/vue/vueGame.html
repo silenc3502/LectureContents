@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/css/vueGame.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <p>My Status</p>
+  <table border="1" width="600">
+    <tr>
+      <th>Lv</th>
+      <th>Job</th>
+      <th>Hp</th>
+      <th>Mp</th>
+      <th>Atk</th>
+      <th>Money</th>
+    </tr>
+    <tr>
+      <th align="center">{{ myStatus.level }}</th>
+      <th align="center">{{ myStatus.myJob }}</th>
+      <th align="center">{{ Math.floor(myStatus.hp) }}</th>
+      <th align="center">{{ Math.floor(myStatus.mp) }}</th>
+      <th align="center">{{ Math.floor(myStatus.atk) }}</th>
+      <th align="center">{{ myStatus.myMoney }}</th>
+    </tr>
+  </table>
+  <p>STR: {{ Math.floor(myStatus.str) }} | INT: {{ Math.floor(myStatus.intelligence) }} |
+      DEX: {{ Math.floor(myStatus.dex) }} | VIT: {{ Math.floor(myStatus.vit) }} |
+      DEF: {{ Math.floor(myStatus.def) }} | MEN: {{ Math.floor(myStatus.men) }} |
+      EXP: {{ myStatus.currentExp }} / {{ myStatus.needExp }} </p>
+  <label>
+    <p v-if="jobListView">- Change Job -</p>
+    <select v-model="myStatus.myJob" v-if="jobListView">
+      <option disabled="disabled">Select job</option>
+      <option value="Magician">magician</option>
+      <option value="Warrior">warrior</option>
+      <option value="Knight">knight</option>
+    </select>
+    <span id="job">Your job is {{ myStatus.myJob }}!!</span>
+  </label>
+  <br>
+  <h3>&lt;Inventory&gt;</h3>
+  <label>
+    <input type="checkbox" v-model="inventoryView">View My Item
+    <table border="1" v-if="inventoryView">
+      <tr>
+        <th width="50">No</th>
+        <th width="150">Item</th>
+        <th width="200">Explanation</th>
+        <th width="50">Check</th>
+      </tr>
+      <tr v-for="(list, idx) in myInventory" v-bind:key="list.idx">
+        <th align="center">{{ idx + 1 }}</th>
+        <th align="center">{{ list.name }}</th>
+        <th align="center">{{ list.effect.desc }}</th>
+        <th align="center">
+          <label>
+            <input type="checkbox" v-model="myInventoryValue" v-bind:value="idx">
+          </label>
+        </th>
+      </tr>
+    </table>
+    <button id="itemBtn" v-if="inventoryView" v-on:click="equipItem()">Equip</button>
+  </label>
+  <br>
+  <br>
+  <h3>&lt;Shop&gt;</h3>
+  <label>
+    <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">View List
+    <table border="1" v-if="shopView">
+      <tr>
+        <th width="50">No</th>
+        <th width="150">Item</th>
+        <th width="100">Price</th>
+        <th width="200">Explanation</th>
+        <th width="50">Check</th>
+      </tr>
+      <tr v-for="(list, idx) in shopList" v-bind:key="list.idx">
+        <th align="center">{{ idx + 1 }}</th>
+        <th align="center">{{ list.name }}</th>
+        <th align="center">{{ list.price }}</th>
+        <th align="center">{{ list.effect.desc }}</th>
+        <th align="center">
+          <label>
+            <input type="checkbox" v-model="shopListValue" v-bind:value="idx">
+          </label>
+        </th>
+      </tr>
+    </table>
+    <button id="shopBtn" v-if="shopView" v-on:click="buyItem()">Buy</button>
+  </label>
+  <br>
+  <br>
+  <br>
+  <button v-on:click="addMonster">Random Monster(1)</button>
+  <button v-on:click="addManyMonster">Random Monsters(100)</button>
+  <ul>
+    <button v-on:click="skill">SKILL</button>
+    <button v-on:click="jobSkill" v-if="jobStat">Job SKILL</button>
+    <li v-for="(monster, index) in myMonsters" v-bind:key="monster.no">
+      No.{{ monster.no }} / Name.{{ monster.name }} / Type.{{ monster.type }} / 
+      HP.{{ Math.floor(monster.hp) }} / EXP.{{ monster.exp }} / Money.{{ monster.money }}
+      <button v-on:click="userAttack(index)">Attack</button>
+      <button v-on:click="userStrongAttack(index)">Strong Attack</button>
+      <button v-on:click="userJobAttack(index)" v-if="jobStat">Job Attack</button>
+    </li>
+  </ul>
+</div>
+<script src="/vue/vueGame.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

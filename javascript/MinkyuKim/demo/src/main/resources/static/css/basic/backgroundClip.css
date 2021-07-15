@@ -1,0 +1,21 @@
+div {
+    width: 300px;
+    padding: 35px;
+    border: 5px dotted #222222;
+    background: skyblue;
+    margin-bottom: 20px;
+
+}
+/* 보더(테두리)까지 꽉참 */
+.bg1 {
+    background-clip: border-box;
+}
+/* 패딩까지만 꽉참 */
+.bg2 {
+    background-clip: padding-box;
+}
+/* 글자에만 꽉참 */
+.bg3 {
+    background-clip: content-box;
+}
+

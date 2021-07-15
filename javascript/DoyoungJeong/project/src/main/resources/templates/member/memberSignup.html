@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+           border: 1px solid #000000;
+        }
+        th {
+           padding: 13px;
+        }
+        td {
+           padding: 13px;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/css.css">
+</head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        var formObj = $("#member");
+
+           $("#btnSignup").on("click", function() {
+              var passwordObj = $("#pw").val();
+
+              if(passwordObj.length <= 8) {
+              alert("비밀번호를 8자 이상 입력해주세요. " + passwordObj.length);
+              } else {
+              formObj.attr("action", "memberSignup");
+              formObj.attr("method", "post");
+              formObj.submit();
+              }
+           });
+           $("#btnMemberList").on("click", function() {
+              self.location = "memberList";
+           });
+           $("#btnLogin").on("click", function() {
+              self.location = "memberLogin";
+           });
+        });
+    </script>
+
+<body>
+    <center><h2>회원가입</h2></center>
+    <form id="member" th:action="@{memberRegister}" th:object="${member}" method="post">
+        <center>
+            <table>
+                <tr><td>ID<small>(e-mail)</small>
+                    <input type="text" name="id" th:field="*{id}">
+                <tr><td>비밀번호
+                    <input type="text" name="pw" th:field="*{pw}" id="pw"></td>
+                </tr>
+                <tr><td>이름
+                    <input type="text" name="name" th:field="*{name}"></td>
+                </tr>
+                <tr><td>나이
+                    <input type="text" name="age" th:field="*{age}"></td>
+                </tr>
+                <tr><td>성별
+                    <input type="radio" value="male" name="남" th:field="*{gender}">남
+                    <input type="radio" value="female" name="여" th:field="*{gender}">여
+                </td></tr>
+                <tr><td>지역
+                    <input type="text" name="location" th:field="*{location}"></td>
+                </tr>
+                <tr><td>관심장르
+                    <input type="checkbox" value="rock" name="interestedGenre" th:field="*{interestedGenre}">락
+                    <input type="checkbox" value="hiphop" name="interestedGenre" th:field="*{interestedGenre}">힙합
+                    <input type="checkbox" value="edm" name="interestedGenre" th:field="*{interestedGenre}">EDM
+                    <input type="checkbox" value="pop" name="interestedGenre" th:field="*{interestedGenre}">팝
+                    <input type="checkbox" value="ballad" name="interestedGenre" th:field="*{interestedGenre}">발라드</td>
+                </tr>
+                <tr><td>관심아티스트
+                    <input type="text" name="interestedArtist" th:field="*{interestedArtist}"></td>
+                </tr>
+            </table>
+        </center>
+    </form>
+    <center>
+        <h4>
+           <button type="submit" id="btnSignup">가입</button>
+           <button type="submit" id="btnMemberList">가입 회원 목록</button>
+        </h4>
+        <div class="box"><h3>이미 계정이 있으신가요? 바로 로그인하세요</h3></div>
+        <button type="submit" id="btnLogin">로그인</button>
+    </center>
+
+</body>
+</html>

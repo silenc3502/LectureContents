@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/memberRegister" method="post">
+    <!-- 위 메소드를 get으로 하면 에러가난다 -->
+    <label for="email">E-mail</label>
+    <input type="text" id="email">
+    <!-- label for와 id는 함께 다녀야한다 -->
+
+    <input type="submit" value="이메일을 입력하세요.">
+    <!-- input type이 submit이어야 입력된 값을 엔터할 수 있다. 그리고 옆 가입bar도 크기가 딱맞게 나온다.-->
+</form>
+
+</body>
+</html>

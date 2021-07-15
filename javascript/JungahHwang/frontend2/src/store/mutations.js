@@ -14,6 +14,7 @@ import {
 // Monster
   ADD_MONSTER,
   DEATH,
+  ADD_MANY_MONSTER,
 
 // Spring
   SUCCESS_GEN_RAND_NUM,
@@ -70,6 +71,12 @@ export default {
   [DEATH] (state, monsterId) {
     const targetIndex = state.monsterElements.findIndex(v => v.monsterId === monsterId)
     state.monsterElements.splice(targetIndex, 1)
+  },
+  [ADD_MANY_MONSTER] (state, payload) {
+    for (var i = 0; i < payload.length; i++) {
+      state.monsterElements.push(payload[i])
+      state.nextMonsterId++
+    }
   },
 
 // Spring

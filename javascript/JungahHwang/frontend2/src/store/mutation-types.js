@@ -12,6 +12,7 @@ export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS'
 // Monster
 export const ADD_MONSTER = 'ADD_MONSTER'
 export const DEATH = 'DEATH'
+export const ADD_MANY_MONSTER = 'ADD_MANY_MONSTER'
 
 // Spring
 export const SUCCESS_GEN_RAND_NUM = 'SUCCESS_GEN_RAND_NUM'

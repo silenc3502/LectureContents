@@ -12,6 +12,7 @@ import {
 // Monster
   ADD_MONSTER,
   DEATH,
+  ADD_MANY_MONSTER,
 
 // Spring
   SUCCESS_GEN_RAND_NUM,
@@ -58,6 +59,9 @@ export default {
   },
   death ({ commit }, payload) {
     commit(DEATH, payload)
+  },
+  addManyMonster (context, payload) {
+    context.commit(ADD_MANY_MONSTER, payload)
   },
 
 // spring과 랜덤 데이터 통신

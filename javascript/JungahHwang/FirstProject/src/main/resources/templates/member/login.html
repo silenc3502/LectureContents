@@ -9,7 +9,7 @@
 
 <script>
   $(document).ready(function() {
-     var formObj = $("#join");
+     var formObj = $("#login");
 
     $("#btnLogin").on("click", function() {
       formObj.attr("action", "login");
@@ -21,7 +21,7 @@
 
 <body>
 <h2>Login</h2>
-<form id="join" th:action="@{join}" th:object="${join}" method="post">
+<form id="login" th:action="@{join}" th:object="${member}" method="post">
   <table>
     <tr>
       <td>id</td>

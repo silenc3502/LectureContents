@@ -9,12 +9,10 @@
                 v-on:removeTodo="onRemoveTodo"
                 v-on:editTodo="onEditTodo"
                 v-on:setEditingId="SET_EDITTING_ID"
-                v-on:resetEditingId="RESET_EDITTING_ID"/>           
+                v-on:resetEditingId="RESET_EDITTING_ID"
+                v-on:toggleTodoStatus="onToggleTodoStatus"/>           
         </ul>
-        <!-- 위에 배열처리된 리스트이 나열되면 항목마다 자동으로 v-on:removeTodo 등이 실행되고,
-        그에 따라서 onRemoveTodo 등도 같이 실행이 된다는 뜻인가요?? -->
 
-        <!-- setEditingId는 TodoItem 컴포넌트에 없던데 어디서 실행이 시작되는건지 모르겠습니다. -->
     </div>    
 </template>
 
@@ -37,6 +35,7 @@ export default {
         ]),
         todoItems() {
             return this.filteredTodoItems
+            //vdom의 변화 없이도 계속해서 todoItems출력을 업데이트해준다.
         }
     },
     methods: {
@@ -46,9 +45,13 @@ export default {
         ]),
         onRemoveTodo(id) {
             this.$emit('removeTodo', id)
+            console.log('onRemoveTodo(): ' + id)
         },
         onEditTodo(content, id) {
             this.$emit('editTodo', content, id)
+        },
+        onToggleTodoStatus(id) {
+            this.$emit('toggleTodoStatus', id)
         }
     }
 }

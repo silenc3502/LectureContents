@@ -9,18 +9,15 @@
                     v-on:removeTodo="onRemoveTodo"
                     v-on:editTodo="onEditTodo"
                     v-on:setEditingId="SET_EDITTING_ID"
-                    v-on:resetEditingId="RESET_EDITTING_ID"/>
+                    v-on:resetEditingId="RESET_EDITTING_ID"
+                    v-on:toggleTodoStatus="onToggleTodoStatus"/>
         </ul>
     </div>
 </template>
-
 <script>
-
 import TodoItem from './TodoItem.vue'
-
 import { mapState, mapMutations, mapGetters } from 'vuex'
 import { RESET_EDITTING_ID, SET_EDITTING_ID } from '../../store/mutation-types'
-
 export default {
     components: {
         'todo-item': TodoItem
@@ -46,7 +43,10 @@ export default {
         },
         onEditTodo (content, id) {
             this.$emit('editTodo', content, id)
+        },
+        onToggleTodoStatus (id) {
+            this.$emit('toggleTodoStatus', id)
         }
     }
 }
-</script> 
+</script>

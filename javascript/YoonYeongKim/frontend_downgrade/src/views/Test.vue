@@ -15,20 +15,22 @@
         <h2>테스트 페이지</h2>
         <div id="app">
             <p>{{ msg }}</p>
-
             <global-component v-bind:initial-test="counter">
             </global-component>
 
             <local-component v-bind:num="value"></local-component>
-            <button v-on:click="plus">클릭해봐!</button>
+            <button v-on:click="plus">클릭해봐!</button><br>
+
+            <b>random: {{ this.$store.getters.randomFromSpring }}</b><br>
+            <input type="button" @click="randomNumber()" value="random"/><br>
         </div>
     </div>
 </template>
-
 <script>
 import Vue from 'vue'
 import GlobalComponent from '../components/GlobalComponent.vue'
 import LocalComponent from '../components/LocalComponent.vue'
+import { mapActions } from 'vuex'
 Vue.component(GlobalComponent.name, GlobalComponent)
 export default {
     components: {
@@ -42,9 +44,15 @@ export default {
         }
     },
     methods: {
+        ...mapActions ([
+            'generateRandomNumber'
+        ]),
         plus () {
             this.value++
+        },
+        randomNumber () {
+            this.generateRandomNumber()
         }
     }
 }
-</script> 
+</script>

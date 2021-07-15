@@ -18,14 +18,7 @@
             </router-link>
         </div>
         <h2>Game</h2>
-        <div id="app">
-            <p>{{ msg }}</p>
-
-            <global-component v-bind:initial-test="counter">
-            </global-component>
-
-            <local-component v-bind:num="value"></local-component>
-            <button v-on:click="plus">클릭해봐!</button>
+        <div id="game">   
         </div>
     </div>
 </template>
@@ -33,7 +26,7 @@
 <script>
 
 export default {
-
+    name:'Game',
     data(){
         return{
             

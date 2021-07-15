@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Test from '../views/Test.vue'
 import Game from '../views/Game.vue'
+import Todo from '../views/Todo.vue'
+import Homework from '../views/Homework.vue'
 
 Vue.use(VueRouter)
 
@@ -19,9 +21,19 @@ const routes = [
     component: Test
   },
   {
-    path:'/game',
+    path: '/game',
     name: 'Game',
     component: Game
+  },
+  {
+    path: '/todo',
+    name: 'Todo',
+    component: Todo
+  },
+  {
+    path: '/homework',
+    name: 'Homework',
+    component: Homework
   }
 
 ]

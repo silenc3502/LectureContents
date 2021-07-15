@@ -19,7 +19,6 @@ export default {
                 console.log('firstSkill')
 
                 this.$emit('firstSkill', this.atk_coefficient)
-            
         }
     }
 }

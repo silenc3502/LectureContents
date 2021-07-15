@@ -26,7 +26,7 @@ public class MemberController {
 
         model.addAttribute("member", memberservice.list());
 
-        return "/member/memberIdList";
+        return "/member/list";
     }
 
     @GetMapping("/signup")

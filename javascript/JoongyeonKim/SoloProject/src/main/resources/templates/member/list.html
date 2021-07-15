@@ -20,7 +20,7 @@
         </tr>
         <tr th:each="memberElem : ${member}">
             <td align="center" th:text="${memberElem.memberNo}"></td>
-            <td align="left"><a th:text="${memberElem.id}"/></td>
+            <td align="left"><a th:href="@{|read?memberNo=${memberElem.memberNo}|}" th:text="${memberElem.id}"/></td>
             <!--<a th:href="@{|read?memberNo=${member.memberNo}|}" th:text="${member.name}"/> -->
         </tr>
     </table>

@@ -1,13 +1,16 @@
 <template>
     <div class="todo">
         <li>
-            <span v-if="!isEditing">
+            <span v-if="!isEditing" v-on:dblclick="handelDoubleClick">
                 {{ todoItem.content }}
             </span>
             <input v-else type="text" ref="content"
                     v-bind:value="todoItem.content"
                     v-on:blur="handleBlur"
                     v-on:keydown.enter="editTodo"/>
+            <input type="checkbox"
+                    v-bind:checked="todoItem.done"
+                    v-on:change="toggleTodoStatus()"/>
             <button v-on:click="removeTodo">지우기</button>
         </li>
     </div>
@@ -47,6 +50,21 @@ export default {
         },
         handleBlur () {
             this.$emit('resetEditingId')
+        },
+        toggleTodoStatus () {
+            const id = this.todoItem.id
+            console.log('toggleTodoStatus() - id: ' + id)
+            this.$emit('toggleTodoStatus', id)
+        },
+        handelDoubleClick () {
+            // { } : 자바 스크립트에서 객체를 만드는 방법
+            const { id } = this.todoItem
+            console.log('handelDoubleClick() - id: ' + JSON.stringify(id))
+
+            this.$emit('setEditingId', id)
+            this.$nextTick(() => {
+                this.$refs.content.focus()
+            })
         }
     }
 }

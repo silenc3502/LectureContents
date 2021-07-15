@@ -20,7 +20,10 @@
             </global-component>
 
             <local-component v-bind:num="value"></local-component>
-            <button v-on:click="plus">몬스터 한마리 리젠</button>
+            <button v-on:click="plus">클릭해봐!</button><br>
+
+            <b>random: {{ this.$store.getters.ranodmFromSpring }}</b><br>
+            <input type="button" @click="randomNumber()" value="random"/><br>
         </div>
     </div>
 </template>
@@ -29,7 +32,11 @@
 import Vue from 'vue'
 import GlobalComponent from '../components/GlobalComponent.vue'
 import LocalComponent from '../components/LocalComponent.vue'
+
+import { mapActions } from 'vuex'
+
 Vue.component(GlobalComponent.name, GlobalComponent)
+
 export default {
     components: {
         'local-component': LocalComponent
@@ -38,12 +45,18 @@ export default {
         return {
             counter: 0,
             value: 0,
-            msg: '몬스터 100마리 리젠'
+            msg: 'Vue 객체 데이터'
         }
     },
     methods: {
+        ...mapActions ([
+            'generateRandomNumber'
+        ]),
         plus () {
             this.value++
+        },
+        randomNumber () {
+            this.generateRandomNumber()
         }
     }
 }

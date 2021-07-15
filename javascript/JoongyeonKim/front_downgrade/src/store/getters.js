@@ -6,5 +6,8 @@ export default {
     },
     getMonsterElements (state) {
         return state.monsterElements
+    },
+    ranodmFromSpring (state) {
+        return state.ranodmFromSpring
     }
 }

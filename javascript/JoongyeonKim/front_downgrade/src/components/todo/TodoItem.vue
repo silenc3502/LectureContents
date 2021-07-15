@@ -1,13 +1,16 @@
 <template>
     <div class="todo">
         <li>
-            <span v-if="!isEditing">
+            <span v-if="!isEditing" v-on:dblclick="handleDoubleClick">
                 {{ todoItem.content }}
             </span>
             <input v-else type="text" ref="content"
                     v-bind:value="todoItem.content"
                     v-on:blur="handleBlur"
                     v-on:keydown.enter="editTodo"/>
+            <input type="checkbox"
+                    v-bind:checked="todoItem.done"
+                    v-on:change="toggleTodoStatus()"/>
             <button v-on:click="removeTodo">지우기</button>
         </li>
     </div>
@@ -19,6 +22,9 @@ export default {
     props: {
         todoItem: {
             type: Object
+        },
+        editingId: {
+            type: Number
         }
     },
     // VDOM 변화가 없어도 계산값이 적용되도록 서포트함
@@ -43,6 +49,22 @@ export default {
         },
         handleBlur () {
             this.$emit('resetEditingId')
+        },
+        toggleTodoStatus () {
+            const id = this.todoItem.id
+            console.log('toggleTodoStatus() - id:' +id)
+
+            this.$emit('toggleTodoStatus', id)
+        },
+        handleDoubleClick () {
+            const { id } = this.todoItem
+            console.log('toggleTodhandleDoubleClickoStatus() - id:' +JSON.stringify.id)
+
+
+            this.$emit('setEditingId', id)
+            this.$nextTick(() => {
+                this.$refs.content.focus()
+            })
         }
     }
 }

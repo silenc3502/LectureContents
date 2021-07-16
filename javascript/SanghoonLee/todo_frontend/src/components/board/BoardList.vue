@@ -16,11 +16,10 @@
             <tr v-else v-for="board in boards" :key="board.boardNo">
                 <td align="center">{{ board.boardNo }}</td>
                 <td align="left">
-                    <!--
                     <router-link :to="{ name: 'BoardReadPage',
-                                    params: { boardNo: board.boardNo.toString() } }"> -->
+                                    params: { boardNo: board.boardNo.toString() } }">
                         {{ board.title }}
-                    <!-- </router-link> -->
+                    </router-link>
                 </td>
                 <td align="right">{{ board.writer }}</td>
                 <td align="center">{{ board.regDate }}</td>

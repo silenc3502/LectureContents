@@ -37,4 +37,11 @@ public class VueBoardController {
 
         return new ResponseEntity<>(service.list(), HttpStatus.OK);
     }
+
+    @GetMapping("/{boardNo}")
+    public ResponseEntity<Board> read(@PathVariable("boardNo") Integer boardNo) throws Exception {
+        Board board = service.read(boardNo);
+
+        return new ResponseEntity<Board>(board, HttpStatus.OK);
+    }
 }

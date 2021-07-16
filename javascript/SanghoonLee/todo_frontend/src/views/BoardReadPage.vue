@@ -12,7 +12,6 @@
         <router-link :to="{ name: 'BoardListPage' }">
             게시물 보기
         </router-link>
-        <board-list :boards="boards"/>
     </div>
 </template>
 

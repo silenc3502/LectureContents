@@ -26,6 +26,11 @@
                     active-class="active">
                 BoardListPage
             </router-link>
+            <router-link :to="{ name: 'GameMemberRegisterPage' }"
+                    class="nav-link"
+                    active-class="active">
+                GameMemberRegisterPage
+            </router-link>
         </div>
     </div>
 </template>

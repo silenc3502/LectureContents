@@ -11,7 +11,9 @@ import {
     DEATH,
     // 스프링 랜덤 데이터 통신
     SUCCESS_GEN_RAND_NUM,
-    FAIL_GEN_RAND_NUM
+    FAIL_GEN_RAND_NUM,
+    // 게시판
+    FETCH_BOARD_LIST
 } from './mutation-types'
 
 import axios from 'axios'
@@ -68,6 +70,13 @@ export default {
                 })
                 .catch((res) => {
                     commit(FAIL_GEN_RAND_NUM, res)
+                })
+    },
+    // 게시판
+    fetchBoardList ({ commit }) {
+        return axios.get('http://localhost:7777/vueboard/lists')
+                .then((res) => {
+                    commit(FETCH_BOARD_LIST, res.data)
                 })
     }
 }

@@ -34,7 +34,7 @@ public class VueBoardRepository {
         // RowMapper를 통해 얻은 행을 하나씩 List에 집어넣으니
         // results엔 DB에서 얻어온 행 정보들이 들어있다.
         List<Board> results = jdbcTemplate.query(
-                "select board_no, title, content, writer, reg_date from board " +
+                "select board_no, title, content, writer, reg_date from vueboard " +
                         "where board_no > 0 order by board_no desc",
                 // Row: 행
                 // 여러개의 Column(열)들이 행 1개에 포함되어 있음
@@ -51,17 +51,11 @@ public class VueBoardRepository {
                         board.setTitle(rs.getString("title"));
                         board.setContent(rs.getString("content"));
                         board.setWriter(rs.getString("writer"));
-                        // rs.getDate()는 DB에 있는 날자 정보를 얻어옴
-                        // board.setRegDate(rs.getDate("reg_date"));
 
-                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        //board.setRegDate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));
 
-
-                        board.setRegDate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));
-
-                        //System.out.println("rs.getDate(): " + rs.getTimestamp("reg_date"));
-                        //System.out.println("rs.getDate(): " + rs.getDate("reg_date"));
-                        //System.out.println("rs.getTime(): " + rs.getTime("reg_date"));
+                        board.setRegDate(rs.getDate("reg_date"));
 
                         return board;
                     }

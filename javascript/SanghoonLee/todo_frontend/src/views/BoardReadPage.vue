@@ -17,6 +17,7 @@
 
 import BoardRead from '@/components/board/BoardRead.vue'
 import { mapState, mapActions } from 'vuex'
+import axios from 'axios'
 
 export default {
     name: 'BoardReadPage',
@@ -42,6 +43,15 @@ export default {
     methods: {
         ...mapActions(['fetchBoard']),
         onDelete () {
+            const { boardNo } = this.board
+            axios.delete(`http://localhost:7777/vueboard/${boardNo}`)
+                    .then(() => {
+                        alert('삭제 성공!')
+                        this.$router.push({ name: 'BoardListPage' })
+                    })
+                    .catch(err => {
+                        alert(err.response.data.message)
+                    })
         }
     }
 }

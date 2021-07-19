@@ -13,7 +13,7 @@
                 </tr>
                 <tr>
                     <td>제목</td>
-                    <td><input type="text" :value="board.title"></td>
+                    <td><input type="text" v-model="title"></td>
                 </tr>
                 <tr>
                     <td>작성자</td>

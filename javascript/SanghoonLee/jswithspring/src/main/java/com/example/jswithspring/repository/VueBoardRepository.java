@@ -93,7 +93,7 @@ public class VueBoardRepository {
     }
 
     public void update(Board board) throws Exception {
-        String query = "update board set title = ?, content = ? where board_no = ?";
+        String query = "update vueboard set title = ?, content = ? where board_no = ?";
 
         jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
     }

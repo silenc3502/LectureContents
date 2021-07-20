@@ -14,6 +14,9 @@ import BoardModifyPage from '@/views/BoardModifyPage.vue'
 // game
 import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 
+// 삼목
+import Concave from '@/views/Concave.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -77,6 +80,13 @@ const routes = [
     name: 'GameMemberRegisterPage',
     components: {
       default: GameMemberRegisterPage
+    }
+  },
+  {
+    path: '/concave',
+    name: 'Concave',
+    components: {
+      default: Concave
     }
   }
 ]

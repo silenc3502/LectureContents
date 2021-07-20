@@ -17,6 +17,10 @@ import GameMemberRegisterPage from '@/views/GameMemberRegisterPage.vue'
 // 삼목
 import Concave from '@/views/Concave.vue'
 
+// product
+import ProductListPage from '@/views/ProductListPage.vue'
+import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -88,7 +92,21 @@ const routes = [
     components: {
       default: Concave
     }
-  }
+  },
+  {
+    path: '/product',
+    name: 'ProductListPage',
+    components: {
+      default: ProductListPage
+    }
+  },
+  {
+    path: '/product/create',
+    name: 'ProductRegisterPage',
+    components: {
+      default: ProductRegisterPage
+    }
+  },
 ]
 
 const router = new VueRouter({

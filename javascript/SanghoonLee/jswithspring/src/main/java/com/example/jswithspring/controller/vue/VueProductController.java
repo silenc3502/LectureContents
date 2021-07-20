@@ -24,7 +24,7 @@ public class VueProductController {
     private VueProductService service;
 
     @PostMapping("/register")
-    public ResponseEntity<Product> register(@Validated @RequestBody Product product) throws Exception {
+    public ResponseEntity<Product> registerProduct(@Validated @RequestBody Product product) throws Exception {
         log.info("post register request from vue");
 
         service.register(product);
@@ -33,7 +33,7 @@ public class VueProductController {
     }
 
     @GetMapping("/lists")
-    public ResponseEntity<List<Product>> getLists () throws Exception {
+    public ResponseEntity<List<Product>> getListsProduct () throws Exception {
         log.info("getLists(): " + service.list());
 
         return new ResponseEntity<>(service.list(), HttpStatus.OK);

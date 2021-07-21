@@ -32,7 +32,7 @@ public class VueProductServiceImpl implements VueProductService {
 
     @Override
     public void remove(Integer productNo) throws Exception {
-        // repository.delete(productNo);
+        repository.delete(productNo);
     }
 
     @Override

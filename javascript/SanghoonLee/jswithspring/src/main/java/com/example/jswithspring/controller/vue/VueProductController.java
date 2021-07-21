@@ -61,12 +61,10 @@ public class VueProductController {
         return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
-    /*
-    @DeleteMapping("/{boardNo}")
-    public ResponseEntity<Void> remove(@PathVariable("boardNo") Integer boardNo) throws Exception {
-        service.remove(boardNo);
+    @DeleteMapping("/{productNo}")
+    public ResponseEntity<Void> remove(@PathVariable("productNo") Integer productNo) throws Exception {
+        service.remove(productNo);
 
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
-     */
 }

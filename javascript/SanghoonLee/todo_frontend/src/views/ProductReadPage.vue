@@ -6,9 +6,7 @@
         <router-link :to="{ name: 'ProductModifyPage', params: { productNo } }">
             등록된 상품 수정
         </router-link>
-        <!--
-        <button @click="onDelete">삭제</button>
-        -->
+        <button @click="onDelete">상품 삭제</button>
         <router-link :to="{ name: 'ProductListPage' }">
             상품 보기
         </router-link>

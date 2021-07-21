@@ -78,13 +78,11 @@ public class VueProductRepository {
         return results.isEmpty() ? null : results.get(0);
     }
 
-    /*
-    public void delete(Integer boardNo) throws Exception {
-        String query = "delete from vueboard where board_no = ?";
+    public void delete(Integer productNo) throws Exception {
+        String query = "delete from vueproduct where product_no = ?";
 
-        jdbcTemplate.update(query, boardNo);
+        jdbcTemplate.update(query, productNo);
     }
-    */
 
     public void update(Product product) throws Exception {
         String query = "update vueproduct set product_name = ?, description = ?, " +

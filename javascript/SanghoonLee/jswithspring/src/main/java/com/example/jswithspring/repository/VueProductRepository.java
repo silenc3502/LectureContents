@@ -3,6 +3,7 @@ package com.example.jswithspring.repository;
 import com.example.jswithspring.entity.Board;
 import com.example.jswithspring.entity.Product;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -12,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+@Slf4j
 @Repository
 public class VueProductRepository {
 
@@ -82,11 +84,16 @@ public class VueProductRepository {
 
         jdbcTemplate.update(query, boardNo);
     }
+    */
 
     public void update(Product product) throws Exception {
-        String query = "update vueboard set title = ?, content = ? where board_no = ?";
+        String query = "update vueproduct set product_name = ?, description = ?, " +
+                "price = ? where product_no = ?";
 
-        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
+        log.info("Vueproduct Repository: " + product);
+
+        jdbcTemplate.update(query, product.getProduct_name(), product.getDescription(),
+                product.getPrice(), product.getProductNo());
     }
-     */
+
 }

@@ -37,6 +37,6 @@ public class VueProductServiceImpl implements VueProductService {
 
     @Override
     public void modify(Product product) throws Exception {
-        // repository.update(product);
+        repository.update(product);
     }
 }

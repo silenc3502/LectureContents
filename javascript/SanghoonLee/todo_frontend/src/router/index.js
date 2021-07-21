@@ -21,6 +21,7 @@ import Concave from '@/views/Concave.vue'
 import ProductListPage from '@/views/ProductListPage.vue'
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
 import ProductReadPage from '@/views/ProductReadPage.vue'
+import ProductModifyPage from '@/views/ProductModifyPage.vue'
 
 Vue.use(VueRouter)
 
@@ -113,6 +114,16 @@ const routes = [
     name: 'ProductReadPage',
     components: {
       default: ProductReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/product/:productNo/edit',
+    name: 'ProductModifyPage',
+    components: {
+      default: ProductModifyPage
     },
     props: {
       default: true

@@ -23,8 +23,8 @@
                         {{ product.product_name }}
                     </router-link>
                 </td>
+                <td align="center">{{ product.producer }}</td>
                 <td align="center">{{ product.price }}</td>
-                <td align="center">{{ product.product_name }}</td>
                 <td align="center">{{ product.regDate }}</td>
             </tr>
         </table>

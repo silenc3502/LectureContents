@@ -39,14 +39,14 @@ public class VueProductController {
         return new ResponseEntity<>(service.list(), HttpStatus.OK);
     }
 
-    /*
     @GetMapping("/{boardNo}")
-    public ResponseEntity<Board> read(@PathVariable("boardNo") Integer boardNo) throws Exception {
-        Board board = service.read(boardNo);
+    public ResponseEntity<Product> read(@PathVariable("boardNo") Integer productNo) throws Exception {
+        Product product = service.read(productNo);
 
-        return new ResponseEntity<Board>(board, HttpStatus.OK);
+        return new ResponseEntity<Product>(product, HttpStatus.OK);
     }
 
+    /*
     @PutMapping("/{boardNo}")
     public ResponseEntity<Board> modify(@PathVariable("boardNo") Integer boardNo,
                                         @Validated @RequestBody Board board) throws Exception {

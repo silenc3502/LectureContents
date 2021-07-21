@@ -20,6 +20,7 @@ import Concave from '@/views/Concave.vue'
 // product
 import ProductListPage from '@/views/ProductListPage.vue'
 import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
+import ProductReadPage from '@/views/ProductReadPage.vue'
 
 Vue.use(VueRouter)
 
@@ -107,6 +108,16 @@ const routes = [
       default: ProductRegisterPage
     }
   },
+  {
+    path: '/product/:productNo',
+    name: 'ProductReadPage',
+    components: {
+      default: ProductReadPage
+    },
+    props: {
+      default: true
+    }
+  }
 ]
 
 const router = new VueRouter({

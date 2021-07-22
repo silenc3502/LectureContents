@@ -14,5 +14,8 @@ export default {
     board: null,
     // 상품
     products: [],
-    product: null
+    product: null,
+    // 판타지 온라인
+    monsters: [],
+    monster: null
 }

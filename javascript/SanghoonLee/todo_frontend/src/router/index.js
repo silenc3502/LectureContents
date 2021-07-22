@@ -29,6 +29,9 @@ import MonsterRegisterPage from '@/views/MonsterRegisterPage.vue'
 import MonsterReadPage from '@/views/MonsterReadPage.vue'
 import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
 
+// EventBus
+import EventBusTestPage from '@/views/EventBusTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -167,6 +170,13 @@ const routes = [
     },
     props: {
       default: true
+    }
+  },
+  {
+    path: '/eventbusTest',
+    name: 'EventBusTestPage',
+    components: {
+      default: EventBusTestPage
     }
   }
 ]

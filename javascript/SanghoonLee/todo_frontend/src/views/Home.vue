@@ -41,6 +41,11 @@
                     active-class="active">
                 ProductListPage
             </router-link>
+            <router-link :to="{ name: 'MonsterListPage' }"
+                    class="nav-link"
+                    active-class="active">
+                몬스터 도감
+            </router-link>
         </div>
     </div>
 </template>

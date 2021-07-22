@@ -23,6 +23,10 @@ import ProductRegisterPage from '@/views/ProductRegisterPage.vue'
 import ProductReadPage from '@/views/ProductReadPage.vue'
 import ProductModifyPage from '@/views/ProductModifyPage.vue'
 
+// monster
+import MonsterListPage from '@/views/MonsterListPage.vue'
+import MonsterRegisterPage from '@/views/MonsterRegisterPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -127,6 +131,20 @@ const routes = [
     },
     props: {
       default: true
+    }
+  },
+  {
+    path: '/monster',
+    name: 'MonsterListPage',
+    components: {
+      default: MonsterListPage
+    }
+  },
+  {
+    path: '/monster/create',
+    name: 'MonsterRegisterPage',
+    components: {
+      default: MonsterRegisterPage
     }
   }
 ]

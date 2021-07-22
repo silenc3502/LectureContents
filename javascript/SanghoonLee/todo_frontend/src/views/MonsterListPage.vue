@@ -4,19 +4,19 @@
         <router-link :to="{ name: 'MonsterRegisterPage' }">
             몬스터 도감 등록
         </router-link>
-        <!-- <monster-list :monsters="monsters"/> -->
+        <monster-list :monsters="monsters"/>
     </div>
 </template>
 
 <script>
 
-// import MonsterList from '@/components/monster/MonsterList.vue'
+import MonsterList from '@/components/monster/MonsterList.vue'
 import { mapState, mapActions } from 'vuex'
 
 export default {
     name: 'MonsterListPage',
     components: {
-        // MonsterList
+        MonsterList
     },
     computed: {
         ...mapState(['monsters'])

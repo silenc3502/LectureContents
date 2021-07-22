@@ -32,7 +32,7 @@ public class VueMonsterRepository {
 
         List<Monster> results = jdbcTemplate.query(
                 "select monster_no, name, description, hp, exp, dropMoney, dropItem, reg_date " +
-                        "from vuemonster where product_no > 0 order by product_no desc",
+                        "from vuemonster where monster_no > 0 order by monster_no desc",
 
                 new RowMapper<Monster>() {
                     @SneakyThrows

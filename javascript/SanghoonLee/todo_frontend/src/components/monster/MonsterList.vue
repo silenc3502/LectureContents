@@ -3,8 +3,8 @@
         <h3>게시물 목록</h3>
         <table border="1">
             <tr>
-                <th align="center" width="100">몬스터번호</th>
-                <th align="center" width="250">몬스터명</th>
+                <th align="center" width="50">번호</th>
+                <th align="center" width="150">몬스터명</th>
                 <th align="center" width="200">HP</th>
                 <th align="center" width="150">경험치</th>
                 <th align="center" width="150">드랍머니</th>
@@ -17,15 +17,13 @@
             </tr>
             <tr v-else v-for="monster in monsters" :key="monster.monsterNo">
                 <td align="center">{{ monster.monsterNo }}</td>
-                <td align="center">{{ monster.name }}</td>
-                <!--
+                <!-- <td align="center">{{ monster.name }}</td> -->
                 <td align="left">
-                    <router-link :to="{ name: 'ProductReadPage',
-                                    params: { productNo: product.productNo.toString() } }">
-                        {{ product.product_name }}
+                    <router-link :to="{ name: 'MonsterReadPage',
+                                    params: { monsterNo: monster.monsterNo.toString() } }">
+                        {{ monster.name }}
                     </router-link>
                 </td>
-                -->
                 <td align="center">{{ monster.hp }}</td>
                 <td align="center">{{ monster.exp }}</td>
                 <td align="center">{{ monster.dropMoney }}</td>

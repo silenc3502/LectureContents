@@ -26,6 +26,8 @@ import ProductModifyPage from '@/views/ProductModifyPage.vue'
 // monster
 import MonsterListPage from '@/views/MonsterListPage.vue'
 import MonsterRegisterPage from '@/views/MonsterRegisterPage.vue'
+import MonsterReadPage from '@/views/MonsterReadPage.vue'
+import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
 
 Vue.use(VueRouter)
 
@@ -145,6 +147,26 @@ const routes = [
     name: 'MonsterRegisterPage',
     components: {
       default: MonsterRegisterPage
+    }
+  },
+  {
+    path: '/monster/:monsterNo',
+    name: 'MonsterReadPage',
+    components: {
+      default: MonsterReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/monster/:monsterNo/edit',
+    name: 'MonsterModifyPage',
+    components: {
+      default: MonsterModifyPage
+    },
+    props: {
+      default: true
     }
   }
 ]

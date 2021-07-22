@@ -21,7 +21,7 @@ export default {
             axios.post('http://localhost:7777/vuemonster/register', { name, description, hp, exp, dropMoney, dropItem })
                     .then(res => {
                         alert('등록 성공! - ' + res)
-                        console.log('게시물 번호: ' + res.data.monsterNo.toString())
+                        // console.log('게시물 번호: ' + res.data.monsterNo.toString())
 
                         this.$router.push({
                             name: 'MonsterListPage'

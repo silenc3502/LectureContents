@@ -17,5 +17,7 @@ export default {
     product: null,
     // 판타지 온라인
     monsters: [],
-    monster: null
+    monster: null,
+    // 랜덤 던전
+    dungeons: []
 }

@@ -32,6 +32,9 @@ import MonsterModifyPage from '@/views/MonsterModifyPage.vue'
 // EventBus
 import EventBusTestPage from '@/views/EventBusTestPage.vue'
 
+// 던전
+import DungeonListPage from '@/views/DungeonListPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -177,6 +180,13 @@ const routes = [
     name: 'EventBusTestPage',
     components: {
       default: EventBusTestPage
+    }
+  },
+  {
+    path: '/dungeon',
+    name: 'DungeonListPage',
+    components: {
+      default: DungeonListPage
     }
   }
 ]

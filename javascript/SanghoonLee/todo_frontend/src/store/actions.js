@@ -20,7 +20,9 @@ import {
     FETCH_PRODUCT,
     // 판타지 온라인
     FETCH_MONSTER_LIST,
-    FETCH_MONSTER
+    FETCH_MONSTER,
+    // 랜덤 던전
+    ALLOC_RANDOM_DUNGEON
 } from './mutation-types'
 
 import axios from 'axios'
@@ -116,6 +118,13 @@ export default {
         return axios.get(`http://localhost:7777/vuemonster/${monsterNo}`)
                 .then((res) => {
                     commit(FETCH_MONSTER, res.data)
+                })
+    },
+    // 랜덤 던전
+    randomDugeonList ({ commit }) {
+        return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
+                .then((res) => {
+                    commit(ALLOC_RANDOM_DUNGEON, res.data)
                 })
     }
 }

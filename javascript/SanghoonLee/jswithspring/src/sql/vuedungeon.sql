@@ -23,4 +23,4 @@ insert into vuedungeon (name, description, monster_amount) values
 ('잊혀진 고대의 신전', '빛 계열 몬스터들이 가장 많이 출몰하는 던전', 3);
 
 insert into vuedungeon (name, description, monster_amount) values
-('멸망의 시전', '혼돈 그 자체', 7);
+('멸망의 신전', '혼돈 그 자체', 7);

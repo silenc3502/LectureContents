@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -27,17 +28,21 @@ public class VueDungeonRepository {
         int cnt = 0;
         int[] randArr = new int[DUNGEON_NUM];
 
-        List<Dungeon> results = null;
+        List<Dungeon> tmp;
 
         int max = jdbcTemplate.queryForObject(
                 "select count(1) from vuedungeon",
                 Integer.class
         );
 
-        for (int i = 0; i < DUNGEON_NUM; i++) {
+        for(int i = 0; i < DUNGEON_NUM; i++) {
             randArr[i] = (int) (Math.random() * max) + 1;
+        }
 
-            results = jdbcTemplate.query(
+        List<Dungeon> results = new ArrayList<Dungeon>();
+
+        for (int i = 0; i < DUNGEON_NUM; i++) {
+            tmp = jdbcTemplate.query(
                     "select dungeon_no, name, description, monster_amount, reg_date " +
                             "from vuedungeon where dungeon_no = ?",
 
@@ -61,6 +66,8 @@ public class VueDungeonRepository {
                         }
                     }, randArr[i]
             );
+
+            results.add(tmp.get(0));
         }
 
         return results;

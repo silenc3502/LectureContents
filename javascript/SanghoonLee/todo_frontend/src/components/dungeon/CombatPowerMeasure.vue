@@ -3,7 +3,7 @@
         <p>{{ dungeons }}</p>
         <ul v-for="(dd, idx) in dungeons_details" :key="idx">
             <li v-if="dd.monsterAmount == dungeons[0]">
-                던전명: {{ dungeons.name }} 몬스터수량: {{ dungeons.monsterAmount }}<br>
+                던전명: {{ dungeons[1] }}, 몬스터수량: {{ dungeons[0] }}<br>
                 {{ dd.text }}
             </li>
         </ul>

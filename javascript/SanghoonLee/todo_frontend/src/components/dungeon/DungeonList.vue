@@ -15,7 +15,9 @@
             </tr>
             <tr v-else v-for="(dungeon, idx) in dungeons" :key="idx">
                 <td align="center">{{ dungeon.dungeonNo }}</td>
-                <td align="center">{{ dungeon.name }}</td>
+                <td align="center" v-on:click="measureMonsterAmount(dungeon.monsterAmount, $event)">
+                    {{ dungeon.name }}
+                </td>
                 <td align="center">{{ dungeon.description }}</td>
                 <td align="center">{{ dungeon.monsterAmount }}</td>
             </tr>
@@ -25,11 +27,19 @@
 
 <script>
 
+import EventBus from '@/eventBus.js'
+
 export default {
     name: 'DungeonList',
     props: {
         dungeons: {
             type: Array
+        }
+    },
+    methods: {
+        measureMonsterAmount(monsterAmount, $event) {
+            const payload = [ monsterAmount, $event.target.innerHTML ]
+            EventBus.$emit('measureMonsterAmount', payload)
         }
     }
 }

@@ -9,12 +9,14 @@
 <script>
 
 import DungeonList from '@/components/dungeon/DungeonList.vue'
+import CombatPowerMeasure from '@/components/dungeon/CombatPowerMeasure.vue'
 import { mapState, mapActions } from 'vuex'
 
 export default {
     name: 'DungeonListPage',
     components: {
-        DungeonList
+        DungeonList,
+        CombatPowerMeasure
     },
     computed: {
         ...mapState(['dungeons'])

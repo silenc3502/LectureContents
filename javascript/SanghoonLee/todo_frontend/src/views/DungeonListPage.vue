@@ -2,6 +2,7 @@
     <div id="board">
         <h2>매번 새롭게 갱신되는 던전 원정 이벤트!</h2>
         <dungeon-list :dungeons="dungeons"/>
+        <combat-power-measure></combat-power-measure>
     </div>
 </template>
 
@@ -19,10 +20,10 @@ export default {
         ...mapState(['dungeons'])
     },
     mounted () {
-        this.randomDugeonList()
+        this.randomDungeonList()
     },
     methods: {
-        ...mapActions(['randomDugeonList'])
+        ...mapActions(['randomDungeonList'])
     }
 }
 

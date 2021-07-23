@@ -13,7 +13,7 @@
                     망겜입니다! 던전 생성이 안됩니다! 삭제하십시오!
                 </td>
             </tr>
-            <tr v-else v-for="dungeon in dungeons" :key="dungeon.dungeonNo">
+            <tr v-else v-for="(dungeon, idx) in dungeons" :key="idx">
                 <td align="center">{{ dungeon.dungeonNo }}</td>
                 <td align="center">{{ dungeon.name }}</td>
                 <td align="center">{{ dungeon.description }}</td>

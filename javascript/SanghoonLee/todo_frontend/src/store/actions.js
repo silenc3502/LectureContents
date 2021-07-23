@@ -121,7 +121,7 @@ export default {
                 })
     },
     // 랜덤 던전
-    randomDugeonList ({ commit }) {
+    randomDungeonList ({ commit }) {
         return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
                 .then((res) => {
                     commit(ALLOC_RANDOM_DUNGEON, res.data)

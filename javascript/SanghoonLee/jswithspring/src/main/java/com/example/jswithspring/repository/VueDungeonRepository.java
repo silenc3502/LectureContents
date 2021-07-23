@@ -51,8 +51,6 @@ public class VueDungeonRepository {
                         @Override
                         public Dungeon mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-                            log.info("rowNum: " + rowNum);
-
                             Dungeon dungeon = new Dungeon();
 
                             dungeon.setDungeonNo(rs.getInt("dungeon_no"));

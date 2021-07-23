@@ -13,7 +13,7 @@ import { mapState, mapActions } from 'vuex'
 export default {
     name: 'DungeonListPage',
     components: {
-        MonsterList
+        DungeonList
     },
     computed: {
         ...mapState(['dungeons'])

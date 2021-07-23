@@ -1,0 +1,37 @@
+<template>
+    <div>
+        <h3>게시물 목록</h3>
+        <table border="1">
+            <tr>
+                <th align="center" width="50">번호</th>
+                <th align="center" width="150">던전명</th>
+                <th align="center" width="500">설명</th>
+                <th align="center" width="100">몹숫자</th>
+            </tr>
+            <tr v-if="!dungeons || (Array.isArray(dungeons) && dungeons.length === 0)">
+                <td colspan="4">
+                    망겜입니다! 던전 생성이 안됩니다! 삭제하십시오!
+                </td>
+            </tr>
+            <tr v-else v-for="dungeon in dungeons" :key="dungeon.dungeonNo">
+                <td align="center">{{ dungeon.dungeonNo }}</td>
+                <td align="center">{{ dungeon.name }}</td>
+                <td align="center">{{ dungeon.description }}</td>
+                <td align="center">{{ dungeon.monsterAmount }}</td>
+            </tr>
+        </table>
+    </div>
+</template>
+
+<script>
+
+export default {
+    name: 'DungeonList',
+    props: {
+        dungeons: {
+            type: Array
+        }
+    }
+}
+
+</script>

@@ -14,12 +14,10 @@
             </tr>
             <tr v-else v-for="(student, idx) in students" :key="idx">
                 <td align="center">{{ student.studentNo }}</td>
-                <td align="center">{{ student.name }}</td>
-                <!--
-                <td align="center" v-on:click="measureMonsterAmount(student.monsterAmount, $event)">
-                    {{ dungeon.name }}
+                <!-- <td align="center">{{ student.name }}</td> -->
+                <td align="center" v-on:click="calcMean(student.score, $event)">
+                    {{ student.name }}
                 </td>
-                -->
                 <td align="center">{{ student.score }}</td>
             </tr>
         </table>
@@ -38,9 +36,17 @@ export default {
         }
     },
     methods: {
-        measureMonsterAmount(monsterAmount, $event) {
-            const payload = [ monsterAmount, $event.target.innerHTML ]
-            EventBus.$emit('measureMonsterAmount', payload)
+        calcMean(personalScore, $event) {
+            var mean = 0
+
+            for (var i = 0; i < this.students.length; i++) {
+                mean += this.students[i].score
+            }
+
+            mean /= this.students.length
+
+            const payload = [ mean, personalScore, $event.target.innerHTML ]
+            EventBus.$emit('calcMean', payload)
         }
     }
 }

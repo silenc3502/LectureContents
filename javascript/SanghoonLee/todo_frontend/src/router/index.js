@@ -37,6 +37,8 @@ import DungeonListPage from '@/views/DungeonListPage.vue'
 
 // OnlyVuePage
 import OnlyVuePage from '@/views/OnlyVuePage.vue'
+// + Spring
+import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 
 Vue.use(VueRouter)
 
@@ -197,6 +199,13 @@ const routes = [
     name: 'OnlyVuePage',
     components: {
       default: OnlyVuePage
+    }
+  },
+  {
+    path: '/springintercon',
+    name: 'SpringInterconnectionPage',
+    components: {
+      default: SpringInterconnectionPage
     }
   }
 ]

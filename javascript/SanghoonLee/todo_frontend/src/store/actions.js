@@ -22,7 +22,9 @@ import {
     FETCH_MONSTER_LIST,
     FETCH_MONSTER,
     // 랜덤 던전
-    ALLOC_RANDOM_DUNGEON
+    ALLOC_RANDOM_DUNGEON,
+    // 성적 관리
+    SCORE_MANAGEMENT
 } from './mutation-types'
 
 import axios from 'axios'
@@ -125,6 +127,13 @@ export default {
         return axios.get('http://localhost:7777/vuedungeon/randomAlloc')
                 .then((res) => {
                     commit(ALLOC_RANDOM_DUNGEON, res.data)
+                })
+    },
+    // 성적 관리
+    fetchStudentScoreList ({ commit }) {
+        return axios.get('http://localhost:7777/vuescore/scoreManagement')
+                .then((res) => {
+                    commit(SCORE_MANAGEMENT, res.data)
                 })
     }
 }

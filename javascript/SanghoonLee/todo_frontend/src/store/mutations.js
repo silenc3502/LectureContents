@@ -24,7 +24,9 @@ import {
     FETCH_MONSTER_LIST,
     FETCH_MONSTER,
     // 랜덤 던전
-    ALLOC_RANDOM_DUNGEON
+    ALLOC_RANDOM_DUNGEON,
+    // 성적 관리
+    SCORE_MANAGEMENT
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -114,5 +116,9 @@ export default {
     // 랜덤 던전
     [ALLOC_RANDOM_DUNGEON] (state, dungeons) {
         state.dungeons = dungeons
+    },
+    // 성적 관리
+    [SCORE_MANAGEMENT] (state, students) {
+        state.students = students
     }
 }

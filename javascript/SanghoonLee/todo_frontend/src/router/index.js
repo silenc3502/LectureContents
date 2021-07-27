@@ -35,6 +35,9 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 // 던전
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
+// 성적 관리
+import ScoreManagerPage from '@/views/ScoreManagerPage.vue'
+
 // OnlyVuePage
 import OnlyVuePage from '@/views/OnlyVuePage.vue'
 // + Spring
@@ -206,6 +209,13 @@ const routes = [
     name: 'SpringInterconnectionPage',
     components: {
       default: SpringInterconnectionPage
+    }
+  },
+  {
+    path: '/scoreManager',
+    name: 'ScoreManagerPage',
+    components: {
+      default: ScoreManagerPage
     }
   }
 ]

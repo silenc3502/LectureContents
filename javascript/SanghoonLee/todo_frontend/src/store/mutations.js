@@ -26,7 +26,8 @@ import {
     // 랜덤 던전
     ALLOC_RANDOM_DUNGEON,
     // 성적 관리
-    SCORE_MANAGEMENT
+    SCORE_MANAGEMENT,
+    CALC_MEAN
 } from './mutation-types'
 
 // 여기는 동기 처리를 하기 때문에 데이터 무결성이 보장됨
@@ -120,5 +121,16 @@ export default {
     // 성적 관리
     [SCORE_MANAGEMENT] (state, students) {
         state.students = students
+    },
+    [CALC_MEAN] (state) {
+        state.mean = 0
+        var tmp = 0
+        var len = state.students.length
+
+        for (var i = 0; i < len; i++) {
+            tmp += state.students[i].score
+        }
+
+        state.mean = tmp / len
     }
 }

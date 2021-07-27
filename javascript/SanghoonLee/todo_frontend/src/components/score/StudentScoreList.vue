@@ -15,12 +15,13 @@
             <tr v-else v-for="(student, idx) in students" :key="idx">
                 <td align="center">{{ student.studentNo }}</td>
                 <!-- <td align="center">{{ student.name }}</td> -->
-                <td align="center" v-on:click="calcMean(student.score, $event)">
+                <td align="center" v-on:click="determinantMean(student.score, $event)">
                     {{ student.name }}
                 </td>
                 <td align="center">{{ student.score }}</td>
             </tr>
         </table>
+        평균: {{ calcMean }}
     </div>
 </template>
 
@@ -35,16 +36,28 @@ export default {
             type: Array
         }
     },
-    methods: {
-        calcMean(personalScore, $event) {
-            var mean = 0
+    computed: {
+        calcMean () {
+            var tmp = 0
+            var len = this.students.length
 
-            for (var i = 0; i < this.students.length; i++) {
-                mean += this.students[i].score
+            for (var i = 0; i < len; i++) {
+                tmp += this.students[i].score
             }
 
-            mean /= this.students.length
+            return tmp / len
+        }
+    },
+    methods: {
+        determinantMean(personalScore, $event) {
+            var tmp = 0
+            var len = this.students.length
 
+            for (var i = 0; i < len; i++) {
+                tmp += this.students[i].score
+            }
+
+            const mean = tmp / len
             const payload = [ mean, personalScore, $event.target.innerHTML ]
             EventBus.$emit('calcMean', payload)
         }

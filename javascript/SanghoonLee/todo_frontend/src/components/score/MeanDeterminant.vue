@@ -1,14 +1,15 @@
 <template>
     <div>
-        <p>{{ students }}</p>
-        <!--
-        <ul v-for="(dd, idx) in dungeons_details" :key="idx">
-            <li v-if="dd.monsterAmount == dungeons[0]">
-                던전명: {{ students[1] }}, 몬스터수량: {{ students[0] }}<br>
-                {{ dd.text }}
-            </li>
-        </ul>
-        -->
+        <p>{{ students }}</p><br>
+        <p v-if="flag && (mean === students[0])">
+            딱 평균에 걸쳤습니다!
+        </p>
+        <p v-else-if="flag && (mean < students[0])">
+            평균 이상입니다!
+        </p>
+        <p v-else-if="flag && (mean > students[0])">
+            평균 이하입니다!
+        </p>
     </div>
 </template>
 
@@ -19,14 +20,16 @@ import EventBus from '@/eventBus.js'
 export default {
     data () {
         return {
-            mean,
+            flag: false,
+            mean: 0,
             students: []
         }
     },
     created: function() {
         EventBus.$on('calcMean', (payload) => {
-            this.mean = payload.mean
-            this.students = { payload }
+            this.flag = true
+            this.mean = payload[0]
+            this.students = [ payload[1], payload[2] ]
         })
     }
 }

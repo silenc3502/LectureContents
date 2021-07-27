@@ -56,6 +56,11 @@
                     active-class="active">
                 Dungeon 테스트
             </router-link>
+            <router-link :to="{ name: 'OnlyVuePage' }"
+                    class="nav-link"
+                    active-class="active">
+                Only 뷰 페이지
+            </router-link>
         </div>
     </div>
 </template>

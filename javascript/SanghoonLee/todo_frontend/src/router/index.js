@@ -35,6 +35,9 @@ import EventBusTestPage from '@/views/EventBusTestPage.vue'
 // 던전
 import DungeonListPage from '@/views/DungeonListPage.vue'
 
+// OnlyVuePage
+import OnlyVuePage from '@/views/OnlyVuePage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -187,6 +190,13 @@ const routes = [
     name: 'DungeonListPage',
     components: {
       default: DungeonListPage
+    }
+  },
+  {
+    path: '/onlyvuepage',
+    name: 'OnlyVuePage',
+    components: {
+      default: OnlyVuePage
     }
   }
 ]

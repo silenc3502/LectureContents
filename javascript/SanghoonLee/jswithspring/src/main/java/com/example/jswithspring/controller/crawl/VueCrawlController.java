@@ -16,16 +16,15 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 public class VueCrawlController {
 
-    //@Autowired
-    //VueDaumNewsCrawlService service;
+    @Autowired
+    VueDaumNewsCrawlService service;
 
     @GetMapping("{category}")
     public List<DaumNews> getDaumNewsCategory(@PathVariable String category) {
         log.info("Crawling with getDaumNewsCategory(): " + category);
 
-        //service.mainDaumCrawler(category);
+        service.daumNewsMainCrawler(category);
 
-        //return service.newsFindAll();
-        return null;
+        return service.daumNewsFindAll();
     }
 }

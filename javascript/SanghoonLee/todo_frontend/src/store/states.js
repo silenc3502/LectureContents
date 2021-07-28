@@ -21,5 +21,7 @@ export default {
     // 랜덤 던전
     dungeons: [],
     // 성적 관리
-    students: []
+    students: [],
+    // 크롤링
+    lists: []
 }

@@ -1,4 +1,4 @@
-package com.example.jswithspring.controller;
+package com.example.jswithspring.controller.basic;
 
 import com.example.jswithspring.utility.Test;
 import com.example.jswithspring.utility.network.Client;

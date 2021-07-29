@@ -49,6 +49,7 @@ import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
 // Slot
 import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
 import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
+import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -244,6 +245,13 @@ const routes = [
     name: 'NamedSlotTestPage',
     components: {
       default: NamedSlotTestPage
+    }
+  },
+  {
+    path: '/scopedSlot',
+    name: 'ScopedSlotTestPage',
+    components: {
+      default: ScopedSlotTestPage
     }
   }
 ]

@@ -94,6 +94,12 @@
                     active-class="active">
                 ScopedSlot 활용
             </router-link>
+            <!-- 뭔놈의 slot이 이래 많냐 ? 하나로 통일하자 v-slot -->
+            <router-link :to="{ name: 'RecentSlotTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                v-slot 활용
+            </router-link>
         </div>
     </div>
 </template>

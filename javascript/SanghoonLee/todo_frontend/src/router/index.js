@@ -50,6 +50,7 @@ import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
 import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
 import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
 import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
+import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -252,6 +253,13 @@ const routes = [
     name: 'ScopedSlotTestPage',
     components: {
       default: ScopedSlotTestPage
+    }
+  },
+  {
+    path: '/vSlot',
+    name: 'RecentSlotTestPage',
+    components: {
+      default: RecentSlotTestPage
     }
   }
 ]

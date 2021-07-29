@@ -46,6 +46,10 @@ import SpringInterconnectionPage from '@/views/SpringInterconnectionPage.vue'
 // 크롤링
 import DaumNewsCrawlerPage from '@/views/DaumNewsCrawlerPage.vue'
 
+// Slot
+import UnNamedSlotTestPage from '@/views/UnNamedSlotTestPage.vue'
+import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -226,6 +230,20 @@ const routes = [
     name: 'DaumNewsCrawlerPage',
     components: {
       default: DaumNewsCrawlerPage
+    }
+  },
+  {
+    path: '/unNamedSlot',
+    name: 'UnNamedSlotTestPage',
+    components: {
+      default: UnNamedSlotTestPage
+    }
+  },
+  {
+    path: '/namedSlot',
+    name: 'NamedSlotTestPage',
+    components: {
+      default: NamedSlotTestPage
     }
   }
 ]

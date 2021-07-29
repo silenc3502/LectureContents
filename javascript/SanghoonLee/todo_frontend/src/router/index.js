@@ -52,6 +52,11 @@ import NamedSlotTestPage from '@/views/NamedSlotTestPage.vue'
 import ScopedSlotTestPage from '@/views/ScopedSlotTestPage.vue'
 import RecentSlotTestPage from '@/views/RecentSlotTestPage.vue'
 
+// Materialize
+import MaterializeTestPage from '@/views/MaterializeTestPage.vue'
+
+// Vuetify
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -260,6 +265,13 @@ const routes = [
     name: 'RecentSlotTestPage',
     components: {
       default: RecentSlotTestPage
+    }
+  },
+  {
+    path: '/materialize',
+    name: 'MaterializeTestPage',
+    components: {
+      default: MaterializeTestPage
     }
   }
 ]

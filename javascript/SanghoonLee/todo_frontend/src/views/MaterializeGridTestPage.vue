@@ -21,12 +21,46 @@
                 column 12
             </div>
         </div>
+        <!--
+        <div class="row flex">
+            <div class="col s12 blue white-text">
+                <span class="flow-text">12</span>
+            </div>
+            <div class="col s6 blue white-text">
+                <span class="flow-text">6</span>
+            </div>
+            <div class="col s3 m4 offset-m4 blue white-text">
+                <span class="flow-text">offset 4</span>
+            </div>
+            <div class="col s3 m4 offset-m8 blue white-text">
+                <span class="flow-text">offset 8</span>
+            </div>
+        </div>
+        -->
+        <div class="row">
+            <a class="btn waves-effect waves-red blue" @click="showMessage()">
+                Wi-Fi ON!
+            </a>
+            <a class="btn-flat waves-effect waves-teal" @click="showMessage()">
+                <i class="material-icons left">cloud</i>
+                Cloud
+            </a>
+            <a class="btn-floating waves-effect waves-yellow" @click="showMessage()">
+                <i class="material-icons right">wifi</i>
+                Wi-Fi
+            </a>
+        </div>
     </div>
 </template>
 
 <script>
 
 export default {
-    name: 'MaterializeGridTestPage'
+    name: 'MaterializeGridTestPage',
+    methods: {
+        showMessage() {
+            alert('버튼이닷!')
+        }
+    }
 }
 </script>

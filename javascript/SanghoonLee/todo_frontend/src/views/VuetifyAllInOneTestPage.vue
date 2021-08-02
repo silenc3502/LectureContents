@@ -73,6 +73,43 @@
                 </v-card>
             </v-dialog>
         </v-layout>
+
+        <v-dialog v-model="loginDialog" persistent max-width="500px">
+            <template v-slot:activator="{ on }">
+                <v-btn color="primary" dark v-on="on">로그인</v-btn>
+            </template>
+            <v-card>
+                <v-card-title>
+                    <span class="headline">
+                        Log in
+                    </span>
+                </v-card-title>
+                <v-card-text>
+                    <v-container grid-list-md>
+                        <v-layout wrap>
+                            <v-flex xs12>
+                                <v-text-field label="Email" v-model="userInfo.email" required>
+                                </v-text-field>
+                            </v-flex>
+                            <v-flex xs12>
+                                <v-text-field label="Password" v-model="userInfo.password"
+                                                type="password" required>
+                                </v-text-field>
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+                </v-card-text>
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="teal darken-1" text @click="btnLoginClick($event)">
+                        취소
+                    </v-btn>
+                    <v-btn color="teal darken-1" text @click="btnLoginClick($event)">
+                        확인
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </div>
 </template>
 
@@ -83,9 +120,14 @@ export default {
         return {
             message: '환장',
             dialog: false,
+            loginDialog: false,
             service: {
                 name: '7박 8일 여행 코스'
-            }
+            },
+            userInfo: {
+                email: '',
+                password: ''
+            },
         }
     },
     methods: {
@@ -97,6 +139,16 @@ export default {
         },
         roundBtnClick () {
             alert('Vuetify 버튼이라고 들어봤니 ?')
+        },
+        btnLoginClick ($event) {
+            if ($event.target.innerHTML == " 확인 ") {
+                alert('로그인이 완료되었습니다!')
+                console.log("입력된 정보 - 이메일: " + this.userInfo.email + 
+                            ", 비밀번호: " + this.userInfo.password)
+                this.loginDialog = false
+            }
+            this.userInfo.email = ''
+            this.userInfo.password = ''
         }
     }    
 }

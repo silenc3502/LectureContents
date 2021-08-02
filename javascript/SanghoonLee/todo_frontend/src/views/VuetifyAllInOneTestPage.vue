@@ -175,6 +175,26 @@
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>
+
+        <div>
+            <v-menu offset-y>
+                <template v-slot:activator="{ on }">
+                    <v-btn color='teal darken-1'
+                            class="white--text ma-5"
+                            v-on="on">
+                        Drop Down Test Button
+                    </v-btn>
+                </template>
+        
+                <v-list>
+                    <v-list-item v-for="(dropItem, index) in dropItems"
+                            :key="index"
+                            link>
+                        <v-list-item-title>{{ dropItem.title }}</v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
+        </div>
     </div>
 </template>
 
@@ -206,6 +226,12 @@ export default {
                 {
                     icon: 'ev_station', text: 'EV Station', name: 'ev_station', route: '/materialize'
                 }
+            ],
+            dropItems: [
+                { title: 'Click Me' },
+                { title: 'Click Me' },
+                { title: 'Click Me' },
+                { title: 'Click Me 2' },
             ]
         }
     },

@@ -213,10 +213,10 @@ export default {
     data () {
         return {
             headerTitle: [
-                { text: '게시물 번호', value: 'boardNo' },
-                { text: '제목', value: 'title' },
-                { text: '작성자', value: 'writer' },
-                { text: '내용', value: 'content' }
+                { text: '번호', value: 'boardNo', width: "70px" },
+                { text: '제목', value: 'title', width: "200px" },
+                { text: '작성자', value: 'writer', width: "100px" },
+                { text: '내용', value: 'content', width: "100px" }
             ],
             contents: [
                 { boardNo: 1, title: '야호', writer: '으마으마', content: '으아아아앜' },

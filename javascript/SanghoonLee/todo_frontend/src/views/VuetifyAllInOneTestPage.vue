@@ -49,7 +49,11 @@
         
         <v-layout row justify-center>
             <!-- 사용자에게 알림을 제공하거나 중요 정보를 포함해 의사 결정을 하도록 유도하는데 활용
-                대화상자가 뜨면서 결제할 것인지 취소할 것인지 어쩔건지 등등에 활용하기 좋음 -->
+                대화상자가 뜨면서 결제할 것인지 취소할 것인지 어쩔건지 등등에 활용하기 좋음
+                v-dialog에 template을 넣고 v-btn으로 아래와 같은 형식을 만들면
+                무조건 버튼 클릭시 v-card가 동작하게 된다.
+                단 주의할 점이라면 v-model에 dialog를 겹치게 만들면 안된다.
+                여러 대화상자(Dialog)를 사용한다면 이 부분을 여러개로 분리하거나 배열로 관리해야 한다. -->
             <v-dialog v-model="dialog" persistent max-width="400">
                 <template v-slot:activator="{ on }">
                     <v-btn color="primary" dark v-on="on">결제</v-btn>
@@ -110,6 +114,22 @@
                 </v-card-actions>
             </v-card>
         </v-dialog>
+
+        <v-toolbar>
+            <v-toolbar-items v-if="$vuetify.breakpoint.smAndUp">
+                <v-btn text>First Test</v-btn>
+                <v-btn text>Second Test</v-btn>
+                <v-btn text>Third Test</v-btn>
+            </v-toolbar-items>
+        </v-toolbar>
+        <v-toolbar>
+            <!-- <v-toolbar-items class="hidden-sm-and-down"> -->
+            <v-toolbar-items class="d-sm-none">
+                <v-btn text>Home</v-btn>
+                <v-btn text>집에갈래요</v-btn>
+                <v-btn text>드루오세요</v-btn>
+            </v-toolbar-items>
+        </v-toolbar>
     </div>
 </template>
 

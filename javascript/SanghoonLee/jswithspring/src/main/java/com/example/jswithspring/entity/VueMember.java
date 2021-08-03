@@ -1,6 +1,8 @@
 package com.example.jswithspring.entity;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -25,9 +27,9 @@ public class VueMember {
     @Column(length = 20, nullable = false)
     private String pw;
 
-    @CreatedDate
-    private LocalDateTime createdDate;
+    @CreationTimestamp
+    private Date createdDate;
 
-    @LastModifiedDate
-    private LocalDateTime lastModifiedDate;
+    @UpdateTimestamp
+    private Date lastModifiedDate;
 }

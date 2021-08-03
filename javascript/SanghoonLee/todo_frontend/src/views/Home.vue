@@ -120,6 +120,11 @@
                     active-class="active">
                 Vuetify 회원 가입 활용
             </router-link>
+            <router-link :to="{ name: 'CoverflowTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Coverflow Test
+            </router-link>
         </div>
     </div>
 </template>

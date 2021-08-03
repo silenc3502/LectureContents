@@ -57,6 +57,9 @@ import MaterializeTestPage from '@/views/MaterializeTestPage.vue'
 import MaterializeGridTestPage from '@/views/MaterializeGridTestPage.vue'
 import VuetifyAllInOneTestPage from '@/views/VuetifyAllInOneTestPage.vue'
 
+// coverflow
+import CoverflowTestPage from '@/views/CoverflowTestPage.vue'
+
 // JPA Test Page
 import VuetifyMemberRegisterPage from '@/views/VuetifyMemberRegisterPage.vue'
 
@@ -296,6 +299,13 @@ const routes = [
     name: 'VuetifyMemberRegisterPage',
     components: {
       default: VuetifyMemberRegisterPage
+    }
+  },
+  {
+    path: '/coverflowTest',
+    name: 'CoverflowTestPage',
+    components: {
+      default: CoverflowTestPage
     }
   }
 ]

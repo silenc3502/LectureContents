@@ -60,6 +60,9 @@ import VuetifyAllInOneTestPage from '@/views/VuetifyAllInOneTestPage.vue'
 // coverflow
 import CoverflowTestPage from '@/views/CoverflowTestPage.vue'
 
+// vue-awesome-swiper
+import AwesomeSwiperTestPage from '@/views/AwesomeSwiperTestPage.vue'
+
 // JPA Test Page
 import VuetifyMemberRegisterPage from '@/views/VuetifyMemberRegisterPage.vue'
 
@@ -306,6 +309,13 @@ const routes = [
     name: 'CoverflowTestPage',
     components: {
       default: CoverflowTestPage
+    }
+  },
+  {
+    path: '/awesomeSwiperTest',
+    name: 'AwesomeSwiperTestPage',
+    components: {
+      default: AwesomeSwiperTestPage
     }
   }
 ]

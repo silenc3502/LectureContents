@@ -125,6 +125,11 @@
                     active-class="active">
                 Coverflow Test
             </router-link>
+            <router-link :to="{ name: 'AwesomeSwiperTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Awesome Swiper Test
+            </router-link>
         </div>
     </div>
 </template>

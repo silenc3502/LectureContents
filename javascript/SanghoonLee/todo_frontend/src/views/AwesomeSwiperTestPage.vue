@@ -15,6 +15,14 @@
                 <swiper-slide>슬라이드 10</swiper-slide>
                 <swiper-slide>슬라이드 11</swiper-slide>
                 <swiper-slide>슬라이드 12</swiper-slide>
+                <swiper-slide>슬라이드 13</swiper-slide>
+                <swiper-slide>슬라이드 14</swiper-slide>
+                <swiper-slide>슬라이드 15</swiper-slide>
+                <swiper-slide>슬라이드 16</swiper-slide>
+                <swiper-slide>슬라이드 17</swiper-slide>
+                <swiper-slide>슬라이드 18</swiper-slide>
+                <swiper-slide>슬라이드 19</swiper-slide>
+                <swiper-slide>슬라이드 20</swiper-slide>
                 <div class="swiper-pagination" slot="pagination">
                 </div>
             </swiper>
@@ -36,6 +44,7 @@ export default {
     data () {
         return {
             swiperOption: {
+                loop: true,
                 effect: 'coverflow',
                 grabCursor: true,
                 centeredSlides: true,
@@ -44,11 +53,18 @@ export default {
                     rotate: 50,
                     stretch: 0,
                     depth: 100,
+                    // 회전 많이 맥이고 싶으면 높을수록 많이 돌아가고
+                    // 그 대신 폭은 작아짐
+                    // 아예 안주면 회전이 없어져서 일직선임
                     modifier: 1,
                     slideShadows: true
                 },
                 pagination: {
-                    el: '.swiper-pagination'
+                    el: '.swiper-pagination',
+                    dynamicBullets: true
+                },
+                autoplay: {
+                    delay: 1000
                 }
             }
         }
@@ -76,6 +92,12 @@ export default {
         align-items: center;
         width: 300px;
         height: 300px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.7rem;
+        background-color: mediumpurple;
+        background-position: center;
+        background-size: cover;
     }
 }
 

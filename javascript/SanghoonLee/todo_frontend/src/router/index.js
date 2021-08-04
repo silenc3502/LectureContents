@@ -69,6 +69,9 @@ import AwesomeSwiperTestPage from '@/views/AwesomeSwiperTestPage.vue'
 // Image Gallery
 import ImageGalleryTestPage from '@/views/ImageGalleryTestPage.vue'
 
+// Calendar
+import CalendarTestPage from '@/views/CalendarTestPage.vue'
+
 // JPA Test Page
 import VuetifyMemberRegisterPage from '@/views/VuetifyMemberRegisterPage.vue'
 
@@ -329,6 +332,13 @@ const routes = [
     name: 'ImageGalleryTestPage',
     components: {
       default: ImageGalleryTestPage
+    }
+  },
+  {
+    path: '/calendar',
+    name: 'CalendarTestPage',
+    components: {
+      default: CalendarTestPage
     }
   }
 ]

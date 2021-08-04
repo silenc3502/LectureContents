@@ -63,6 +63,12 @@ import CoverflowTestPage from '@/views/CoverflowTestPage.vue'
 // vue-awesome-swiper
 import AwesomeSwiperTestPage from '@/views/AwesomeSwiperTestPage.vue'
 
+// Likes Facebook
+// import LikesFacebookPage from '@/views/LikesFacebookPage.vue'
+
+// Image Gallery
+import ImageGalleryTestPage from '@/views/ImageGalleryTestPage.vue'
+
 // JPA Test Page
 import VuetifyMemberRegisterPage from '@/views/VuetifyMemberRegisterPage.vue'
 
@@ -316,6 +322,13 @@ const routes = [
     name: 'AwesomeSwiperTestPage',
     components: {
       default: AwesomeSwiperTestPage
+    }
+  },
+  {
+    path: '/imageGallery',
+    name: 'ImageGalleryTestPage',
+    components: {
+      default: ImageGalleryTestPage
     }
   }
 ]

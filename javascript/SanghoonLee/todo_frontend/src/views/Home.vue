@@ -130,6 +130,11 @@
                     active-class="active">
                 Awesome Swiper Test
             </router-link>
+            <router-link :to="{ name: 'ImageGalleryTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Image Gallery Test
+            </router-link>
         </div>
     </div>
 </template>

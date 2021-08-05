@@ -6,6 +6,7 @@ import com.example.jswithspring.entity.jpa.MemberAuth;
 import com.example.jswithspring.service.jpa.JPAMemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -23,14 +24,13 @@ public class JPAMemberController {
     private JPAMemberService service;
 
     @PostMapping("/register")
-    public ResponseEntity<Member> jpaRegister(
+    public ResponseEntity<Void> jpaRegister(
             @Validated @RequestBody MemberRequest memberRequest) throws Exception {
         log.info("jpaRegister(): " + memberRequest.getUserId() + ", " + memberRequest.getPassword() + ", " +
                 (memberRequest.getAuth().equals("사업자") ? "ROLE_BUSINESS" : "ROLE_INDIVIDUAL"));
 
-        //service.register(member);
+        service.register(memberRequest);
 
-        //return new ResponseEntity<>(member, HttpStatus.OK);
-        return null;
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

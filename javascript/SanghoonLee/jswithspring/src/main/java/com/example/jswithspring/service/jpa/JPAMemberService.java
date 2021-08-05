@@ -4,7 +4,7 @@ import com.example.jswithspring.entity.jpa.Member;
 
 import java.util.List;
 
-public interface MemberService {
+public interface JPAMemberService {
     public void register(Member member) throws Exception;
     /*
     public void login(Member member) throws Exception;

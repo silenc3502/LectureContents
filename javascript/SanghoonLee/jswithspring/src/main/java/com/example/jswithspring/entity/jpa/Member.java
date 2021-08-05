@@ -1,9 +1,7 @@
 package com.example.jswithspring.entity.jpa;
 
 import com.sun.istack.NotNull;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,9 +10,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Getter
-@Setter
-@ToString
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name="member")
 public class Member {

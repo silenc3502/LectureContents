@@ -1,17 +1,15 @@
 package com.example.jswithspring.service.jpa;
 
 import com.example.jswithspring.entity.jpa.Member;
-import com.example.jswithspring.repository.jpa.MemberRepository;
+import com.example.jswithspring.repository.jpa.JPAMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
-public class MemberServiceImpl implements MemberService {
+public class JPAMemberServiceImpl implements JPAMemberService {
 
     @Autowired
-    private MemberRepository repository;
+    private JPAMemberRepository repository;
 
     @Override
     public void register(Member member) throws Exception {

@@ -17,7 +17,7 @@ import java.util.Map;
 @Slf4j
 @Controller
 @RequestMapping("/jpamember")
-@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
+@CrossOrigin(origins = { "http://localhost:7777", "http://localhost:8080" }, allowedHeaders = "*")
 public class JPAMemberController {
 
     @Autowired

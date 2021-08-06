@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Slf4j
 @Controller
 @RequestMapping("/jpa")
@@ -17,6 +20,12 @@ public class JPATestMemberController {
 
     @GetMapping("/jpaMemberTest")
     public void getJPATest () throws Exception {
-        log.info("getJPATest(): " + service.findByJPQL());
+        log.info("getJPATest - findByJPQL(): " + service.findByJPQL());
+
+        List<Object[]> resultLists = service.findSpecificByJPQL();
+
+        for (Object[] result : resultLists) {
+            log.info("getJPATest - findSpecificByJPQL(): " + Arrays.toString(result));
+        }
     }
 }

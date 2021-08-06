@@ -17,4 +17,9 @@ public class JPATestMemberServiceImpl implements JPATestMemberService {
     public List<TestMember> findByJPQL() throws Exception {
         return memberRepository.findByJPQL("hihi");
     }
+
+    @Override
+    public List<Object[]> findSpecificByJPQL() throws Exception {
+        return memberRepository.findSpecificByJPQL("hihi");
+    }
 }

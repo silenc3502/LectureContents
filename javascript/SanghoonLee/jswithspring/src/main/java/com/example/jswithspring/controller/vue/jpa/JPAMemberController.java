@@ -37,13 +37,16 @@ public class JPAMemberController {
     }
 
     @PostMapping("/test")
-    public ResponseEntity<Void> jpaJPQLTest() throws Exception {
+    public ResponseEntity<Void> jpaJPQLTest(
+            @RequestBody MemberRequest memberRequest) throws Exception {
+
         log.info("jpaJPQLTest()");
 
         Optional<Member> maybeMember = service.findByAuth(new Long(3));
         Member member = maybeMember.get();
 
-        log.info("번호 정보: " + member);
+        log.info("Auth: " + (member.getAuthList().get(0).getAuth().equals("사업자") ?
+                "ROLE_BUSINESS" : "ROLE_CUSTOMER"));
 
         return new ResponseEntity<Void>(HttpStatus.OK);
     }

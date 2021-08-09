@@ -38,11 +38,11 @@ public class JPAMemberController {
 
     @PostMapping("/login")
     public ResponseEntity<Boolean> jpaLogin(
-            @RequestBody Member member) throws Exception {
+            @RequestBody MemberRequest memberRequest) throws Exception {
 
-        log.info("jpaLogin()");
+        log.info("jpaLogin() - userId: " + memberRequest.getUserId() + ", password: " + memberRequest.getPassword());
 
-        Boolean isSuccess = service.login(member);
+        Boolean isSuccess = service.login(memberRequest);
 
         if (isSuccess) {
             log.info("Login Success");

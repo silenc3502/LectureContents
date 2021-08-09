@@ -39,8 +39,8 @@ public class JPAMemberServiceImpl implements JPAMemberService {
     }
 
     @Override
-    public boolean login(Member member) throws Exception {
-        Optional<Member> maybeMember = memberRepository.findByUserId(member.getUserId());
+    public boolean login(MemberRequest memberRequest) throws Exception {
+        Optional<Member> maybeMember = memberRepository.findByUserId(memberRequest.getUserId());
 
         if (maybeMember == null)
         {
@@ -50,7 +50,7 @@ public class JPAMemberServiceImpl implements JPAMemberService {
 
         Member loginMember = maybeMember.get();
 
-        if (!passwordEncoder.matches(member.getPassword(), loginMember.getPassword()))
+        if (!passwordEncoder.matches(memberRequest.getPassword(), loginMember.getPassword()))
         {
             log.info("login(): 비밀번호 잘못 입력하였습니다.");
             return false;

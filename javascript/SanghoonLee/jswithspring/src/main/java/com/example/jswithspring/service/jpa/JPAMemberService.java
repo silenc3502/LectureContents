@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface JPAMemberService {
     public void register(MemberRequest memberRequest) throws Exception;
 
-    public boolean login(Member member) throws Exception;
+    public boolean login(MemberRequest memberRequest) throws Exception;
     /*
     public List<Member> list() throws Exception;
      */

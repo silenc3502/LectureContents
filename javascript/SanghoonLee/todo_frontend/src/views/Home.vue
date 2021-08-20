@@ -149,6 +149,11 @@
                     class="nav-link"
                     active-class="active">
                 Member 로그인 Test
+            </router-link><br/>
+            <router-link :to="{ name: 'FileUploadPage' }"
+                    class="nav-link"
+                    active-class="active">
+                파일 업로드 Test
             </router-link>
         </div>
     </div>

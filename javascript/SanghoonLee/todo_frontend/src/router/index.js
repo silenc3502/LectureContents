@@ -77,6 +77,9 @@ import VuetifyMemberRegisterPage from '@/views/VuetifyMemberRegisterPage.vue'
 import MemberJoinColumnTestPage from '@/views/MemberJoinColumnTestPage.vue'
 import VuetifyMemberLoginPage from '@/views/VuetifyMemberLoginPage.vue'
 
+import SessionLoginPage from '@/views/SessionLoginPage.vue'
+import AccountRegisterPage from '@/views/AccountRegisterPage.vue'
+
 // File Upload
 import FileUploadPage from '@/views/FileUploadPage.vue'
 
@@ -365,6 +368,20 @@ const routes = [
     name: 'FileUploadPage',
     components: {
       default: FileUploadPage
+    }
+  },
+  {
+    path: '/sessionLogin',
+    name: 'SessionLoginPage',
+    components: {
+      default: SessionLoginPage
+    }
+  },
+  {
+    path: '/accountRegister',
+    name: 'AccountRegisterPage',
+    components: {
+      default: AccountRegisterPage
     }
   }
 ]

@@ -23,5 +23,7 @@ export default {
     // 성적 관리
     students: [],
     // 크롤링
-    lists: []
+    lists: [],
+    // 세션
+    session: []
 }

@@ -1,6 +1,7 @@
 package com.example.jswithspring.controller.vue.jpa;
 
 import com.example.jswithspring.controller.vue.jpa.request.SignInForm;
+import com.example.jswithspring.controller.vue.jpa.response.ResponseSession;
 import com.example.jswithspring.service.jpa.AccountService;
 import com.example.jswithspring.service.jpa.SignInService;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,7 @@ public class JPAMemberLoginSessionController {
     private AccountService service;
 
     @PostMapping("sign-in")
-    public ResponseEntity<Boolean> signIn(@RequestBody SignInForm form) {
+    public ResponseEntity<ResponseSession> signIn(@RequestBody SignInForm form) {
 
         log.info("signIn(): " + form.getEmail() + ", " + form.getPassword());
 
@@ -34,7 +35,17 @@ public class JPAMemberLoginSessionController {
 
         log.info("Test Success!!!");
 
-        return new ResponseEntity<Boolean>(isLogin, HttpStatus.OK);
+        String hashcode;
+
+        if (isLogin) {
+            hashcode = form.getEmail() + form.getEmail().hashCode();
+        } else {
+            hashcode = null;
+        }
+
+        ResponseSession rs = new ResponseSession(form.getEmail(), hashcode);
+
+        return new ResponseEntity<ResponseSession>(rs, HttpStatus.OK);
     }
 
     @PostMapping("register")

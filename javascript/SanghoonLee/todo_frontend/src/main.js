@@ -9,8 +9,12 @@ import 'material-design-icons/iconfont/material-icons.css'
 import '@morioh/v-lightbox/dist/lightbox.css'
 import Lightbox from '@morioh/v-lightbox'
 
+import cookies from 'vue-cookies'
+
 Vue.use(Lightbox)
 Vue.config.productionTip = false
+
+Vue.use(cookies)
 
 new Vue({
   router,

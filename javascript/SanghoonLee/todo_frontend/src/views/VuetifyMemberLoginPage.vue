@@ -1,9 +1,17 @@
 <template>
     <div>
-        <div align="center">
-            <h2>로그인</h2>
+        <v-btn tile color="teal" @click="logout" v-if="isLogin">
+            <v-icon left>
+                ads_click
+            </v-icon>
+            로그 아웃
+        </v-btn>
+        <div v-else>
+            <div align="center">
+                <h2>로그인</h2>
+            </div>
+            <vuetify-member-login-form @submit="onSubmit"/>
         </div>
-        <vuetify-member-login-form @submit="onSubmit"/>
         <v-spacer></v-spacer>
         <v-btn tile color="teal" @click="showSession">
             <v-icon left>
@@ -24,7 +32,12 @@
 <script>
 
 import VuetifyMemberLoginForm from '@/components/member/VuetifyMemberLoginForm.vue'
+import { mapState } from 'vuex'
+import Vue from 'vue'
+import cookies from 'vue-cookies'
 import axios from 'axios'
+
+Vue.use(cookies)
 
 export default {
     name: 'VuetifyMemberLoginPage',
@@ -36,27 +49,45 @@ export default {
             isLogin: false
         }
     },
+    mounted () {
+        // this.fetchSession()
+        this.$store.state.session = this.$cookies.get("user")
+
+        if (this.$store.state.session != null) {
+            this.isLogin = true
+        }
+    },
+    computed: {
+        ...mapState(['session'])
+    },
     methods: {
         onSubmit (payload) {
-            const { id, pw } = payload
-            axios.post('http://localhost:7777/jpamember/login', { userId: id, password: pw, auth: null })
-                    .then(res => {
-                        if (res.data != "") {
-                            alert('로그인 성공! - ' + res.data)
-                            this.isLogin = true;
-                        } else {
-                            alert('로그인 실패! - ' + res.data)
-                        }
-                        /*
-                        this.$router.push({
-                            name: 'BoardReadPage',
-                            params: { boardNo: res.data.boardNo.toString() }
+            if (this.$store.state.session == null) {
+                const { id, pw } = payload
+                axios.post('http://localhost:7777/jpamember/login', { userId: id, password: pw, auth: null })
+                        .then(res => {
+                            if (res.data != "") {
+                                alert('로그인 성공! - ' + res.data.userId)
+                                this.isLogin = true
+                                this.$store.state.session = res.data
+                                this.$cookies.set("user", res.data, '1h')
+                            } else {
+                                alert('로그인 실패! - ' + res.data)
+                                this.isLogin = false
+                            }
+                            /*
+                            this.$router.push({
+                                name: 'BoardReadPage',
+                                params: { boardNo: res.data.boardNo.toString() }
+                            })
+                            */
                         })
-                        */
-                    })
-                    .catch(res => {
-                        alert(res.response.data.message)
-                    })
+                        .catch(res => {
+                            alert(res.response.data.message)
+                        })
+            } else {
+                alert('이미 로그인 되어 있습니다: ' + this.$store.state.session.userId)
+            }
         },
         showSession () {
             if (this.isLogin == true) {
@@ -86,6 +117,11 @@ export default {
                     .then(res => {
                         this.isLogin = res.data
                     })
+        },
+        logout () {
+            this.$cookies.remove("user")
+            this.isLogin = false
+            this.$store.state.session = null
         }
     }
 }

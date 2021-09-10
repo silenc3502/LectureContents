@@ -83,6 +83,9 @@ import AccountRegisterPage from '@/views/AccountRegisterPage.vue'
 // File Upload
 import FileUploadPage from '@/views/FileUploadPage.vue'
 
+// Image Test
+import ImgTestPage from '@/views/ImgTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -382,6 +385,13 @@ const routes = [
     name: 'AccountRegisterPage',
     components: {
       default: AccountRegisterPage
+    }
+  },
+  {
+    path: '/imgTest',
+    name: 'ImgTestPage',
+    components: {
+      default: ImgTestPage
     }
   }
 ]

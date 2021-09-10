@@ -51,13 +51,14 @@ public class JPAMemberController {
 
         log.info("jpaLogin() - userId: " + memberRequest.getUserId() + ", password: " + memberRequest.getPassword());
 
-        Boolean isSuccess = service.login(memberRequest);
+        MemberRequest memberResponse = service.login(memberRequest);
 
-        if (isSuccess) {
+        if (!memberResponse.equals(null)) {
             log.info("Login Success");
             // 세션 할당
             info = new UserInfo();
-            info.setUserId(memberRequest.getUserId());
+            info.setUserId(memberResponse.getUserId());
+            info.setAuth(memberResponse.getAuth());
             log.info("Session Info: " + info);
 
             session = request.getSession();

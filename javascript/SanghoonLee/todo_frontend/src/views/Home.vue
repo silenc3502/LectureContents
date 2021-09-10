@@ -165,6 +165,11 @@
                     active-class="active">
                 Account 로그인 Test
             </router-link>
+            <router-link :to="{ name: 'ImgTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Image Test
+            </router-link>
         </div>
     </div>
 </template>

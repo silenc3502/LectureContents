@@ -67,7 +67,7 @@ export default {
                 axios.post('http://localhost:7777/jpamember/login', { userId: id, password: pw, auth: null })
                         .then(res => {
                             if (res.data != "") {
-                                alert('로그인 성공! - ' + res.data.userId)
+                                alert('로그인 성공! - ' + res.data.auth)
                                 this.isLogin = true
                                 this.$store.state.session = res.data
                                 this.$cookies.set("user", res.data, '1h')

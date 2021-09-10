@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "member_auth")
 public class MemberAuth {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long memberAuthNo;
 
     @Column(name = "member_no")

@@ -27,6 +27,7 @@ export default {
     methods: {
         onSubmit (payload) {
             const { userId, password, auth } = payload
+            console.log('auth: ' + auth)
             axios.post('http://localhost:7777/jpamember/register', {
                         userId, password, auth
                     })

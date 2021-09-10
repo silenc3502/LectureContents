@@ -35,7 +35,7 @@ public class Member {
     /* Join Column 파트 */
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "member_no")
-    private List<MemberAuth> authList = new ArrayList<MemberAuth>();
+    private List<MemberAuth> authList;
 
     public Member(String userId, String password) {
         this.userId = userId;
@@ -43,6 +43,10 @@ public class Member {
     }
 
     public void addAuth(MemberAuth auth) {
+        if (authList == null) {
+            authList = new ArrayList<MemberAuth>();
+        }
+
         authList.add(auth);
     }
 

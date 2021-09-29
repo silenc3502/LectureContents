@@ -169,6 +169,13 @@
                     class="nav-link"
                     active-class="active">
                 Image Test
+            </router-link><br/>
+
+            <!-- Python Test -->
+            <router-link :to="{ name: 'PythonLoginTestPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Python Login Test
             </router-link>
         </div>
     </div>

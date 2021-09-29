@@ -86,6 +86,9 @@ import FileUploadPage from '@/views/FileUploadPage.vue'
 // Image Test
 import ImgTestPage from '@/views/ImgTestPage.vue'
 
+// Python Login Test
+import PythonLoginTestPage from '@/views/PythonLoginTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -392,6 +395,13 @@ const routes = [
     name: 'ImgTestPage',
     components: {
       default: ImgTestPage
+    }
+  },
+  {
+    path: '/pyLogin',
+    name: 'PythonLoginTestPage',
+    components: {
+      default: PythonLoginTestPage
     }
   }
 ]

@@ -176,6 +176,13 @@
                     class="nav-link"
                     active-class="active">
                 Python Login Test
+            </router-link><br/>
+
+            <!-- Kakao Login Test -->
+            <router-link :to="{ name: 'KakaoLoginPage' }"
+                    class="nav-link"
+                    active-class="active">
+                Kakao Login
             </router-link>
         </div>
     </div>

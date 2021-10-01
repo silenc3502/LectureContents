@@ -89,6 +89,9 @@ import ImgTestPage from '@/views/ImgTestPage.vue'
 // Python Login Test
 import PythonLoginTestPage from '@/views/PythonLoginTestPage.vue'
 
+// Kakao Login
+import KakaoLoginPage from '@/views/KakaoLoginPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -402,6 +405,13 @@ const routes = [
     name: 'PythonLoginTestPage',
     components: {
       default: PythonLoginTestPage
+    }
+  },
+  {
+    path: '/kakaoLogin',
+    name: 'KakaoLoginPage',
+    components: {
+      default: KakaoLoginPage
     }
   }
 ]

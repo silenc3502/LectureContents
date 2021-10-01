@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <ul>
-            <li onclick="kakaoLogin()">
+            <li v-on:click="kakaoLogin()">
                 <a href="javascript:void(0)">
                     <span>카카오 로그인</span>
                 </a>
@@ -37,6 +37,25 @@ export default {
                     .catch(res => {
                         alert(res.response.data.message)
                     })
+        },
+        kakaoLogin () {
+            window.Kakao.Auth.login({
+                success: (res) => {
+                    window.Kakao.API.request({
+                        url: '/v2/user/me',
+                        success: (res) => {
+                            console.log(res)
+                        },
+                        fail: (err) => {
+                            console.log(err)
+                        }
+                    })
+                    console.log(res)
+                },
+                fail: (err) => {
+                    console.log(err)
+                }
+            })
         }
     }
 }

@@ -2,7 +2,9 @@
     <v-container>
         <ul>
             <li onclick="kakaoLogin()">
-                <span>카카오 로그인</span>
+                <a href="javascript:void(0)">
+                    <span>카카오 로그인</span>
+                </a>
             </li>
         </ul>
     </v-container>

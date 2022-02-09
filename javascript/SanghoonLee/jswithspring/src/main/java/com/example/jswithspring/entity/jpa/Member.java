@@ -13,7 +13,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name="member")
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,9 +32,10 @@ public class Member {
     private Date updDate;
 
     /* Join Column 파트 */
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "member_no")
-    private List<MemberAuth> authList;
+    //@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //@JoinColumn(name = "member")
+    @OneToMany(mappedBy = "member")
+    private List<MemberAuth> authList = new ArrayList<>();
 
     public Member(String userId, String password) {
         this.userId = userId;

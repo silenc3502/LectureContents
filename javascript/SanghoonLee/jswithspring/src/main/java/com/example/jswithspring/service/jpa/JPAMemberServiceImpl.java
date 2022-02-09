@@ -17,6 +17,7 @@ import java.util.Optional;
 @Service
 public class JPAMemberServiceImpl implements JPAMemberService {
 
+    /*
     @Autowired
     private JPAMemberRepository memberRepository;
 
@@ -26,6 +27,9 @@ public class JPAMemberServiceImpl implements JPAMemberService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+     */
+
+    /*
     @Override
     public void register(MemberRequest memberRequest) throws Exception {
         String encodedPassword = passwordEncoder.encode(memberRequest.getPassword());
@@ -86,6 +90,8 @@ public class JPAMemberServiceImpl implements JPAMemberService {
         return true;
     }
 
+     */
+
     /*
     @Override
     public List<Member> list() throws Exception {
@@ -93,8 +99,31 @@ public class JPAMemberServiceImpl implements JPAMemberService {
     }
      */
 
+    /*
     @Override
     public Optional<Member> findByAuth(Long memberNo) {
         return memberRepository.findByAuth(memberNo);
+    }
+
+     */
+
+    @Override
+    public void register(MemberRequest memberRequest) throws Exception {
+
+    }
+
+    @Override
+    public MemberRequest login(MemberRequest memberRequest) throws Exception {
+        return null;
+    }
+
+    @Override
+    public boolean checkUserIdValidation(String userId) throws Exception {
+        return false;
+    }
+
+    @Override
+    public Optional<Member> findByAuth(Long memberNo) {
+        return Optional.empty();
     }
 }

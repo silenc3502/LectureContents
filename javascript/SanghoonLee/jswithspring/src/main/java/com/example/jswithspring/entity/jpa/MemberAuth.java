@@ -18,8 +18,9 @@ public class MemberAuth {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long memberAuthNo;
 
-    @Column(name = "member_no")
-    private Long memberNo;
+    @ManyToOne
+    @JoinColumn(name = "member_no")
+    private Member member;
 
     @Column(length = 64, nullable = false)
     private String auth;

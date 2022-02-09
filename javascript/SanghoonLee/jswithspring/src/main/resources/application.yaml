@@ -10,8 +10,8 @@ spring:
     url: jdbc:mysql://localhost:3306/jpa_db?serverTimezone=UTC&useSSL=false
     username: khweb
     password: khWeb@123
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    dialect: org.hibernate.dialect.MySQL8Dialect
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    #dialect: org.hibernate.dialect.MySQL8Dialect
 
   jpa:
     open-in-view: false

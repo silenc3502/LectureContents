@@ -13,8 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,7 +48,7 @@ public class JPAManyToManyTestMemberServiceImpl implements JPAManyToManyTestMemb
         memberManyToManyTestAuthRepository.save(authEntity);
     }
 
-    @Override
+    @Transactional
     public List<ManyToManyMember> findBusiness() {
         //List<ManyToManyMemberAuth> businessAuth = memberManyToManyTestAuthRepository.findByAuth("ROLE_BUSINESS");
 

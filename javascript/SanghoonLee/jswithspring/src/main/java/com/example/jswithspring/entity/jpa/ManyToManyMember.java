@@ -1,7 +1,6 @@
 package com.example.jswithspring.entity.jpa;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -10,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@ToString(exclude = "authLists")
 @NoArgsConstructor
 @Entity
 @Table(name = "tbl_many_to_many_member")

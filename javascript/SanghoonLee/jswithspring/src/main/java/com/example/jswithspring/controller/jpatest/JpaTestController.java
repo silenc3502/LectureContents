@@ -24,10 +24,11 @@ public class JpaTestController {
 
     @GetMapping("member")
     public String insertMember () throws Exception {
-        MemberRequest memberRequest = new MemberRequest("id" + cnt, "pw", "ROLE_BUSINESS");
+        MemberRequest memberRequest = new MemberRequest("id" + (++cnt), "pw", "ROLE_BUSINESS");
+        MemberRequest memberRequest2 = new MemberRequest("id" + (++cnt), "pw", "ROLE_CUSTOMER");
 
         service.register(memberRequest);
-        cnt++;
+        service.register(memberRequest2);
 
         return "Insert Success";
     }
@@ -37,6 +38,7 @@ public class JpaTestController {
         List<ManyToManyMember> businessMember = service.findBusiness();
 
         for (ManyToManyMember member : businessMember) {
+            //log.info("member id: " + member.getUserId());
             log.info(String.valueOf(member));
         }
 
